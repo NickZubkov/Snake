@@ -3,7 +3,7 @@ using UICoreECS;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Modules.CT.UI.UnityComponents
+namespace Modules.DragonIO.UI.UnityComponents
 {
     // activate via pointer down to not require click for transition
     public class TTSButton : AUIEntity, IPointerDownHandler

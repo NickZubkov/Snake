@@ -3,7 +3,7 @@ using Leopotam.Ecs;
 using Modules.EventGroup;
 using Modules.Currency;
 
-namespace Modules.CT.EventHandlers
+namespace Modules.DragonIO.EventHandlers
 {
     /// <summary>
     /// at tap to start screen, handle level transition at these state enter

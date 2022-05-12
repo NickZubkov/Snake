@@ -2,7 +2,7 @@
 using Leopotam.Ecs;
 using Modules.EventGroup;
 
-namespace Modules.CT.EventHandlers
+namespace Modules.DragonIO.EventHandlers
 {
     /// <summary>
     /// when player sucessfully passed the level

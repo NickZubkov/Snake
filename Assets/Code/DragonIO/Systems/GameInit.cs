@@ -1,6 +1,6 @@
 ﻿using Leopotam.Ecs;
 
-namespace Modules.CT
+namespace Modules.DragonIO
 {
     public class GameInit : IEcsInitSystem
     {

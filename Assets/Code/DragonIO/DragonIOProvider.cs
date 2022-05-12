@@ -3,10 +3,10 @@ using Modules.Root.ECS;
 using Modules.Root.ContainerComponentModel;
 using UnityEngine;
 
-namespace Modules.CT
+namespace Modules.DragonIO
 {
     [CreateAssetMenu(menuName = "Modules/CT/Provider")]
-    public class CTProvider : ScriptableObject, ISystemsProvider
+    public class DragonIOProvider : ScriptableObject, ISystemsProvider
     {
         public EcsSystems GetSystems(EcsWorld world, EcsSystems endFrame, EcsSystems mainSystems)
         {

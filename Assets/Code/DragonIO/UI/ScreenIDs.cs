@@ -1,4 +1,4 @@
-﻿namespace Modules.CT.UI
+﻿namespace Modules.DragonIO.UI
 {
     public enum MainScreens
     {

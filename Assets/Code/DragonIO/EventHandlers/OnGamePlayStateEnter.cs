@@ -2,14 +2,14 @@
 using Leopotam.Ecs;
 using Modules.EventGroup;
 
-namespace Modules.CT.EventHandlers
+namespace Modules.DragonIO.EventHandlers
 {
     /// <summary>
-    /// when player lost the level
+    /// process enter at a regular gameplay state(after click on TTS)
     /// </summary>
-    public class OnRoundFailedEnter: IEcsRunSystem
+    public class OnGamePlayStateEnter : IEcsRunSystem
     {
-        readonly EcsFilter<RoundFailedState, StateEnter> _signal;
+        readonly EcsFilter<GamePlayState, StateEnter> _signal;
         readonly EcsWorld _world;
 
         public void Run()
@@ -17,9 +17,9 @@ namespace Modules.CT.EventHandlers
             if (_signal.IsEmpty())
                 return;
 
-            // show round failed screen
+            // show gameplay screen
             ref var screen = ref _world.NewEntity().Get<UICoreECS.ShowScreenTag>();
-            screen.ID = (int)UI.MainScreens.RoundFailed;
+            screen.ID = (int)UI.MainScreens.GamePlay;
             screen.Layer = (int)UI.Layers.MainLayer;
         }
     }

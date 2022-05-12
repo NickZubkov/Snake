@@ -2,7 +2,7 @@
 using Modules.PlayerLevel;
 using TMPro;
 
-namespace Modules.CT.UI
+namespace Modules.DragonIO.UI
 {
     public class CurrentLevelPanel : MonoBehaviour
     {

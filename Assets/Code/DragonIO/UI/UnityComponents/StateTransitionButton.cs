@@ -1,7 +1,7 @@
 ﻿using UICoreECS;
 using UnityEngine;
 
-namespace Modules.CT.UI.UnityComponents
+namespace Modules.DragonIO.UI.UnityComponents
 {
     /// <summary>
     ///  generally for debug purposes
