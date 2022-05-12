@@ -5,12 +5,13 @@ using UnityEngine;
 
 namespace Modules.DragonIO
 {
-    [CreateAssetMenu(menuName = "Modules/CT/Provider")]
+    [CreateAssetMenu(menuName = "Modules/DragonIO/Provider")]
     public class DragonIOProvider : ScriptableObject, ISystemsProvider
     {
+        [SerializeField] private Data.GameConfig _config;
         public EcsSystems GetSystems(EcsWorld world, EcsSystems endFrame, EcsSystems mainSystems)
         {
-            EcsSystems systems = new EcsSystems(world, "CTGame");
+            EcsSystems systems = new EcsSystems(world, "DragonIOGame");
 
             #region AppContainerCheck
             if (AppContainer.Instance == null) 
@@ -33,6 +34,10 @@ namespace Modules.DragonIO
 
             systems
                 .Add(new GameInit())
+                
+                // player
+                .Add(new Player.Systems.PlayerInitSystem())
+                .Add(new Player.Systems.PlayerMoveProcessing())
 
                 // event group
                 .Add(new EventGroup.StateCleanupSystem())       // remove entity with prev state component
@@ -42,10 +47,16 @@ namespace Modules.DragonIO
                 .Add(new EventHandlers.OnRoundCompletedEnter()) // on round completed state enter
                 .Add(new EventHandlers.OnRoundFailedEnter())    // on round failed state enter
 
-                .Add(new Utils.TimedDestructorSystem());
+                .Add(new Utils.TimedDestructorSystem())
+                
+                // injections
+                .Inject(_config)
+                ;
 
             endFrame
-                .OneFrame<EventGroup.StateEnter>();
+                .OneFrame<EventGroup.StateEnter>()
+                .OneFrame<Player.Components.PlayerSpawnedSignal>()
+                ;
 
             return systems;
         }
