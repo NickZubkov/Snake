@@ -12,6 +12,7 @@
     "com.lipsar.modules.camerautils": "1.0.2",
     "com.lipsar.modules.currency": "1.0.3",
     "com.lipsar.modules.eventgroup": "1.0.3",
+    "com.lipsar.modules.joystick": "1.0.2",
     "com.lipsar.modules.levelspawner": "1.2.0",
     "com.lipsar.modules.playerlevel": "1.0.1",
     "com.lipsar.modules.root.containercomponentmodel": "1.0.2",
