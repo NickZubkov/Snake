@@ -7,7 +7,10 @@ namespace Modules.DragonIO.Data
     public class GameConfig : ScriptableObject
     {
         [TitleGroup("Player")] 
-        public Player.EntityTemplates.PlayerTemplate PlayerPrefab;
-        public PlayerConfig[] PlayerConfigs;
+        public Dragons.EntityTemplates.DragonHeadTemplate DragonHeadPrefab;
+        public Dragons.EntityTemplates.DragonBodyTemplate DragonBodyPrefab;
+        public Dragons.EntityTemplates.DragonBodyTemplate DragonBodyPrefabFrontLegs;
+        public Dragons.EntityTemplates.DragonBodyTemplate DragonBodyPrefabBackLegs;
+        public DragonConfig[] DragonConfigs;
     }
 }

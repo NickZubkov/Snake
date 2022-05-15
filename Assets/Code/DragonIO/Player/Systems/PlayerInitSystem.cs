@@ -4,8 +4,8 @@ namespace Modules.DragonIO.Player.Systems
 {
     public class PlayerInitSystem : IEcsRunSystem
     {
-        private EcsFilter<Components.Player, ViewHub.UnityView, Components.PlayerSpawnedSignal> _player;
-
+        private EcsFilter<Dragons.Components.DragonHead, ViewHub.UnityView, Components.PlayerSpawnedSignal> _player;
+            
         private Data.GameConfig _config;
         private EcsWorld _world;
 
@@ -18,7 +18,7 @@ namespace Modules.DragonIO.Player.Systems
             foreach (var idx in _player)
             {
                 ref var player = ref _player.Get1(idx);
-                player.Config = _config.PlayerConfigs.SafeGetAt(0);
+                player.Config = _config.DragonConfigs.SafeGetAt(0);
                 
                 _world.NewEntity().Get<CameraUtils.SwitchCameraSignal>() = new CameraUtils.SwitchCameraSignal
                 {

@@ -36,8 +36,12 @@ namespace Modules.DragonIO
                 .Add(new GameInit())
                 
                 // player
+                .Add(new Player.Systems.PlayerSpawner())
                 .Add(new Player.Systems.PlayerInitSystem())
-                .Add(new Player.Systems.PlayerMoveProcessing())
+                .Add(new Player.Systems.PlayerPathCalculateProcessing())
+                
+                // dragons
+                .Add(new Dragons.Systems.DragonsMoveProcessing())
 
                 // event group
                 .Add(new EventGroup.StateCleanupSystem())       // remove entity with prev state component
