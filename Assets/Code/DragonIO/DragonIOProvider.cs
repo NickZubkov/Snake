@@ -71,7 +71,6 @@ namespace Modules.DragonIO
                 .OneFrame<LevelController.Components.FoodSpawningSignal>()
                 .OneFrame<LevelController.Components.BonusSpawningSignal>()
                 .OneFrame<Player.Components.PlayerSpawnedSignal>()
-                .OneFrame<Dragons.Components.GoodsTriggeredSignal>()
                 ;
 
             return systems;
