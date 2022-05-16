@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Leopotam.Ecs;
 using Modules.ViewHub;
 using UnityEngine;
@@ -16,7 +17,8 @@ namespace Modules.DragonIO.Dragons.EntityTemplates
                 {
                     transform
                 },
-                PositionsHistory = new List<Vector3>()
+                PositionsHistory = new List<Vector3>(),
+                Points = 0
             };
         }
     }

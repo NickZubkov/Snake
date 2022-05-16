@@ -35,13 +35,21 @@ namespace Modules.DragonIO
             systems
                 .Add(new GameInit())
                 
+                // level controller
+                .Add(new LevelController.Systems.LevelControllerInitSystem())
+                .Add(new LevelController.Systems.LevelControllerProcessing())
+                
                 // player
-                .Add(new Player.Systems.PlayerSpawner())
+                .Add(new Player.Systems.PlayerSpawnSystem())
                 .Add(new Player.Systems.PlayerInitSystem())
                 .Add(new Player.Systems.PlayerPathCalculateProcessing())
                 
                 // dragons
                 .Add(new Dragons.Systems.DragonsMoveProcessing())
+                .Add(new Dragons.Systems.DragonsCollectGoodsProcessing())
+                
+                // goods
+                .Add(new Goods.Systems.GoodsSpawnProcessing())
 
                 // event group
                 .Add(new EventGroup.StateCleanupSystem())       // remove entity with prev state component
@@ -59,7 +67,11 @@ namespace Modules.DragonIO
 
             endFrame
                 .OneFrame<EventGroup.StateEnter>()
+                .OneFrame<LevelController.Components.LevelControllerSpawnedSignal>()
+                .OneFrame<LevelController.Components.FoodSpawningSignal>()
+                .OneFrame<LevelController.Components.BonusSpawningSignal>()
                 .OneFrame<Player.Components.PlayerSpawnedSignal>()
+                .OneFrame<Dragons.Components.GoodsTriggeredSignal>()
                 ;
 
             return systems;

@@ -8,5 +8,6 @@ namespace Modules.DragonIO.Dragons.Components
         public Data.DragonConfig Config;
         public List<Transform> BodyParts;
         public List<Vector3> PositionsHistory;
+        public int Points;
     }
 }

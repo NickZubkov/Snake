@@ -12,14 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28fed0df595141e8b2e089ab99e4bd1c, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
-  DragonHeadPrefab: {fileID: 2672087176939207069, guid: ee64ed5f86fef3743b913d0ade1c9d2c,
+  LevelControllerPrefab: {fileID: 2721200936963766563, guid: c6f901d9bf7557648bdc901a129bc505,
     type: 3}
-  DragonBodyPrefab: {fileID: 6822617958120127719, guid: ee759863f32b3344ab940327cf93605e,
-    type: 3}
-  DragonBodyPrefabFrontLegs: {fileID: 4455966368233153384, guid: be3148f6477c6bf40be33447f8ff3203,
-    type: 3}
-  DragonBodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 2564a790db79cee44974be2e0098ac33,
-    type: 3}
-  DragonConfigs:
-  - Speed: 5
-    Gap: 15
+  LevelsConfig:
+  - LevelID: 0
+    LevelTimer: 300
+    PlayerConfig: {fileID: 11400000, guid: b2495a313bb2d4142b3a84d8ec93a27f, type: 2}
+    GoodsConfig: {fileID: 11400000, guid: 0c76c02d17c719546b5fd99a70f3030e, type: 2}

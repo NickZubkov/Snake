@@ -13,12 +13,12 @@ namespace Modules.DragonIO.Player.Systems
         {
             if(_player.IsEmpty())
                 return;
-
-
+            
             foreach (var idx in _player)
             {
                 ref var player = ref _player.Get1(idx);
-                player.Config = _config.DragonConfigs.SafeGetAt(0);
+                var levelConfig = _config.LevelsConfig[0];
+                player.Config = levelConfig.PlayerConfig;
                 
                 _world.NewEntity().Get<CameraUtils.SwitchCameraSignal>() = new CameraUtils.SwitchCameraSignal
                 {
