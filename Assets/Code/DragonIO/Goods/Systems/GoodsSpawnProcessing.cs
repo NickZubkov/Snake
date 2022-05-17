@@ -19,14 +19,16 @@ namespace Modules.DragonIO.Goods.Systems
             if (!_foodSignal.IsEmpty())
             {
                 var spawnPosition = new Vector3(Random.Range(-19, 19), 0f, Random.Range(-19, 19));
-                var food = Object.Instantiate(_config.LevelsConfig[0].GoodsConfig.FoodPrefab, spawnPosition, Quaternion.identity);
+                var prefab = _config.LevelsConfig.SafeGetAt(PlayerLevel.ProgressionInfo.CurrentLevel).GoodsConfig.FoodPrefab;
+                var food = Object.Instantiate(prefab, spawnPosition, Quaternion.identity);
                 food.Spawn(_world.NewEntity(), _world);
             }
             
             if (!_bonusSignal.IsEmpty())
             {
                 var spawnPosition = new Vector3(Random.Range(-19, 19), 0f, Random.Range(-19, 19));
-                var bonus = Object.Instantiate(_config.LevelsConfig[0].GoodsConfig.BonusPrefab, spawnPosition, Quaternion.identity);
+                var prefab = _config.LevelsConfig.SafeGetAt(PlayerLevel.ProgressionInfo.CurrentLevel).GoodsConfig.BonusPrefab;
+                var bonus = Object.Instantiate(prefab, spawnPosition, Quaternion.identity);
                 bonus.Spawn(_world.NewEntity(), _world);
             }
         }

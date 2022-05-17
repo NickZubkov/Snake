@@ -8,7 +8,7 @@ namespace Modules.DragonIO.Player.ViewComponents
         public override void EntityInit(EcsEntity ecsEntity, EcsWorld ecsWorld, bool parentOnScene)
         {
             ecsEntity.Get<Components.PlayerTag>();
-            ecsEntity.Get<Components.PlayerSpawnedSignal>();
+            ecsEntity.Get<Components.PlayerHeadSpawnedSignal>();
         }
     }
 }

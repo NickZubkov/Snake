@@ -10,6 +10,8 @@ namespace Modules.DragonIO.Data
         public float LevelTimer = 300;
 
         public PlayerConfig PlayerConfig;
+        public EnemyConfig EnemyConfig;
         public GoodsConfig GoodsConfig;
+        public ObstacleConfig ObstacleConfig;
     }
 }

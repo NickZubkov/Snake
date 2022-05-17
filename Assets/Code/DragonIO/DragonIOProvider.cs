@@ -34,6 +34,10 @@ namespace Modules.DragonIO
 
             systems
                 .Add(new GameInit())
+
+                // round end tracker
+                .Add(new RoundCompletedTracker())
+                .Add(new RoundFailedTracker())
                 
                 // level controller
                 .Add(new LevelController.Systems.LevelControllerInitSystem())
@@ -44,12 +48,21 @@ namespace Modules.DragonIO
                 .Add(new Player.Systems.PlayerInitSystem())
                 .Add(new Player.Systems.PlayerPathCalculateProcessing())
                 
-                // dragons
-                .Add(new Dragons.Systems.DragonsMoveProcessing())
-                .Add(new Dragons.Systems.DragonsCollectGoodsProcessing())
+                // enemy
+                .Add(new Enemy.Systems.EnemySpawnSystem())
+                .Add(new Enemy.Systems.EnemyInitSystem())
+                .Add(new Enemy.Systems.EnemyPathCalculateProcessing())
+                
+                // obstacles
+                .Add(new Obstacles.Systems.ObstaclesSpawnSystem())
                 
                 // goods
                 .Add(new Goods.Systems.GoodsSpawnProcessing())
+                
+                // dragons
+                .Add(new Dragons.Systems.DragonsMoveProcessing())
+                .Add(new Dragons.Systems.DragonsCollectGoodsProcessing())
+                .Add(new Dragons.Systems.DragonsCollisionsProcessing())
 
                 // event group
                 .Add(new EventGroup.StateCleanupSystem())       // remove entity with prev state component
@@ -67,10 +80,10 @@ namespace Modules.DragonIO
 
             endFrame
                 .OneFrame<EventGroup.StateEnter>()
-                .OneFrame<LevelController.Components.LevelControllerSpawnedSignal>()
                 .OneFrame<LevelController.Components.FoodSpawningSignal>()
                 .OneFrame<LevelController.Components.BonusSpawningSignal>()
-                .OneFrame<Player.Components.PlayerSpawnedSignal>()
+                .OneFrame<Player.Components.PlayerHeadSpawnedSignal>()
+                .OneFrame<Enemy.Components.EnemyHeadSpawnedSignal>()
                 ;
 
             return systems;

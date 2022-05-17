@@ -20,7 +20,7 @@ namespace Modules.DragonIO.Player.Systems
         {
             if (_gameplay.IsEmpty())
                 return;
-
+            
             foreach (var idx in _joystick)
             {
                 var joystickInput = _joystick.Get1(idx).Input;
@@ -33,9 +33,8 @@ namespace Modules.DragonIO.Player.Systems
             foreach (var idx in _player)
             {
                 ref var dragon = ref _player.Get2(idx);
-                
                 // Calc head position
-                _targetHeadPoint += _headMoveDirection * _time.DeltaTime * dragon.Config.Speed;
+                _targetHeadPoint = _player.Get1(idx).Transform.position + _headMoveDirection * _time.DeltaTime * dragon.Config.Speed;
 
                 // Store position history
                 dragon.PositionsHistory.Insert(0, _targetHeadPoint);

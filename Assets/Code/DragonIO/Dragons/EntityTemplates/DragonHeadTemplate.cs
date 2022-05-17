@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Leopotam.Ecs;
 using Modules.ViewHub;
 using UnityEngine;

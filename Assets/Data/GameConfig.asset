@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28fed0df595141e8b2e089ab99e4bd1c, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
-  LevelControllerPrefab: {fileID: 2721200936963766563, guid: c6f901d9bf7557648bdc901a129bc505,
-    type: 3}
   LevelsConfig:
   - LevelID: 0
     LevelTimer: 300
     PlayerConfig: {fileID: 11400000, guid: b2495a313bb2d4142b3a84d8ec93a27f, type: 2}
+    EnemyConfig: {fileID: 11400000, guid: 80566281d422eb5488a2e36c947bf0c1, type: 2}
     GoodsConfig: {fileID: 11400000, guid: 0c76c02d17c719546b5fd99a70f3030e, type: 2}
+    ObstacleConfig: {fileID: 11400000, guid: ba5ded57f5489ba4c8de08b0cc4983e5, type: 2}

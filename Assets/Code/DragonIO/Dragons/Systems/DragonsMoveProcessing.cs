@@ -6,9 +6,7 @@ namespace Modules.DragonIO.Dragons.Systems
     public class DragonsMoveProcessing : IEcsRunSystem
     {
         private EcsFilter<EventGroup.GamePlayState> _gameplay;
-
-        private EcsFilter<Components.DragonHead, ViewHub.UnityView> _dragons;
-
+        private EcsFilter<Components.DragonHead> _dragons;
         private Utils.TimeService _time;
 
         // runtime data
