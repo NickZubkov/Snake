@@ -20,9 +20,11 @@ MonoBehaviour:
     type: 3}
   DragonBodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 8ab61ebc2134884418d8a01457e8024b,
     type: 3}
-  Speed: 20
+  Speed: 15
   Gap: 15
   BodySize: 0
-  EnemyAI: 0
+  EnemyAI: 2
   EnemyCount: 10
   TimeToChangeDirection: 2
+  GoodsSerchRadius: 10
+  SerchRadiusThreshold: 0.8

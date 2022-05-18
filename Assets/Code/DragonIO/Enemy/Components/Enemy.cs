@@ -8,5 +8,6 @@ namespace Modules.DragonIO.Enemy.Components
         public float ChangeDirectionTimeThreshold;
         public float ChangeDirectionTimer;
         public Vector3 MoveDirection;
+        public float SerchRadiusThreshold;
     }
 }

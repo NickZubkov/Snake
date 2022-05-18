@@ -1,4 +1,7 @@
-﻿namespace Modules.DragonIO.LevelController.Components
+﻿using System.Collections.Generic;
+using UnityEngine;
+
+namespace Modules.DragonIO.LevelController.Components
 {
     public struct LevelController
     {
@@ -8,5 +11,6 @@
         public float BonusMinSpawnTime;
         public float BonusMaxSpawnTime;
         public float BonusSpawnTimer;
+        public List<Transform> GoodsPositions;
     }
 }

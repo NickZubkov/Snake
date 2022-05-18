@@ -175,7 +175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &668137865805037184
 Transform:
   m_ObjectHideFlags: 0
@@ -201,7 +201,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1839314742721591575}
-  - component: {fileID: 1209017970765179552}
+  - component: {fileID: 4137618187380219370}
+  - component: {fileID: 1451190381435194298}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Untagged
@@ -226,7 +227,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1209017970765179552
+--- !u!114 &4137618187380219370
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -239,3 +240,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _components: []
+--- !u!65 &1451190381435194298
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7576680590022555804}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

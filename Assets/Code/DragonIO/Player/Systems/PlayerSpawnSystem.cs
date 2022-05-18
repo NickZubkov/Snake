@@ -6,7 +6,7 @@ namespace Modules.DragonIO.Player.Systems
     public class PlayerSpawnSystem : IEcsRunSystem
     {
         private EcsFilter<EventGroup.GamePlayState> _gameplay;
-        private EcsFilter<Dragons.Components.DragonHead, Components.PlayerTag> _player;
+        private EcsFilter<Dragons.Components.DragonHead, Components.Player> _player;
         private EcsFilter<Dragons.Components.DragonHead, Components.PlayerHeadSpawnedSignal> _spawnedSignal;
         
         private EcsWorld _world;

@@ -7,6 +7,7 @@ namespace Modules.DragonIO.Dragons.Systems
     {
         private EcsFilter<EventGroup.GamePlayState> _gamePlay;
         private EcsFilter<Components.DragonHead, UPhysics.Triggered> _dragon;
+        private EcsFilter<LevelController.Components.LevelController> _levelController;
         
         private EcsWorld _world;
         public void Run()
@@ -27,10 +28,30 @@ namespace Modules.DragonIO.Dragons.Systems
                     bodyPart.SetComponentReferences(_dragon.GetEntity(idx));
                     dragonHead.BodyParts.Insert(index, bodyPart.transform);
                     dragonHead.Points++;
+                    foreach (var levelController in _levelController)
+                    {
+                        for (int i = 0; i < _levelController.Get1(levelController).GoodsPositions.Count; i++)
+                        {
+                            if (_levelController.Get1(levelController).GoodsPositions[i].gameObject == triggered.Collider.transform.parent.parent.gameObject)
+                            {
+                                _levelController.Get1(levelController).GoodsPositions.RemoveAt(i);
+                            } 
+                        }
+                    }
                     triggered.Other.Destroy();
                 }
                 else if (triggered.Other.IsAlive() && triggered.Other.Has<Goods.Components.Bonus>())
                 {
+                    foreach (var levelController in _levelController)
+                    {
+                        for (int i = 0; i < _levelController.Get1(levelController).GoodsPositions.Count; i++)
+                        {
+                            if (_levelController.Get1(levelController).GoodsPositions[i].gameObject == triggered.Collider.transform.parent.parent.gameObject)
+                            {
+                                _levelController.Get1(levelController).GoodsPositions.RemoveAt(i);
+                            } 
+                        }
+                    }
                     triggered.Other.Destroy();
                 }
             }

@@ -16,8 +16,8 @@ MonoBehaviour:
     type: 3}
   BonusPrefab: {fileID: 8310880059426670931, guid: 1ae9f349062cf8942a82f9933e855216,
     type: 3}
-  MinFoodCount: 10
-  MaxBonusCount: 5
+  MinFoodCount: 16
+  MaxBonusCount: 2
   BonusSpawnTimeRange:
-    Min: 5
-    Max: 15
+    Min: 1
+    Max: 2

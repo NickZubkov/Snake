@@ -7,7 +7,7 @@ namespace Modules.DragonIO.Data
     {
         public Goods.EntityTemplates.GoodsTemplate FoodPrefab;
         public Goods.EntityTemplates.GoodsTemplate BonusPrefab;
-        [Range(10, 500)]
+        [Range(1, 500)]
         public int MinFoodCount = 20;
         [Range(1, 100)] 
         public int MaxBonusCount = 10;

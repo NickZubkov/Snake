@@ -21,6 +21,7 @@ namespace Modules.DragonIO.Enemy.Systems
                 enemy.Config = _config.LevelsConfig.SafeGetAt(PlayerLevel.ProgressionInfo.CurrentLevel).EnemyConfig;
                 enemy.ChangeDirectionTimeThreshold = enemy.Config.TimeToChangeDirection;
                 enemy.ChangeDirectionTimer = 0;
+                enemy.SerchRadiusThreshold = enemy.Config.SerchRadiusThreshold;
             }
         }
     }

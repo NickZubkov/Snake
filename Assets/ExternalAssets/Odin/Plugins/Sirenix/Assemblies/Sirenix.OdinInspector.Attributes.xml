@@ -3845,7 +3845,7 @@
             <example>
             <para>The following example shows how MinMaxSlider is used.</para>
             <code>
-            public class PlayerTag : MonoBehaviour
+            public class Player : MonoBehaviour
             {
             	[MinMaxSlider(4, 5)]
             	public Vector2 SpawnRadius;
@@ -4219,7 +4219,7 @@
             <example>
             <para>The following example shows a player component that must have at least 1 life.</para>
             <code>
-            public class PlayerTag : MonoBehaviour
+            public class Player : MonoBehaviour
             {
             	// The life value must be set to at least 1.
             	[MinValue(1)]

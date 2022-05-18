@@ -20,6 +20,6 @@ MonoBehaviour:
     type: 3}
   DragonBodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 2564a790db79cee44974be2e0098ac33,
     type: 3}
-  Speed: 20
-  Gap: 15
+  Speed: 5
+  Gap: 10
   BodySize: 0

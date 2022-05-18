@@ -1,7 +1,7 @@
-﻿namespace Modules.DragonIO.Obstacles.Components
+﻿
+namespace Modules.DragonIO.Obstacles.Components
 {
     public struct Obstacle
     {
-        
     }
 }

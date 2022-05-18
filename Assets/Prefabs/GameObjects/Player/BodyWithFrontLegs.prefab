@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 1040865188858622309}
   - component: {fileID: 4455966368233153384}
   - component: {fileID: -1999448485703785225}
+  - component: {fileID: 3718449301091364081}
   m_Layer: 0
   m_Name: BodyWithFrontLegs
   m_TagString: Untagged
@@ -261,6 +262,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 324fe05ab7244063be5c285e07b8ae94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &3718449301091364081
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6791998349828107887}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 0.7, z: 0.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6811883120599348703
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,7 +418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3623238163956853224
 Transform:
   m_ObjectHideFlags: 0

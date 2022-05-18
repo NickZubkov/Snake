@@ -35,9 +35,7 @@ namespace Modules.DragonIO
             systems
                 .Add(new GameInit())
 
-                // round end tracker
-                .Add(new RoundCompletedTracker())
-                .Add(new RoundFailedTracker())
+                
                 
                 // level controller
                 .Add(new LevelController.Systems.LevelControllerInitSystem())
@@ -63,6 +61,10 @@ namespace Modules.DragonIO
                 .Add(new Dragons.Systems.DragonsMoveProcessing())
                 .Add(new Dragons.Systems.DragonsCollectGoodsProcessing())
                 .Add(new Dragons.Systems.DragonsCollisionsProcessing())
+                
+                // round end tracker
+                .Add(new RoundCompletedTracker())
+                .Add(new RoundFailedTracker())
 
                 // event group
                 .Add(new EventGroup.StateCleanupSystem())       // remove entity with prev state component

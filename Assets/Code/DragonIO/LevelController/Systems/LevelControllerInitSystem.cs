@@ -1,4 +1,5 @@
-﻿using Leopotam.Ecs;
+﻿using System.Collections.Generic;
+using Leopotam.Ecs;
 using UnityEngine;
 
 namespace Modules.DragonIO.LevelController.Systems
@@ -19,6 +20,7 @@ namespace Modules.DragonIO.LevelController.Systems
                 {
                     _enemiesSpawnedTag.GetEntity(idx).Del<Enemy.Components.EnemiesSpawnedTag>();
                 }
+
                 return;
             }
                 
@@ -33,6 +35,7 @@ namespace Modules.DragonIO.LevelController.Systems
                 entity.BonusMinSpawnTime = levelConfig.GoodsConfig.BonusSpawnTimeRange.Min;
                 entity.BonusMaxSpawnTime = levelConfig.GoodsConfig.BonusSpawnTimeRange.Max;
                 entity.BonusSpawnTimer = Random.Range(entity.BonusMinSpawnTime, entity.BonusMaxSpawnTime);
+                entity.GoodsPositions = new List<Transform>();
             }
         }
     }

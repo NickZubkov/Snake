@@ -8,6 +8,7 @@ namespace Modules.DragonIO.Goods.Systems
         private EcsFilter<EventGroup.GamePlayState> _gameplay;
         private EcsFilter<LevelController.Components.FoodSpawningSignal> _foodSignal;
         private EcsFilter<LevelController.Components.BonusSpawningSignal> _bonusSignal;
+        private EcsFilter<LevelController.Components.LevelController> _levelController;
         
         private EcsWorld _world;
         private Data.GameConfig _config;
@@ -22,6 +23,11 @@ namespace Modules.DragonIO.Goods.Systems
                 var prefab = _config.LevelsConfig.SafeGetAt(PlayerLevel.ProgressionInfo.CurrentLevel).GoodsConfig.FoodPrefab;
                 var food = Object.Instantiate(prefab, spawnPosition, Quaternion.identity);
                 food.Spawn(_world.NewEntity(), _world);
+
+                foreach (var idx in _levelController)
+                {
+                    _levelController.Get1(idx).GoodsPositions.Insert(0, food.transform);
+                }
             }
             
             if (!_bonusSignal.IsEmpty())
@@ -30,6 +36,11 @@ namespace Modules.DragonIO.Goods.Systems
                 var prefab = _config.LevelsConfig.SafeGetAt(PlayerLevel.ProgressionInfo.CurrentLevel).GoodsConfig.BonusPrefab;
                 var bonus = Object.Instantiate(prefab, spawnPosition, Quaternion.identity);
                 bonus.Spawn(_world.NewEntity(), _world);
+                
+                foreach (var idx in _levelController)
+                {
+                    _levelController.Get1(idx).GoodsPositions.Insert(0, bonus.transform);
+                }
             }
         }
     }
