@@ -11,7 +11,7 @@ PlayerSettings:
   defaultScreenOrientation: 0
   targetDevice: 2
   useOnDemandResources: 0
-  accelerometerFrequency: 60
+  accelerometerFrequency: 0
   companyName: EverPlay
   productName: Dragon io
   defaultCursor: {fileID: 0}
@@ -588,7 +588,7 @@ PlayerSettings:
   logObjCUncaughtExceptions: 1
   enableCrashReportAPI: 0
   cameraUsageDescription: Does  not use camera
-  locationUsageDescription: Does not use location
+  locationUsageDescription: Uses coarse location
   microphoneUsageDescription: Does not use microphone
   switchNMETAOverride: 
   switchNetLibKey: 
