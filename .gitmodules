@@ -1,0 +1,4 @@
+[submodule "Assets/LS/BuildSystem"]
+	path = Assets/LS/BuildSystem
+	url = https://git.lipsar.studio/Lipsar-Studio/bs-module.git
+	branch = develop
