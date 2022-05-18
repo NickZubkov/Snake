@@ -1,3 +1,7 @@
+[submodule "Assets/LS/BuildSystem"]
+	path = Assets/LS/BuildSystem
+	url = https://git.lipsar.studio/Lipsar-Studio/bs-module.git
+	branch = develop
 [submodule "Assets/Code/ToolBox"]
 	path = Assets/Code/ToolBox
 	url = https://git.lipsar.studio/a.subaev/ToolBox.git
