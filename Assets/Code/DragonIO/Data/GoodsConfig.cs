@@ -13,6 +13,6 @@ namespace Modules.DragonIO.Data
         [Range(1, 100)] 
         public int MaxBonusCount = 10;
         [MinMaxSlider(1, 10)]
-        public Vector2Int BonusSpawnTimeRange = new (1,2);
+        public Vector2Int BonusSpawnTimeRange = new Vector2Int(1,2);
     }
 }
