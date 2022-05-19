@@ -1,8 +1,7 @@
-﻿using UnityEngine;
-
+﻿
 namespace Modules.DragonIO.Data
 {
-    [CreateAssetMenu(fileName = "PlayerConfig", menuName = "Modules/DragonIO/PlayerConfig")]
+    [System.Serializable]
     public class PlayerConfig : DragonConfig
     {
         

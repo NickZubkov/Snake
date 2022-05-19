@@ -1,9 +1,7 @@
-﻿using UnityEngine;
-
-namespace Modules.DragonIO.Data
+﻿namespace Modules.DragonIO.Data
 {
     [System.Serializable]
-    public class DragonConfig : ScriptableObject
+    public class DragonConfig
     {
         public Dragons.EntityTemplates.DragonHeadTemplate DragonHeadPrefab;
         public Dragons.EntityTemplates.DragonBodyTemplate DragonBodyPrefab;

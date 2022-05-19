@@ -10,6 +10,7 @@ namespace Modules.DragonIO.Dragons.EntityTemplates
         {
             base.OnSpawn(entity, world);
             entity.Get<Components.DragonBody>();
+            entity.Get<LevelSpawner.LevelEntityTag>();
             _entity = entity;
         }
 

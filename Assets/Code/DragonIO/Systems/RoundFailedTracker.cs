@@ -18,7 +18,6 @@ namespace Modules.DragonIO
             {
                 EventGroup.StateFactory.CreateState<EventGroup.RoundFailedState>(_world);
             }
-            
         }
     }
 }

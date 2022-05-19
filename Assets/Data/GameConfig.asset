@@ -13,9 +13,144 @@ MonoBehaviour:
   m_Name: GameConfig
   m_EditorClassIdentifier: 
   LevelsConfig:
-  - LevelID: 0
-    LevelTimer: 300
-    PlayerConfig: {fileID: 11400000, guid: b2495a313bb2d4142b3a84d8ec93a27f, type: 2}
-    EnemyConfig: {fileID: 11400000, guid: 80566281d422eb5488a2e36c947bf0c1, type: 2}
-    GoodsConfig: {fileID: 11400000, guid: 0c76c02d17c719546b5fd99a70f3030e, type: 2}
-    ObstacleConfig: {fileID: 11400000, guid: ba5ded57f5489ba4c8de08b0cc4983e5, type: 2}
+  - LevelConfig:
+      LevelTimer: 300
+      LevelSize: 80
+      WallPrefab: {fileID: 8292693005376339395, guid: 733e1affa63de94488547a3ba5e82741,
+        type: 3}
+      WallsCount: 3
+    PlayerConfig:
+      DragonHeadPrefab: {fileID: 2672087176939207069, guid: ee64ed5f86fef3743b913d0ade1c9d2c,
+        type: 3}
+      DragonBodyPrefab: {fileID: 6822617958120127719, guid: ee759863f32b3344ab940327cf93605e,
+        type: 3}
+      DragonBodyPrefabFrontLegs: {fileID: 4455966368233153384, guid: be3148f6477c6bf40be33447f8ff3203,
+        type: 3}
+      DragonBodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 2564a790db79cee44974be2e0098ac33,
+        type: 3}
+      Speed: 5
+      Gap: 10
+      BodySize: 0
+    EnemyConfig:
+      DragonHeadPrefab: {fileID: 2672087176939207069, guid: 5a0c89fd381cd0c419523605bbeaf6fe,
+        type: 3}
+      DragonBodyPrefab: {fileID: 6822617958120127719, guid: 18e79bc30459bf940830d8f3d671f11f,
+        type: 3}
+      DragonBodyPrefabFrontLegs: {fileID: 4455966368233153384, guid: 54acdbddc36a9b941bbde8d8fdaf6f5a,
+        type: 3}
+      DragonBodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 8ab61ebc2134884418d8a01457e8024b,
+        type: 3}
+      Speed: 20
+      Gap: 10
+      BodySize: 0
+      EnemyAI: 0
+      EnemyCount: 10
+      TimeToChangeDirection: 2
+      GoodsSerchRadius: 10
+      SerchRadiusThreshold: 0.8
+    GoodsConfig:
+      FoodPrefab: {fileID: 1239600050858635287, guid: 8062a0c11d04c6b4e987904b0fe6f303,
+        type: 3}
+      BonusPrefab: {fileID: 8310880059426670931, guid: 1ae9f349062cf8942a82f9933e855216,
+        type: 3}
+      MinFoodCount: 20
+      MaxBonusCount: 10
+      BonusSpawnTimeRange: {x: 1, y: 2}
+    ObstacleConfig:
+      ObstaclePrefab: {fileID: 4137618187380219370, guid: 3b6c3ef6d626eae40b04e59cf6d844b5,
+        type: 3}
+      ObstaclesCount: 5
+  - LevelConfig:
+      LevelTimer: 300
+      LevelSize: 80
+      WallPrefab: {fileID: 8292693005376339395, guid: 733e1affa63de94488547a3ba5e82741,
+        type: 3}
+      WallsCount: 4
+    PlayerConfig:
+      DragonHeadPrefab: {fileID: 2672087176939207069, guid: ee64ed5f86fef3743b913d0ade1c9d2c,
+        type: 3}
+      DragonBodyPrefab: {fileID: 6822617958120127719, guid: ee759863f32b3344ab940327cf93605e,
+        type: 3}
+      DragonBodyPrefabFrontLegs: {fileID: 4455966368233153384, guid: be3148f6477c6bf40be33447f8ff3203,
+        type: 3}
+      DragonBodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 2564a790db79cee44974be2e0098ac33,
+        type: 3}
+      Speed: 5
+      Gap: 10
+      BodySize: 0
+    EnemyConfig:
+      DragonHeadPrefab: {fileID: 2672087176939207069, guid: 5a0c89fd381cd0c419523605bbeaf6fe,
+        type: 3}
+      DragonBodyPrefab: {fileID: 6822617958120127719, guid: 18e79bc30459bf940830d8f3d671f11f,
+        type: 3}
+      DragonBodyPrefabFrontLegs: {fileID: 4455966368233153384, guid: 54acdbddc36a9b941bbde8d8fdaf6f5a,
+        type: 3}
+      DragonBodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 8ab61ebc2134884418d8a01457e8024b,
+        type: 3}
+      Speed: 20
+      Gap: 10
+      BodySize: 0
+      EnemyAI: 1
+      EnemyCount: 10
+      TimeToChangeDirection: 2
+      GoodsSerchRadius: 10
+      SerchRadiusThreshold: 0.8
+    GoodsConfig:
+      FoodPrefab: {fileID: 1239600050858635287, guid: 8062a0c11d04c6b4e987904b0fe6f303,
+        type: 3}
+      BonusPrefab: {fileID: 8310880059426670931, guid: 1ae9f349062cf8942a82f9933e855216,
+        type: 3}
+      MinFoodCount: 20
+      MaxBonusCount: 10
+      BonusSpawnTimeRange: {x: 1, y: 2}
+    ObstacleConfig:
+      ObstaclePrefab: {fileID: 4137618187380219370, guid: 3b6c3ef6d626eae40b04e59cf6d844b5,
+        type: 3}
+      ObstaclesCount: 10
+  - LevelConfig:
+      LevelTimer: 300
+      LevelSize: 80
+      WallPrefab: {fileID: 8292693005376339395, guid: 733e1affa63de94488547a3ba5e82741,
+        type: 3}
+      WallsCount: 5
+    PlayerConfig:
+      DragonHeadPrefab: {fileID: 2672087176939207069, guid: ee64ed5f86fef3743b913d0ade1c9d2c,
+        type: 3}
+      DragonBodyPrefab: {fileID: 6822617958120127719, guid: ee759863f32b3344ab940327cf93605e,
+        type: 3}
+      DragonBodyPrefabFrontLegs: {fileID: 4455966368233153384, guid: be3148f6477c6bf40be33447f8ff3203,
+        type: 3}
+      DragonBodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 2564a790db79cee44974be2e0098ac33,
+        type: 3}
+      Speed: 5
+      Gap: 10
+      BodySize: 0
+    EnemyConfig:
+      DragonHeadPrefab: {fileID: 2672087176939207069, guid: 5a0c89fd381cd0c419523605bbeaf6fe,
+        type: 3}
+      DragonBodyPrefab: {fileID: 6822617958120127719, guid: 18e79bc30459bf940830d8f3d671f11f,
+        type: 3}
+      DragonBodyPrefabFrontLegs: {fileID: 4455966368233153384, guid: 54acdbddc36a9b941bbde8d8fdaf6f5a,
+        type: 3}
+      DragonBodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 8ab61ebc2134884418d8a01457e8024b,
+        type: 3}
+      Speed: 20
+      Gap: 10
+      BodySize: 0
+      EnemyAI: 2
+      EnemyCount: 10
+      TimeToChangeDirection: 2
+      GoodsSerchRadius: 10
+      SerchRadiusThreshold: 0.8
+    GoodsConfig:
+      FoodPrefab: {fileID: 1239600050858635287, guid: 8062a0c11d04c6b4e987904b0fe6f303,
+        type: 3}
+      BonusPrefab: {fileID: 8310880059426670931, guid: 1ae9f349062cf8942a82f9933e855216,
+        type: 3}
+      MinFoodCount: 20
+      MaxBonusCount: 10
+      BonusSpawnTimeRange: {x: 1, y: 2}
+    ObstacleConfig:
+      ObstaclePrefab: {fileID: 4137618187380219370, guid: 3b6c3ef6d626eae40b04e59cf6d844b5,
+        type: 3}
+      ObstaclesCount: 15

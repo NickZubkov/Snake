@@ -8,6 +8,7 @@ namespace Modules.DragonIO.Goods.ViewComponents
         public override void EntityInit(EcsEntity ecsEntity, EcsWorld ecsWorld, bool parentOnScene)
         {
             ecsEntity.Get<Components.Food>();
+            ecsEntity.Get<LevelSpawner.LevelEntityTag>();
         }
     }
 }

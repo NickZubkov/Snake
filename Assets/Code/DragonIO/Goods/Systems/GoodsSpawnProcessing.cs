@@ -19,27 +19,29 @@ namespace Modules.DragonIO.Goods.Systems
             
             if (!_foodSignal.IsEmpty())
             {
-                var spawnPosition = new Vector3(Random.Range(-19, 19), 0f, Random.Range(-19, 19));
-                var prefab = _config.LevelsConfig.SafeGetAt(PlayerLevel.ProgressionInfo.CurrentLevel).GoodsConfig.FoodPrefab;
-                var food = Object.Instantiate(prefab, spawnPosition, Quaternion.identity);
-                food.Spawn(_world.NewEntity(), _world);
-
                 foreach (var idx in _levelController)
                 {
-                    _levelController.Get1(idx).GoodsPositions.Insert(0, food.transform);
+                    ref var controller = ref _levelController.Get1(idx);
+                    var randomPoint = Random.insideUnitCircle * controller.PlaceRadius;
+                    var position = new Vector3(randomPoint.x, 0f, randomPoint.y);
+                    var prefab = _config.LevelsConfig.SafeGetAt(PlayerLevel.ProgressionInfo.CurrentLevel).GoodsConfig.FoodPrefab;
+                    var food = Object.Instantiate(prefab, position, Quaternion.identity);
+                    food.Spawn(_world.NewEntity(), _world);
+                    controller.GoodsPositions.Insert(0, food.transform);
                 }
             }
             
             if (!_bonusSignal.IsEmpty())
             {
-                var spawnPosition = new Vector3(Random.Range(-19, 19), 0f, Random.Range(-19, 19));
-                var prefab = _config.LevelsConfig.SafeGetAt(PlayerLevel.ProgressionInfo.CurrentLevel).GoodsConfig.BonusPrefab;
-                var bonus = Object.Instantiate(prefab, spawnPosition, Quaternion.identity);
-                bonus.Spawn(_world.NewEntity(), _world);
-                
                 foreach (var idx in _levelController)
-                {
-                    _levelController.Get1(idx).GoodsPositions.Insert(0, bonus.transform);
+                { 
+                    ref var controller = ref _levelController.Get1(idx);
+                    var randomPoint = Random.insideUnitCircle * controller.PlaceRadius;
+                    var position = new Vector3(randomPoint.x, 0f, randomPoint.y);
+                    var prefab = _config.LevelsConfig.SafeGetAt(PlayerLevel.ProgressionInfo.CurrentLevel).GoodsConfig.BonusPrefab;
+                    var bonus = Object.Instantiate(prefab, position, Quaternion.identity);
+                    bonus.Spawn(_world.NewEntity(), _world);
+                    controller.GoodsPositions.Insert(0, bonus.transform);
                 }
             }
         }

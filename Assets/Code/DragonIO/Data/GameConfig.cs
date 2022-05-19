@@ -4,9 +4,11 @@ using UnityEngine;
 namespace Modules.DragonIO.Data
 {
     [CreateAssetMenu(fileName = "GameConfig", menuName = "Modules/DragonIO/GameConfig")]
+    
     public class GameConfig : ScriptableObject
     {
         [TitleGroup("Levels")] 
-        public LevelConfig[] LevelsConfig;
+        public LevelsConfigs[] LevelsConfig;
+        
     }
 }

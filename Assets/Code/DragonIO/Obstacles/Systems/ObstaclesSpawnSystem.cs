@@ -17,15 +17,18 @@ namespace Modules.DragonIO.Obstacles.Systems
             if (!_enter.IsEmpty() && _obstaclesSpawnedTag.IsEmpty())
             {
                 var levelConfig = _config.LevelsConfig.SafeGetAt(PlayerLevel.ProgressionInfo.CurrentLevel);
-                for (int i = 0; i < levelConfig.ObstacleConfig.ObstaclesCount; i++)
-                {
-                    var spawnPosition = new Vector3(Random.Range(-19, 19), 0f, Random.Range(-19, 19));
-                    var obstacle = Object.Instantiate(levelConfig.ObstacleConfig.ObstaclePrefab, spawnPosition, Quaternion.identity);
-                    obstacle.Spawn(_world.NewEntity(), _world);
-                }
-
+                
                 foreach (var idx in _levelController)
                 {
+                    for (int i = 0; i < levelConfig.ObstacleConfig.ObstaclesCount; i++)
+                    {
+                        ref var controller = ref _levelController.Get1(idx);
+                        var randomPoint = Random.insideUnitCircle * controller.PlaceRadius;
+                        var position = new Vector3(randomPoint.x, 0f, randomPoint.y);
+                        var obstacle = Object.Instantiate(levelConfig.ObstacleConfig.ObstaclePrefab, position, Quaternion.identity);
+                        obstacle.Spawn(_world.NewEntity(), _world);
+                    }
+                    
                     _levelController.GetEntity(idx).Get<Components.ObstaclesSpawnedTag>();
                 }
             }

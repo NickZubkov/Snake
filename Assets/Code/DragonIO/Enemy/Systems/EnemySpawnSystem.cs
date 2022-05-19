@@ -5,7 +5,7 @@ namespace Modules.DragonIO.Enemy.Systems
 {
     public class EnemySpawnSystem : IEcsRunSystem
     {
-        private EcsFilter<EventGroup.GamePlayState> _gameplay;
+        private EcsFilter<EventGroup.GamePlayState>.Exclude<EventGroup.StateEnter> _gameplay;
         private EcsFilter<ViewHub.UnityView, Dragons.Components.DragonHead, Components.Enemy> _enemy;
         private EcsFilter<ViewHub.UnityView, Dragons.Components.DragonHead, Components.EnemyHeadSpawnedSignal> _spawnedSignal;
         private EcsFilter<Components.EnemiesSpawnedTag> _enemiesSpawnedTag;
@@ -22,16 +22,17 @@ namespace Modules.DragonIO.Enemy.Systems
             if (_enemy.IsEmpty() && _enemiesSpawnedTag.IsEmpty())
             {
                 var dragonConfig = _config.LevelsConfig.SafeGetAt(PlayerLevel.ProgressionInfo.CurrentLevel).EnemyConfig;
-
-                for (int i = 0; i < dragonConfig.EnemyCount; i++)
-                {
-                    var position = new Vector3(Random.Range(-19, 19), 0f, Random.Range(-19, 19));
-                    var enemy = Object.Instantiate(dragonConfig.DragonHeadPrefab, position, Quaternion.identity);
-                    enemy.Spawn(_world.NewEntity(), _world);
-                }
-
+                
                 foreach (var idx in _controller)
                 {
+                    var PlaceRadius = _controller.Get1(idx).PlaceRadius;
+                    for (int i = 0; i < dragonConfig.EnemyCount; i++)
+                    {
+                        var randomPoint = Random.insideUnitCircle * PlaceRadius;
+                        var position = new Vector3(randomPoint.x, 0f, randomPoint.y);
+                        var enemy = Object.Instantiate(dragonConfig.DragonHeadPrefab, position, Quaternion.identity);
+                        enemy.Spawn(_world.NewEntity(), _world);
+                    }
                     _controller.GetEntity(idx).Get<Components.EnemiesSpawnedTag>();
                 }
             }

@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using Sirenix.OdinInspector;
+using UnityEngine;
 
 namespace Modules.DragonIO.Data
 {
-    [CreateAssetMenu(fileName = "GoodsConfig", menuName = "Modules/DragonIO/GoodsConfig")]
-    public class GoodsConfig : ScriptableObject
+    [System.Serializable]
+    public class GoodsConfig
     {
         public Goods.EntityTemplates.GoodsTemplate FoodPrefab;
         public Goods.EntityTemplates.GoodsTemplate BonusPrefab;
@@ -11,14 +12,7 @@ namespace Modules.DragonIO.Data
         public int MinFoodCount = 20;
         [Range(1, 100)] 
         public int MaxBonusCount = 10;
-
-        public BonusSpawnTimeRange BonusSpawnTimeRange;
-    }
-
-    [System.Serializable]
-    public class BonusSpawnTimeRange
-    {
-        public int Min = 5;
-        public int Max = 15;
+        [MinMaxSlider(1, 10)]
+        public Vector2Int BonusSpawnTimeRange = new (1,2);
     }
 }

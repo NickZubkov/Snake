@@ -12,5 +12,6 @@ namespace Modules.DragonIO.LevelController.Components
         public float BonusMaxSpawnTime;
         public float BonusSpawnTimer;
         public List<Transform> GoodsPositions;
+        public float PlaceRadius;
     }
 }

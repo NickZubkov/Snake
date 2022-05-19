@@ -35,7 +35,8 @@ namespace Modules.DragonIO
             systems
                 .Add(new GameInit())
 
-                
+                // level
+                .Add(new Level.Systems.LevelInitSystem())
                 
                 // level controller
                 .Add(new LevelController.Systems.LevelControllerInitSystem())

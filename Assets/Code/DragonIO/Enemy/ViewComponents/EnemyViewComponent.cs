@@ -8,6 +8,7 @@ namespace Modules.DragonIO.Enemy.ViewComponents
         public override void EntityInit(EcsEntity ecsEntity, EcsWorld ecsWorld, bool parentOnScene)
         {
             ecsEntity.Get<Components.Enemy>();
+            ecsEntity.Get<LevelSpawner.LevelEntityTag>();
             ecsEntity.Get<Components.EnemyHeadSpawnedSignal>();
         }
     }

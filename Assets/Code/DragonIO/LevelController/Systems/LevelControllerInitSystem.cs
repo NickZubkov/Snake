@@ -15,27 +15,23 @@ namespace Modules.DragonIO.LevelController.Systems
         public void Run()
         {
             if (_gameplay.IsEmpty())
-            {
-                foreach (var idx in _enemiesSpawnedTag)
-                {
-                    _enemiesSpawnedTag.GetEntity(idx).Del<Enemy.Components.EnemiesSpawnedTag>();
-                }
-
                 return;
-            }
-                
             
             if (_controller.IsEmpty())
             {
-                ref var entity = ref _world.NewEntity().Get<Components.LevelController>();
+                var entity = _world.NewEntity();
+                ref var controller = ref entity.Get<Components.LevelController>();
+                entity.Get<LevelSpawner.LevelEntityTag>();
                 var levelConfig = _config.LevelsConfig.SafeGetAt(PlayerLevel.ProgressionInfo.CurrentLevel);
-                entity.LevelTimer = levelConfig.LevelTimer;
-                entity.MinFoodCount = levelConfig.GoodsConfig.MinFoodCount;
-                entity.MaxBonusCount = levelConfig.GoodsConfig.MaxBonusCount;
-                entity.BonusMinSpawnTime = levelConfig.GoodsConfig.BonusSpawnTimeRange.Min;
-                entity.BonusMaxSpawnTime = levelConfig.GoodsConfig.BonusSpawnTimeRange.Max;
-                entity.BonusSpawnTimer = Random.Range(entity.BonusMinSpawnTime, entity.BonusMaxSpawnTime);
-                entity.GoodsPositions = new List<Transform>();
+                controller.LevelTimer = levelConfig.LevelConfig.LevelTimer;
+                controller.MinFoodCount = levelConfig.GoodsConfig.MinFoodCount;
+                controller.MaxBonusCount = levelConfig.GoodsConfig.MaxBonusCount;
+                controller.BonusMinSpawnTime = levelConfig.GoodsConfig.BonusSpawnTimeRange.x;
+                controller.BonusMaxSpawnTime = levelConfig.GoodsConfig.BonusSpawnTimeRange.y;
+                controller.BonusSpawnTimer = Random.Range(controller.BonusMinSpawnTime, controller.BonusMaxSpawnTime);
+                controller.GoodsPositions = new List<Transform>();
+                var wallSize = levelConfig.LevelConfig.LevelSize * Mathf.Sin(180 * Mathf.Deg2Rad / levelConfig.LevelConfig.WallsCount);
+                controller.PlaceRadius = wallSize / (2 * Mathf.Tan(180 * Mathf.Deg2Rad / levelConfig.LevelConfig.WallsCount));
             }
         }
     }

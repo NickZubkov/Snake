@@ -5,13 +5,12 @@ namespace Modules.DragonIO.Data
     [System.Serializable]
     public class LevelConfig
     {
-        public int LevelID = 0;
-        [Range(60f, 600f)]
+        [Range(60f, 600f)] 
         public float LevelTimer = 300;
-
-        public PlayerConfig PlayerConfig;
-        public EnemyConfig EnemyConfig;
-        public GoodsConfig GoodsConfig;
-        public ObstacleConfig ObstacleConfig;
+        [Range(40, 200)] 
+        public int LevelSize = 80;
+        public Level.EntityTemplates.WallTemplate WallPrefab;
+        [Range(3, 36)] 
+        public int WallsCount = 4;
     }
 }

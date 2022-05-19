@@ -19,6 +19,7 @@ namespace Modules.DragonIO.Dragons.EntityTemplates
                 PositionsHistory = new List<Vector3>(),
                 Points = 0
             };
+            entity.Get<LevelSpawner.LevelEntityTag>();
         }
     }
 }
