@@ -28,7 +28,7 @@ MonoBehaviour:
         type: 3}
       DragonBodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 2564a790db79cee44974be2e0098ac33,
         type: 3}
-      Speed: 5
+      Speed: 2
       Gap: 10
       BodySize: 0
     EnemyConfig:
@@ -40,7 +40,7 @@ MonoBehaviour:
         type: 3}
       DragonBodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 8ab61ebc2134884418d8a01457e8024b,
         type: 3}
-      Speed: 20
+      Speed: 10
       Gap: 10
       BodySize: 0
       EnemyAI: 0
@@ -75,7 +75,7 @@ MonoBehaviour:
         type: 3}
       DragonBodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 2564a790db79cee44974be2e0098ac33,
         type: 3}
-      Speed: 5
+      Speed: 2
       Gap: 10
       BodySize: 0
     EnemyConfig:
@@ -87,7 +87,7 @@ MonoBehaviour:
         type: 3}
       DragonBodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 8ab61ebc2134884418d8a01457e8024b,
         type: 3}
-      Speed: 20
+      Speed: 10
       Gap: 10
       BodySize: 0
       EnemyAI: 1
@@ -122,7 +122,7 @@ MonoBehaviour:
         type: 3}
       DragonBodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 2564a790db79cee44974be2e0098ac33,
         type: 3}
-      Speed: 5
+      Speed: 2
       Gap: 10
       BodySize: 0
     EnemyConfig:
@@ -134,7 +134,7 @@ MonoBehaviour:
         type: 3}
       DragonBodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 8ab61ebc2134884418d8a01457e8024b,
         type: 3}
-      Speed: 20
+      Speed: 10
       Gap: 10
       BodySize: 0
       EnemyAI: 2
