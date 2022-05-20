@@ -6,7 +6,6 @@ namespace Modules.DragonIO.Obstacles.Systems
     public class ObstaclesSpawnSystem : IEcsRunSystem
     {
         private EcsFilter<EventGroup.GamePlayState, EventGroup.StateEnter> _enter;
-        private EcsFilter<Components.Obstacle> _obstacles;
         private EcsFilter<LevelController.Components.LevelController> _levelController;
         private EcsFilter<Components.ObstaclesSpawnedTag> _obstaclesSpawnedTag;
 
@@ -15,18 +14,30 @@ namespace Modules.DragonIO.Obstacles.Systems
         {
             if (!_enter.IsEmpty() && _obstaclesSpawnedTag.IsEmpty())
             {
-                foreach (var idx in _levelController)
+                foreach (var levelController in _levelController)
                 {
-                    ref var controller = ref _levelController.Get1(idx);
-                    for (int i = 0; i < controller.LevelsConfigs.ObstacleConfig.ObstaclesCount; i++)
+                    ref var controller = ref _levelController.Get1(levelController);
+                    for (int i = 0; i < controller.LevelsConfigs.GroundConfig.ObstaclesCount; i++)
                     {
                         var randomPoint = Random.insideUnitCircle * controller.PlaceRadius;
-                        var position = new Vector3(randomPoint.x, 0f, randomPoint.y);
-                        var obstacle = Object.Instantiate(controller.LevelsConfigs.ObstacleConfig.ObstaclePrefab, position, Quaternion.identity);
+                        var idx = Random.Range(0, controller.LevelsConfigs.GroundConfig.ObstaclePrefabs.Count);
+                        var prefab = controller.LevelsConfigs.GroundConfig.ObstaclePrefabs[idx];
+                        var position = new Vector3(randomPoint.x, prefab.transform.position.y, randomPoint.y);
+                        var obstacle = Object.Instantiate(prefab, position, Quaternion.identity);
+                        obstacle.Spawn(_world.NewEntity(), _world);
+                    }
+
+                    for (int i = 0; i < controller.LevelsConfigs.GroundConfig.GroundCount; i++)
+                    {
+                        var randomPoint = Random.insideUnitCircle * controller.PlaceRadius;
+                        var idx = Random.Range(0, controller.LevelsConfigs.GroundConfig.GroundPrefabs.Count);
+                        var prefab = controller.LevelsConfigs.GroundConfig.GroundPrefabs[idx];
+                        var position = new Vector3(randomPoint.x, prefab.transform.position.y, randomPoint.y);
+                        var obstacle = Object.Instantiate(prefab, position, Quaternion.identity);
                         obstacle.Spawn(_world.NewEntity(), _world);
                     }
                     
-                    _levelController.GetEntity(idx).Get<Components.ObstaclesSpawnedTag>();
+                    _levelController.GetEntity(levelController).Get<Components.ObstaclesSpawnedTag>();
                 }
             }
         }

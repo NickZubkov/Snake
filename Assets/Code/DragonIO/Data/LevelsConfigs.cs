@@ -9,6 +9,6 @@ namespace Modules.DragonIO.Data
         public PlayerConfig PlayerConfig;
         public List<EnemyConfig> EnemiesConfigs;
         public GoodsConfig GoodsConfig;
-        public ObstacleConfig ObstacleConfig;
+        public GroundConfig GroundConfig;
     }
 }

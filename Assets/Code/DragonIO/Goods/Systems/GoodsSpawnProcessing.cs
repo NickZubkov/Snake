@@ -22,8 +22,8 @@ namespace Modules.DragonIO.Goods.Systems
                 {
                     ref var controller = ref _levelController.Get1(idx);
                     var randomPoint = Random.insideUnitCircle * controller.PlaceRadius;
-                    var position = new Vector3(randomPoint.x, 0f, randomPoint.y);
                     var prefab = controller.LevelsConfigs.GoodsConfig.FoodPrefab;
+                    var position = new Vector3(randomPoint.x, prefab.transform.position.y, randomPoint.y);
                     var food = Object.Instantiate(prefab, position, Quaternion.identity);
                     food.Spawn(_world.NewEntity(), _world);
                     controller.GoodsPositions.Insert(0, food.transform);
@@ -36,8 +36,8 @@ namespace Modules.DragonIO.Goods.Systems
                 { 
                     ref var controller = ref _levelController.Get1(idx);
                     var randomPoint = Random.insideUnitCircle * controller.PlaceRadius;
-                    var position = new Vector3(randomPoint.x, 0f, randomPoint.y);
                     var prefab = controller.LevelsConfigs.GoodsConfig.BonusPrefab;
+                    var position = new Vector3(randomPoint.x, prefab.transform.position.y, randomPoint.y);
                     var bonus = Object.Instantiate(prefab, position, Quaternion.identity);
                     bonus.Spawn(_world.NewEntity(), _world);
                     controller.GoodsPositions.Insert(0, bonus.transform);
