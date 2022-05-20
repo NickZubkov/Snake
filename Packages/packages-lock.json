@@ -29,6 +29,17 @@
       },
       "url": "https://npm.lipsar.studio"
     },
+    "com.lipsar.modules.joystick": {
+      "version": "1.0.2",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.lipsar.modules.root.ecs": "1.0.3",
+        "com.lipsar.modules.userinput": "1.0.0",
+        "com.lipsar.modules.uicoreecs": "1.0.0"
+      },
+      "url": "https://npm.lipsar.studio"
+    },
     "com.lipsar.modules.levelspawner": {
       "version": "1.2.0",
       "depth": 0,

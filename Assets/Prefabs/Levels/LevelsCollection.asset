@@ -15,4 +15,4 @@ MonoBehaviour:
   _overfillStrategy: 2
   _shuffleStartId: 0
   Levels:
-  - SampleLevel2
+  - LevelPrototype

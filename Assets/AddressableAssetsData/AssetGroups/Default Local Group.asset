@@ -21,8 +21,10 @@ MonoBehaviour:
     m_Address: SampleLevel2
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+  - m_GUID: bc20ccb8b8407d34e9f014665a4194ca
+    m_Address: LevelPrototype
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 0d222592832b5a6468d14b4496b7928c, type: 2}
   m_SchemaSet:

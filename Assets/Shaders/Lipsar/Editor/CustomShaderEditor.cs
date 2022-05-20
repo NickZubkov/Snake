@@ -72,7 +72,7 @@ namespace Lipsar.Editor
 
         public void DrawHeader(string shaderName = default)
         {
-            ShaderEditorStyles.InitImages("Assets/Shaders/Lipsar/Logo/");
+            ShaderEditorStyles.InitImages("Assets/Content/Shaders/Lipsar/Logo/");
             ShaderEditorStyles.Init();
 
             /////////////////////////////////////////////////////////////////////////////////
