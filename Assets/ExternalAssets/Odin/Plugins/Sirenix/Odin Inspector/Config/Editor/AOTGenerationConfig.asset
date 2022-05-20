@@ -12,9 +12,96 @@ MonoBehaviour:
   m_Script: {fileID: 1726182683, guid: a4865f1ab4504ed8a368670db22f409c, type: 3}
   m_Name: AOTGenerationConfig
   m_EditorClassIdentifier: 
-  automateBeforeBuilds: 0
+  automateBeforeBuilds: 1
   deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 0
-  supportSerializedTypes: []
+  lastScan: 637886591335351747
+  supportSerializedTypes:
+  - TypeName: MS.Internal.Xml.XPath.ClonableStack`1[[Modules.DragonIO.Data.EnemyConfig,
+      Assembly-CSharp]], System.Xml
+    IsCustom: 0
+    Emit: 1
+  - TypeName: MS.Internal.Xml.XPath.ClonableStack`1[[Modules.DragonIO.Obstacles.EntityTemplates.GroundTemplate,
+      Assembly-CSharp]], System.Xml
+    IsCustom: 0
+    Emit: 1
+  - TypeName: MS.Internal.Xml.XPath.ClonableStack`1[[Modules.DragonIO.Obstacles.EntityTemplates.ObstacleTemplate,
+      Assembly-CSharp]], System.Xml
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[Modules.DragonIO.Data.LevelID,
+      Assembly-CSharp],[Modules.DragonIO.Data.LevelsConfigs, Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Modules.DragonIO.Dragons.EntityTemplates.DragonBodyTemplate, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Modules.DragonIO.Dragons.EntityTemplates.DragonHeadTemplate, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Modules.DragonIO.Data.EnemyAI, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Modules.DragonIO.Data.EnemyConfig, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[Modules.DragonIO.Data.LevelID,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Single, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Modules.DragonIO.Data.GoodsConfig, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Modules.DragonIO.Goods.EntityTemplates.GoodsTemplate, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Modules.DragonIO.Data.GroundConfig, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Modules.DragonIO.Obstacles.EntityTemplates.GroundTemplate, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[Modules.DragonIO.Data.LevelID,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Int32, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Modules.DragonIO.Data.LevelID, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Modules.DragonIO.Data.LevelsConfigs, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[Modules.DragonIO.Data.EnemyConfig,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[Modules.DragonIO.Obstacles.EntityTemplates.GroundTemplate,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[Modules.DragonIO.Obstacles.EntityTemplates.ObstacleTemplate,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Modules.DragonIO.Data.LocationConfig, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Modules.DragonIO.Obstacles.EntityTemplates.ObstacleTemplate, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Modules.DragonIO.Data.PlayerConfig, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Modules.DragonIO.Location.EntityTemplates.WallTemplate, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
