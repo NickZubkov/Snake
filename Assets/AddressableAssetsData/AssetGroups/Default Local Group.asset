@@ -25,34 +25,6 @@ MonoBehaviour:
     m_Address: LevelPrototype
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: ee64ed5f86fef3743b913d0ade1c9d2c
-    m_Address: Assets/Prefabs/GameObjects/Player/Head.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: ee759863f32b3344ab940327cf93605e
-    m_Address: Assets/Prefabs/GameObjects/Player/Body.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: be3148f6477c6bf40be33447f8ff3203
-    m_Address: Assets/Prefabs/GameObjects/Player/BodyWithFrontLegs.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 2564a790db79cee44974be2e0098ac33
-    m_Address: Assets/Prefabs/GameObjects/Player/BodyWithBackLegs.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 3b6c3ef6d626eae40b04e59cf6d844b5
-    m_Address: Assets/Prefabs/GameObjects/Obstacles/Obstacle.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 1ae9f349062cf8942a82f9933e855216
-    m_Address: Assets/Prefabs/GameObjects/Goods/Bonus.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 8062a0c11d04c6b4e987904b0fe6f303
-    m_Address: Assets/Prefabs/GameObjects/Goods/Food.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 0d222592832b5a6468d14b4496b7928c, type: 2}
   m_SchemaSet:

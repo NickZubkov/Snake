@@ -21,10 +21,10 @@ MonoBehaviour:
     - {fileID: 6822617958120127719, guid: ee759863f32b3344ab940327cf93605e, type: 3}
     - {fileID: 4455966368233153384, guid: be3148f6477c6bf40be33447f8ff3203, type: 3}
     - {fileID: 4455966368233153384, guid: 2564a790db79cee44974be2e0098ac33, type: 3}
-    - {fileID: 2672087176939207069, guid: 5a0c89fd381cd0c419523605bbeaf6fe, type: 3}
-    - {fileID: 6822617958120127719, guid: 18e79bc30459bf940830d8f3d671f11f, type: 3}
-    - {fileID: 4455966368233153384, guid: 54acdbddc36a9b941bbde8d8fdaf6f5a, type: 3}
-    - {fileID: 4455966368233153384, guid: 8ab61ebc2134884418d8a01457e8024b, type: 3}
+    - {fileID: 2672087176939207069, guid: 0814a13c6b5af4244bba26c23b4c61dc, type: 3}
+    - {fileID: 6822617958120127719, guid: 1c958aa7571d7764b8ae1f89a22c4d5b, type: 3}
+    - {fileID: 4455966368233153384, guid: 43992c8f4429c0e4a84ae8ac76dca838, type: 3}
+    - {fileID: 4455966368233153384, guid: 9e47bb66f6d77264197f16c39cbad1e7, type: 3}
     - {fileID: 1239600050858635287, guid: 8062a0c11d04c6b4e987904b0fe6f303, type: 3}
     - {fileID: 8310880059426670931, guid: 1ae9f349062cf8942a82f9933e855216, type: 3}
     - {fileID: 4137618187380219370, guid: 5d095d4a2eea5f643a0d5da278c7774a, type: 3}
@@ -32,10 +32,6 @@ MonoBehaviour:
     - {fileID: -5104231348702000887, guid: 7223a7c9aa8c7af4f8f1756a95ef445e, type: 3}
     - {fileID: 3194564261651819475, guid: 2bc6fe9dcfc5e76469e3183c12b179d7, type: 3}
     - {fileID: -2000839231632473423, guid: 2d365e4ceb970d242bbe93c6307c11ac, type: 3}
-    - {fileID: 2672087176939207069, guid: 0814a13c6b5af4244bba26c23b4c61dc, type: 3}
-    - {fileID: 6822617958120127719, guid: 1c958aa7571d7764b8ae1f89a22c4d5b, type: 3}
-    - {fileID: 4455966368233153384, guid: 43992c8f4429c0e4a84ae8ac76dca838, type: 3}
-    - {fileID: 4455966368233153384, guid: 9e47bb66f6d77264197f16c39cbad1e7, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -188,10 +184,10 @@ MonoBehaviour:
       Data: 10
     - Name: MinFoodCount
       Entry: 3
-      Data: 100
+      Data: 49
     - Name: MaxBonusCount
       Entry: 3
-      Data: 20
+      Data: 10
     - Name: BonusSpawnTimeRange
       Entry: 7
       Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
@@ -289,7 +285,7 @@ MonoBehaviour:
       Data: 0
     - Name: WallsCount
       Entry: 3
-      Data: 4
+      Data: 5
     - Name: 
       Entry: 8
       Data: 
@@ -335,16 +331,16 @@ MonoBehaviour:
       Data: 15|Modules.DragonIO.Data.EnemyConfig, Assembly-CSharp
     - Name: HeadPrefab
       Entry: 10
-      Data: 16
+      Data: 5
     - Name: BodyPrefab
       Entry: 10
-      Data: 17
+      Data: 6
     - Name: BodyPrefabFrontLegs
       Entry: 10
-      Data: 18
+      Data: 7
     - Name: BodyPrefabBackLegs
       Entry: 10
-      Data: 19
+      Data: 8
     - Name: Speed
       Entry: 4
       Data: 10
