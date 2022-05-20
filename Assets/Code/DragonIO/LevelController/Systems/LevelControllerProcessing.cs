@@ -22,19 +22,21 @@ namespace Modules.DragonIO.LevelController.Systems
 
                 controller.BonusSpawnTimer -= _timeService.DeltaTime;
                 
-                if (_food.GetEntitiesCount() < controller.MinFoodCount)
+                if (_food.GetEntitiesCount() < controller.LevelsConfigs.GoodsConfig.MinFoodCount)
                 {
                     _controller.GetEntity(idx).Get<Components.FoodSpawningSignal>();
                 }
                 
                 if (controller.BonusSpawnTimer <= 0)
                 {
-                    if (_bonus.GetEntitiesCount() < controller.MaxBonusCount)
+                    if (_bonus.GetEntitiesCount() < controller.LevelsConfigs.GoodsConfig.MaxBonusCount)
                     {
                         _controller.GetEntity(idx).Get<Components.BonusSpawningSignal>();
                     }
                     
-                    controller.BonusSpawnTimer = Random.Range(controller.BonusMinSpawnTime, controller.BonusMaxSpawnTime);
+                    controller.BonusSpawnTimer = Random.Range(
+                        controller.LevelsConfigs.GoodsConfig.BonusSpawnTimeRange.x, 
+                        controller.LevelsConfigs.GoodsConfig.BonusSpawnTimeRange.y);
                 }
             }
         }

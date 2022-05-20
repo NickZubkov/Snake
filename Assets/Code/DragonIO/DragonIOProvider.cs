@@ -34,13 +34,13 @@ namespace Modules.DragonIO
 
             systems
                 .Add(new GameInit())
-
-                // level
-                .Add(new Level.Systems.LevelInitSystem())
                 
                 // level controller
                 .Add(new LevelController.Systems.LevelControllerInitSystem())
                 .Add(new LevelController.Systems.LevelControllerProcessing())
+                
+                // location
+                .Add(new Location.Systems.LocationInitSystem())
                 
                 // player
                 .Add(new Player.Systems.PlayerSpawnSystem())
@@ -49,7 +49,6 @@ namespace Modules.DragonIO
                 
                 // enemy
                 .Add(new Enemy.Systems.EnemySpawnSystem())
-                .Add(new Enemy.Systems.EnemyInitSystem())
                 .Add(new Enemy.Systems.EnemyPathCalculateProcessing())
                 
                 // obstacles
@@ -62,6 +61,9 @@ namespace Modules.DragonIO
                 .Add(new Dragons.Systems.DragonsMoveProcessing())
                 .Add(new Dragons.Systems.DragonsCollectGoodsProcessing())
                 .Add(new Dragons.Systems.DragonsCollisionsProcessing())
+                
+                // ui
+                .Add(new UI.Systems.UIUpdateProcessing())
                 
                 // round end tracker
                 .Add(new RoundCompletedTracker())

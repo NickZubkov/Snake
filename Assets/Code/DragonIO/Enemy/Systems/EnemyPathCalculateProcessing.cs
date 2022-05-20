@@ -24,7 +24,7 @@ namespace Modules.DragonIO.Enemy.Systems
 
                 enemy.ChangeDirectionTimer -= _time.DeltaTime;
                 var randomInput = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-                switch (enemy.Config.EnemyAI)
+                switch (enemy.EnemyConfig.EnemyAI)
                 {
                     case Data.EnemyAI.Easy: 
                         CalculateEasyAIDirection(ref enemy, randomInput);
@@ -44,13 +44,13 @@ namespace Modules.DragonIO.Enemy.Systems
                 }
 
                 // Calc head position
-                Vector3 targetHeadPoint = dragonHeadTransform.position + enemy.MoveDirection * _time.DeltaTime * enemy.Config.Speed;
+                Vector3 targetHeadPoint = dragonHeadTransform.position + enemy.MoveDirection * _time.DeltaTime * enemy.EnemyConfig.Speed;
 
                 // Store position history
                 dragonHead.PositionsHistory.Insert(0, targetHeadPoint);
 
                 // Clear position history
-                int targetCount = dragonHead.BodyParts.Count * enemy.Config.Gap;
+                int targetCount = dragonHead.BodyParts.Count * enemy.EnemyConfig.Gap;
                 if (dragonHead.PositionsHistory.Count > targetCount)
                 {
                     var countToRemove = dragonHead.PositionsHistory.Count - targetCount;
@@ -65,10 +65,9 @@ namespace Modules.DragonIO.Enemy.Systems
             if (enemy.ChangeDirectionTimer <= 0f)
             {
                 enemy.MoveDirection = new Vector3(input.x, 0f, input.y);
-                enemy.ChangeDirectionTimer = enemy.ChangeDirectionTimeThreshold + Random.Range(0f, 1f);
+                enemy.ChangeDirectionTimer = enemy.TimeToChangeDirection + Random.Range(0f, 1f);
             }
         }
-
         private void CalculateMediumAIDirection(ref Components.Enemy enemy, Transform headPosition, Vector3 input)
         {
             foreach (var levelController in _levelController)
@@ -78,7 +77,7 @@ namespace Modules.DragonIO.Enemy.Systems
                 {
                     var distance = Vector3.Distance(goodsPosition.position, headPosition.position);
                     
-                    if (distance > enemy.SerchRadiusThreshold && distance < enemy.Config.GoodsSerchRadius)
+                    if (distance > enemy.SerchRadiusThreshold && distance < enemy.EnemyConfig.GoodsSerchRadius)
                     {
                         enemy.MoveDirection = (goodsPosition.position - headPosition.position).normalized;
                         goodsFounded = true;

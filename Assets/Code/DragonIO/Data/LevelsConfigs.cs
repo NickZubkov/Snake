@@ -1,12 +1,13 @@
-﻿
+﻿using System.Collections.Generic;
+
 namespace Modules.DragonIO.Data
 {
     [System.Serializable]
     public class LevelsConfigs
     {
-        public LevelConfig LevelConfig;
+        public LocationConfig LocationConfig;
         public PlayerConfig PlayerConfig;
-        public EnemyConfig EnemyConfig;
+        public List<EnemyConfig> EnemiesConfigs;
         public GoodsConfig GoodsConfig;
         public ObstacleConfig ObstacleConfig;
     }

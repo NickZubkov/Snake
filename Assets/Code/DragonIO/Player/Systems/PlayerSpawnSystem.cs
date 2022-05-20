@@ -8,9 +8,9 @@ namespace Modules.DragonIO.Player.Systems
         private EcsFilter<EventGroup.GamePlayState> _gameplay;
         private EcsFilter<Dragons.Components.DragonHead, Components.Player> _player;
         private EcsFilter<Dragons.Components.DragonHead, Components.PlayerHeadSpawnedSignal> _spawnedSignal;
+        private EcsFilter<LevelController.Components.LevelController> _levelController;
         
         private EcsWorld _world;
-        private Data.GameConfig _config;
 
         public void Run()
         {
@@ -19,25 +19,32 @@ namespace Modules.DragonIO.Player.Systems
             
             if (_player.IsEmpty())
             {
-                var dragonConfig = _config.LevelsConfig.SafeGetAt(PlayerLevel.ProgressionInfo.CurrentLevel).PlayerConfig;
-                var player = Object.Instantiate(dragonConfig.DragonHeadPrefab, Vector3.zero, Quaternion.identity);
-                player.Spawn(_world.NewEntity(), _world);
+                foreach (var idx in _levelController)
+                {
+                    ref var controller = ref _levelController.Get1(idx);
+                    var player = Object.Instantiate(controller.LevelsConfigs.PlayerConfig.HeadPrefab, Vector3.zero, Quaternion.identity);
+                    player.Spawn(_world.NewEntity(), _world);
+                }
             }
             
-            foreach (var idx in _spawnedSignal)
+            foreach (var spawnedSignal in _spawnedSignal)
             {
-                ref var signal = ref _spawnedSignal.Get1(idx);
-                var dragonConfig = _config.LevelsConfig.SafeGetAt(PlayerLevel.ProgressionInfo.CurrentLevel).PlayerConfig;
+                foreach (var levelController in _levelController)
+                {
+                    ref var controller = ref _levelController.Get1(levelController);
+                    ref var signal = ref _spawnedSignal.Get1(spawnedSignal);
                 
-                var bodyWithLegs = Object.Instantiate(dragonConfig.DragonBodyPrefabFrontLegs, Vector3.zero, Quaternion.identity);
-                bodyWithLegs.Spawn(_world.NewEntity(), _world);
-                bodyWithLegs.SetComponentReferences(_spawnedSignal.GetEntity(idx));
-                signal.BodyParts.Add(bodyWithLegs.transform);
+                    var bodyWithLegs = Object.Instantiate(controller.LevelsConfigs.PlayerConfig.BodyPrefabFrontLegs, Vector3.zero, Quaternion.identity);
+                    bodyWithLegs.Spawn(_world.NewEntity(), _world);
+                    bodyWithLegs.SetComponentReferences(_spawnedSignal.GetEntity(spawnedSignal));
+                    signal.BodyParts.Add(bodyWithLegs.transform);
 
-                bodyWithLegs = Object.Instantiate(dragonConfig.DragonBodyPrefabBackLegs, Vector3.zero, Quaternion.identity);
-                bodyWithLegs.Spawn(_world.NewEntity(), _world);
-                bodyWithLegs.SetComponentReferences(_spawnedSignal.GetEntity(idx));
-                signal.BodyParts.Add(bodyWithLegs.transform);
+                    bodyWithLegs = Object.Instantiate(controller.LevelsConfigs.PlayerConfig.BodyPrefabBackLegs, Vector3.zero, Quaternion.identity);
+                    bodyWithLegs.Spawn(_world.NewEntity(), _world);
+                    bodyWithLegs.SetComponentReferences(_spawnedSignal.GetEntity(spawnedSignal));
+                    signal.BodyParts.Add(bodyWithLegs.transform);
+                }
+                
             }
         }
     }

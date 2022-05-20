@@ -13,6 +13,11 @@ namespace Modules.DragonIO
             
             // start next level
             EventGroup.StateFactory.CreateState<EventGroup.NextLevelState>(_world);
+            
+            // spawn gameplay screen
+            ref var screen = ref _world.NewEntity().Get<UICoreECS.ShowScreenTag>();
+            screen.ID = 0;
+            screen.Layer = (int)UI.Layers.MainLayer;
         }
     }
 }

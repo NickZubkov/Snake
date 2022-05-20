@@ -28,9 +28,9 @@ namespace Modules.DragonIO.Dragons.Systems
                 int index = 0;
                 foreach (var bodyPart in dragon.BodyParts)
                 {
-                    _targetBodyPoint = dragon.PositionsHistory[Mathf.Clamp(index * dragon.Config.Gap, 0, dragon.PositionsHistory.Count - 1)];
+                    _targetBodyPoint = dragon.PositionsHistory[Mathf.Clamp(index * dragon.DragonConfig.Gap, 0, dragon.PositionsHistory.Count - 1)];
                     _bodyMoveDirection = _targetBodyPoint - bodyPart.position;
-                    bodyPart.Translate(_bodyMoveDirection * _time.DeltaTime * dragon.Config.Speed, Space.World);
+                    bodyPart.Translate(_bodyMoveDirection * _time.DeltaTime * dragon.DragonConfig.Speed, Space.World);
                     bodyPart.LookAt(_targetBodyPoint);
                     index++;
                 }

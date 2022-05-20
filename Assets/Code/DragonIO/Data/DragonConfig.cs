@@ -1,14 +1,19 @@
-﻿namespace Modules.DragonIO.Data
+﻿using UnityEngine;
+
+namespace Modules.DragonIO.Data
 {
     [System.Serializable]
     public class DragonConfig
     {
-        public Dragons.EntityTemplates.DragonHeadTemplate DragonHeadPrefab;
-        public Dragons.EntityTemplates.DragonBodyTemplate DragonBodyPrefab;
-        public Dragons.EntityTemplates.DragonBodyTemplate DragonBodyPrefabFrontLegs;
-        public Dragons.EntityTemplates.DragonBodyTemplate DragonBodyPrefabBackLegs;
+        public Dragons.EntityTemplates.DragonHeadTemplate HeadPrefab;
+        public Dragons.EntityTemplates.DragonBodyTemplate BodyPrefab;
+        [Tooltip(nameof(BodyPrefabFrontLegs))]
+        public Dragons.EntityTemplates.DragonBodyTemplate BodyPrefabFrontLegs;
+        [Tooltip(nameof(BodyPrefabBackLegs))]
+        public Dragons.EntityTemplates.DragonBodyTemplate BodyPrefabBackLegs;
         public float Speed = 20;
         public int Gap = 10;
-        public float BodySize;
+        public float BodySize = 1;
+        public int BodySegmentsCount = 2;
     }
 }

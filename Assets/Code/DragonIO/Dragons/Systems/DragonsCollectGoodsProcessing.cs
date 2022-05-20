@@ -23,7 +23,7 @@ namespace Modules.DragonIO.Dragons.Systems
                 {
                     ref var dragonHead = ref _dragon.Get1(idx);
                     var index = dragonHead.BodyParts.Count - 1;
-                    var bodyPart = Object.Instantiate(dragonHead.Config.DragonBodyPrefab, dragonHead.BodyParts[index].position, Quaternion.identity);
+                    var bodyPart = Object.Instantiate(dragonHead.DragonConfig.BodyPrefab, dragonHead.BodyParts[index].position, Quaternion.identity);
                     bodyPart.Spawn(_world.NewEntity(), _world);
                     bodyPart.SetComponentReferences(_dragon.GetEntity(idx));
                     dragonHead.BodyParts.Insert(index, bodyPart.transform);

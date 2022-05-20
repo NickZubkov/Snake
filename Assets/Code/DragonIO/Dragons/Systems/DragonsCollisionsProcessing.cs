@@ -11,7 +11,6 @@ namespace Modules.DragonIO.Dragons.Systems
         private EcsFilter<LevelController.Components.LevelController> _levelController;
         
         private EcsWorld _world;
-        private Data.GameConfig _config;
         public void Run()
         {
             if (_gameplay.IsEmpty())
@@ -19,38 +18,38 @@ namespace Modules.DragonIO.Dragons.Systems
 
             foreach (var dragon in _dragons)  
             {
-                ref var triggered = ref _dragons.Get2(dragon);
-
-                if (triggered.Other.IsAlive() && triggered.Other.Has<Components.DragonBody>())
+                foreach (var levelController in _levelController)
                 {
-                    if (_dragons.GetEntity(dragon) == triggered.Other.Get<Components.DragonBody>().Head)
-                    {
-                        continue;
-                    }
-                }
-                
-                if (triggered.Other.IsAlive() && triggered.Other.Has<Obstacles.Components.Obstacle>())
-                {
-                    ref var dragonHead = ref _dragons.Get1(dragon);
+                    ref var controller = ref _levelController.Get1(levelController);
+                    ref var triggered = ref _dragons.Get2(dragon);
 
-                    var foodPrefab = _config.LevelsConfig.SafeGetAt(PlayerLevel.ProgressionInfo.CurrentLevel).GoodsConfig.FoodPrefab;
-                 
-                    for (int i = 0; i <  dragonHead.BodyParts.Count; i++)
+                    if (triggered.Other.IsAlive() && triggered.Other.Has<Components.DragonBody>())
                     {
-                        var food = Object.Instantiate(foodPrefab, dragonHead.BodyParts[i].position, Quaternion.identity);
-                        food.Spawn(_world.NewEntity(), _world);
-                        
-                        foreach (var controller in _levelController)
+                        if (_dragons.GetEntity(dragon) == triggered.Other.Get<Components.DragonBody>().Head)
                         {
-                            _levelController.Get1(controller).GoodsPositions.Insert(0, food.transform);
+                            continue;
                         }
                     }
-
-                    foreach (var bodyParts in dragonHead.BodyParts)
+                
+                    if (triggered.Other.IsAlive() && triggered.Other.Has<Obstacles.Components.Obstacle>())
                     {
-                        if (bodyParts.TryGetComponent(out EntityRef entityRef))
+                        ref var dragonHead = ref _dragons.Get1(dragon);
+
+                        var foodPrefab = controller.LevelsConfigs.GoodsConfig.FoodPrefab;
+                 
+                        for (int i = 0; i <  dragonHead.BodyParts.Count; i++)
                         {
-                            entityRef.Entity.Destroy();
+                            var food = Object.Instantiate(foodPrefab, dragonHead.BodyParts[i].position, Quaternion.identity);
+                            food.Spawn(_world.NewEntity(), _world);
+                            controller.GoodsPositions.Insert(0, food.transform);
+                        }
+
+                        foreach (var bodyParts in dragonHead.BodyParts)
+                        {
+                            if (bodyParts.TryGetComponent(out EntityRef entityRef))
+                            {
+                                entityRef.Entity.Destroy();
+                            }
                         }
                     }
                 }

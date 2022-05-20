@@ -11,7 +11,6 @@ namespace Modules.DragonIO.Goods.Systems
         private EcsFilter<LevelController.Components.LevelController> _levelController;
         
         private EcsWorld _world;
-        private Data.GameConfig _config;
         public void Run()
         {
             if (_gameplay.IsEmpty())
@@ -24,7 +23,7 @@ namespace Modules.DragonIO.Goods.Systems
                     ref var controller = ref _levelController.Get1(idx);
                     var randomPoint = Random.insideUnitCircle * controller.PlaceRadius;
                     var position = new Vector3(randomPoint.x, 0f, randomPoint.y);
-                    var prefab = _config.LevelsConfig.SafeGetAt(PlayerLevel.ProgressionInfo.CurrentLevel).GoodsConfig.FoodPrefab;
+                    var prefab = controller.LevelsConfigs.GoodsConfig.FoodPrefab;
                     var food = Object.Instantiate(prefab, position, Quaternion.identity);
                     food.Spawn(_world.NewEntity(), _world);
                     controller.GoodsPositions.Insert(0, food.transform);
@@ -38,7 +37,7 @@ namespace Modules.DragonIO.Goods.Systems
                     ref var controller = ref _levelController.Get1(idx);
                     var randomPoint = Random.insideUnitCircle * controller.PlaceRadius;
                     var position = new Vector3(randomPoint.x, 0f, randomPoint.y);
-                    var prefab = _config.LevelsConfig.SafeGetAt(PlayerLevel.ProgressionInfo.CurrentLevel).GoodsConfig.BonusPrefab;
+                    var prefab = controller.LevelsConfigs.GoodsConfig.BonusPrefab;
                     var bonus = Object.Instantiate(prefab, position, Quaternion.identity);
                     bonus.Spawn(_world.NewEntity(), _world);
                     controller.GoodsPositions.Insert(0, bonus.transform);
