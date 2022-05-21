@@ -23,7 +23,8 @@ namespace Modules.DragonIO.Obstacles.Systems
                         var idx = Random.Range(0, controller.LevelsConfigs.GroundConfig.ObstaclePrefabs.Count);
                         var prefab = controller.LevelsConfigs.GroundConfig.ObstaclePrefabs[idx];
                         var position = new Vector3(randomPoint.x, prefab.transform.position.y, randomPoint.y);
-                        var obstacle = Object.Instantiate(prefab, position, Quaternion.identity);
+                        var angle = new Vector3(0, Random.Range(0,180f), 0);
+                        var obstacle = Object.Instantiate(prefab, position, Quaternion.Euler(angle));
                         obstacle.Spawn(_world.NewEntity(), _world);
                     }
 
@@ -33,7 +34,8 @@ namespace Modules.DragonIO.Obstacles.Systems
                         var idx = Random.Range(0, controller.LevelsConfigs.GroundConfig.GroundPrefabs.Count);
                         var prefab = controller.LevelsConfigs.GroundConfig.GroundPrefabs[idx];
                         var position = new Vector3(randomPoint.x, prefab.transform.position.y, randomPoint.y);
-                        var obstacle = Object.Instantiate(prefab, position, Quaternion.identity);
+                        var angle = new Vector3(0, Random.Range(0,180f), 0);
+                        var obstacle = Object.Instantiate(prefab, position, Quaternion.Euler(angle));
                         obstacle.Spawn(_world.NewEntity(), _world);
                     }
                     
