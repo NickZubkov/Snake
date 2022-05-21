@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: AOTGenerationConfig
   m_EditorClassIdentifier: 
   automateBeforeBuilds: 1
-  deleteDllAfterBuilds: 1
+  deleteDllAfterBuilds: 0
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 637886591335351747
+  lastScan: 637887083515447266
   supportSerializedTypes:
   - TypeName: MS.Internal.Xml.XPath.ClonableStack`1[[Modules.DragonIO.Data.EnemyConfig,
       Assembly-CSharp]], System.Xml
