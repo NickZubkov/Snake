@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Sirenix.OdinInspector;
+﻿using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Modules.DragonIO.Data
@@ -7,26 +6,19 @@ namespace Modules.DragonIO.Data
     [CreateAssetMenu(fileName = "GameConfig", menuName = "Modules/DragonIO/GameConfig")]
     
     public class GameConfig : SerializedScriptableObject
-    {
-        [TitleGroup("Levels")] [DictionaryDrawerSettings(KeyLabel = "Level", ValueLabel = "LevelConfigs")]
-        public Dictionary<LevelID, LevelsConfigs> LevelsConfigs = new Dictionary<LevelID, LevelsConfigs>
-        {
-            {
-                LevelID.Level1, new LevelsConfigs
-                {
-                    LocationConfig = new LocationConfig(),
-                    PlayerConfig = new PlayerConfig(),
-                    EnemiesConfigs = new List<EnemyConfig>
-                    {
-                        new EnemyConfig()
-                    },
-                    GoodsConfig = new GoodsConfig(),
-                    GroundConfig = new GroundConfig()
-                }
-            }
-        };
+    { 
+        [TitleGroup("Levels")] 
+        public LevelConfig LevelsConfigs;
     }
-[System.Serializable]
+
+    [DictionaryDrawerSettings(KeyLabel = "Level",DisplayMode = DictionaryDisplayOptions.Foldout, ValueLabel = "LevelConfigs")]
+    [System.Serializable]
+    public class LevelConfig : UnitySerializedDictionary<LevelID, LevelsConfigs>
+    {
+        
+    }
+    
+    [System.Serializable]
     public enum LevelID
     {
         Level1 = 0,

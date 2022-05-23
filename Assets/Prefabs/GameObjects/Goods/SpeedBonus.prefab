@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 759222001143712054}
   - component: {fileID: 6076964972760143057}
   m_Layer: 0
-  m_Name: Bonus
+  m_Name: SpeedBonus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
