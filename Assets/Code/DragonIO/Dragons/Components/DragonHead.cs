@@ -7,7 +7,8 @@ namespace Modules.DragonIO.Dragons.Components
     {
         public Data.DragonConfig DragonConfig;
         public List<Transform> BodyParts;
-        public List<Vector3> PositionsHistory;
+        public Vector3 TargetHeadDirection;
         public int Points;
+        public float RotationSpeed;
     }
 }

@@ -17,7 +17,7 @@ namespace Modules.DragonIO.Dragons.EntityTemplates
                 {
                     transform
                 },
-                PositionsHistory = new List<Vector3>(),
+                TargetHeadDirection = Vector3.zero,
                 Points = 0
             };
             entity.Get<LevelSpawner.LevelEntityTag>();
@@ -31,9 +31,18 @@ namespace Modules.DragonIO.Dragons.EntityTemplates
             entity.ChangeDirectionTimer = 0;
             entity.SerchRadiusThreshold = enemyConfig.SerchRadiusThreshold;
             entity.TimeToChangeDirection = enemyConfig.TimeToChangeDirection;
-            _entity.Get<LevelSpawner.LevelEntityTag>();
             _entity.Get<Enemy.Components.EnemyHeadSpawnedSignal>();
-            _entity.Get<Components.DragonHead>().DragonConfig = enemyConfig;
+            ref var dragonHad = ref _entity.Get<Components.DragonHead>();
+            dragonHad.DragonConfig = enemyConfig;
+            dragonHad.RotationSpeed = dragonHad.DragonConfig.RotationSpeed * 100f;
+            
+        }
+        public void AddPlayerComponent(Data.PlayerConfig playerConfig)
+        {
+            ref var dragonHad = ref _entity.Get<Components.DragonHead>();
+            dragonHad.DragonConfig = playerConfig;
+            dragonHad.RotationSpeed = dragonHad.DragonConfig.RotationSpeed * 100f;
+            
         }
     }
 }
