@@ -15,21 +15,9 @@ MonoBehaviour:
   automateBeforeBuilds: 1
   deleteDllAfterBuilds: 0
   AutomateForAllAOTPlatforms: 1
-  automateForPlatforms: 0900000014000000
-  lastScan: 637887083515447266
+  automateForPlatforms: 09000000140000000d000000
+  lastScan: 637889106206125752
   supportSerializedTypes:
-  - TypeName: MS.Internal.Xml.XPath.ClonableStack`1[[Modules.DragonIO.Data.EnemyConfig,
-      Assembly-CSharp]], System.Xml
-    IsCustom: 0
-    Emit: 1
-  - TypeName: MS.Internal.Xml.XPath.ClonableStack`1[[Modules.DragonIO.Obstacles.EntityTemplates.GroundTemplate,
-      Assembly-CSharp]], System.Xml
-    IsCustom: 0
-    Emit: 1
-  - TypeName: MS.Internal.Xml.XPath.ClonableStack`1[[Modules.DragonIO.Obstacles.EntityTemplates.ObstacleTemplate,
-      Assembly-CSharp]], System.Xml
-    IsCustom: 0
-    Emit: 1
   - TypeName: System.Collections.Generic.Dictionary`2[[Modules.DragonIO.Data.LevelID,
       Assembly-CSharp],[Modules.DragonIO.Data.LevelsConfigs, Assembly-CSharp]], mscorlib
     IsCustom: 0
