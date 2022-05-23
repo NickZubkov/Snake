@@ -16,3 +16,4 @@ MonoBehaviour:
   _shuffleStartId: 0
   Levels:
   - LevelPrototype
+  - LevelPrototypeDark
