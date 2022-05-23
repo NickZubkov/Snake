@@ -91,7 +91,7 @@ MonoBehaviour:
       Data: 0
     - Name: WallsCount
       Entry: 3
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 8
       Data: 
@@ -112,10 +112,10 @@ MonoBehaviour:
       Data: 4
     - Name: Speed
       Entry: 4
-      Data: 0
+      Data: 3
     - Name: Gap
       Entry: 3
-      Data: 10
+      Data: 6
     - Name: BodySize
       Entry: 4
       Data: 1
@@ -149,10 +149,10 @@ MonoBehaviour:
       Data: 8
     - Name: Speed
       Entry: 4
-      Data: 0
+      Data: 3
     - Name: Gap
       Entry: 3
-      Data: 10
+      Data: 6
     - Name: BodySize
       Entry: 4
       Data: 1
@@ -161,7 +161,7 @@ MonoBehaviour:
       Data: 2
     - Name: EnemyAI
       Entry: 3
-      Data: 1
+      Data: 2
     - Name: EnemyCount
       Entry: 3
       Data: 10
@@ -194,7 +194,7 @@ MonoBehaviour:
       Data: 10
     - Name: MinFoodCount
       Entry: 3
-      Data: 20
+      Data: 100
     - Name: MaxBonusCount
       Entry: 3
       Data: 10
@@ -310,10 +310,10 @@ MonoBehaviour:
       Data: 18
     - Name: Speed
       Entry: 4
-      Data: 0
+      Data: 3
     - Name: Gap
       Entry: 3
-      Data: 10
+      Data: 6
     - Name: BodySize
       Entry: 4
       Data: 1
@@ -347,10 +347,10 @@ MonoBehaviour:
       Data: 22
     - Name: Speed
       Entry: 4
-      Data: 5
+      Data: 3
     - Name: Gap
       Entry: 3
-      Data: 10
+      Data: 6
     - Name: BodySize
       Entry: 4
       Data: 1
@@ -362,10 +362,10 @@ MonoBehaviour:
       Data: 2
     - Name: EnemyCount
       Entry: 3
-      Data: 1
+      Data: 10
     - Name: TimeToChangeDirection
       Entry: 4
-      Data: 1
+      Data: 2
     - Name: GoodsSerchRadius
       Entry: 4
       Data: 10
