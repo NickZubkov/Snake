@@ -8,11 +8,25 @@ namespace Modules.DragonIO.Data
     
     public class GameConfig : SerializedScriptableObject
     {
-        [TitleGroup("Levels")] 
-        [DictionaryDrawerSettings(KeyLabel = "Level", ValueLabel = "LevelConfigs")]
-        public Dictionary<LevelID, LevelsConfigs> LevelsConfigs;
+        [TitleGroup("Levels")] [DictionaryDrawerSettings(KeyLabel = "Level", ValueLabel = "LevelConfigs")]
+        public Dictionary<LevelID, LevelsConfigs> LevelsConfigs = new Dictionary<LevelID, LevelsConfigs>
+        {
+            {
+                LevelID.Level1, new LevelsConfigs
+                {
+                    LocationConfig = new LocationConfig(),
+                    PlayerConfig = new PlayerConfig(),
+                    EnemiesConfigs = new List<EnemyConfig>
+                    {
+                        new EnemyConfig()
+                    },
+                    GoodsConfig = new GoodsConfig(),
+                    GroundConfig = new GroundConfig()
+                }
+            }
+        };
     }
-
+[System.Serializable]
     public enum LevelID
     {
         Level1 = 0,
