@@ -27,11 +27,21 @@ MonoBehaviour:
     - {fileID: 4455966368233153384, guid: 9e47bb66f6d77264197f16c39cbad1e7, type: 3}
     - {fileID: 1239600050858635287, guid: 8062a0c11d04c6b4e987904b0fe6f303, type: 3}
     - {fileID: 8310880059426670931, guid: 1ae9f349062cf8942a82f9933e855216, type: 3}
-    - {fileID: 4137618187380219370, guid: 5d095d4a2eea5f643a0d5da278c7774a, type: 3}
     - {fileID: 4137618187380219370, guid: 3b6c3ef6d626eae40b04e59cf6d844b5, type: 3}
-    - {fileID: -5104231348702000887, guid: 7223a7c9aa8c7af4f8f1756a95ef445e, type: 3}
-    - {fileID: 3194564261651819475, guid: 2bc6fe9dcfc5e76469e3183c12b179d7, type: 3}
-    - {fileID: -2000839231632473423, guid: 2d365e4ceb970d242bbe93c6307c11ac, type: 3}
+    - {fileID: 4137618187380219370, guid: 5d095d4a2eea5f643a0d5da278c7774a, type: 3}
+    - {fileID: 2586615985214007743, guid: 7223a7c9aa8c7af4f8f1756a95ef445e, type: 3}
+    - {fileID: 8292693005376339395, guid: b20ae18527f09d24b848231dde6a8199, type: 3}
+    - {fileID: 2672087176939207069, guid: 9b90f3ca0aaf14045bf40d804514fc23, type: 3}
+    - {fileID: 6822617958120127719, guid: 3986e53c1f8cf724896fef3a3d3bb6c6, type: 3}
+    - {fileID: 4455966368233153384, guid: 4d4d78c34b6bece46910f14b38352ca8, type: 3}
+    - {fileID: 4455966368233153384, guid: 6756835978bcb734da14b6198d93862b, type: 3}
+    - {fileID: 2672087176939207069, guid: 9d56692b0a802444bb82c4a17373fa6f, type: 3}
+    - {fileID: 6822617958120127719, guid: fc156f86d0fb8cf4cb9e260b3c817d26, type: 3}
+    - {fileID: 4455966368233153384, guid: 87364315669d1d840abdb93d25228ab6, type: 3}
+    - {fileID: 4455966368233153384, guid: 5b2349613531c4c4a9726f44fb6c78f8, type: 3}
+    - {fileID: 4137618187380219370, guid: 49fe441bac1d19441903eca720bcbdc1, type: 3}
+    - {fileID: 4137618187380219370, guid: 19c268e7522f3aa4991ad202d7987ed3, type: 3}
+    - {fileID: 4216171309869509283, guid: 83d10a157ec1d8348bbc42842de07e6f, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -151,7 +161,7 @@ MonoBehaviour:
       Data: 2
     - Name: EnemyAI
       Entry: 3
-      Data: 2
+      Data: 1
     - Name: EnemyCount
       Entry: 3
       Data: 10
@@ -184,7 +194,7 @@ MonoBehaviour:
       Data: 10
     - Name: MinFoodCount
       Entry: 3
-      Data: 49
+      Data: 20
     - Name: MaxBonusCount
       Entry: 3
       Data: 10
@@ -208,8 +218,8 @@ MonoBehaviour:
       Data: 8|Modules.DragonIO.Data.GroundConfig, Assembly-CSharp
     - Name: ObstaclePrefabs
       Entry: 7
-      Data: 9|MS.Internal.Xml.XPath.ClonableStack`1[[Modules.DragonIO.Obstacles.EntityTemplates.ObstacleTemplate,
-        Assembly-CSharp]], System.Xml
+      Data: 9|System.Collections.Generic.List`1[[Modules.DragonIO.Obstacles.EntityTemplates.ObstacleTemplate,
+        Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
@@ -230,20 +240,14 @@ MonoBehaviour:
       Data: 10
     - Name: GroundPrefabs
       Entry: 7
-      Data: 10|MS.Internal.Xml.XPath.ClonableStack`1[[Modules.DragonIO.Obstacles.EntityTemplates.GroundTemplate,
-        Assembly-CSharp]], System.Xml
+      Data: 10|System.Collections.Generic.List`1[[Modules.DragonIO.Location.EntityTemplates.GroundTemplate,
+        Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 1
     - Name: 
       Entry: 10
       Data: 13
-    - Name: 
-      Entry: 10
-      Data: 14
-    - Name: 
-      Entry: 10
-      Data: 15
     - Name: 
       Entry: 13
       Data: 
@@ -279,10 +283,10 @@ MonoBehaviour:
       Data: 300
     - Name: LevelSize
       Entry: 3
-      Data: 102
+      Data: 100
     - Name: WallPrefab
       Entry: 10
-      Data: 0
+      Data: 14
     - Name: WallsCount
       Entry: 3
       Data: 5
@@ -294,16 +298,16 @@ MonoBehaviour:
       Data: 13|Modules.DragonIO.Data.PlayerConfig, Assembly-CSharp
     - Name: HeadPrefab
       Entry: 10
-      Data: 1
+      Data: 15
     - Name: BodyPrefab
       Entry: 10
-      Data: 2
+      Data: 16
     - Name: BodyPrefabFrontLegs
       Entry: 10
-      Data: 3
+      Data: 17
     - Name: BodyPrefabBackLegs
       Entry: 10
-      Data: 4
+      Data: 18
     - Name: Speed
       Entry: 4
       Data: 0
@@ -321,8 +325,8 @@ MonoBehaviour:
       Data: 
     - Name: EnemiesConfigs
       Entry: 7
-      Data: 14|MS.Internal.Xml.XPath.ClonableStack`1[[Modules.DragonIO.Data.EnemyConfig,
-        Assembly-CSharp]], System.Xml
+      Data: 14|System.Collections.Generic.List`1[[Modules.DragonIO.Data.EnemyConfig,
+        Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
@@ -331,16 +335,16 @@ MonoBehaviour:
       Data: 15|Modules.DragonIO.Data.EnemyConfig, Assembly-CSharp
     - Name: HeadPrefab
       Entry: 10
-      Data: 5
+      Data: 19
     - Name: BodyPrefab
       Entry: 10
-      Data: 6
+      Data: 20
     - Name: BodyPrefabFrontLegs
       Entry: 10
-      Data: 7
+      Data: 21
     - Name: BodyPrefabBackLegs
       Entry: 10
-      Data: 8
+      Data: 22
     - Name: Speed
       Entry: 4
       Data: 5
@@ -388,10 +392,10 @@ MonoBehaviour:
       Data: 10
     - Name: MinFoodCount
       Entry: 3
-      Data: 102
+      Data: 100
     - Name: MaxBonusCount
       Entry: 3
-      Data: 19
+      Data: 10
     - Name: BonusSpawnTimeRange
       Entry: 7
       Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
@@ -412,17 +416,17 @@ MonoBehaviour:
       Data: 17|Modules.DragonIO.Data.GroundConfig, Assembly-CSharp
     - Name: ObstaclePrefabs
       Entry: 7
-      Data: 18|MS.Internal.Xml.XPath.ClonableStack`1[[Modules.DragonIO.Obstacles.EntityTemplates.ObstacleTemplate,
-        Assembly-CSharp]], System.Xml
+      Data: 18|System.Collections.Generic.List`1[[Modules.DragonIO.Obstacles.EntityTemplates.ObstacleTemplate,
+        Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 10
-      Data: 12
+      Data: 23
     - Name: 
       Entry: 10
-      Data: 11
+      Data: 24
     - Name: 
       Entry: 13
       Data: 
@@ -434,20 +438,14 @@ MonoBehaviour:
       Data: 10
     - Name: GroundPrefabs
       Entry: 7
-      Data: 19|MS.Internal.Xml.XPath.ClonableStack`1[[Modules.DragonIO.Obstacles.EntityTemplates.GroundTemplate,
-        Assembly-CSharp]], System.Xml
+      Data: 19|System.Collections.Generic.List`1[[Modules.DragonIO.Location.EntityTemplates.GroundTemplate,
+        Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 1
     - Name: 
       Entry: 10
-      Data: 13
-    - Name: 
-      Entry: 10
-      Data: 14
-    - Name: 
-      Entry: 10
-      Data: 15
+      Data: 25
     - Name: 
       Entry: 13
       Data: 

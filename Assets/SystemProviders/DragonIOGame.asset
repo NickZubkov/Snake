@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b463a1d65313304d9b00aa82216971e, type: 3}
   m_Name: DragonIOGame
   m_EditorClassIdentifier: 
-  _config: {fileID: 11400000, guid: 5a076c07dd6319643b08272700b49a50, type: 2}
+  _config: {fileID: 11400000, guid: 19e303684bf20004a80d009e07ab72fe, type: 2}

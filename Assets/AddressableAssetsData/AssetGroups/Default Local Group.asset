@@ -25,6 +25,10 @@ MonoBehaviour:
     m_Address: LevelPrototype
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: ba1a7b3ea55c3754dac892cdf5ca03d7
+    m_Address: LevelPrototypeDark
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 0d222592832b5a6468d14b4496b7928c, type: 2}
   m_SchemaSet:

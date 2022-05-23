@@ -14,4 +14,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Layers:
   - {fileID: 11400000, guid: 59c44413da51b6747872e1500527dcf3, type: 2}
-  - {fileID: 11400000, guid: d1934e6eee5a9fa44a56f68fb0698845, type: 2}
