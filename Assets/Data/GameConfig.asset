@@ -27,8 +27,8 @@ MonoBehaviour:
     - {fileID: 4455966368233153384, guid: 9e47bb66f6d77264197f16c39cbad1e7, type: 3}
     - {fileID: 1239600050858635287, guid: 8062a0c11d04c6b4e987904b0fe6f303, type: 3}
     - {fileID: 8310880059426670931, guid: 1ae9f349062cf8942a82f9933e855216, type: 3}
-    - {fileID: 4137618187380219370, guid: 5d095d4a2eea5f643a0d5da278c7774a, type: 3}
     - {fileID: 4137618187380219370, guid: 3b6c3ef6d626eae40b04e59cf6d844b5, type: 3}
+    - {fileID: 4137618187380219370, guid: 5d095d4a2eea5f643a0d5da278c7774a, type: 3}
     - {fileID: -5104231348702000887, guid: 7223a7c9aa8c7af4f8f1756a95ef445e, type: 3}
     - {fileID: 3194564261651819475, guid: 2bc6fe9dcfc5e76469e3183c12b179d7, type: 3}
     - {fileID: -2000839231632473423, guid: 2d365e4ceb970d242bbe93c6307c11ac, type: 3}
@@ -57,7 +57,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
       Data: 
@@ -139,7 +139,7 @@ MonoBehaviour:
       Data: 8
     - Name: Speed
       Entry: 4
-      Data: 10
+      Data: 15
     - Name: Gap
       Entry: 3
       Data: 10
@@ -151,7 +151,7 @@ MonoBehaviour:
       Data: 2
     - Name: EnemyAI
       Entry: 3
-      Data: 2
+      Data: 1
     - Name: EnemyCount
       Entry: 3
       Data: 10
@@ -184,7 +184,7 @@ MonoBehaviour:
       Data: 10
     - Name: MinFoodCount
       Entry: 3
-      Data: 49
+      Data: 100
     - Name: MaxBonusCount
       Entry: 3
       Data: 10
@@ -208,8 +208,8 @@ MonoBehaviour:
       Data: 8|Modules.DragonIO.Data.GroundConfig, Assembly-CSharp
     - Name: ObstaclePrefabs
       Entry: 7
-      Data: 9|MS.Internal.Xml.XPath.ClonableStack`1[[Modules.DragonIO.Obstacles.EntityTemplates.ObstacleTemplate,
-        Assembly-CSharp]], System.Xml
+      Data: 9|System.Collections.Generic.List`1[[Modules.DragonIO.Obstacles.EntityTemplates.ObstacleTemplate,
+        Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
@@ -230,212 +230,8 @@ MonoBehaviour:
       Data: 10
     - Name: GroundPrefabs
       Entry: 7
-      Data: 10|MS.Internal.Xml.XPath.ClonableStack`1[[Modules.DragonIO.Obstacles.EntityTemplates.GroundTemplate,
-        Assembly-CSharp]], System.Xml
-    - Name: 
-      Entry: 12
-      Data: 3
-    - Name: 
-      Entry: 10
-      Data: 13
-    - Name: 
-      Entry: 10
-      Data: 14
-    - Name: 
-      Entry: 10
-      Data: 15
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: GroundCount
-      Entry: 3
-      Data: 10
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 1
-    - Name: $v
-      Entry: 7
-      Data: 11|Modules.DragonIO.Data.LevelsConfigs, Assembly-CSharp
-    - Name: LocationConfig
-      Entry: 7
-      Data: 12|Modules.DragonIO.Data.LocationConfig, Assembly-CSharp
-    - Name: LevelTimer
-      Entry: 4
-      Data: 300
-    - Name: LevelSize
-      Entry: 3
-      Data: 102
-    - Name: WallPrefab
-      Entry: 10
-      Data: 0
-    - Name: WallsCount
-      Entry: 3
-      Data: 5
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: PlayerConfig
-      Entry: 7
-      Data: 13|Modules.DragonIO.Data.PlayerConfig, Assembly-CSharp
-    - Name: HeadPrefab
-      Entry: 10
-      Data: 1
-    - Name: BodyPrefab
-      Entry: 10
-      Data: 2
-    - Name: BodyPrefabFrontLegs
-      Entry: 10
-      Data: 3
-    - Name: BodyPrefabBackLegs
-      Entry: 10
-      Data: 4
-    - Name: Speed
-      Entry: 4
-      Data: 3
-    - Name: Gap
-      Entry: 3
-      Data: 10
-    - Name: BodySize
-      Entry: 4
-      Data: 1
-    - Name: BodySegmentsCount
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: EnemiesConfigs
-      Entry: 7
-      Data: 14|MS.Internal.Xml.XPath.ClonableStack`1[[Modules.DragonIO.Data.EnemyConfig,
-        Assembly-CSharp]], System.Xml
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 15|Modules.DragonIO.Data.EnemyConfig, Assembly-CSharp
-    - Name: HeadPrefab
-      Entry: 10
-      Data: 5
-    - Name: BodyPrefab
-      Entry: 10
-      Data: 6
-    - Name: BodyPrefabFrontLegs
-      Entry: 10
-      Data: 7
-    - Name: BodyPrefabBackLegs
-      Entry: 10
-      Data: 8
-    - Name: Speed
-      Entry: 4
-      Data: 10
-    - Name: Gap
-      Entry: 3
-      Data: 10
-    - Name: BodySize
-      Entry: 4
-      Data: 1
-    - Name: BodySegmentsCount
-      Entry: 3
-      Data: 2
-    - Name: EnemyAI
-      Entry: 3
-      Data: 2
-    - Name: EnemyCount
-      Entry: 3
-      Data: 10
-    - Name: TimeToChangeDirection
-      Entry: 4
-      Data: 2
-    - Name: GoodsSerchRadius
-      Entry: 4
-      Data: 10
-    - Name: SerchRadiusThreshold
-      Entry: 4
-      Data: 0.8
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: GoodsConfig
-      Entry: 7
-      Data: 16|Modules.DragonIO.Data.GoodsConfig, Assembly-CSharp
-    - Name: FoodPrefab
-      Entry: 10
-      Data: 9
-    - Name: BonusPrefab
-      Entry: 10
-      Data: 10
-    - Name: MinFoodCount
-      Entry: 3
-      Data: 102
-    - Name: MaxBonusCount
-      Entry: 3
-      Data: 19
-    - Name: BonusSpawnTimeRange
-      Entry: 7
-      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: GroundConfig
-      Entry: 7
-      Data: 17|Modules.DragonIO.Data.GroundConfig, Assembly-CSharp
-    - Name: ObstaclePrefabs
-      Entry: 7
-      Data: 18|MS.Internal.Xml.XPath.ClonableStack`1[[Modules.DragonIO.Obstacles.EntityTemplates.ObstacleTemplate,
-        Assembly-CSharp]], System.Xml
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 10
-      Data: 12
-    - Name: 
-      Entry: 10
-      Data: 11
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: ObstaclesCount
-      Entry: 3
-      Data: 10
-    - Name: GroundPrefabs
-      Entry: 7
-      Data: 19|MS.Internal.Xml.XPath.ClonableStack`1[[Modules.DragonIO.Obstacles.EntityTemplates.GroundTemplate,
-        Assembly-CSharp]], System.Xml
+      Data: 10|System.Collections.Generic.List`1[[Modules.DragonIO.Obstacles.EntityTemplates.GroundTemplate,
+        Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 3

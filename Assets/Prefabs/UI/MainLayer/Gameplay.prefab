@@ -2490,7 +2490,19 @@ MonoBehaviour:
   - {fileID: 4075041940821340880}
   _onShow:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3364532675203457152}
+        m_TargetAssemblyTypeName: Modules.DragonIO.UI.CurrentLevelPanel, Assembly-CSharp
+        m_MethodName: UpdateView
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onHide:
     m_PersistentCalls:
       m_Calls: []

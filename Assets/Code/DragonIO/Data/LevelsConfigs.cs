@@ -5,10 +5,13 @@ namespace Modules.DragonIO.Data
     [System.Serializable]
     public class LevelsConfigs
     {
-        public LocationConfig LocationConfig;
-        public PlayerConfig PlayerConfig;
-        public List<EnemyConfig> EnemiesConfigs;
-        public GoodsConfig GoodsConfig;
-        public GroundConfig GroundConfig;
+        public LocationConfig LocationConfig = new LocationConfig();
+        public PlayerConfig PlayerConfig = new PlayerConfig();
+        public List<EnemyConfig> EnemiesConfigs = new List<EnemyConfig>
+        {
+            new EnemyConfig()
+        };
+        public GoodsConfig GoodsConfig = new GoodsConfig();
+        public GroundConfig GroundConfig = new GroundConfig();
     }
 }
