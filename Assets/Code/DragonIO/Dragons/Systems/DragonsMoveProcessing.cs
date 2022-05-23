@@ -20,35 +20,32 @@ namespace Modules.DragonIO.Dragons.Systems
             foreach (var idx in _dragons)
             {
                 ref var dragon = ref _dragons.Get1(idx);
-                
-                if (dragon.PositionsHistory.Count == 0)
-                    continue;
-                
+
                 int index = 0;
                 for (int i = 0; i < dragon.BodyParts.Count; i++)
                 {
                     if (i == 0)
                     {
-                        if (dragon.PositionsHistory[0] != Vector3.zero)
+                        if (dragon.TargetHeadDirection != Vector3.zero)
                         {
-                            var cross = Vector3.Cross(dragon.BodyParts[i].forward, dragon.PositionsHistory[0]);
-
-                            if (cross.y >= dragon.DragonConfig.Speed * 0.01f)
+                            var cross = Vector3.Cross(dragon.BodyParts[i].forward, dragon.TargetHeadDirection);
+                            var angle = dragon.RotationSpeed;
+                            if (cross.y >= 0.025f)
                             {
-                                dragon.BodyParts[i].Rotate(Vector3.up * dragon.DragonConfig.Speed/2);
+                                dragon.BodyParts[i].Rotate(Vector3.up * angle);
                             }
-                            else if (cross.y < dragon.DragonConfig.Speed * -0.01f)
+                            else if (cross.y <= -0.025f)
                             {
-                                dragon.BodyParts[i].Rotate(Vector3.down * dragon.DragonConfig.Speed/2);
+                                dragon.BodyParts[i].Rotate(Vector3.down * angle);
                             }
                         }
-                        dragon.BodyParts[i].Translate(dragon.BodyParts[i].forward * _time.DeltaTime * dragon.DragonConfig.Speed, Space.World);
+                        dragon.BodyParts[i].Translate(dragon.BodyParts[i].forward * _time.DeltaTime * dragon.DragonConfig.MovementSpeed, Space.World);
                     }
                     else
                     {
                         _bodyMoveDirection = dragon.BodyParts[i - 1].position - dragon.BodyParts[i].position;
                         var gap = 10f / dragon.DragonConfig.Gap;
-                        dragon.BodyParts[i].Translate(_bodyMoveDirection * _time.DeltaTime * dragon.DragonConfig.Speed * gap, Space.World);
+                        dragon.BodyParts[i].Translate(_bodyMoveDirection * _time.DeltaTime * dragon.DragonConfig.MovementSpeed * gap, Space.World);
                         dragon.BodyParts[i].LookAt(dragon.BodyParts[i - 1].position);
                     }
                     index++;

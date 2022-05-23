@@ -24,6 +24,7 @@ namespace Modules.DragonIO.Player.Systems
                     ref var controller = ref _levelController.Get1(idx);
                     var player = Object.Instantiate(controller.LevelsConfigs.PlayerConfig.HeadPrefab, Vector3.zero, Quaternion.identity);
                     player.Spawn(_world.NewEntity(), _world);
+                    player.AddPlayerComponent(controller.LevelsConfigs.PlayerConfig);
                 }
             }
             

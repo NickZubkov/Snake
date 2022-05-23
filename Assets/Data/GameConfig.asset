@@ -26,10 +26,10 @@ MonoBehaviour:
     valueData:
     - LocationConfig:
         LevelTimer: 300
-        LevelSize: 100
+        LevelSize: 150
         WallPrefab: {fileID: 8292693005376339395, guid: 733e1affa63de94488547a3ba5e82741,
           type: 3}
-        WallsCount: 4
+        WallsCount: 3
       PlayerConfig:
         HeadPrefab: {fileID: 2672087176939207069, guid: ee64ed5f86fef3743b913d0ade1c9d2c,
           type: 3}
@@ -39,7 +39,8 @@ MonoBehaviour:
           type: 3}
         BodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 2564a790db79cee44974be2e0098ac33,
           type: 3}
-        Speed: 3
+        MovementSpeed: 5
+        RotationSpeed: 0.03
         Gap: 6
         BodySize: 1
         BodySegmentsCount: 2
@@ -52,7 +53,8 @@ MonoBehaviour:
           type: 3}
         BodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 9e47bb66f6d77264197f16c39cbad1e7,
           type: 3}
-        Speed: 3
+        MovementSpeed: 5
+        RotationSpeed: 0.03
         Gap: 6
         BodySize: 1
         BodySegmentsCount: 2
@@ -72,7 +74,7 @@ MonoBehaviour:
       GroundConfig:
         ObstaclePrefabs:
         - {fileID: 4137618187380219370, guid: 3b6c3ef6d626eae40b04e59cf6d844b5, type: 3}
-        - {fileID: 4137618187380219370, guid: 49fe441bac1d19441903eca720bcbdc1, type: 3}
+        - {fileID: 4137618187380219370, guid: 5d095d4a2eea5f643a0d5da278c7774a, type: 3}
         ObstaclesCount: 10
         GroundPrefabs:
         - {fileID: 2586615985214007743, guid: 7223a7c9aa8c7af4f8f1756a95ef445e, type: 3}
@@ -92,7 +94,8 @@ MonoBehaviour:
           type: 3}
         BodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 6756835978bcb734da14b6198d93862b,
           type: 3}
-        Speed: 3
+        MovementSpeed: 5
+        RotationSpeed: 0.03
         Gap: 6
         BodySize: 1
         BodySegmentsCount: 2
@@ -105,7 +108,8 @@ MonoBehaviour:
           type: 3}
         BodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 5b2349613531c4c4a9726f44fb6c78f8,
           type: 3}
-        Speed: 3
+        MovementSpeed: 5
+        RotationSpeed: 0.03
         Gap: 6
         BodySize: 1
         BodySegmentsCount: 2
@@ -129,4 +133,4 @@ MonoBehaviour:
         ObstaclesCount: 10
         GroundPrefabs:
         - {fileID: 4216171309869509283, guid: 83d10a157ec1d8348bbc42842de07e6f, type: 3}
-        GroundCount: 10
+        GroundCount: 5

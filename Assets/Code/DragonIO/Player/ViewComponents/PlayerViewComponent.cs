@@ -1,6 +1,5 @@
 ﻿using Leopotam.Ecs;
 using Modules.ViewHub;
-using UnityEngine;
 
 namespace Modules.DragonIO.Player.ViewComponents
 {
@@ -8,7 +7,7 @@ namespace Modules.DragonIO.Player.ViewComponents
     {
         public override void EntityInit(EcsEntity ecsEntity, EcsWorld ecsWorld, bool parentOnScene)
         {
-            ecsEntity.Get<Components.Player>().TargetHeadPoint = Vector3.zero;
+            ecsEntity.Get<Components.Player>();
             ecsEntity.Get<LevelSpawner.LevelEntityTag>();
             ecsEntity.Get<Components.PlayerHeadSpawnedSignal>();
         }

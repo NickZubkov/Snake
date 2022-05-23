@@ -11,9 +11,10 @@ namespace Modules.DragonIO.Data
         public Dragons.EntityTemplates.DragonBodyTemplate BodyPrefabFrontLegs;
         [Tooltip(nameof(BodyPrefabBackLegs))]
         public Dragons.EntityTemplates.DragonBodyTemplate BodyPrefabBackLegs;
-        public float Speed = 20;
-        public int Gap = 10;
+        public float MovementSpeed = 5f;
+        public float RotationSpeed = 5f;
+        public int Gap = 6;
         public float BodySize = 1;
-        public int BodySegmentsCount = 2;
+        public int BodySegmentsCount = 1;
     }
 }

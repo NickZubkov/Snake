@@ -29,20 +29,7 @@ namespace Modules.DragonIO.Player.Systems
             foreach (var idx in _player)
             {
                 ref var dragonHead = ref _player.Get2(idx);
-                ref var player = ref _player.Get3(idx);
-                // Calc head position
-                //player.TargetHeadPoint += _player.Get1(idx).Transform.forward * _time.DeltaTime * dragonHead.DragonConfig.Speed;
-
-                // Store position history
-                dragonHead.PositionsHistory.Insert(0, _headMoveDirection);
-
-                // Clear position history
-                int targetCount = dragonHead.BodyParts.Count * dragonHead.DragonConfig.Gap;
-                if (dragonHead.PositionsHistory.Count > targetCount)
-                {
-                    var countToRemove = dragonHead.PositionsHistory.Count - targetCount;
-                    dragonHead.PositionsHistory.RemoveRange(targetCount, countToRemove);
-                }
+                dragonHead.TargetHeadDirection = _headMoveDirection;
             }
         }
     }
