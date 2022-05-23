@@ -10,7 +10,7 @@ namespace Modules.DragonIO.Data
             null
         };
         public int ObstaclesCount;
-        public List<Obstacles.EntityTemplates.GroundTemplate> GroundPrefabs = new List<Obstacles.EntityTemplates.GroundTemplate>
+        public List<Location.EntityTemplates.GroundTemplate> GroundPrefabs = new List<Location.EntityTemplates.GroundTemplate>
         {
             null
         };
