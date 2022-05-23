@@ -27,27 +27,27 @@ namespace Modules.DragonIO.Enemy.Systems
                 switch (enemy.EnemyConfig.EnemyAI)
                 {
                     case Data.EnemyAI.Easy: 
-                        CalculateEasyAIDirection(ref enemy, randomInput);
+                        CalculateEasyAIDirection(ref enemy, ref dragonHead, randomInput);
                         break;
                     case Data.EnemyAI.Medium:
-                        CalculateMediumAIDirection(ref enemy, dragonHeadTransform, randomInput);
+                        CalculateMediumAIDirection(ref enemy, ref dragonHead, dragonHeadTransform, randomInput);
                         break;
                     case Data.EnemyAI.Hard:
-                        CalculateHardAIDirection(ref enemy, dragonHeadTransform, entity, randomInput);
+                        CalculateHardAIDirection(ref enemy, ref dragonHead, dragonHeadTransform, entity, randomInput);
                         break;
                     case Data.EnemyAI.Legend:
                         CalculateLegendAIDirection(ref enemy, dragonHeadTransform, dragonHead);
                         break;
                     default:
-                        CalculateEasyAIDirection(ref enemy, randomInput);
+                        CalculateEasyAIDirection(ref enemy, ref dragonHead, randomInput);
                         break;
                 }
 
                 // Calc head position
-                Vector3 targetHeadPoint = dragonHeadTransform.position + enemy.MoveDirection * _time.DeltaTime * enemy.EnemyConfig.Speed;
+                //Vector3 targetHeadPoint = dragonHeadTransform.position + enemy.MoveDirection * _time.DeltaTime * enemy.EnemyConfig.Speed;
 
                 // Store position history
-                dragonHead.PositionsHistory.Insert(0, targetHeadPoint);
+                //dragonHead.PositionsHistory.Insert(0, targetHeadPoint);
 
                 // Clear position history
                 int targetCount = dragonHead.BodyParts.Count * enemy.EnemyConfig.Gap;
@@ -60,15 +60,16 @@ namespace Modules.DragonIO.Enemy.Systems
             }
         }
 
-        private void CalculateEasyAIDirection(ref Components.Enemy enemy, Vector3 input)
+        private void CalculateEasyAIDirection(ref Components.Enemy enemy, ref Dragons.Components.DragonHead dragonHead, Vector3 input)
         {
             if (enemy.ChangeDirectionTimer <= 0f)
             {
-                enemy.MoveDirection = new Vector3(input.x, 0f, input.y);
+                dragonHead.PositionsHistory.Insert(0, new Vector3(input.x, 0f, input.y));
+                //enemy.MoveDirection = new Vector3(input.x, 0f, input.y);
                 enemy.ChangeDirectionTimer = enemy.TimeToChangeDirection + Random.Range(0f, 1f);
             }
         }
-        private void CalculateMediumAIDirection(ref Components.Enemy enemy, Transform headPosition, Vector3 input)
+        private void CalculateMediumAIDirection(ref Components.Enemy enemy, ref Dragons.Components.DragonHead dragonHead, Transform headPosition, Vector3 input)
         {
             foreach (var levelController in _levelController)
             {
@@ -79,7 +80,9 @@ namespace Modules.DragonIO.Enemy.Systems
                     
                     if (distance > enemy.SerchRadiusThreshold && distance < enemy.EnemyConfig.GoodsSerchRadius)
                     {
-                        enemy.MoveDirection = (goodsPosition.position - headPosition.position).normalized;
+                        //enemy.MoveDirection = goodsPosition.position.normalized;
+                        var MoveDirection = (goodsPosition.position - headPosition.position).normalized;
+                        dragonHead.PositionsHistory.Insert(0, MoveDirection);
                         goodsFounded = true;
                         break;
                     }
@@ -87,15 +90,15 @@ namespace Modules.DragonIO.Enemy.Systems
 
                 if (!goodsFounded)
                 {
-                    CalculateEasyAIDirection(ref enemy, input);
+                    CalculateEasyAIDirection(ref enemy, ref dragonHead, input);
                 }
             }
         }
-        private void CalculateHardAIDirection(ref Components.Enemy enemy, Transform headPosition, EcsEntity entity, Vector3 input)
+        private void CalculateHardAIDirection(ref Components.Enemy enemy, ref Dragons.Components.DragonHead dragonHead, Transform headPosition, EcsEntity entity, Vector3 input)
         {
             RaycastHit Hit;
             
-            if (Physics.Raycast(headPosition.TransformPoint(new Vector3(-0.55f, 0f, 0.55f)), headPosition.TransformDirection(Vector3.forward), out Hit, 2f))
+            if (Physics.Raycast(headPosition.TransformPoint(new Vector3(-0.55f, 0f, 0.55f)), headPosition.TransformDirection(Vector3.forward), out Hit, 5f))
             {
                 if (Hit.transform.TryGetComponent(out ViewHub.EntityRef entityRef))
                 {
@@ -108,11 +111,13 @@ namespace Modules.DragonIO.Enemy.Systems
                                 return;
                             }
                         }
-                        enemy.MoveDirection = new Vector3(input.x, 0f, input.y);
+                        //enemy.MoveDirection = new Vector3(input.x, 0f, input.y);
+                        dragonHead.PositionsHistory.Insert(0, new Vector3(input.x, 0f, input.y));
+                        Debug.Log("+++");
                     }
                 }
             }
-            else if (Physics.Raycast(headPosition.TransformPoint(new Vector3(0.55f, 0f, 0.55f)), headPosition.TransformDirection(Vector3.forward), out Hit, 2f))
+            else if (Physics.Raycast(headPosition.TransformPoint(new Vector3(0.55f, 0f, 0.55f)), headPosition.TransformDirection(Vector3.forward), out Hit, 5f))
             {
                 if (Hit.transform.TryGetComponent(out ViewHub.EntityRef entityRef))
                 {
@@ -125,11 +130,13 @@ namespace Modules.DragonIO.Enemy.Systems
                                 return;
                             }
                         }
-                        enemy.MoveDirection = new Vector3(input.x, 0f, input.y);
+                       // enemy.MoveDirection = new Vector3(input.x, 0f, input.y);
+                        dragonHead.PositionsHistory.Insert(0, new Vector3(input.x, 0f, input.y));
+                        Debug.Log("+++");
                     }
                 }
             }
-            else if (Physics.Raycast(headPosition.TransformPoint(new Vector3(0f, 0f, 0.55f)), headPosition.TransformDirection(Vector3.forward), out Hit, 2f))
+            else if (Physics.Raycast(headPosition.TransformPoint(new Vector3(0f, 0f, 0.55f)), headPosition.TransformDirection(Vector3.forward), out Hit, 5f))
             {
                 if (Hit.transform.TryGetComponent(out ViewHub.EntityRef entityRef))
                 {
@@ -142,13 +149,15 @@ namespace Modules.DragonIO.Enemy.Systems
                                 return;
                             }
                         }
-                        enemy.MoveDirection = new Vector3(input.x, 0f, input.y);
+                        //enemy.MoveDirection = new Vector3(input.x, 0f, input.y);
+                        dragonHead.PositionsHistory.Insert(0, new Vector3(input.x, 0f, input.y));
+                        Debug.Log("+++");
                     }
                 }
             }
             else
             {
-                CalculateMediumAIDirection(ref enemy, headPosition, input);
+                CalculateMediumAIDirection(ref enemy, ref dragonHead, headPosition, input);
             }
             
         }

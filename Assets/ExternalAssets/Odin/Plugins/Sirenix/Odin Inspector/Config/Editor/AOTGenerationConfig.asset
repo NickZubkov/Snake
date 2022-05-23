@@ -16,7 +16,7 @@ MonoBehaviour:
   deleteDllAfterBuilds: 0
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 637887083515447266
+  lastScan: 637887123082960479
   supportSerializedTypes:
   - TypeName: MS.Internal.Xml.XPath.ClonableStack`1[[Modules.DragonIO.Data.EnemyConfig,
       Assembly-CSharp]], System.Xml

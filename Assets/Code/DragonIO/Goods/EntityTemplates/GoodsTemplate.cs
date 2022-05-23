@@ -1,5 +1,6 @@
 ﻿using Leopotam.Ecs;
 using Modules.ViewHub;
+using UnityEngine;
 
 namespace Modules.DragonIO.Goods.EntityTemplates
 {

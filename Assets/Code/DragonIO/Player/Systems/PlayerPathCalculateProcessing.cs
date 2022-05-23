@@ -31,11 +31,10 @@ namespace Modules.DragonIO.Player.Systems
                 ref var dragonHead = ref _player.Get2(idx);
                 ref var player = ref _player.Get3(idx);
                 // Calc head position
-                player.TargetHeadPoint += (_player.Get1(idx).Transform.forward + _headMoveDirection) * _time.DeltaTime * dragonHead.DragonConfig.Speed;
-                
+                //player.TargetHeadPoint += _player.Get1(idx).Transform.forward * _time.DeltaTime * dragonHead.DragonConfig.Speed;
 
                 // Store position history
-                dragonHead.PositionsHistory.Insert(0, player.TargetHeadPoint);
+                dragonHead.PositionsHistory.Insert(0, _headMoveDirection);
 
                 // Clear position history
                 int targetCount = dragonHead.BodyParts.Count * dragonHead.DragonConfig.Gap;
