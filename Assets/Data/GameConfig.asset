@@ -133,4 +133,4 @@ MonoBehaviour:
         ObstaclesCount: 10
         GroundPrefabs:
         - {fileID: 4216171309869509283, guid: 83d10a157ec1d8348bbc42842de07e6f, type: 3}
-        GroundCount: 5
+        GroundCount: 10
