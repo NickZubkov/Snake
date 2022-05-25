@@ -30,9 +30,10 @@ namespace Modules.DragonIO.Dragons.Systems
                     {
                         if (dragon.TargetHeadDirection != Vector3.zero)
                         {
-                            float step = dragon.RotationSpeed * 100f * _time.DeltaTime;
+                            float step = dragon.RotationSpeed * 100f * _time.DeltaTime / dragonHeadTransform.localScale.x;
                             Quaternion lookRotation = Quaternion.LookRotation(dragon.TargetHeadDirection);
-                            dragon.BodyParts[i].rotation = Quaternion.RotateTowards(dragon.BodyParts[i].rotation, lookRotation, step);
+                            var tmp = Quaternion.RotateTowards(dragon.BodyParts[i].rotation, lookRotation, step);
+                            dragon.BodyParts[i].rotation = Quaternion.RotateTowards(dragon.BodyParts[i].rotation, tmp, step);
                         }
                         dragon.BodyParts[i].Translate(dragon.BodyParts[i].forward * _time.DeltaTime * dragon.MovementSpeed, Space.World);
                     }

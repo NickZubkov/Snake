@@ -10,5 +10,7 @@ namespace Modules.DragonIO.LevelController.Components
         public List<Transform> GoodsPositions;
         public float WallSize;
         public float PlaceRadius;
+        public Cinemachine.CinemachineTransposer CinemachineTransposer;
+        public float DragonScalingFactor;
     }
 }

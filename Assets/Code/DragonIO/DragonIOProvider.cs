@@ -89,6 +89,7 @@ namespace Modules.DragonIO
                 .OneFrame<LevelController.Components.BonusSpawningSignal>()
                 .OneFrame<Player.Components.PlayerHeadSpawnedSignal>()
                 .OneFrame<Enemy.Components.EnemyHeadSpawnedSignal>()
+                
                 ;
 
             return systems;

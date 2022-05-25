@@ -6,9 +6,15 @@ namespace Modules.DragonIO.Data
     [CreateAssetMenu(fileName = "GameConfig", menuName = "Modules/DragonIO/GameConfig")]
     
     public class GameConfig : SerializedScriptableObject
-    { 
+    {
         [TitleGroup("Levels")] 
         public LevelConfig LevelsConfigs;
+        
+        [Space]
+        [FoldoutGroup("Other")]
+        public float DragonScalingFactor = 0.02f;
+        [FoldoutGroup("Other")]
+        public Vector3 DefaultCameraOffset = new Vector3(0, 25f, 0);
     }
 
     [DictionaryDrawerSettings(KeyLabel = "Level",DisplayMode = DictionaryDisplayOptions.Foldout, ValueLabel = "LevelConfigs")]
