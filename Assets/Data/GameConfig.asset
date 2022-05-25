@@ -41,7 +41,7 @@ MonoBehaviour:
           type: 3}
         MovementSpeed: 5
         RotationSpeed: 3
-        Gap: 6
+        Gap: 5
         BodySize: 1
         BodySegmentsCount: 2
       EnemiesConfigs:
@@ -55,7 +55,7 @@ MonoBehaviour:
           type: 3}
         MovementSpeed: 5
         RotationSpeed: 3
-        Gap: 6
+        Gap: 5
         BodySize: 1
         BodySegmentsCount: 2
         EnemyAI: 2
@@ -67,8 +67,8 @@ MonoBehaviour:
       GoodsConfig:
         FoodPrefab: {fileID: 1239600050858635287, guid: 8062a0c11d04c6b4e987904b0fe6f303,
           type: 3}
-        BonusPrefab: {fileID: 8310880059426670931, guid: 1ae9f349062cf8942a82f9933e855216,
-          type: 3}
+        BonusPrefabs:
+        - {fileID: 8310880059426670931, guid: 1ae9f349062cf8942a82f9933e855216, type: 3}
         MinFoodCount: 100
         MaxBonusCount: 10
         BonusSpawnTimeRange: {x: 1, y: 2}
@@ -79,10 +79,10 @@ MonoBehaviour:
         ObstaclesCount: 10
         GroundPrefabs:
         - {fileID: 2586615985214007743, guid: 7223a7c9aa8c7af4f8f1756a95ef445e, type: 3}
-        GroundCount: 5
+        GroundCount: 10
     - LocationConfig:
         LevelTimer: 300
-        LevelSize: 150
+        LevelSize: 200
         WallPrefab: {fileID: 8292693005376339395, guid: b20ae18527f09d24b848231dde6a8199,
           type: 3}
         WallsCount: 5
@@ -97,7 +97,7 @@ MonoBehaviour:
           type: 3}
         MovementSpeed: 5
         RotationSpeed: 3
-        Gap: 6
+        Gap: 5
         BodySize: 1
         BodySegmentsCount: 2
       EnemiesConfigs:
@@ -111,11 +111,11 @@ MonoBehaviour:
           type: 3}
         MovementSpeed: 5
         RotationSpeed: 3
-        Gap: 6
+        Gap: 5
         BodySize: 1
         BodySegmentsCount: 2
         EnemyAI: 2
-        EnemyCount: 10
+        EnemyCount: 0
         TimeToChangeDirection: 1
         GoodsSerchRadius: 10
         SerchRadiusThreshold: 0.5
@@ -123,9 +123,11 @@ MonoBehaviour:
       GoodsConfig:
         FoodPrefab: {fileID: 1239600050858635287, guid: 8062a0c11d04c6b4e987904b0fe6f303,
           type: 3}
-        BonusPrefab: {fileID: 8310880059426670931, guid: 1ae9f349062cf8942a82f9933e855216,
-          type: 3}
-        MinFoodCount: 50
+        BonusPrefabs:
+        - {fileID: 8310880059426670931, guid: 1ae9f349062cf8942a82f9933e855216, type: 3}
+        - {fileID: 8310880059426670931, guid: d365bfe454a0a1f4f95709d2824de4f1, type: 3}
+        - {fileID: 8310880059426670931, guid: af87ffbde9952f141a8c4f0adff8eb0a, type: 3}
+        MinFoodCount: 100
         MaxBonusCount: 10
         BonusSpawnTimeRange: {x: 1, y: 2}
       GroundConfig:

@@ -36,14 +36,19 @@ namespace Modules.DragonIO.Dragons.EntityTemplates
             ref var dragonHad = ref _entity.Get<Components.DragonHead>();
             dragonHad.DragonConfig = enemyConfig;
             dragonHad.RotationSpeed = dragonHad.DragonConfig.RotationSpeed;
+            dragonHad.MovementSpeed = dragonHad.DragonConfig.MovementSpeed;
+            dragonHad.DefaultMultiplyer = 1;
+            dragonHad.PointBonusMultiplyer = 1;
             
-
         }
         public void AddPlayerComponent(Data.PlayerConfig playerConfig)
         {
             ref var dragonHad = ref _entity.Get<Components.DragonHead>();
             dragonHad.DragonConfig = playerConfig;
             dragonHad.RotationSpeed = dragonHad.DragonConfig.RotationSpeed;
+            dragonHad.MovementSpeed = dragonHad.DragonConfig.MovementSpeed;
+            dragonHad.DefaultMultiplyer = 1;
+            dragonHad.PointBonusMultiplyer = 1;
             
         }
     }

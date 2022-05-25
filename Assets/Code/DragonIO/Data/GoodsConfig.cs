@@ -1,4 +1,5 @@
-﻿using Sirenix.OdinInspector;
+﻿using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Modules.DragonIO.Data
@@ -7,7 +8,10 @@ namespace Modules.DragonIO.Data
     public class GoodsConfig
     {
         public Goods.EntityTemplates.GoodsTemplate FoodPrefab;
-        public Goods.EntityTemplates.GoodsTemplate BonusPrefab;
+        public List<Goods.EntityTemplates.GoodsTemplate> BonusPrefabs = new List<Goods.EntityTemplates.GoodsTemplate>
+        {
+            new Goods.EntityTemplates.GoodsTemplate()
+        };
         [Range(1, 500)]
         public int MinFoodCount = 20;
         [Range(1, 100)] 

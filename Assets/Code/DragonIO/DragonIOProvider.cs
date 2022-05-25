@@ -58,9 +58,9 @@ namespace Modules.DragonIO
                 .Add(new Goods.Systems.GoodsSpawnProcessing())
                 
                 // dragons
-                .Add(new Dragons.Systems.DragonsMoveProcessing())
                 .Add(new Dragons.Systems.DragonsCollectGoodsProcessing())
                 .Add(new Dragons.Systems.DragonsCollisionsProcessing())
+                .Add(new Dragons.Systems.DragonsMoveProcessing())
                 
                 // ui
                 .Add(new UI.Systems.UIUpdateProcessing())

@@ -36,7 +36,8 @@ namespace Modules.DragonIO.Goods.Systems
                 { 
                     ref var controller = ref _levelController.Get1(idx);
                     var randomPoint = Random.insideUnitCircle * controller.PlaceRadius;
-                    var prefab = controller.LevelsConfigs.GoodsConfig.BonusPrefab;
+                    var index = Random.Range(0, controller.LevelsConfigs.GoodsConfig.BonusPrefabs.Count);
+                    var prefab = controller.LevelsConfigs.GoodsConfig.BonusPrefabs[index];
                     var position = new Vector3(randomPoint.x, prefab.transform.position.y, randomPoint.y);
                     var bonus = Object.Instantiate(prefab, position, Quaternion.identity);
                     bonus.Spawn(_world.NewEntity(), _world);

@@ -34,6 +34,10 @@ namespace Modules.DragonIO.Dragons.Systems
                     if (triggered.Other.IsAlive() && triggered.Other.Has<Obstacles.Components.Obstacle>())
                     {
                         ref var dragonHead = ref _dragons.Get1(dragon);
+                        if (dragonHead.IsShieldActive)
+                        {
+                            continue;
+                        }
 
                         var foodPrefab = controller.LevelsConfigs.GoodsConfig.FoodPrefab;
                  

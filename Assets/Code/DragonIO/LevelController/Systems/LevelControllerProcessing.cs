@@ -10,6 +10,7 @@ namespace Modules.DragonIO.LevelController.Systems
         private EcsFilter<Components.LevelController> _controller;
         private EcsFilter<Goods.Components.Food> _food;
         private EcsFilter<Goods.Components.Bonus> _bonus;
+        private EcsFilter<Dragons.Components.DragonHead> _dragons;
         private TimeService _timeService;
         public void Run()
         {
@@ -37,6 +38,37 @@ namespace Modules.DragonIO.LevelController.Systems
                     controller.BonusSpawnTimer = Random.Range(
                         controller.LevelsConfigs.GoodsConfig.BonusSpawnTimeRange.x, 
                         controller.LevelsConfigs.GoodsConfig.BonusSpawnTimeRange.y);
+                }
+
+                foreach (var dragons in _dragons)
+                {
+                    ref var dragon = ref _dragons.Get1(dragons);
+                    if (dragon.SpeedBonusTimer > 0)
+                    {
+                        
+                        dragon.SpeedBonusTimer -= _timeService.DeltaTime;
+                        if (dragon.SpeedBonusTimer <= 0)
+                        {
+                            dragon.MovementSpeed /= dragon.SpeedBonusMultiplyer;
+                        }
+                    }
+                    if (dragon.ShieldBonusTimer > 0)
+                    {
+                        dragon.ShieldBonusTimer -= _timeService.DeltaTime;
+                        if (dragon.ShieldBonusTimer <= 0)
+                        {
+                            dragon.IsShieldActive = false;
+                        }
+                    }
+                    if (dragon.PointBonusTimer > 0)
+                    {
+                        
+                        dragon.PointBonusTimer -= _timeService.DeltaTime;
+                        if (dragon.PointBonusTimer <= 0)
+                        {
+                            dragon.PointBonusMultiplyer = (int)dragon.DefaultMultiplyer;
+                        }
+                    }
                 }
             }
         }
