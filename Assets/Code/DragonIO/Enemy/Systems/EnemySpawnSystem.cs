@@ -21,11 +21,12 @@ namespace Modules.DragonIO.Enemy.Systems
             foreach (var idx in _controller)
             {
                 ref var controller = ref _controller.Get1(idx);
-                var dragonsConfigs = controller.LevelsConfigs.EnemiesConfigs;
                 
-                foreach (var dragonsConfig in dragonsConfigs)
-                {
-                    if(_enemy.GetEntitiesCount() < dragonsConfig.EnemyCount)
+                var locationConfig = controller.LevelsConfigs.LocationConfig;
+                var index = Random.Range(0, controller.LevelsConfigs.EnemiesConfigs.Count);
+                var dragonConfigs = controller.LevelsConfigs.EnemiesConfigs[index];
+                
+                    if(_enemy.GetEntitiesCount() < locationConfig.EnemiesCount)
                     {
                         var randomPoint = Random.insideUnitCircle * controller.PlaceRadius;
                         var position = new Vector3(randomPoint.x, 0f, randomPoint.y);
@@ -33,13 +34,12 @@ namespace Modules.DragonIO.Enemy.Systems
                         var parentEntity = parent.AddComponent<Dragons.EntityTemplates.DragonParentTemplate>();
                         parentEntity._components = new List<ViewHub.ViewComponent>();
                         parentEntity.Spawn(_world.NewEntity(), _world);
-                        var enemy = Object.Instantiate(dragonsConfig.HeadPrefab, position, Quaternion.identity);
+                        var enemy = Object.Instantiate(dragonConfigs.HeadPrefab, position, Quaternion.identity);
                         enemy.transform.parent = parent.transform;
                         enemy.Spawn(_world.NewEntity(), _world);
-                        enemy.AddEnemyComponent(dragonsConfig);
+                        enemy.AddEnemyComponent(dragonConfigs);
                        
                     }
-                }
             }
 
             foreach (var signal in _spawnedSignal)
@@ -48,13 +48,13 @@ namespace Modules.DragonIO.Enemy.Systems
                 ref var enemy = ref _spawnedSignal.Get3(signal);
                 var dragonHeadTransform = _spawnedSignal.Get1(signal).Transform;
 
-                var bodyWithLegs = Object.Instantiate(enemy.EnemyConfig.BodyPrefabFrontLegs, dragonHeadTransform.position, Quaternion.identity);
+                var bodyWithLegs = Object.Instantiate(enemy.EnemyConfig.LegsPrefab, dragonHeadTransform.position, Quaternion.identity);
                 bodyWithLegs.Spawn(_world.NewEntity(), _world);
                 bodyWithLegs.SetComponentReferences(_spawnedSignal.GetEntity(signal));
                 bodyWithLegs.transform.parent = dragonHeadTransform.parent;
                 dragonHead.BodyParts.Add(bodyWithLegs.transform);
 
-                bodyWithLegs = Object.Instantiate(enemy.EnemyConfig.BodyPrefabBackLegs, dragonHeadTransform.position, Quaternion.identity);
+                bodyWithLegs = Object.Instantiate(enemy.EnemyConfig.TailPrefab, dragonHeadTransform.position, Quaternion.identity);
                 bodyWithLegs.Spawn(_world.NewEntity(), _world);
                 bodyWithLegs.SetComponentReferences(_spawnedSignal.GetEntity(signal));
                 bodyWithLegs.transform.parent = dragonHeadTransform.parent;

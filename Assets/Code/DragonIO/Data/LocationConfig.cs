@@ -12,5 +12,6 @@ namespace Modules.DragonIO.Data
         public Location.EntityTemplates.WallTemplate WallPrefab;
         [Range(3, 36)] 
         public int WallsCount = 4;
+        public int EnemiesCount = 10;
     }
 }

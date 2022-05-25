@@ -30,14 +30,15 @@ MonoBehaviour:
         WallPrefab: {fileID: 8292693005376339395, guid: 733e1affa63de94488547a3ba5e82741,
           type: 3}
         WallsCount: 3
+        EnemiesCount: 10
       PlayerConfig:
         HeadPrefab: {fileID: 2672087176939207069, guid: ee64ed5f86fef3743b913d0ade1c9d2c,
           type: 3}
         BodyPrefab: {fileID: 6822617958120127719, guid: ee759863f32b3344ab940327cf93605e,
           type: 3}
-        BodyPrefabFrontLegs: {fileID: 4455966368233153384, guid: be3148f6477c6bf40be33447f8ff3203,
+        LegsPrefab: {fileID: 4455966368233153384, guid: be3148f6477c6bf40be33447f8ff3203,
           type: 3}
-        BodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 2564a790db79cee44974be2e0098ac33,
+        TailPrefab: {fileID: 4455966368233153384, guid: 2564a790db79cee44974be2e0098ac33,
           type: 3}
         MovementSpeed: 5
         RotationSpeed: 3
@@ -49,26 +50,99 @@ MonoBehaviour:
           type: 3}
         BodyPrefab: {fileID: 6822617958120127719, guid: 1c958aa7571d7764b8ae1f89a22c4d5b,
           type: 3}
-        BodyPrefabFrontLegs: {fileID: 4455966368233153384, guid: 43992c8f4429c0e4a84ae8ac76dca838,
+        LegsPrefab: {fileID: 4455966368233153384, guid: 43992c8f4429c0e4a84ae8ac76dca838,
           type: 3}
-        BodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 9e47bb66f6d77264197f16c39cbad1e7,
+        TailPrefab: {fileID: 4455966368233153384, guid: 9e47bb66f6d77264197f16c39cbad1e7,
           type: 3}
         MovementSpeed: 5
         RotationSpeed: 3
         Gap: 5
         BodySize: 1
-        BodySegmentsCount: 2
+        BodySegmentsCount: 1
         EnemyAI: 2
-        EnemyCount: 10
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         SerchRadiusThreshold: 0.5
-        ObstacleSerchingDistance: 1
+        ObstacleSerchingDistance: 5
+      - HeadPrefab: {fileID: 2672087176939207069, guid: 83920b88aeee2a94591f14f3a49464de,
+          type: 3}
+        BodyPrefab: {fileID: 6822617958120127719, guid: 955cc973f1bc3f94bb14ae634c0e40ad,
+          type: 3}
+        LegsPrefab: {fileID: 4455966368233153384, guid: fb9c00088f33f754799c9011bb7e8d42,
+          type: 3}
+        TailPrefab: {fileID: 4455966368233153384, guid: 2ad295f2d983edd48b3fa45e9d9a0211,
+          type: 3}
+        MovementSpeed: 5
+        RotationSpeed: 3
+        Gap: 5
+        BodySize: 1
+        BodySegmentsCount: 1
+        EnemyAI: 2
+        TimeToChangeDirection: 2
+        GoodsSerchRadius: 10
+        SerchRadiusThreshold: 0.5
+        ObstacleSerchingDistance: 5
+      - HeadPrefab: {fileID: 2672087176939207069, guid: d189f231170080d4c97fd1b731818945,
+          type: 3}
+        BodyPrefab: {fileID: 6822617958120127719, guid: 2ce48c2a01b7f2b429b625fc71584260,
+          type: 3}
+        LegsPrefab: {fileID: 4455966368233153384, guid: 4bbe0b1b8a26b8546be0dc8dd23929ba,
+          type: 3}
+        TailPrefab: {fileID: 4455966368233153384, guid: 54aba405a26d81b4fb945eb73860be20,
+          type: 3}
+        MovementSpeed: 5
+        RotationSpeed: 3
+        Gap: 5
+        BodySize: 1
+        BodySegmentsCount: 1
+        EnemyAI: 2
+        TimeToChangeDirection: 2
+        GoodsSerchRadius: 10
+        SerchRadiusThreshold: 0.5
+        ObstacleSerchingDistance: 5
+      - HeadPrefab: {fileID: 2672087176939207069, guid: ef9426a34fa0a4746aa3f561004acabb,
+          type: 3}
+        BodyPrefab: {fileID: 6822617958120127719, guid: b68c48fd02eb4374e94d84fe16beeed9,
+          type: 3}
+        LegsPrefab: {fileID: 4455966368233153384, guid: 09d5e059dcf09b34b9b9afb203ced8ae,
+          type: 3}
+        TailPrefab: {fileID: 4455966368233153384, guid: d3e074c90928dda40a535bbf2c502fb7,
+          type: 3}
+        MovementSpeed: 5
+        RotationSpeed: 3
+        Gap: 5
+        BodySize: 1
+        BodySegmentsCount: 1
+        EnemyAI: 2
+        TimeToChangeDirection: 2
+        GoodsSerchRadius: 10
+        SerchRadiusThreshold: 0.5
+        ObstacleSerchingDistance: 5
+      - HeadPrefab: {fileID: 2672087176939207069, guid: df230d69058bff64881d8ea33f59c1df,
+          type: 3}
+        BodyPrefab: {fileID: 6822617958120127719, guid: c0051f496cd0ead4dba71ae4771c16d4,
+          type: 3}
+        LegsPrefab: {fileID: 4455966368233153384, guid: d4cd6e42af260a245b8eb282259ac6c1,
+          type: 3}
+        TailPrefab: {fileID: 4455966368233153384, guid: 3e692e170259a2843aa4fbbcfa39b103,
+          type: 3}
+        MovementSpeed: 5
+        RotationSpeed: 3
+        Gap: 5
+        BodySize: 1
+        BodySegmentsCount: 1
+        EnemyAI: 2
+        TimeToChangeDirection: 2
+        GoodsSerchRadius: 10
+        SerchRadiusThreshold: 0.5
+        ObstacleSerchingDistance: 5
       GoodsConfig:
         FoodPrefab: {fileID: 1239600050858635287, guid: 8062a0c11d04c6b4e987904b0fe6f303,
           type: 3}
         BonusPrefabs:
         - {fileID: 8310880059426670931, guid: 1ae9f349062cf8942a82f9933e855216, type: 3}
+        - {fileID: 8310880059426670931, guid: d365bfe454a0a1f4f95709d2824de4f1, type: 3}
+        - {fileID: 8310880059426670931, guid: af87ffbde9952f141a8c4f0adff8eb0a, type: 3}
         MinFoodCount: 100
         MaxBonusCount: 10
         BonusSpawnTimeRange: {x: 1, y: 2}
@@ -82,18 +156,19 @@ MonoBehaviour:
         GroundCount: 10
     - LocationConfig:
         LevelTimer: 300
-        LevelSize: 200
+        LevelSize: 150
         WallPrefab: {fileID: 8292693005376339395, guid: b20ae18527f09d24b848231dde6a8199,
           type: 3}
         WallsCount: 5
+        EnemiesCount: 10
       PlayerConfig:
         HeadPrefab: {fileID: 2672087176939207069, guid: 9b90f3ca0aaf14045bf40d804514fc23,
           type: 3}
         BodyPrefab: {fileID: 6822617958120127719, guid: 3986e53c1f8cf724896fef3a3d3bb6c6,
           type: 3}
-        BodyPrefabFrontLegs: {fileID: 4455966368233153384, guid: 4d4d78c34b6bece46910f14b38352ca8,
+        LegsPrefab: {fileID: 4455966368233153384, guid: 4d4d78c34b6bece46910f14b38352ca8,
           type: 3}
-        BodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 6756835978bcb734da14b6198d93862b,
+        TailPrefab: {fileID: 4455966368233153384, guid: 6756835978bcb734da14b6198d93862b,
           type: 3}
         MovementSpeed: 5
         RotationSpeed: 3
@@ -105,9 +180,9 @@ MonoBehaviour:
           type: 3}
         BodyPrefab: {fileID: 6822617958120127719, guid: fc156f86d0fb8cf4cb9e260b3c817d26,
           type: 3}
-        BodyPrefabFrontLegs: {fileID: 4455966368233153384, guid: 87364315669d1d840abdb93d25228ab6,
+        LegsPrefab: {fileID: 4455966368233153384, guid: 87364315669d1d840abdb93d25228ab6,
           type: 3}
-        BodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 5b2349613531c4c4a9726f44fb6c78f8,
+        TailPrefab: {fileID: 4455966368233153384, guid: 5b2349613531c4c4a9726f44fb6c78f8,
           type: 3}
         MovementSpeed: 5
         RotationSpeed: 3
@@ -115,8 +190,79 @@ MonoBehaviour:
         BodySize: 1
         BodySegmentsCount: 2
         EnemyAI: 2
-        EnemyCount: 0
         TimeToChangeDirection: 1
+        GoodsSerchRadius: 10
+        SerchRadiusThreshold: 0.5
+        ObstacleSerchingDistance: 5
+      - HeadPrefab: {fileID: 2672087176939207069, guid: 83920b88aeee2a94591f14f3a49464de,
+          type: 3}
+        BodyPrefab: {fileID: 6822617958120127719, guid: 955cc973f1bc3f94bb14ae634c0e40ad,
+          type: 3}
+        LegsPrefab: {fileID: 4455966368233153384, guid: fb9c00088f33f754799c9011bb7e8d42,
+          type: 3}
+        TailPrefab: {fileID: 4455966368233153384, guid: 2ad295f2d983edd48b3fa45e9d9a0211,
+          type: 3}
+        MovementSpeed: 5
+        RotationSpeed: 3
+        Gap: 5
+        BodySize: 1
+        BodySegmentsCount: 1
+        EnemyAI: 2
+        TimeToChangeDirection: 1
+        GoodsSerchRadius: 10
+        SerchRadiusThreshold: 0.5
+        ObstacleSerchingDistance: 5
+      - HeadPrefab: {fileID: 2672087176939207069, guid: d189f231170080d4c97fd1b731818945,
+          type: 3}
+        BodyPrefab: {fileID: 6822617958120127719, guid: 2ce48c2a01b7f2b429b625fc71584260,
+          type: 3}
+        LegsPrefab: {fileID: 4455966368233153384, guid: 4bbe0b1b8a26b8546be0dc8dd23929ba,
+          type: 3}
+        TailPrefab: {fileID: 4455966368233153384, guid: 54aba405a26d81b4fb945eb73860be20,
+          type: 3}
+        MovementSpeed: 5
+        RotationSpeed: 3
+        Gap: 5
+        BodySize: 1
+        BodySegmentsCount: 1
+        EnemyAI: 2
+        TimeToChangeDirection: 2
+        GoodsSerchRadius: 10
+        SerchRadiusThreshold: 0.5
+        ObstacleSerchingDistance: 5
+      - HeadPrefab: {fileID: 2672087176939207069, guid: ef9426a34fa0a4746aa3f561004acabb,
+          type: 3}
+        BodyPrefab: {fileID: 6822617958120127719, guid: b68c48fd02eb4374e94d84fe16beeed9,
+          type: 3}
+        LegsPrefab: {fileID: 4455966368233153384, guid: 09d5e059dcf09b34b9b9afb203ced8ae,
+          type: 3}
+        TailPrefab: {fileID: 4455966368233153384, guid: d3e074c90928dda40a535bbf2c502fb7,
+          type: 3}
+        MovementSpeed: 5
+        RotationSpeed: 3
+        Gap: 5
+        BodySize: 1
+        BodySegmentsCount: 1
+        EnemyAI: 2
+        TimeToChangeDirection: 2
+        GoodsSerchRadius: 10
+        SerchRadiusThreshold: 0.5
+        ObstacleSerchingDistance: 5
+      - HeadPrefab: {fileID: 2672087176939207069, guid: df230d69058bff64881d8ea33f59c1df,
+          type: 3}
+        BodyPrefab: {fileID: 6822617958120127719, guid: c0051f496cd0ead4dba71ae4771c16d4,
+          type: 3}
+        LegsPrefab: {fileID: 4455966368233153384, guid: d4cd6e42af260a245b8eb282259ac6c1,
+          type: 3}
+        TailPrefab: {fileID: 4455966368233153384, guid: 3e692e170259a2843aa4fbbcfa39b103,
+          type: 3}
+        MovementSpeed: 5
+        RotationSpeed: 3
+        Gap: 5
+        BodySize: 1
+        BodySegmentsCount: 1
+        EnemyAI: 2
+        TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         SerchRadiusThreshold: 0.5
         ObstacleSerchingDistance: 5

@@ -4,11 +4,10 @@
     public class EnemyConfig : DragonConfig
     {
         public EnemyAI EnemyAI;
-        public int EnemyCount = 10;
         public float TimeToChangeDirection = 2;
         public float GoodsSerchRadius = 10f;
         public float SerchRadiusThreshold = 0.5f;
-        public float ObstacleSerchingDistance = 1f;
+        public float ObstacleSerchingDistance = 5f;
     }
       public enum EnemyAI
         {

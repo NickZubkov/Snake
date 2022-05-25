@@ -42,13 +42,13 @@ namespace Modules.DragonIO.Player.Systems
                     ref var signal = ref _spawnedSignal.Get2(spawnedSignal);
                     ref var dragonHeadTransform = ref _spawnedSignal.Get1(spawnedSignal).Transform;
                 
-                    var bodyWithLegs = Object.Instantiate(controller.LevelsConfigs.PlayerConfig.BodyPrefabFrontLegs, Vector3.zero, Quaternion.identity);
+                    var bodyWithLegs = Object.Instantiate(controller.LevelsConfigs.PlayerConfig.LegsPrefab, Vector3.zero, Quaternion.identity);
                     bodyWithLegs.Spawn(_world.NewEntity(), _world);
                     bodyWithLegs.SetComponentReferences(_spawnedSignal.GetEntity(spawnedSignal));
                     bodyWithLegs.transform.parent = dragonHeadTransform.parent;
                     signal.BodyParts.Add(bodyWithLegs.transform);
 
-                    bodyWithLegs = Object.Instantiate(controller.LevelsConfigs.PlayerConfig.BodyPrefabBackLegs, Vector3.zero, Quaternion.identity);
+                    bodyWithLegs = Object.Instantiate(controller.LevelsConfigs.PlayerConfig.TailPrefab, Vector3.zero, Quaternion.identity);
                     bodyWithLegs.Spawn(_world.NewEntity(), _world);
                     bodyWithLegs.SetComponentReferences(_spawnedSignal.GetEntity(spawnedSignal));
                     bodyWithLegs.transform.parent = dragonHeadTransform.parent;
