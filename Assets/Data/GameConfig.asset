@@ -40,7 +40,7 @@ MonoBehaviour:
         BodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 2564a790db79cee44974be2e0098ac33,
           type: 3}
         MovementSpeed: 5
-        RotationSpeed: 0.03
+        RotationSpeed: 3
         Gap: 6
         BodySize: 1
         BodySegmentsCount: 2
@@ -54,7 +54,7 @@ MonoBehaviour:
         BodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 9e47bb66f6d77264197f16c39cbad1e7,
           type: 3}
         MovementSpeed: 5
-        RotationSpeed: 0.03
+        RotationSpeed: 3
         Gap: 6
         BodySize: 1
         BodySegmentsCount: 2
@@ -62,7 +62,8 @@ MonoBehaviour:
         EnemyCount: 10
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
-        SerchRadiusThreshold: 0.8
+        SerchRadiusThreshold: 0.5
+        ObstacleSerchingDistance: 1
       GoodsConfig:
         FoodPrefab: {fileID: 1239600050858635287, guid: 8062a0c11d04c6b4e987904b0fe6f303,
           type: 3}
@@ -81,7 +82,7 @@ MonoBehaviour:
         GroundCount: 5
     - LocationConfig:
         LevelTimer: 300
-        LevelSize: 100
+        LevelSize: 150
         WallPrefab: {fileID: 8292693005376339395, guid: b20ae18527f09d24b848231dde6a8199,
           type: 3}
         WallsCount: 5
@@ -95,7 +96,7 @@ MonoBehaviour:
         BodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 6756835978bcb734da14b6198d93862b,
           type: 3}
         MovementSpeed: 5
-        RotationSpeed: 0.03
+        RotationSpeed: 3
         Gap: 6
         BodySize: 1
         BodySegmentsCount: 2
@@ -109,21 +110,22 @@ MonoBehaviour:
         BodyPrefabBackLegs: {fileID: 4455966368233153384, guid: 5b2349613531c4c4a9726f44fb6c78f8,
           type: 3}
         MovementSpeed: 5
-        RotationSpeed: 0.03
+        RotationSpeed: 3
         Gap: 6
         BodySize: 1
         BodySegmentsCount: 2
         EnemyAI: 2
         EnemyCount: 10
-        TimeToChangeDirection: 2
+        TimeToChangeDirection: 1
         GoodsSerchRadius: 10
-        SerchRadiusThreshold: 0.8
+        SerchRadiusThreshold: 0.5
+        ObstacleSerchingDistance: 5
       GoodsConfig:
         FoodPrefab: {fileID: 1239600050858635287, guid: 8062a0c11d04c6b4e987904b0fe6f303,
           type: 3}
         BonusPrefab: {fileID: 8310880059426670931, guid: 1ae9f349062cf8942a82f9933e855216,
           type: 3}
-        MinFoodCount: 100
+        MinFoodCount: 50
         MaxBonusCount: 10
         BonusSpawnTimeRange: {x: 1, y: 2}
       GroundConfig:

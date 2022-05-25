@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4718865509589135129}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 596822450421524027}
   - component: {fileID: 8965547895191993498}
   - component: {fileID: 8007127986792878108}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerHeadDark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,6 +218,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: head_1
       objectReference: {fileID: 0}
+    - target: {fileID: 3439049202428488458, guid: 9c9213b660799fe49837af0dfde2aac4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4940614637766902974, guid: 9c9213b660799fe49837af0dfde2aac4,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -228,6 +233,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 17a1e4fcf8e2f0a4a82db0c1978a39a1, type: 2}
+    - target: {fileID: 6886121091960317291, guid: 9c9213b660799fe49837af0dfde2aac4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c9213b660799fe49837af0dfde2aac4, type: 3}
 --- !u!4 &2008370043455426274 stripped

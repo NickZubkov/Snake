@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6822617958120127719}
   - component: {fileID: 6410525192301213350}
   - component: {fileID: 2114048285324752714}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BodyDark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5583544100355109578}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,6 +172,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: body_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3176324293469502295, guid: 4e3a2a8eb160baa46b23360c71880995,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902230345171052561, guid: 4e3a2a8eb160baa46b23360c71880995,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8550823664836413892, guid: 4e3a2a8eb160baa46b23360c71880995,
         type: 3}

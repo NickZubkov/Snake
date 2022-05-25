@@ -28,16 +28,9 @@ namespace Modules.DragonIO.Dragons.Systems
                     {
                         if (dragon.TargetHeadDirection != Vector3.zero)
                         {
-                            var cross = Vector3.Cross(dragon.BodyParts[i].forward, dragon.TargetHeadDirection);
-                            var angle = dragon.RotationSpeed;
-                            if (cross.y >= 0.025f)
-                            {
-                                dragon.BodyParts[i].Rotate(Vector3.up * angle);
-                            }
-                            else if (cross.y <= -0.025f)
-                            {
-                                dragon.BodyParts[i].Rotate(Vector3.down * angle);
-                            }
+                            float step = dragon.RotationSpeed * 100f * _time.DeltaTime;
+                            Quaternion lookRotation = Quaternion.LookRotation(dragon.TargetHeadDirection);
+                            dragon.BodyParts[i].rotation = Quaternion.RotateTowards(dragon.BodyParts[i].rotation, lookRotation, step);
                         }
                         dragon.BodyParts[i].Translate(dragon.BodyParts[i].forward * _time.DeltaTime * dragon.DragonConfig.MovementSpeed, Space.World);
                     }

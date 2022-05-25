@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8679513198734020214}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 8310880059426670931}
   - component: {fileID: 759222001143712054}
   - component: {fileID: 6076964972760143057}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpeedBonus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8982808596988156241}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6868972121420079146}
   - component: {fileID: 2962676947338372578}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,10 +191,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8679513198734020214}
     m_Modifications:
+    - target: {fileID: 54249474657069586, guid: 3c670d69f4339174e8da9a50c169970e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993911209475536629, guid: 3c670d69f4339174e8da9a50c169970e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2357853026878705964, guid: 3c670d69f4339174e8da9a50c169970e,
         type: 3}
       propertyPath: m_Name
       value: speed_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2357853026878705964, guid: 3c670d69f4339174e8da9a50c169970e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7043177568086556501, guid: 3c670d69f4339174e8da9a50c169970e,
         type: 3}
@@ -250,6 +265,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864567630443283502, guid: 3c670d69f4339174e8da9a50c169970e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c670d69f4339174e8da9a50c169970e, type: 3}

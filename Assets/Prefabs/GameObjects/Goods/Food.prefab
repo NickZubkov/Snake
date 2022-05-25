@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8679513198734020214}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 6951979773722385701}
   - component: {fileID: 1239600050858635287}
   - component: {fileID: 3506784324815368835}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8982808596988156241}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6868972121420079146}
   - component: {fileID: 2962676947338372578}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere
   m_TagString: Goods
   m_Icon: {fileID: 0}
@@ -232,10 +232,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1691419548462302367, guid: 0ce5577ae8c9ae74397cba3a94049247,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3501132183553745808, guid: 0ce5577ae8c9ae74397cba3a94049247,
         type: 3}
       propertyPath: m_Name
       value: apple_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501132183553745808, guid: 0ce5577ae8c9ae74397cba3a94049247,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5969498934789711438, guid: 0ce5577ae8c9ae74397cba3a94049247,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ce5577ae8c9ae74397cba3a94049247, type: 3}

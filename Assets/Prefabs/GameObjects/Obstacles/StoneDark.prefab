@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1853306305076735358}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 1839314742721591575}
   - component: {fileID: 4137618187380219370}
   - component: {fileID: 1451190381435194298}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: StoneDark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,6 +158,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: stone_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5608108085243220653, guid: 369f9e2fe39141e4e984ecb87a486f02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6256903851866370936, guid: 369f9e2fe39141e4e984ecb87a486f02,
         type: 3}

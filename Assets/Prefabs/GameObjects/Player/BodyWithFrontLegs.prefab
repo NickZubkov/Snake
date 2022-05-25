@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8138996679439662990}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4455966368233153384}
   - component: {fileID: -1999448485703785225}
   - component: {fileID: 3718449301091364081}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BodyWithFrontLegs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,10 +168,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2435381207205460188, guid: f421ca1b2307fd443a41a4687bd10f5d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3215653373334510931, guid: f421ca1b2307fd443a41a4687bd10f5d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3367089235827202911, guid: f421ca1b2307fd443a41a4687bd10f5d,
         type: 3}
       propertyPath: m_Name
       value: legs_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3367089235827202911, guid: f421ca1b2307fd443a41a4687bd10f5d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7999663347225020441, guid: f421ca1b2307fd443a41a4687bd10f5d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f421ca1b2307fd443a41a4687bd10f5d, type: 3}

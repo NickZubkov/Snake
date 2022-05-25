@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1853306305076735358}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 1839314742721591575}
   - component: {fileID: 4137618187380219370}
   - component: {fileID: 1451190381435194298}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TreeDark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,6 +168,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: tree_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2291239489950977498, guid: f69bb0e30ff725d4887bc398d656a50f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f69bb0e30ff725d4887bc398d656a50f, type: 3}

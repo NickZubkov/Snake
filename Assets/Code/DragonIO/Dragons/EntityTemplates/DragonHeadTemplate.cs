@@ -31,17 +31,19 @@ namespace Modules.DragonIO.Dragons.EntityTemplates
             entity.ChangeDirectionTimer = 0;
             entity.SerchRadiusThreshold = enemyConfig.SerchRadiusThreshold;
             entity.TimeToChangeDirection = enemyConfig.TimeToChangeDirection;
+            entity.LayerMask = 1 << 7;
             _entity.Get<Enemy.Components.EnemyHeadSpawnedSignal>();
             ref var dragonHad = ref _entity.Get<Components.DragonHead>();
             dragonHad.DragonConfig = enemyConfig;
-            dragonHad.RotationSpeed = dragonHad.DragonConfig.RotationSpeed * 100f;
+            dragonHad.RotationSpeed = dragonHad.DragonConfig.RotationSpeed;
             
+
         }
         public void AddPlayerComponent(Data.PlayerConfig playerConfig)
         {
             ref var dragonHad = ref _entity.Get<Components.DragonHead>();
             dragonHad.DragonConfig = playerConfig;
-            dragonHad.RotationSpeed = dragonHad.DragonConfig.RotationSpeed * 100f;
+            dragonHad.RotationSpeed = dragonHad.DragonConfig.RotationSpeed;
             
         }
     }

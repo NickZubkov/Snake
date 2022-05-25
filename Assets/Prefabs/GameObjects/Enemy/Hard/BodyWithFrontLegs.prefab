@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8138996679439662990}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4455966368233153384}
   - component: {fileID: -627832411555602967}
   - component: {fileID: 7901577166145504209}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BodyWithFrontLegs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,10 +183,25 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 54135a3c7205a1545a09caa05792066c, type: 2}
+    - target: {fileID: 2435381207205460188, guid: f421ca1b2307fd443a41a4687bd10f5d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3215653373334510931, guid: f421ca1b2307fd443a41a4687bd10f5d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3367089235827202911, guid: f421ca1b2307fd443a41a4687bd10f5d,
         type: 3}
       propertyPath: m_Name
       value: legs_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3367089235827202911, guid: f421ca1b2307fd443a41a4687bd10f5d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4123946630203032793, guid: f421ca1b2307fd443a41a4687bd10f5d,
         type: 3}
@@ -198,6 +213,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 234001f184fb8cf4cb0467fac1bfd400, type: 2}
+    - target: {fileID: 7999663347225020441, guid: f421ca1b2307fd443a41a4687bd10f5d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8359946575411210700, guid: f421ca1b2307fd443a41a4687bd10f5d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

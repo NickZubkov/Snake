@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8138996679439662990}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4455966368233153384}
   - component: {fileID: -6560030728458864500}
   - component: {fileID: 6436982825910046026}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BodyWithBackLegs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,6 +113,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8138996679439662990}
     m_Modifications:
+    - target: {fileID: 467401460959450165, guid: 15489e5e755cf60458e3bbddbba4595d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1654534371054890329, guid: 15489e5e755cf60458e3bbddbba4595d,
         type: 3}
       propertyPath: m_RootOrder
@@ -183,6 +188,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: tail_1
       objectReference: {fileID: 0}
+    - target: {fileID: 3543097914501088838, guid: 15489e5e755cf60458e3bbddbba4595d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6991122373356975966, guid: 15489e5e755cf60458e3bbddbba4595d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7341159708859689373, guid: 15489e5e755cf60458e3bbddbba4595d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -203,6 +218,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 234001f184fb8cf4cb0467fac1bfd400, type: 2}
+    - target: {fileID: 8112480995582219520, guid: 15489e5e755cf60458e3bbddbba4595d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142858838080374856, guid: 15489e5e755cf60458e3bbddbba4595d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15489e5e755cf60458e3bbddbba4595d, type: 3}
 --- !u!4 &3070315830559074229 stripped

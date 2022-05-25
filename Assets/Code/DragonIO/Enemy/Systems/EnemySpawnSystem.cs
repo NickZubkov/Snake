@@ -1,4 +1,5 @@
-﻿using Leopotam.Ecs;
+﻿using System.Collections.Generic;
+using Leopotam.Ecs;
 using UnityEngine;
 
 namespace Modules.DragonIO.Enemy.Systems
@@ -21,16 +22,22 @@ namespace Modules.DragonIO.Enemy.Systems
             {
                 ref var controller = ref _controller.Get1(idx);
                 var dragonsConfigs = controller.LevelsConfigs.EnemiesConfigs;
-                
+                int i = 0;
                 foreach (var dragonsConfig in dragonsConfigs)
                 {
                     if(_enemy.GetEntitiesCount() < dragonsConfig.EnemyCount)
                     {
                         var randomPoint = Random.insideUnitCircle * controller.PlaceRadius;
                         var position = new Vector3(randomPoint.x, 0f, randomPoint.y);
+                        var parent = new GameObject("Dragon_" + i);
+                        var parentEntity = parent.AddComponent<Dragons.EntityTemplates.DragonParentTemplate>();
+                        parentEntity._components = new List<ViewHub.ViewComponent>();
+                        parentEntity.Spawn(_world.NewEntity(), _world);
                         var enemy = Object.Instantiate(dragonsConfig.HeadPrefab, position, Quaternion.identity);
+                        enemy.transform.parent = parent.transform;
                         enemy.Spawn(_world.NewEntity(), _world);
                         enemy.AddEnemyComponent(dragonsConfig);
+                        i++;
                     }
                 }
             }
@@ -39,18 +46,18 @@ namespace Modules.DragonIO.Enemy.Systems
             {
                 ref var dragonHead = ref _spawnedSignal.Get2(signal);
                 ref var enemy = ref _spawnedSignal.Get3(signal);
-                var position = _spawnedSignal.Get1(signal).Transform.position;
+                var dragonHeadTransform = _spawnedSignal.Get1(signal).Transform;
 
-                var bodyWithLegs = Object.Instantiate(enemy.EnemyConfig.BodyPrefabFrontLegs, position,
-                    Quaternion.identity);
+                var bodyWithLegs = Object.Instantiate(enemy.EnemyConfig.BodyPrefabFrontLegs, dragonHeadTransform.position, Quaternion.identity);
                 bodyWithLegs.Spawn(_world.NewEntity(), _world);
                 bodyWithLegs.SetComponentReferences(_spawnedSignal.GetEntity(signal));
+                bodyWithLegs.transform.parent = dragonHeadTransform.parent;
                 dragonHead.BodyParts.Add(bodyWithLegs.transform);
 
-                bodyWithLegs = Object.Instantiate(enemy.EnemyConfig.BodyPrefabBackLegs, position,
-                    Quaternion.identity);
+                bodyWithLegs = Object.Instantiate(enemy.EnemyConfig.BodyPrefabBackLegs, dragonHeadTransform.position, Quaternion.identity);
                 bodyWithLegs.Spawn(_world.NewEntity(), _world);
                 bodyWithLegs.SetComponentReferences(_spawnedSignal.GetEntity(signal));
+                bodyWithLegs.transform.parent = dragonHeadTransform.parent;
                 dragonHead.BodyParts.Add(bodyWithLegs.transform);
             }
         }

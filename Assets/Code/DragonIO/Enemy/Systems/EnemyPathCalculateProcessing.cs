@@ -53,18 +53,18 @@ namespace Modules.DragonIO.Enemy.Systems
                 enemy.ChangeDirectionTimer = enemy.TimeToChangeDirection + Random.Range(0f, 1f);
             }
         }
-        private void CalculateMediumAIDirection(ref Components.Enemy enemy, ref Dragons.Components.DragonHead dragonHead, Transform headPosition, Vector2 input)
+        private void CalculateMediumAIDirection(ref Components.Enemy enemy, ref Dragons.Components.DragonHead dragonHead, Transform headTransform, Vector2 input)
         {
             foreach (var levelController in _levelController)
             {
                 bool goodsFounded = false;
                 foreach (var goodsPosition in _levelController.Get1(levelController).GoodsPositions)
                 {
-                    var distance = Vector3.Distance(goodsPosition.position, headPosition.position);
-                    
+                    var distance = Vector3.Distance(goodsPosition.position, headTransform.position);
+
                     if (distance > enemy.SerchRadiusThreshold && distance < enemy.EnemyConfig.GoodsSerchRadius)
                     {
-                        var MoveDirection = (goodsPosition.position - headPosition.position).normalized;
+                        var MoveDirection = (goodsPosition.position - headTransform.position).normalized;
                         dragonHead.TargetHeadDirection = MoveDirection;
                         goodsFounded = true;
                         break;
@@ -77,66 +77,81 @@ namespace Modules.DragonIO.Enemy.Systems
                 }
             }
         }
-        private void CalculateHardAIDirection(ref Components.Enemy enemy, ref Dragons.Components.DragonHead dragonHead, Transform headPosition, EcsEntity entity, Vector2 input)
+        private void CalculateHardAIDirection(ref Components.Enemy enemy, ref Dragons.Components.DragonHead dragonHead, Transform headTransform, EcsEntity entity, Vector2 input)
         {
             RaycastHit Hit;
-            if (Physics.Raycast(headPosition.TransformPoint(new Vector3(-0.55f, 0f, 0.55f)), headPosition.TransformDirection(Vector3.forward), out Hit, 8f))
+            var angle = 135f;
+            bool leftHited = false;
+            bool rightHited = false;
+            bool centrHited = false;
+            if (Physics.Raycast(headTransform.TransformPoint(new Vector3(-0.55f, 0f, 0.55f)), headTransform.TransformDirection(Vector3.forward), out Hit, enemy.EnemyConfig.ObstacleSerchingDistance, enemy.LayerMask))
             {
-                if (Hit.transform.TryGetComponent(out ViewHub.EntityRef entityRef))
+                if (Hit.collider.transform.parent != null)
                 {
-                    if (entityRef.Entity.Has<Obstacles.Components.Obstacle>())
+                    if (headTransform.parent.gameObject == Hit.collider.transform.parent.gameObject)
                     {
-                        if (entityRef.Entity.Has<Dragons.Components.DragonBody>())
-                        {
-                            if (entity == entityRef.Entity.Get<Dragons.Components.DragonBody>().Head)
-                            {
-                                return;
-                            }
-                        }
-                        var newDirection = new Vector3(-headPosition.position.z, 0f, headPosition.position.x);
-                        dragonHead.TargetHeadDirection = newDirection.normalized;
+                        return;
                     }
                 }
-            }
-            else if (Physics.Raycast(headPosition.TransformPoint(new Vector3(0.55f, 0f, 0.55f)), headPosition.TransformDirection(Vector3.forward), out Hit, 8f))
-            {
-                if (Hit.transform.TryGetComponent(out ViewHub.EntityRef entityRef))
+                
+                leftHited = true;
+                if (!enemy.IsAvoidingObstacle)
                 {
-                    if (entityRef.Entity.Has<Obstacles.Components.Obstacle>())
-                    {
-                        if (entityRef.Entity.Has<Dragons.Components.DragonBody>())
-                        {
-                            if (entity == entityRef.Entity.Get<Dragons.Components.DragonBody>().Head)
-                            {
-                                return;
-                            }
-                        }
-                       var newDirection = new Vector3(headPosition.position.z, 0f, -headPosition.position.x);
-                        dragonHead.TargetHeadDirection = newDirection.normalized;
-                    }
+                    angle = Mathf.Deg2Rad * -angle;
+                    var newX = headTransform.position.x * Mathf.Cos(angle) - headTransform.position.z * Mathf.Sin(angle);
+                    var newZ = headTransform.position.x * Mathf.Sin(angle) + headTransform.position.z * Mathf.Cos(angle);
+                    var newDirection = new Vector3(newX, 0f, newZ);
+                    dragonHead.TargetHeadDirection = newDirection.normalized;
                 }
             }
-            else if (Physics.Raycast(headPosition.TransformPoint(new Vector3(0f, 0f, 0.55f)), headPosition.TransformDirection(Vector3.forward), out Hit, 8f))
+            else if (Physics.Raycast(headTransform.TransformPoint(new Vector3(0f, 0f, 0.55f)), headTransform.TransformDirection(Vector3.forward), out Hit, enemy.EnemyConfig.ObstacleSerchingDistance, enemy.LayerMask))
             {
-                if (Hit.transform.TryGetComponent(out ViewHub.EntityRef entityRef))
+                if (Hit.collider.transform.parent != null)
                 {
-                    if (entityRef.Entity.Has<Obstacles.Components.Obstacle>())
+                    if (headTransform.parent.gameObject == Hit.collider.transform.parent.gameObject)
                     {
-                        if (entityRef.Entity.Has<Dragons.Components.DragonBody>())
-                        {
-                            if (entity == entityRef.Entity.Get<Dragons.Components.DragonBody>().Head)
-                            {
-                                return;
-                            }
-                        }
-                        var newDirection = new Vector3(-headPosition.position.z, 0f, headPosition.position.x);
-                        dragonHead.TargetHeadDirection = newDirection.normalized;
+                        return;
                     }
                 }
+
+                centrHited = true;
+                if (!enemy.IsAvoidingObstacle)
+                {
+                    angle = Mathf.Deg2Rad * -angle;
+                    var newX = headTransform.position.x * Mathf.Cos(angle) - headTransform.position.z * Mathf.Sin(angle);
+                    var newZ = headTransform.position.x * Mathf.Sin(angle) + headTransform.position.z * Mathf.Cos(angle);
+                    var newDirection = new Vector3(newX, 0f, newZ);
+                    dragonHead.TargetHeadDirection = newDirection.normalized;
+                }
+                        
             }
-            else
+            else if (Physics.Raycast(headTransform.TransformPoint(new Vector3(0.55f, 0f, 0.55f)), headTransform.TransformDirection(Vector3.forward), out Hit, enemy.EnemyConfig.ObstacleSerchingDistance, enemy.LayerMask))
             {
-                CalculateMediumAIDirection(ref enemy, ref dragonHead, headPosition, input);
+                if (Hit.collider.transform.parent != null)
+                {
+                    if (headTransform.parent.gameObject == Hit.collider.transform.parent.gameObject)
+                    {
+                        return;
+                    }
+                }
+
+                rightHited = true;
+                if (!enemy.IsAvoidingObstacle)
+                {
+                    angle = Mathf.Deg2Rad * angle;
+                    var newX = headTransform.position.x * Mathf.Cos(angle) - headTransform.position.z * Mathf.Sin(angle);
+                    var newZ = headTransform.position.x * Mathf.Sin(angle) + headTransform.position.z * Mathf.Cos(angle);
+                    var newDirection = new Vector3(newX, 0f, newZ);
+                    dragonHead.TargetHeadDirection = newDirection.normalized;
+                }
+                        
+            }
+
+            enemy.IsAvoidingObstacle = leftHited || rightHited || centrHited;
+            
+            if(!enemy.IsAvoidingObstacle)
+            {
+                CalculateMediumAIDirection(ref enemy, ref dragonHead, headTransform, input);
             }
             
         }
