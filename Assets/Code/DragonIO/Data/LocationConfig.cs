@@ -5,7 +5,7 @@ namespace Modules.DragonIO.Data
     [System.Serializable]
     public class LocationConfig
     {
-        [Range(60f, 600f)] 
+        [Range(10f, 600f)] 
         public float LevelTimer = 300;
         [Range(40, 200)] 
         public int LevelSize = 80;

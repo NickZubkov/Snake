@@ -25,7 +25,7 @@ MonoBehaviour:
     keyData: 0000000001000000
     valueData:
     - LocationConfig:
-        LevelTimer: 300
+        LevelTimer: 60
         LevelSize: 150
         WallPrefab: {fileID: 8292693005376339395, guid: 733e1affa63de94488547a3ba5e82741,
           type: 3}
@@ -155,12 +155,12 @@ MonoBehaviour:
         - {fileID: 2586615985214007743, guid: 7223a7c9aa8c7af4f8f1756a95ef445e, type: 3}
         GroundCount: 10
     - LocationConfig:
-        LevelTimer: 300
+        LevelTimer: 60
         LevelSize: 150
         WallPrefab: {fileID: 8292693005376339395, guid: b20ae18527f09d24b848231dde6a8199,
           type: 3}
         WallsCount: 5
-        EnemiesCount: 1
+        EnemiesCount: 10
       PlayerConfig:
         HeadPrefab: {fileID: 2672087176939207069, guid: 9b90f3ca0aaf14045bf40d804514fc23,
           type: 3}
@@ -285,3 +285,4 @@ MonoBehaviour:
         - {fileID: 4216171309869509283, guid: 83d10a157ec1d8348bbc42842de07e6f, type: 3}
         GroundCount: 10
   DragonScalingFactor: 0.02
+  DefaultCameraOffset: {x: 0, y: 25, z: 0}

@@ -39,6 +39,7 @@ namespace Modules.DragonIO.Dragons.EntityTemplates
             dragonHad.MovementSpeed = dragonHad.DragonConfig.MovementSpeed;
             dragonHad.DefaultMultiplyer = 1;
             dragonHad.PointBonusMultiplyer = 1;
+            dragonHad.DragonName = transform.parent.name;
             
         }
         public void AddPlayerComponent(Data.PlayerConfig playerConfig)
@@ -49,7 +50,7 @@ namespace Modules.DragonIO.Dragons.EntityTemplates
             dragonHad.MovementSpeed = dragonHad.DragonConfig.MovementSpeed;
             dragonHad.DefaultMultiplyer = 1;
             dragonHad.PointBonusMultiplyer = 1;
-            
+            dragonHad.DragonName = transform.parent.name;
         }
     }
 }

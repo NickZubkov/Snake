@@ -11,6 +11,7 @@ namespace Modules.DragonIO.Dragons.Components
         public int Points;
         public float MovementSpeed;
         public float RotationSpeed;
+        public string DragonName;
 
         public float DefaultMultiplyer;
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Leopotam.Ecs;
+using Modules.DragonIO.Dragons.Components;
 using UnityEngine;
 
 namespace Modules.DragonIO.LevelController.Systems
@@ -41,7 +42,9 @@ namespace Modules.DragonIO.LevelController.Systems
                 }
 
                 controller.DragonScalingFactor = _config.DragonScalingFactor;
-                
+                controller.LevelTimer = controller.LevelsConfigs.LocationConfig.LevelTimer;
+                controller.SpawnedEnemiesCount = 0;
+
             }
         }
     }

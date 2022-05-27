@@ -30,7 +30,7 @@ namespace Modules.DragonIO.Enemy.Systems
                     {
                         var randomPoint = Random.insideUnitCircle * controller.PlaceRadius;
                         var position = new Vector3(randomPoint.x, 0f, randomPoint.y);
-                        var parent = new GameObject("Dragon");
+                        var parent = new GameObject("Dragon_" + controller.SpawnedEnemiesCount);
                         var parentEntity = parent.AddComponent<Dragons.EntityTemplates.DragonParentTemplate>();
                         parentEntity._components = new List<ViewHub.ViewComponent>();
                         parentEntity.Spawn(_world.NewEntity(), _world);
@@ -38,7 +38,7 @@ namespace Modules.DragonIO.Enemy.Systems
                         enemy.transform.parent = parent.transform;
                         enemy.Spawn(_world.NewEntity(), _world);
                         enemy.AddEnemyComponent(dragonConfigs);
-                       
+                        controller.SpawnedEnemiesCount++;
                     }
             }
 

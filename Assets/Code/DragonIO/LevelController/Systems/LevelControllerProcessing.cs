@@ -12,6 +12,9 @@ namespace Modules.DragonIO.LevelController.Systems
         private EcsFilter<Goods.Components.Bonus> _bonus;
         private EcsFilter<Dragons.Components.DragonHead> _dragons;
         private EcsFilter<Components.ChangeCameraOffsetSignal> _cameraOffsetSignal;
+        private EcsFilter<Dragons.Components.DragonHead, Player.Components.Player> _player;
+
+        private EcsWorld _world;
         private TimeService _timeService;
         public void Run()
         {
@@ -21,6 +24,35 @@ namespace Modules.DragonIO.LevelController.Systems
             foreach (var idx in _controller)
             {
                 ref var controller = ref _controller.Get1(idx);
+
+                controller.LevelTimer -= _timeService.DeltaTime;
+                
+                foreach (var player in _player)
+                {
+                    var playerPoints = _player.Get1(player).Points;
+                    controller.PlayerPoints = playerPoints;
+
+                    if (controller.LevelTimer <= 0)
+                    {
+                        int maxPoints = -1;
+                        foreach (var dragon in _dragons)
+                        {
+                            if (maxPoints < _dragons.Get1(dragon).Points)
+                            {
+                                maxPoints = _dragons.Get1(dragon).Points;
+                            }
+                        }
+
+                        if (playerPoints < maxPoints)
+                        {
+                            EventGroup.StateFactory.CreateState<EventGroup.RoundFailedState>(_world);
+                        }
+                        else
+                        {
+                            EventGroup.StateFactory.CreateState<EventGroup.RoundCompletedState>(_world);
+                        }
+                    }
+                }
                 
                 if (_food.GetEntitiesCount() < controller.LevelsConfigs.GoodsConfig.MinFoodCount)
                 {
