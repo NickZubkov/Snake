@@ -9,6 +9,7 @@ namespace Modules.DragonIO.Enemy.Systems
         private EcsFilter<EventGroup.GamePlayState>.Exclude<EventGroup.StateEnter> _gameplay;
         private EcsFilter<ViewHub.UnityView, Dragons.Components.DragonHead, Components.Enemy> _enemy;
         private EcsFilter<ViewHub.UnityView, Dragons.Components.DragonHead, Components.Enemy, Components.EnemyHeadSpawnedSignal> _spawnedSignal;
+        private EcsFilter<ViewHub.UnityView, Dragons.Components.DragonHead, Player.Components.Player> _player;
         private EcsFilter<LevelController.Components.LevelController> _controller;
         
         private EcsWorld _world;
@@ -20,16 +21,23 @@ namespace Modules.DragonIO.Enemy.Systems
 
             foreach (var idx in _controller)
             {
-                ref var controller = ref _controller.Get1(idx);
+                foreach (var player in _player)
+                {
+                    ref var controller = ref _controller.Get1(idx);
+                    ref var playerTransform = ref _player.Get1(player).Transform;
                 
-                var locationConfig = controller.LevelsConfigs.LocationConfig;
-                var index = Random.Range(0, controller.LevelsConfigs.EnemiesConfigs.Count);
-                var dragonConfigs = controller.LevelsConfigs.EnemiesConfigs[index];
+                    var locationConfig = controller.LevelsConfigs.LocationConfig;
+                    var index = Random.Range(0, controller.LevelsConfigs.EnemiesConfigs.Count);
+                    var dragonConfigs = controller.LevelsConfigs.EnemiesConfigs[index];
                 
                     if(_enemy.GetEntitiesCount() < locationConfig.EnemiesCount)
                     {
                         var randomPoint = Random.insideUnitCircle * controller.PlaceRadius;
                         var position = new Vector3(randomPoint.x, 0f, randomPoint.y);
+                        while ((playerTransform.position - position).sqrMagnitude < controller.ObjectsSpawnRadius * controller.ObjectsSpawnRadius)
+                        {
+                            position = new Vector3(randomPoint.x, 0f, randomPoint.y);
+                        }
                         var parent = new GameObject("Dragon_" + controller.SpawnedEnemiesCount);
                         var parentEntity = parent.AddComponent<Dragons.EntityTemplates.DragonParentTemplate>();
                         parentEntity._components = new List<ViewHub.ViewComponent>();
@@ -40,6 +48,7 @@ namespace Modules.DragonIO.Enemy.Systems
                         enemy.AddEnemyComponent(dragonConfigs);
                         controller.SpawnedEnemiesCount++;
                     }
+                }
             }
 
             foreach (var signal in _spawnedSignal)

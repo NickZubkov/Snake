@@ -30,8 +30,8 @@ namespace Modules.DragonIO.LevelController.Systems
                 controller.LevelsConfigs = _config.LevelsConfigs[currentLevelID];
                 controller.BonusSpawnTimer = Random.Range(controller.LevelsConfigs.GoodsConfig.BonusSpawnTimeRange.x, controller.LevelsConfigs.GoodsConfig.BonusSpawnTimeRange.y);
                 controller.GoodsPositions = new List<Transform>();
-                controller.WallSize = controller.LevelsConfigs.LocationConfig.LevelSize * Mathf.Sin(180 * Mathf.Deg2Rad / controller.LevelsConfigs.LocationConfig.WallsCount);
-                controller.PlaceRadius = controller.WallSize / (2 * Mathf.Tan(180 * Mathf.Deg2Rad / controller.LevelsConfigs.LocationConfig.WallsCount));
+                controller.WallSize = 150 * controller.LevelsConfigs.LocationConfig.LevelSize * Mathf.Sin(180 * Mathf.Deg2Rad / controller.LevelsConfigs.LocationConfig.WallsCount);
+                controller.PlaceRadius = 74.5f * controller.LevelsConfigs.LocationConfig.LevelSize;//controller.WallSize / (2 * Mathf.Tan(180 * Mathf.Deg2Rad / controller.LevelsConfigs.LocationConfig.WallsCount));
                 foreach (var camera in _virtualCamera)
                 {
                     controller.CinemachineTransposer = _virtualCamera.Get1(camera)
@@ -44,6 +44,7 @@ namespace Modules.DragonIO.LevelController.Systems
                 controller.DragonScalingFactor = _config.DragonScalingFactor;
                 controller.LevelTimer = controller.LevelsConfigs.LocationConfig.LevelTimer;
                 controller.SpawnedEnemiesCount = 0;
+                controller.ObjectsSpawnRadius = _config.ObjectsSpawnRadius;
 
             }
         }

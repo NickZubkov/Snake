@@ -29,7 +29,8 @@ namespace Modules.DragonIO.Location.Systems
                 for(int i = 0; i < controller.LevelsConfigs.LocationConfig.WallsCount; i++)
                 {
                     var angle = (360 / controller.LevelsConfigs.LocationConfig.WallsCount) * Mathf.Deg2Rad * i;
-                    var position = new Vector3(Mathf.Cos(angle) * controller.PlaceRadius, 0, Mathf.Sin(angle) * controller.PlaceRadius);
+                    var angleOffset = 5 * Mathf.Deg2Rad;
+                    var position = new Vector3(Mathf.Cos(angle + angleOffset) * controller.PlaceRadius, 0, Mathf.Sin(angle + angleOffset) * controller.PlaceRadius);
                     var wall = Object.Instantiate(controller.LevelsConfigs.LocationConfig.WallPrefab, position, Quaternion.identity);
                     wall.transform.LookAt(Vector3.zero);
                     wall.transform.localScale = new Vector3(controller.WallSize, wall.transform.localScale.y, wall.transform.localScale.z);

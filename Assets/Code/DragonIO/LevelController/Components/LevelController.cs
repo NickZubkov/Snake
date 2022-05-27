@@ -15,5 +15,6 @@ namespace Modules.DragonIO.LevelController.Components
         public float LevelTimer;
         public int SpawnedEnemiesCount;
         public int PlayerPoints;
+        public float ObjectsSpawnRadius;
     }
 }
