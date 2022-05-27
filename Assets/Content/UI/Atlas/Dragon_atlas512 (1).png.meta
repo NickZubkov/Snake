@@ -1,0 +1,398 @@
+fileFormatVersion: 2
+guid: 03dce0bef302d124e8951c563ee85480
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dragon_atlas512 (1)_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 259
+        width: 122
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 55, y: 55, z: 55, w: 55}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8cc245c96e776b4d8fca228d68ea3e4
+      internalID: -183888636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_atlas512 (1)_1
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 259
+        width: 232
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48168261e737d2947a29ef1114735d7e
+      internalID: 136187744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_atlas512 (1)_2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 156
+        width: 66
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5351e0bcb2f4eb44a0b2e248174cda6
+      internalID: -2108982333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_atlas512 (1)_3
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 156
+        width: 110
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a1cdeb39726471428cc27db527dec85
+      internalID: 1274628740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_atlas512 (1)_4
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 89
+        width: 156
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 70, y: 70, z: 70, w: 70}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53413af2fc64872429f92b1476af5471
+      internalID: -774358141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_atlas512 (1)_5
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 4
+        width: 163
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 74, y: 70, z: 74, w: 70}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8ac859cca08c0a43b6b6750590ab951
+      internalID: 812929272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_atlas512 (1)_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 72
+        width: 89
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9d328278d9925946b5a660c7e368849
+      internalID: 1926611054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_atlas512 (1)_7
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 72
+        width: 77
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba82215e51840b548b7c8fb51d6068f1
+      internalID: 62828819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_atlas512 (1)_8
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 2
+        width: 90
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 40, y: 35, z: 40, w: 35}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c0bf95fb4450984db00fb4409a1a999
+      internalID: 1958962800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_atlas512 (1)_9
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 70
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 30, y: 28, z: 30, w: 28}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64d712a13fd57f243a08abe3d51db68a
+      internalID: -459492497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_atlas512 (1)_10
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 2
+        width: 70
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 30, y: 28, z: 30, w: 28}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 753b353a9ee2d174590dca42a0e9de96
+      internalID: 159154633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_atlas512 (1)_11
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 2
+        width: 75
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 32, y: 28, z: 32, w: 28}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6be356c65e3d8ba4ca693438073ead5c
+      internalID: -92039065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: dfa1507233f190d47b03985cc4c24365
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Dragon_atlas512 (1)_10: 159154633
+      Dragon_atlas512 (1)_4: -774358141
+      Dragon_atlas512 (1)_8: 1958962800
+      Dragon_atlas512 (1)_9: -459492497
+      Dragon_atlas512 (1)_0: -183888636
+      Dragon_atlas512 (1)_6: 1926611054
+      Dragon_atlas512 (1)_7: 62828819
+      Dragon_atlas512 (1)_1: 136187744
+      Dragon_atlas512 (1)_2: -2108982333
+      Dragon_atlas512 (1)_11: -92039065
+      Dragon_atlas512 (1)_3: 1274628740
+      Dragon_atlas512 (1)_5: 812929272
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
