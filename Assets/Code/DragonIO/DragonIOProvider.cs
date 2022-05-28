@@ -59,8 +59,12 @@ namespace Modules.DragonIO
                 
                 // dragons
                 .Add(new Dragons.Systems.DragonsCollectGoodsProcessing())
+                .Add(new Dragons.Systems.DragonBodySpawnProcessing())
                 .Add(new Dragons.Systems.DragonsCollisionsProcessing())
                 .Add(new Dragons.Systems.DragonsMoveProcessing())
+                
+                // camera
+                .Add(new LevelCamera.Systems.CameraInitSystem())
                 
                 // ui
                 .Add(new UI.Systems.UIUpdateProcessing())
@@ -92,7 +96,8 @@ namespace Modules.DragonIO
                 .OneFrame<LevelController.Components.GroundDecorSpawningSignal>()
                 .OneFrame<LevelController.Components.WallSpawningSignal>()
                 .OneFrame<LevelController.Components.PlayerSpawningSignal>()
-                .OneFrame<Player.Components.PlayerHeadSpawnedSignal>()
+                .OneFrame<LevelController.Components.DragonBodySpawningSignal>()
+                .OneFrame<Dragons.Components.DragonHeadSpawnedSignal>()
                 .OneFrame<Enemy.Components.EnemyHeadSpawnedSignal>()
                 
                 ;

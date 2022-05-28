@@ -7,7 +7,7 @@ namespace Modules.DragonIO.Enemy.Systems
     {
         private EcsFilter<EventGroup.GamePlayState> _gameplay;
         private EcsFilter<ViewHub.UnityView, Dragons.Components.DragonHead, Components.Enemy> _enemy;
-        private EcsFilter<LevelController.Components.LevelRunTimeData> _levelController;
+        private EcsFilter<LevelController.Components.LevelRunTimeData, LevelController.Components.CurrentLevelConfigs> _levelData;
         private Utils.TimeService _time;
 
         public void Run()
@@ -24,7 +24,7 @@ namespace Modules.DragonIO.Enemy.Systems
 
                 enemy.ChangeDirectionTimer -= _time.DeltaTime;
                 var randomInput = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-                switch (enemy.EnemyConfig.EnemyAI)
+                switch (enemy.EnemyAI)
                 {
                     case Data.EnemyAI.Easy: 
                         CalculateEasyAIDirection(ref enemy, ref dragonHead, randomInput);
@@ -55,26 +55,29 @@ namespace Modules.DragonIO.Enemy.Systems
         }
         private void CalculateMediumAIDirection(ref Components.Enemy enemy, ref Dragons.Components.DragonHead dragonHead, Transform headTransform, Vector2 input)
         {
-            foreach (var levelController in _levelController)
+            bool goodsFounded = false;
+
+            Collider[] hitColliders = new Collider[enemy.MaxGoodsSerchingCount];
+            Physics.OverlapSphereNonAlloc(headTransform.position, enemy.GoodsSerchRadius, hitColliders, enemy.GoodslayerMask);
+            var target = hitColliders[0];
+            foreach (var collider in hitColliders)
             {
-                bool goodsFounded = false;
-                foreach (var goodsPosition in _levelController.Get1(levelController).GoodsPositions)
+                if (collider == null)
+                    continue;
+                
+                var newDirection = collider.transform.position - headTransform.position;
+                var prevDirection = target.transform.position - headTransform.position;
+                if (newDirection.sqrMagnitude < prevDirection.sqrMagnitude)
                 {
-                    var distance = Vector3.Distance(goodsPosition.position, headTransform.position);
-
-                    if (distance > enemy.SerchRadiusThreshold && distance < enemy.EnemyConfig.GoodsSerchRadius)
-                    {
-                        var MoveDirection = (goodsPosition.position - headTransform.position).normalized;
-                        dragonHead.TargetHeadDirection = MoveDirection;
-                        goodsFounded = true;
-                        break;
-                    }
+                    target = collider;
+                    dragonHead.TargetHeadDirection = newDirection.normalized;
+                    goodsFounded = true;
                 }
+            }
 
-                if (!goodsFounded)
-                {
-                    CalculateEasyAIDirection(ref enemy, ref dragonHead, input);
-                }
+            if (!goodsFounded)
+            {
+                CalculateEasyAIDirection(ref enemy, ref dragonHead, input);
             }
         }
         private void CalculateHardAIDirection(ref Components.Enemy enemy, ref Dragons.Components.DragonHead dragonHead, Transform headTransform, EcsEntity entity, Vector2 input)
@@ -84,7 +87,7 @@ namespace Modules.DragonIO.Enemy.Systems
             bool leftHited = false;
             bool rightHited = false;
             bool centrHited = false;
-            if (Physics.Raycast(headTransform.TransformPoint(new Vector3(-0.55f, 0f, 0.55f)), headTransform.TransformDirection(Vector3.forward), out Hit, enemy.EnemyConfig.ObstacleSerchingDistance, enemy.LayerMask))
+            if (Physics.Raycast(headTransform.TransformPoint(new Vector3(-0.55f, 0f, 0.55f)), headTransform.TransformDirection(Vector3.forward), out Hit, enemy.ObstacleSerchingDistance, enemy.ObstacleLayerMask))
             {
                 if (Hit.collider.transform.parent != null)
                 {
@@ -104,7 +107,7 @@ namespace Modules.DragonIO.Enemy.Systems
                     dragonHead.TargetHeadDirection = newDirection.normalized;
                 }
             }
-            else if (Physics.Raycast(headTransform.TransformPoint(new Vector3(0f, 0f, 0.55f)), headTransform.TransformDirection(Vector3.forward), out Hit, enemy.EnemyConfig.ObstacleSerchingDistance, enemy.LayerMask))
+            else if (Physics.Raycast(headTransform.TransformPoint(new Vector3(0f, 0f, 0.55f)), headTransform.TransformDirection(Vector3.forward), out Hit, enemy.ObstacleSerchingDistance, enemy.ObstacleLayerMask))
             {
                 if (Hit.collider.transform.parent != null)
                 {
@@ -125,7 +128,7 @@ namespace Modules.DragonIO.Enemy.Systems
                 }
                         
             }
-            else if (Physics.Raycast(headTransform.TransformPoint(new Vector3(0.55f, 0f, 0.55f)), headTransform.TransformDirection(Vector3.forward), out Hit, enemy.EnemyConfig.ObstacleSerchingDistance, enemy.LayerMask))
+            else if (Physics.Raycast(headTransform.TransformPoint(new Vector3(0.55f, 0f, 0.55f)), headTransform.TransformDirection(Vector3.forward), out Hit, enemy.ObstacleSerchingDistance, enemy.ObstacleLayerMask))
             {
                 if (Hit.collider.transform.parent != null)
                 {

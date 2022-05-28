@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -30,7 +29,6 @@ namespace Modules.DragonIO.LevelController.Systems
                 levelConfigs.PlayerConfig = _config.LevelsConfigs[currentLevelID].PlayerConfig;
                 
                 levelRunTimeData.BonusSpawnTimer = Random.Range(levelConfigs.GoodsConfig.BonusSpawnTimeRange.x, levelConfigs.GoodsConfig.BonusSpawnTimeRange.y);
-                levelRunTimeData.GoodsPositions = new List<Transform>();
                 levelRunTimeData.WallSize = Data.GameConstants.LEVEL_PREFAB_SIZE * levelConfigs.LocationConfig.LevelSize * Mathf.Sin(180 * Mathf.Deg2Rad / Data.GameConstants.WALLS_COUNT);
                 levelRunTimeData.ObjectsMaxSpawnRadius = Data.GameConstants.CORRECTED_SPAWN_RADIUS * levelConfigs.LocationConfig.LevelSize;
                 levelRunTimeData.DragonScalingFactor = _config.DragonScalingFactor;

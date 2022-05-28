@@ -6,6 +6,8 @@ namespace Modules.DragonIO.Dragons.Components
     public struct DragonHead
     {
         public Data.DragonConfig DragonConfig;
+        public int HeadID;
+        public Transform HeadTransform;
         public List<Transform> BodyParts;
         public Vector3 TargetHeadDirection;
         public int Points;
@@ -13,7 +15,7 @@ namespace Modules.DragonIO.Dragons.Components
         public float RotationSpeed;
         public string DragonName;
 
-        public float DefaultMultiplyer;
+        public float DefaultBonusMultiplyer;
 
         public float SpeedBonusMultiplyer;
         public float SpeedBonusTimer;

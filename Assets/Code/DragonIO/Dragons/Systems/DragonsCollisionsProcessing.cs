@@ -20,13 +20,13 @@ namespace Modules.DragonIO.Dragons.Systems
             {
                 foreach (var levelData in _levelData)
                 {
-                    ref var levelRunTimeData = ref _levelData.Get1(levelData);
                     ref var currentLevelConfigs = ref _levelData.Get2(levelData);
                     ref var triggered = ref _dragons.Get2(dragon);
+                    ref var dragonHead = ref _dragons.Get1(dragon);
 
                     if (triggered.Other.IsAlive() && triggered.Other.Has<Components.DragonBody>())
                     {
-                        if (_dragons.GetEntity(dragon) == triggered.Other.Get<Components.DragonBody>().Head)
+                        if (dragonHead.HeadID == triggered.Other.Get<Components.DragonBody>().HeadID)
                         {
                             continue;
                         }
@@ -34,7 +34,6 @@ namespace Modules.DragonIO.Dragons.Systems
                 
                     if (triggered.Other.IsAlive() && triggered.Other.Has<Location.Components.Obstacle>())
                     {
-                        ref var dragonHead = ref _dragons.Get1(dragon);
                         if (dragonHead.IsShieldActive)
                         {
                             continue;
@@ -46,14 +45,13 @@ namespace Modules.DragonIO.Dragons.Systems
                         {
                             var food = Object.Instantiate(foodPrefab, dragonHead.BodyParts[i].position, Quaternion.identity);
                             food.Spawn(_world.NewEntity(), _world);
-                            levelRunTimeData.GoodsPositions.Insert(0, food.transform);
                         }
 
                         foreach (var bodyParts in dragonHead.BodyParts)
                         {
                             if (bodyParts.TryGetComponent(out EntityRef entityRef))
                             {
-                                entityRef.Entity.Destroy();
+                                entityRef.Entity.Get<Utils.DestroyTag>();
                             }
                         }
                     }

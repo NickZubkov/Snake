@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿
+using Leopotam.Ecs;
 
 namespace Modules.DragonIO.Player.Components
 {
-    public struct Player 
+    public struct Player : IEcsIgnoreInFilter
     {
     }
 }

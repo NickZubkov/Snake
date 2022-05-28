@@ -53,9 +53,7 @@ namespace Modules.DragonIO.LevelController.Systems
                         _levelData.GetEntity(idx).Get<Components.BonusSpawningSignal>();
                     }
                     
-                    levelRunTimeData.BonusSpawnTimer = Random.Range(
-                        levelConfigs.GoodsConfig.BonusSpawnTimeRange.x, 
-                        levelConfigs.GoodsConfig.BonusSpawnTimeRange.y);
+                    levelRunTimeData.BonusSpawnTimer = Random.Range(levelConfigs.GoodsConfig.BonusSpawnTimeRange.x, levelConfigs.GoodsConfig.BonusSpawnTimeRange.y);
                 }
                 
                 if (_groundDecor.GetEntitiesCount() < levelConfigs.GroundConfig.GroundDecorCount)
@@ -112,6 +110,7 @@ namespace Modules.DragonIO.LevelController.Systems
                 
                 levelRunTimeData.BonusSpawnTimer -= _timeService.DeltaTime;
                 
+                
                 // bonus timers
                 foreach (var dragons in _dragons)
                 {
@@ -135,11 +134,10 @@ namespace Modules.DragonIO.LevelController.Systems
                     }
                     if (dragon.PointBonusTimer > 0)
                     {
-                        
                         dragon.PointBonusTimer -= _timeService.DeltaTime;
                         if (dragon.PointBonusTimer <= 0)
                         {
-                            dragon.PointBonusMultiplyer = (int)dragon.DefaultMultiplyer;
+                            dragon.PointBonusMultiplyer = (int)dragon.DefaultBonusMultiplyer;
                         }
                     }
                 }

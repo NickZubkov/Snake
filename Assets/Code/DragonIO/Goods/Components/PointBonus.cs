@@ -14,7 +14,7 @@ namespace Modules.DragonIO.Goods.Components
 
         public void Activate(ref DragonHead dragonHead)
         {
-            if (dragonHead.SpeedBonusTimer <= 0)
+            if (dragonHead.PointBonusTimer <= 0)
             {
                 dragonHead.PointBonusMultiplyer = PointMultiplyer;
             }

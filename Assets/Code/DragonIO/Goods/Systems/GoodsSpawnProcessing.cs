@@ -31,7 +31,6 @@ namespace Modules.DragonIO.Goods.Systems
                         }
                         var food = Object.Instantiate(prefab, position, Quaternion.identity);
                         food.Spawn(_world.NewEntity(), _world);
-                        levelRunTimeData.GoodsPositions.Insert(0, food.transform);
                     }
                 }
             }
@@ -55,7 +54,6 @@ namespace Modules.DragonIO.Goods.Systems
                         }
                         var bonus = Object.Instantiate(prefab, position, Quaternion.identity);
                         bonus.Spawn(_world.NewEntity(), _world);
-                        levelRunTimeData.GoodsPositions.Insert(0, bonus.transform);
                     }
                 }
             }

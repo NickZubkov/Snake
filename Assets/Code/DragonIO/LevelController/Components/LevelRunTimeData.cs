@@ -6,7 +6,6 @@ namespace Modules.DragonIO.LevelController.Components
     public struct LevelRunTimeData
     {
         public float BonusSpawnTimer;
-        public List<Transform> GoodsPositions;
         public float WallSize;
         public float ObjectsMaxSpawnRadius;
         public Cinemachine.CinemachineTransposer CinemachineTransposer;
