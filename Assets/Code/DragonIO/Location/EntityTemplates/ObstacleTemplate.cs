@@ -1,7 +1,7 @@
 ﻿using Leopotam.Ecs;
 using Modules.ViewHub;
 
-namespace Modules.DragonIO.Obstacles.EntityTemplates
+namespace Modules.DragonIO.Location.EntityTemplates
 {
     public class ObstacleTemplate : ViewElement
     {

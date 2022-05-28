@@ -5,15 +5,17 @@ namespace Modules.DragonIO.Data
     [System.Serializable]
     public class GroundConfig
     {
-        public List<Obstacles.EntityTemplates.ObstacleTemplate> ObstaclePrefabs = new List<Obstacles.EntityTemplates.ObstacleTemplate>
-        {
-            new Obstacles.EntityTemplates.ObstacleTemplate()
-        };
         public int ObstaclesCount;
-        public List<Location.EntityTemplates.GroundTemplate> GroundPrefabs = new List<Location.EntityTemplates.GroundTemplate>
+        public List<Location.EntityTemplates.ObstacleTemplate> ObstaclePrefabs = new List<Location.EntityTemplates.ObstacleTemplate>
         {
-            new Location.EntityTemplates.GroundTemplate()
+            new Location.EntityTemplates.ObstacleTemplate()
         };
-        public int GroundCount;
+        
+        public int GroundDecorCount;
+        public List<Location.EntityTemplates.GroundDecorTemplate> GroundDecorPrefabs = new List<Location.EntityTemplates.GroundDecorTemplate>
+        {
+            new Location.EntityTemplates.GroundDecorTemplate()
+        };
+        
     }
 }

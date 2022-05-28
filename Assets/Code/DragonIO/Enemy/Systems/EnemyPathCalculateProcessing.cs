@@ -7,7 +7,7 @@ namespace Modules.DragonIO.Enemy.Systems
     {
         private EcsFilter<EventGroup.GamePlayState> _gameplay;
         private EcsFilter<ViewHub.UnityView, Dragons.Components.DragonHead, Components.Enemy> _enemy;
-        private EcsFilter<LevelController.Components.LevelController> _levelController;
+        private EcsFilter<LevelController.Components.LevelRunTimeData> _levelController;
         private Utils.TimeService _time;
 
         public void Run()

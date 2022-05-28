@@ -41,9 +41,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1839314742721591575}
-  - component: {fileID: 2586615985214007743}
+  - component: {fileID: -6642587625746292088}
   m_Layer: 0
-  m_Name: Ground
+  m_Name: GroundDecorDark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +65,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2586615985214007743
+--- !u!114 &-6642587625746292088
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7576680590022555804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11153a257ff94751b5de5a6f92634a8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 84442f63234d7b34da9d073c45453fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _components: []
@@ -145,6 +145,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1748685794814957469, guid: 6ad7c479d9a8f0041a72b1fa70eaef1f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c918ab767a297b04793eaf8602737484, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ad7c479d9a8f0041a72b1fa70eaef1f, type: 3}
 --- !u!4 &2695856073578042801 stripped

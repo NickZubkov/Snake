@@ -7,7 +7,7 @@ namespace Modules.DragonIO.Dragons.Systems
     {
         private EcsFilter<EventGroup.GamePlayState> _gamePlay;
         private EcsFilter<ViewHub.UnityView, Components.DragonHead, UPhysics.Triggered> _dragon;
-        private EcsFilter<LevelController.Components.LevelController> _levelController;
+        private EcsFilter<LevelController.Components.LevelRunTimeData> _levelController;
 
         private EcsWorld _world;
 

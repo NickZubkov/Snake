@@ -6,48 +6,44 @@ namespace Modules.DragonIO.Enemy.Systems
 {
     public class EnemySpawnSystem : IEcsRunSystem
     {
-        private EcsFilter<EventGroup.GamePlayState>.Exclude<EventGroup.StateEnter> _gameplay;
-        private EcsFilter<ViewHub.UnityView, Dragons.Components.DragonHead, Components.Enemy> _enemy;
+        private EcsFilter<LevelController.Components.EnemySpawningSignal> _enemySpawningSignal;
         private EcsFilter<ViewHub.UnityView, Dragons.Components.DragonHead, Components.Enemy, Components.EnemyHeadSpawnedSignal> _spawnedSignal;
         private EcsFilter<ViewHub.UnityView, Dragons.Components.DragonHead, Player.Components.Player> _player;
-        private EcsFilter<LevelController.Components.LevelController> _controller;
+        private EcsFilter<LevelController.Components.LevelRunTimeData, LevelController.Components.CurrentLevelConfigs> _levelData;
         
         private EcsWorld _world;
 
         public void Run()
         {
-            if(_gameplay.IsEmpty())
+            if(_enemySpawningSignal.IsEmpty())
                 return;
 
-            foreach (var idx in _controller)
+            foreach (var levelData in _levelData)
             {
                 foreach (var player in _player)
                 {
-                    ref var controller = ref _controller.Get1(idx);
+                    ref var levelRunTimeData = ref _levelData.Get1(levelData);
+                    ref var currentLevelConfigs = ref _levelData.Get2(levelData);
                     ref var playerTransform = ref _player.Get1(player).Transform;
-                
-                    var locationConfig = controller.LevelsConfigs.LocationConfig;
-                    var index = Random.Range(0, controller.LevelsConfigs.EnemiesConfigs.Count);
-                    var dragonConfigs = controller.LevelsConfigs.EnemiesConfigs[index];
-                
-                    if(_enemy.GetEntitiesCount() < locationConfig.EnemiesCount)
+
+                    var index = Random.Range(0, currentLevelConfigs.EnemiesConfigs.Count);
+                    var dragonConfigs = currentLevelConfigs.EnemiesConfigs[index];
+                    var randomPoint = Random.insideUnitCircle * levelRunTimeData.ObjectsMaxSpawnRadius;
+                    var position = new Vector3(randomPoint.x, 0f, randomPoint.y);
+                    if ((playerTransform.position - position).sqrMagnitude < levelRunTimeData.ObjectsMinSpawnRadiusSqr)
                     {
-                        var randomPoint = Random.insideUnitCircle * controller.PlaceRadius;
-                        var position = new Vector3(randomPoint.x, 0f, randomPoint.y);
-                        while ((playerTransform.position - position).sqrMagnitude < controller.ObjectsSpawnRadius * controller.ObjectsSpawnRadius)
-                        {
-                            position = new Vector3(randomPoint.x, 0f, randomPoint.y);
-                        }
-                        var parent = new GameObject("Dragon_" + controller.SpawnedEnemiesCount);
-                        var parentEntity = parent.AddComponent<Dragons.EntityTemplates.DragonParentTemplate>();
-                        parentEntity._components = new List<ViewHub.ViewComponent>();
-                        parentEntity.Spawn(_world.NewEntity(), _world);
-                        var enemy = Object.Instantiate(dragonConfigs.HeadPrefab, position, Quaternion.identity);
-                        enemy.transform.parent = parent.transform;
-                        enemy.Spawn(_world.NewEntity(), _world);
-                        enemy.AddEnemyComponent(dragonConfigs);
-                        controller.SpawnedEnemiesCount++;
+                        break;
                     }
+
+                    var parent = new GameObject("Dragon_" + levelRunTimeData.SpawnedEnemiesCount);
+                    var parentEntity = parent.AddComponent<Dragons.EntityTemplates.DragonParentTemplate>();
+                    parentEntity._components = new List<ViewHub.ViewComponent>();
+                    parentEntity.Spawn(_world.NewEntity(), _world);
+                    var enemy = Object.Instantiate(dragonConfigs.HeadPrefab, position, Quaternion.identity);
+                    enemy.transform.parent = parent.transform;
+                    enemy.Spawn(_world.NewEntity(), _world);
+                    enemy.AddEnemyComponent(dragonConfigs);
+                    levelRunTimeData.SpawnedEnemiesCount++;
                 }
             }
 

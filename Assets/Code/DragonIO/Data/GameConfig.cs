@@ -16,7 +16,7 @@ namespace Modules.DragonIO.Data
         [FoldoutGroup("Other")]
         public Vector3 DefaultCameraOffset = new Vector3(0, 25f, 0);
         [FoldoutGroup("Other")] 
-        public float ObjectsSpawnRadius = 5f;
+        public float ObjectsMinSpawnRadius = 15f;
     }
 
     [DictionaryDrawerSettings(KeyLabel = "Level",DisplayMode = DictionaryDisplayOptions.Foldout, ValueLabel = "LevelConfigs")]

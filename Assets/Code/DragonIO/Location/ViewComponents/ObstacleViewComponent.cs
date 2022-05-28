@@ -1,7 +1,7 @@
 ﻿using Leopotam.Ecs;
 using Modules.ViewHub;
 
-namespace Modules.DragonIO.Obstacles.ViewComponents
+namespace Modules.DragonIO.Location.ViewComponents
 {
     public class ObstacleViewComponent : ViewComponent
     {

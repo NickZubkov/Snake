@@ -37,10 +37,13 @@ namespace Modules.DragonIO
                 
                 // level controller
                 .Add(new LevelController.Systems.LevelControllerInitSystem())
-                .Add(new LevelController.Systems.LevelControllerProcessing())
+                .Add(new LevelController.Systems.LevelObjectsCountProcessing())
                 
                 // location
-                .Add(new Location.Systems.LocationInitSystem())
+                .Add(new Location.Systems.LocationGroundInitSystem())
+                .Add(new Location.Systems.LocationWallsSpawnProcessing())
+                .Add(new Location.Systems.ObstaclesSpawnProcessing())
+                .Add(new Location.Systems.GroundDecorSpawnProcessing())
                 
                 // player
                 .Add(new Player.Systems.PlayerSpawnSystem())
@@ -50,10 +53,7 @@ namespace Modules.DragonIO
                 // enemy
                 .Add(new Enemy.Systems.EnemySpawnSystem())
                 .Add(new Enemy.Systems.EnemyPathCalculateProcessing())
-                
-                // obstacles
-                .Add(new Obstacles.Systems.ObstaclesSpawnSystem())
-                
+
                 // goods
                 .Add(new Goods.Systems.GoodsSpawnProcessing())
                 
@@ -87,6 +87,11 @@ namespace Modules.DragonIO
                 .OneFrame<EventGroup.StateEnter>()
                 .OneFrame<LevelController.Components.FoodSpawningSignal>()
                 .OneFrame<LevelController.Components.BonusSpawningSignal>()
+                .OneFrame<LevelController.Components.EnemySpawningSignal>()
+                .OneFrame<LevelController.Components.ObstaclesSpawningSignal>()
+                .OneFrame<LevelController.Components.GroundDecorSpawningSignal>()
+                .OneFrame<LevelController.Components.WallSpawningSignal>()
+                .OneFrame<LevelController.Components.PlayerSpawningSignal>()
                 .OneFrame<Player.Components.PlayerHeadSpawnedSignal>()
                 .OneFrame<Enemy.Components.EnemyHeadSpawnedSignal>()
                 

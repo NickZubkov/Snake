@@ -1,51 +1,52 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Leopotam.Ecs;
-using Modules.DragonIO.Dragons.Components;
 using UnityEngine;
 
 namespace Modules.DragonIO.LevelController.Systems
 {
     public class LevelControllerInitSystem : IEcsRunSystem
     {
-        private EcsFilter<EventGroup.GamePlayState> _gameplay;
-        private EcsFilter<Components.LevelController> _controller;
+        private EcsFilter<Components.LevelRunTimeData, Components.CurrentLevelConfigs> _levelData;
         private EcsFilter<CameraUtils.VirtualCamera> _virtualCamera;
         
         private EcsWorld _world;
         private Data.GameConfig _config;
         
-        
         public void Run()
         {
-            if (_gameplay.IsEmpty())
-                return;
-            
-            if (_controller.IsEmpty())
+            if (_levelData.IsEmpty())
             {
                 var entity = _world.NewEntity();
-                ref var controller = ref entity.Get<Components.LevelController>();
+                ref var levelRunTimeData = ref entity.Get<Components.LevelRunTimeData>();
+                ref var levelConfigs = ref entity.Get<Components.CurrentLevelConfigs>();
                 entity.Get<LevelSpawner.LevelEntityTag>();
+                
                 var currentLevelID = _config.LevelsConfigs.Keys.ToArray().SafeGetAt(PlayerLevel.ProgressionInfo.CurrentLevel);
-                controller.LevelsConfigs = _config.LevelsConfigs[currentLevelID];
-                controller.BonusSpawnTimer = Random.Range(controller.LevelsConfigs.GoodsConfig.BonusSpawnTimeRange.x, controller.LevelsConfigs.GoodsConfig.BonusSpawnTimeRange.y);
-                controller.GoodsPositions = new List<Transform>();
-                controller.WallSize = 150 * controller.LevelsConfigs.LocationConfig.LevelSize * Mathf.Sin(180 * Mathf.Deg2Rad / controller.LevelsConfigs.LocationConfig.WallsCount);
-                controller.PlaceRadius = 74.5f * controller.LevelsConfigs.LocationConfig.LevelSize;//controller.WallSize / (2 * Mathf.Tan(180 * Mathf.Deg2Rad / controller.LevelsConfigs.LocationConfig.WallsCount));
+                levelConfigs.LocationConfig = _config.LevelsConfigs[currentLevelID].LocationConfig;
+                levelConfigs.EnemiesConfigs = _config.LevelsConfigs[currentLevelID].EnemiesConfigs;
+                levelConfigs.GoodsConfig = _config.LevelsConfigs[currentLevelID].GoodsConfig;
+                levelConfigs.GroundConfig = _config.LevelsConfigs[currentLevelID].GroundConfig;
+                levelConfigs.PlayerConfig = _config.LevelsConfigs[currentLevelID].PlayerConfig;
+                
+                levelRunTimeData.BonusSpawnTimer = Random.Range(levelConfigs.GoodsConfig.BonusSpawnTimeRange.x, levelConfigs.GoodsConfig.BonusSpawnTimeRange.y);
+                levelRunTimeData.GoodsPositions = new List<Transform>();
+                levelRunTimeData.WallSize = Data.GameConstants.LEVEL_PREFAB_SIZE * levelConfigs.LocationConfig.LevelSize * Mathf.Sin(180 * Mathf.Deg2Rad / Data.GameConstants.WALLS_COUNT);
+                levelRunTimeData.ObjectsMaxSpawnRadius = Data.GameConstants.CORRECTED_SPAWN_RADIUS * levelConfigs.LocationConfig.LevelSize;
+                levelRunTimeData.DragonScalingFactor = _config.DragonScalingFactor;
+                levelRunTimeData.LevelTimer = levelConfigs.LocationConfig.LevelTimer;
+                levelRunTimeData.SpawnedEnemiesCount = 0;
+                levelRunTimeData.ObjectsMinSpawnRadius = _config.ObjectsMinSpawnRadius;
+                levelRunTimeData.ObjectsMinSpawnRadiusSqr = levelRunTimeData.ObjectsMinSpawnRadius * levelRunTimeData.ObjectsMinSpawnRadius;
+
                 foreach (var camera in _virtualCamera)
                 {
-                    controller.CinemachineTransposer = _virtualCamera.Get1(camera)
+                    levelRunTimeData.CinemachineTransposer = _virtualCamera.Get1(camera)
                         .Camera
                         .GetComponent<Cinemachine.CinemachineVirtualCamera>()
                         .GetCinemachineComponent(Cinemachine.CinemachineCore.Stage.Body) as Cinemachine.CinemachineTransposer;
-                    controller.CinemachineTransposer.m_FollowOffset = _config.DefaultCameraOffset;
+                    levelRunTimeData.CinemachineTransposer.m_FollowOffset = _config.DefaultCameraOffset;
                 }
-
-                controller.DragonScalingFactor = _config.DragonScalingFactor;
-                controller.LevelTimer = controller.LevelsConfigs.LocationConfig.LevelTimer;
-                controller.SpawnedEnemiesCount = 0;
-                controller.ObjectsSpawnRadius = _config.ObjectsSpawnRadius;
-
             }
         }
     }

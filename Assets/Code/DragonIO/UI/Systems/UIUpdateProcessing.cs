@@ -11,7 +11,7 @@ namespace Modules.DragonIO.UI.Systems
         private EcsFilter<Components.FinalPlayerPoints> _finalPlayerPoints;
         private EcsFilter<Components.BonusIcons> _bonusIcons;
         private EcsFilter<ViewHub.UnityView, Dragons.Components.DragonHead> _dragons;
-        private EcsFilter<LevelController.Components.LevelController> _levelController;
+        private EcsFilter<LevelController.Components.LevelRunTimeData> _levelController;
         private EcsFilter<Dragons.Components.DragonHead, Player.Components.Player> _player;
         private EcsFilter<UICoreECS.UIScreen> _UIScreen;
         
