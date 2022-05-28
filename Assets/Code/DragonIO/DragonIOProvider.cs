@@ -60,14 +60,19 @@ namespace Modules.DragonIO
                 // dragons
                 .Add(new Dragons.Systems.DragonsCollectGoodsProcessing())
                 .Add(new Dragons.Systems.DragonBodySpawnProcessing())
+                .Add(new Dragons.Systems.DragonScalingProcessing())
                 .Add(new Dragons.Systems.DragonsCollisionsProcessing())
                 .Add(new Dragons.Systems.DragonsMoveProcessing())
                 
                 // camera
                 .Add(new LevelCamera.Systems.CameraInitSystem())
+                .Add(new LevelCamera.Systems.CameraOffsetProcessing())
                 
                 // ui
                 .Add(new UI.Systems.UIUpdateProcessing())
+                
+                //
+                .Add(new Utils.TimedDestructorSystem())
                 
                 // round end tracker
                 .Add(new RoundCompletedTracker())
@@ -80,8 +85,6 @@ namespace Modules.DragonIO
                 .Add(new EventHandlers.OnGamePlayStateEnter())  // enter at gameplay stage
                 .Add(new EventHandlers.OnRoundCompletedEnter()) // on round completed state enter
                 .Add(new EventHandlers.OnRoundFailedEnter())    // on round failed state enter
-
-                .Add(new Utils.TimedDestructorSystem())
                 
                 // injections
                 .Inject(_config)
@@ -89,8 +92,7 @@ namespace Modules.DragonIO
 
             endFrame
                 .OneFrame<EventGroup.StateEnter>()
-                .OneFrame<LevelController.Components.FoodSpawningSignal>()
-                .OneFrame<LevelController.Components.BonusSpawningSignal>()
+                .OneFrame<LevelController.Components.GoodsSpawningSignal>()
                 .OneFrame<LevelController.Components.EnemySpawningSignal>()
                 .OneFrame<LevelController.Components.ObstaclesSpawningSignal>()
                 .OneFrame<LevelController.Components.GroundDecorSpawningSignal>()
@@ -98,7 +100,6 @@ namespace Modules.DragonIO
                 .OneFrame<LevelController.Components.PlayerSpawningSignal>()
                 .OneFrame<LevelController.Components.DragonBodySpawningSignal>()
                 .OneFrame<Dragons.Components.DragonHeadSpawnedSignal>()
-                .OneFrame<Enemy.Components.EnemyHeadSpawnedSignal>()
                 
                 ;
 

@@ -18,7 +18,6 @@ namespace Modules.DragonIO.LevelController.Systems
         
         private EcsFilter<EventGroup.GamePlayState> _gameplay;
         private EcsFilter<Dragons.Components.DragonHead> _dragons;
-        private EcsFilter<Components.ChangeCameraOffsetSignal> _cameraOffsetSignal;
         private EcsFilter<Dragons.Components.DragonHead, Player.Components.Player> _playerHead;
         
         
@@ -43,14 +42,17 @@ namespace Modules.DragonIO.LevelController.Systems
                 
                 if (_food.GetEntitiesCount() < levelConfigs.GoodsConfig.MinFoodCount)
                 {
-                    _levelData.GetEntity(idx).Get<Components.FoodSpawningSignal>();
+                    var prefab = levelConfigs.GoodsConfig.FoodPrefab;
+                    _levelData.GetEntity(idx).Get<Components.GoodsSpawningSignal>().GoodsPrefab = prefab;
                 }
                 
                 if (levelRunTimeData.BonusSpawnTimer <= 0)
                 {
                     if (_bonus.GetEntitiesCount() < levelConfigs.GoodsConfig.MaxBonusCount)
                     {
-                        _levelData.GetEntity(idx).Get<Components.BonusSpawningSignal>();
+                        var index = Random.Range(0, levelConfigs.GoodsConfig.BonusPrefabs.Count);
+                        var prefab = levelConfigs.GoodsConfig.BonusPrefabs[index];
+                        _levelData.GetEntity(idx).Get<Components.GoodsSpawningSignal>().GoodsPrefab = prefab;
                     }
                     
                     levelRunTimeData.BonusSpawnTimer = Random.Range(levelConfigs.GoodsConfig.BonusSpawnTimeRange.x, levelConfigs.GoodsConfig.BonusSpawnTimeRange.y);
@@ -142,12 +144,6 @@ namespace Modules.DragonIO.LevelController.Systems
                     }
                 }
 
-                foreach (var signal in _cameraOffsetSignal)
-                {
-                    levelRunTimeData.CinemachineTransposer.m_FollowOffset += new Vector3(0, levelRunTimeData.DragonScalingFactor, 0);
-                    _cameraOffsetSignal.GetEntity(signal).Del<Components.ChangeCameraOffsetSignal>();  
-                }
-                
             }
         }
     }
