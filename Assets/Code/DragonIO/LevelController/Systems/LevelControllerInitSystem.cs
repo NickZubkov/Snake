@@ -38,9 +38,9 @@ namespace Modules.DragonIO.LevelController.Systems
                 levelRunTimeData.DragonScalingFactor = _config.DragonScalingFactor;
                 levelRunTimeData.LevelTimer = levelConfigs.LocationConfig.LevelTimer;
                 levelRunTimeData.SpawnedEnemiesCount = 0;
-                levelRunTimeData.EnemyMinSpawnRadiusSqr = levelRunTimeData.EnemyMinSpawnRadiusSqr * levelRunTimeData.EnemyMinSpawnRadiusSqr;
-                levelRunTimeData.ObstaclesMinSpawnRadiusSqr = levelRunTimeData.ObstaclesMinSpawnRadiusSqr * levelRunTimeData.ObstaclesMinSpawnRadiusSqr;
-                levelRunTimeData.GoodsMinSpawnRadiusSqr = levelRunTimeData.GoodsMinSpawnRadiusSqr * levelRunTimeData.GoodsMinSpawnRadiusSqr;
+                levelRunTimeData.EnemyMinSpawnRadiusSqr = _config.EnemyMinSpawnRadius * _config.EnemyMinSpawnRadius;
+                levelRunTimeData.ObstaclesMinSpawnRadiusSqr = _config.ObstaclesMinSpawnRadius * _config.ObstaclesMinSpawnRadius;
+                levelRunTimeData.GoodsMinSpawnRadiusSqr = _config.GoodsMinSpawnRadius * _config.GoodsMinSpawnRadius;
 
                 foreach (var camera in _virtualCamera)
                 {
