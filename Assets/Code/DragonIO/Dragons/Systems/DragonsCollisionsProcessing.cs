@@ -54,6 +54,10 @@ namespace Modules.DragonIO.Dragons.Systems
                             }
                             ReleaseCollision(currentLevelConfigs, ref dragonHead);
                         }
+                        else if (triggered.Other.Has<Location.Components.Wall>())
+                        {
+                            ReleaseCollision(currentLevelConfigs, ref dragonHead);
+                        }
                     }
                 }
             }

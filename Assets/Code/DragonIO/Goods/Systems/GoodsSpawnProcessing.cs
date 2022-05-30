@@ -20,7 +20,7 @@ namespace Modules.DragonIO.Goods.Systems
                     foreach (var player in _player)
                     {
                         ref var playerTransform = ref _player.Get1(player).Transform;
-                        var randomPoint = Random.insideUnitCircle * levelRunTimeData.ObjectsMaxSpawnRadius;
+                        var randomPoint = Random.insideUnitCircle * levelRunTimeData.OtherObjectMaxSpawnRadius;
                         var prefab = _goodsSignal.Get1(goodsSignal).GoodsPrefab;
                         var position = new Vector3(randomPoint.x, prefab.transform.position.y, randomPoint.y);
                         if ((playerTransform.position - position).sqrMagnitude < levelRunTimeData.GoodsMinSpawnRadiusSqr)

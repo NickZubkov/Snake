@@ -22,7 +22,7 @@ namespace Modules.DragonIO.Location.Systems
                         ref var currentLevelConfigs = ref _levelData.Get2(levelData);
                         ref var playerTransform = ref _player.Get1(player).Transform;
                         
-                        var randomPoint = Random.insideUnitCircle * levelRunTimeData.ObjectsMaxSpawnRadius;
+                        var randomPoint = Random.insideUnitCircle * levelRunTimeData.OtherObjectMaxSpawnRadius;
                         var idx = Random.Range(0, currentLevelConfigs.GroundConfig.ObstaclePrefabs.Count);
                         var prefab = currentLevelConfigs.GroundConfig.ObstaclePrefabs[idx];
                         var position = new Vector3(randomPoint.x, prefab.transform.position.y, randomPoint.y);

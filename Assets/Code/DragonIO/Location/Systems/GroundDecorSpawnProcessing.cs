@@ -21,7 +21,7 @@ namespace Modules.DragonIO.Location.Systems
                         ref var levelRunTimeData = ref _levelData.Get1(levelData);
                         ref var currentLevelConfigs = ref _levelData.Get2(levelData);
                         
-                        var randomPoint = Random.insideUnitCircle * levelRunTimeData.ObjectsMaxSpawnRadius;
+                        var randomPoint = Random.insideUnitCircle * levelRunTimeData.GroundDecorMaxSpawnRadius;
                         var idx = Random.Range(0, currentLevelConfigs.GroundConfig.GroundDecorPrefabs.Count);
                         var prefab = currentLevelConfigs.GroundConfig.GroundDecorPrefabs[idx];
                         var position = new Vector3(randomPoint.x, prefab.transform.position.y, randomPoint.y);

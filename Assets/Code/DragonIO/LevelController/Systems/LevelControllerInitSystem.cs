@@ -34,7 +34,9 @@ namespace Modules.DragonIO.LevelController.Systems
                 
                 levelRunTimeData.BonusSpawnTimer = Random.Range(levelConfigs.GoodsConfig.BonusSpawnTimeRange.x, levelConfigs.GoodsConfig.BonusSpawnTimeRange.y);
                 levelRunTimeData.WallSize = Data.GameConstants.LEVEL_PREFAB_SIZE * levelConfigs.LocationConfig.LevelSize * Mathf.Sin(180 * Mathf.Deg2Rad / Data.GameConstants.WALLS_COUNT);
-                levelRunTimeData.ObjectsMaxSpawnRadius = Data.GameConstants.CORRECTED_SPAWN_RADIUS * levelConfigs.LocationConfig.LevelSize;
+                levelRunTimeData.WallMaxSpawnRadius = Data.GameConstants.WALL_SPAWN_RADIUS * levelConfigs.LocationConfig.LevelSize;
+                levelRunTimeData.GroundDecorMaxSpawnRadius = Data.GameConstants.GROUND_DECOR_SPAWN_RADIUS * levelConfigs.LocationConfig.LevelSize;
+                levelRunTimeData.OtherObjectMaxSpawnRadius = Data.GameConstants.OTHER_OBJECTS_SPAWN_RADIUS * levelConfigs.LocationConfig.LevelSize;
                 levelRunTimeData.DragonScalingFactor = _config.DragonScalingFactor;
                 levelRunTimeData.LevelTimer = levelConfigs.LocationConfig.LevelTimer;
                 levelRunTimeData.SpawnedEnemiesCount = 0;

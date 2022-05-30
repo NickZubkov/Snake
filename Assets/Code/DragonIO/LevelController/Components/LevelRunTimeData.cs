@@ -7,7 +7,9 @@ namespace Modules.DragonIO.LevelController.Components
     {
         public float BonusSpawnTimer;
         public float WallSize;
-        public float ObjectsMaxSpawnRadius;
+        public float WallMaxSpawnRadius;
+        public float GroundDecorMaxSpawnRadius;
+        public float OtherObjectMaxSpawnRadius;
         public Cinemachine.CinemachineTransposer CinemachineTransposer;
         public float DragonScalingFactor;
         public float LevelTimer;
