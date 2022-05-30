@@ -7,6 +7,7 @@ namespace Modules.DragonIO.LevelController.Systems
     public class LevelControllerInitSystem : IEcsRunSystem
     {
         private EcsFilter<Components.LevelRunTimeData, Components.CurrentLevelConfigs> _levelData;
+        readonly EcsFilter<LevelSpawner.LevelSpawnedSignal> _levelSpawned;
         private EcsFilter<CameraUtils.VirtualCamera> _virtualCamera;
         
         private EcsWorld _world;
@@ -14,6 +15,9 @@ namespace Modules.DragonIO.LevelController.Systems
         
         public void Run()
         {
+            if (_levelSpawned.IsEmpty())
+                return;
+            
             if (_levelData.IsEmpty())
             {
                 var entity = _world.NewEntity();
