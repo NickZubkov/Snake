@@ -70,7 +70,7 @@ namespace Modules.DragonIO.Enemy.Systems
                 if (newDirection.sqrMagnitude < prevDirection.sqrMagnitude)
                 {
                     target = collider;
-                    dragonHead.TargetHeadDirection = newDirection.normalized;
+                    dragonHead.TargetHeadDirection = newDirection.Where(y: 0f).normalized;
                     goodsFounded = true;
                 }
             }
