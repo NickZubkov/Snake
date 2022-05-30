@@ -9,6 +9,7 @@ namespace Modules.DragonIO.Location.EntityTemplates
         {
             base.OnSpawn(entity, world);
             entity.Get<Components.GroundDecor>();
+            entity.Get<LevelSpawner.LevelEntityTag>();
         }
     }
 }

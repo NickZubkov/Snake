@@ -19,8 +19,8 @@ namespace Modules.DragonIO.Dragons.Systems
                     foreach (var part in dragonHead.BodyParts)
                     {
                         part.localScale = newScale;
-                        var newPosition = new Vector3(part.position.x, part.position.y + levelRunTimeData.DragonScalingFactor, part.position.z);
-                        part.position = newPosition;
+                        var newPosition = new Vector3(part.localPosition.x, part.localScale.y / 2f, part.localPosition.z);
+                        part.localPosition = newPosition;
                     }
                 }
             }

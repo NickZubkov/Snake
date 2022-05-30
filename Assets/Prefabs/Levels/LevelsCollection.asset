@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c59593d97208444f81a846556c992f6, type: 3}
   m_Name: LevelsCollection
   m_EditorClassIdentifier: 
-  _overfillStrategy: 2
+  _overfillStrategy: 0
   _shuffleStartId: 0
   Levels:
   - LevelPrototype
