@@ -28,7 +28,7 @@ namespace Modules.DragonIO.Enemy.Systems
                     var enemyConfig = currentLevelConfigs.EnemiesConfigs[index];
                     var randomPoint = Random.insideUnitCircle * levelRunTimeData.ObjectsMaxSpawnRadius;
                     var position = new Vector3(randomPoint.x, 0f, randomPoint.y);
-                    if ((_player.Get1(player).Transform.position - position).sqrMagnitude < levelRunTimeData.ObjectsMinSpawnRadiusSqr)
+                    if ((_player.Get1(player).Transform.position - position).sqrMagnitude < levelRunTimeData.EnemyMinSpawnRadiusSqr)
                     {
                         break;
                     }

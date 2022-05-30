@@ -27,7 +27,7 @@ namespace Modules.DragonIO.Location.Systems
                         var prefab = currentLevelConfigs.GroundConfig.ObstaclePrefabs[idx];
                         var position = new Vector3(randomPoint.x, prefab.transform.position.y, randomPoint.y);
                         
-                        if ((playerTransform.position - position).sqrMagnitude < levelRunTimeData.ObjectsMinSpawnRadiusSqr)
+                        if ((playerTransform.position - position).sqrMagnitude < levelRunTimeData.ObstaclesMinSpawnRadiusSqr)
                         {
                             break;
                         }

@@ -23,7 +23,7 @@ namespace Modules.DragonIO.Goods.Systems
                         var randomPoint = Random.insideUnitCircle * levelRunTimeData.ObjectsMaxSpawnRadius;
                         var prefab = _goodsSignal.Get1(goodsSignal).GoodsPrefab;
                         var position = new Vector3(randomPoint.x, prefab.transform.position.y, randomPoint.y);
-                        if ((playerTransform.position - position).sqrMagnitude < levelRunTimeData.ObjectsMinSpawnRadiusSqr)
+                        if ((playerTransform.position - position).sqrMagnitude < levelRunTimeData.GoodsMinSpawnRadiusSqr)
                         {
                             break;
                         }
