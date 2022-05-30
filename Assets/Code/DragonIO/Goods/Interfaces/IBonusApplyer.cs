@@ -2,7 +2,7 @@
 {
     public interface IBonusApplyer
     {
-        float BonusTimeLife { get; set; }
+        float BonusDuration { get; set; }
         void Activate(ref Dragons.Components.DragonHead dragonHead);
     }
 }

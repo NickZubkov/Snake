@@ -370,7 +370,7 @@ MonoBehaviour:
   m_fontSizeMax: 50
   m_fontStyle: 17
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 4
   m_wordSpacing: 0
@@ -629,6 +629,7 @@ GameObject:
   - component: {fileID: 542661840654541252}
   - component: {fileID: 3499135007381199945}
   - component: {fileID: 3068309572823731293}
+  - component: {fileID: 4555982479656490586}
   m_Layer: 5
   m_Name: TTS
   m_TagString: Untagged
@@ -674,6 +675,7 @@ MonoBehaviour:
   ID: 0
   Layer: 0
   _extensions:
+  - {fileID: 4555982479656490586}
   - {fileID: 4085310778074939360}
   _showSwitchersChain:
   - {fileID: 3070228405803565358}
@@ -759,3 +761,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4555982479656490586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9138812185803077892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03b5d16795cffce468cd5ddd05e2fa5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConformX: 1
+  ConformY: 1
+  Logging: 0

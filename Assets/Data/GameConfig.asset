@@ -29,7 +29,7 @@ MonoBehaviour:
         LevelSize: 1
         WallPrefab: {fileID: 8292693005376339395, guid: 733e1affa63de94488547a3ba5e82741,
           type: 3}
-        EnemiesCount: 15
+        EnemiesCount: 20
       PlayerConfig:
         HeadPrefab: {fileID: 2227945532121990189, guid: ee64ed5f86fef3743b913d0ade1c9d2c,
           type: 3}
@@ -131,15 +131,15 @@ MonoBehaviour:
         - {fileID: 8310880059426670931, guid: 1ae9f349062cf8942a82f9933e855216, type: 3}
         - {fileID: 8310880059426670931, guid: d365bfe454a0a1f4f95709d2824de4f1, type: 3}
         - {fileID: 8310880059426670931, guid: af87ffbde9952f141a8c4f0adff8eb0a, type: 3}
-        MinFoodCount: 300
-        MaxBonusCount: 100
+        MinFoodCount: 200
+        MaxBonusCount: 20
         BonusSpawnTimeRange: {x: 1, y: 2}
       GroundConfig:
         ObstaclesCount: 20
         ObstaclePrefabs:
         - {fileID: 8161272052182483467, guid: 3b6c3ef6d626eae40b04e59cf6d844b5, type: 3}
         - {fileID: 7285664605853232875, guid: 5d095d4a2eea5f643a0d5da278c7774a, type: 3}
-        GroundDecorCount: 10
+        GroundDecorCount: 20
         GroundDecorPrefabs:
         - {fileID: 7235652679403321981, guid: 7223a7c9aa8c7af4f8f1756a95ef445e, type: 3}
     - LocationConfig:
@@ -147,7 +147,7 @@ MonoBehaviour:
         LevelSize: 1
         WallPrefab: {fileID: 8292693005376339395, guid: b20ae18527f09d24b848231dde6a8199,
           type: 3}
-        EnemiesCount: 15
+        EnemiesCount: 20
       PlayerConfig:
         HeadPrefab: {fileID: 2672087176939207069, guid: 9b90f3ca0aaf14045bf40d804514fc23,
           type: 3}
@@ -262,4 +262,4 @@ MonoBehaviour:
         - {fileID: -6642587625746292088, guid: 83d10a157ec1d8348bbc42842de07e6f, type: 3}
   DragonScalingFactor: 0.02
   DefaultCameraOffset: {x: 0, y: 25, z: 0}
-  ObjectsMinSpawnRadius: 10
+  ObjectsMinSpawnRadius: 5

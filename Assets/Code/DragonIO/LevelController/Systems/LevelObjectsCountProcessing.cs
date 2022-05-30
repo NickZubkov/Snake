@@ -12,7 +12,7 @@ namespace Modules.DragonIO.LevelController.Systems
         private EcsFilter<Goods.Components.Food> _food;
         private EcsFilter<Goods.Components.Bonus> _bonus;
         private EcsFilter<Location.Components.GroundDecor> _groundDecor;
-        private EcsFilter<Location.Components.Obstacle> _obstacle;
+        private EcsFilter<Location.Components.Obstacle>.Exclude<Location.Components.Wall> _obstacle;
         private EcsFilter<Player.Components.Player> _player;
         
         
@@ -42,8 +42,7 @@ namespace Modules.DragonIO.LevelController.Systems
                 
                 if (_food.GetEntitiesCount() < levelConfigs.GoodsConfig.MinFoodCount)
                 {
-                    var prefab = levelConfigs.GoodsConfig.FoodPrefab;
-                    _levelData.GetEntity(idx).Get<Components.GoodsSpawningSignal>().GoodsPrefab = prefab;
+                    _levelData.GetEntity(idx).Get<Components.GoodsSpawningSignal>().GoodsPrefab = levelConfigs.GoodsConfig.FoodPrefab;
                 }
                 
                 if (levelRunTimeData.BonusSpawnTimer <= 0)
@@ -51,11 +50,10 @@ namespace Modules.DragonIO.LevelController.Systems
                     if (_bonus.GetEntitiesCount() < levelConfigs.GoodsConfig.MaxBonusCount)
                     {
                         var index = Random.Range(0, levelConfigs.GoodsConfig.BonusPrefabs.Count);
-                        var prefab = levelConfigs.GoodsConfig.BonusPrefabs[index];
-                        _levelData.GetEntity(idx).Get<Components.GoodsSpawningSignal>().GoodsPrefab = prefab;
+                        _levelData.GetEntity(idx).Get<Components.GoodsSpawningSignal>().GoodsPrefab = levelConfigs.GoodsConfig.BonusPrefabs[index];
                     }
                     
-                    levelRunTimeData.BonusSpawnTimer = Random.Range(levelConfigs.GoodsConfig.BonusSpawnTimeRange.x, levelConfigs.GoodsConfig.BonusSpawnTimeRange.y);
+                    levelRunTimeData.BonusSpawnTimer = Random.Range(levelConfigs.GoodsConfig.BonusSpawnTimeRange.x, (float)levelConfigs.GoodsConfig.BonusSpawnTimeRange.y);
                 }
                 
                 if (_groundDecor.GetEntitiesCount() < levelConfigs.GroundConfig.GroundDecorCount)

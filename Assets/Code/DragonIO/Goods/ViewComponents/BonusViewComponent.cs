@@ -7,7 +7,7 @@ namespace Modules.DragonIO.Goods.ViewComponents
     public class BonusViewComponent : ViewComponent
     {
         [SerializeField] private BonusComponent _bonusComponent;
-        [SerializeField] private float _bonusTimeLife;
+        [SerializeField] private float _bonusDuration;
         [SerializeField] private float _bonusMultiplyer;
         public override void EntityInit(EcsEntity ecsEntity, EcsWorld ecsWorld, bool parentOnScene)
         {
@@ -18,27 +18,27 @@ namespace Modules.DragonIO.Goods.ViewComponents
                 case BonusComponent.PointBonus :
                     entityBonus.BonusApplyer = new Components.PointBonus
                     {
-                        BonusTimeLife = _bonusTimeLife,
+                        BonusDuration = _bonusDuration,
                         PointMultiplyer = (int)_bonusMultiplyer
                     };
                     break;
                 case BonusComponent.ShieldBonus :
                     entityBonus.BonusApplyer = new Components.ShieldBonus
                     {
-                        BonusTimeLife = _bonusTimeLife
+                        BonusDuration = _bonusDuration
                     };
                     break;
                 case BonusComponent.SpeedBonus :
                     entityBonus.BonusApplyer = new Components.SpeedBonus
                     {
-                        BonusTimeLife = _bonusTimeLife,
+                        BonusDuration = _bonusDuration,
                         SpeedMultiplier = _bonusMultiplyer
                     };
                     break;
                 default:
                     entityBonus.BonusApplyer = new Components.SpeedBonus
                     {
-                        BonusTimeLife = _bonusTimeLife,
+                        BonusDuration = _bonusDuration,
                         SpeedMultiplier = _bonusMultiplyer
                     };
                     break;

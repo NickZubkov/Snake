@@ -27,8 +27,8 @@ namespace Modules.DragonIO.Goods.Systems
                         {
                             break;
                         }
-                        var food = Object.Instantiate(prefab, position, Quaternion.identity);
-                        food.Spawn(_world.NewEntity(), _world);
+                        var goods = Object.Instantiate(prefab, position, Quaternion.identity);
+                        goods.Spawn(_world.NewEntity(), _world);
                     }
                 }
             }

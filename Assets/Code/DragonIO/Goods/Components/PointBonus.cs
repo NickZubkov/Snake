@@ -5,11 +5,11 @@ namespace Modules.DragonIO.Goods.Components
     public struct PointBonus : Interfaces.IBonusApplyer
     {
         public int PointMultiplyer;
-        private float _bonusTimeLife;
-        public float BonusTimeLife
+        private float _bonusDuration;
+        public float BonusDuration
         {
-            get => _bonusTimeLife;
-            set => _bonusTimeLife = value;
+            get => _bonusDuration;
+            set => _bonusDuration = value;
         }
 
         public void Activate(ref DragonHead dragonHead)
@@ -18,7 +18,8 @@ namespace Modules.DragonIO.Goods.Components
             {
                 dragonHead.PointBonusMultiplyer = PointMultiplyer;
             }
-            dragonHead.PointBonusTimer += BonusTimeLife;
+            dragonHead.PointBonusTimer = BonusDuration;
+            dragonHead.PointBonusDuration = BonusDuration;
         }
     }
 }

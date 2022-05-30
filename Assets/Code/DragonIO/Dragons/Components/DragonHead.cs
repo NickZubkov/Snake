@@ -18,12 +18,15 @@ namespace Modules.DragonIO.Dragons.Components
         public float DefaultBonusMultiplyer;
 
         public float SpeedBonusMultiplyer;
+        public float SpeedBonusDuration;
         public float SpeedBonusTimer;
 
         public int PointBonusMultiplyer;
+        public float PointBonusDuration;
         public float PointBonusTimer;
 
         public bool IsShieldActive;
+        public float ShieldBonusDuration;
         public float ShieldBonusTimer;
     }
 }

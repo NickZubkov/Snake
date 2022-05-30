@@ -9,7 +9,7 @@ namespace Modules.DragonIO.UI.Systems
         private EcsFilter<Components.LeaderBoard> _leaderBoard;
         private EcsFilter<Components.Timer> _levelTimer;
         private EcsFilter<Components.FinalPlayerPoints> _finalPlayerPoints;
-        private EcsFilter<Components.BonusIcons> _bonusIcons;
+        private EcsFilter<Components.BonusIcons> _bonus;
         private EcsFilter<ViewHub.UnityView, Dragons.Components.DragonHead> _dragons;
         private EcsFilter<LevelController.Components.LevelRunTimeData> _levelController;
         private EcsFilter<Dragons.Components.DragonHead, Player.Components.Player> _player;
@@ -48,35 +48,44 @@ namespace Modules.DragonIO.UI.Systems
             {
                 ref var playerHead = ref _player.Get1(player);
                 
-                foreach (var bonusIcon in _bonusIcons)
+                foreach (var bonus in _bonus)
                 {
-                    ref var bonus = ref _bonusIcons.Get1(bonusIcon);
+                    ref var bonusIcon = ref _bonus.Get1(bonus);
                     
-                    if (playerHead.PointBonusTimer > 0 && !bonus.PointBonus.activeSelf)
+                    if (playerHead.PointBonusTimer > 0)
                     {
-                        bonus.PointBonus.SetActive(true);
+                        if (!bonusIcon.PointBonus.activeSelf)
+                            bonusIcon.PointBonus.SetActive(true);
+                        
+                        bonusIcon.PointBonusImage.fillAmount = playerHead.PointBonusTimer / playerHead.PointBonusDuration;
                     }
-                    else if (playerHead.PointBonusTimer <= 0 && bonus.PointBonus.activeSelf)
+                    else if (playerHead.PointBonusTimer <= 0 && bonusIcon.PointBonus.activeSelf)
                     {
-                        bonus.PointBonus.SetActive(false);
-                    }
-                    
-                    if (playerHead.SpeedBonusTimer > 0 && !bonus.SpeedBonus.activeSelf)
-                    {
-                        bonus.SpeedBonus.SetActive(true);
-                    }
-                    else if (playerHead.SpeedBonusTimer <= 0 && bonus.SpeedBonus.activeSelf)
-                    {
-                        bonus.SpeedBonus.SetActive(false);
+                        bonusIcon.PointBonus.SetActive(false);
                     }
                     
-                    if (playerHead.ShieldBonusTimer > 0 && !bonus.ShieldBonus.activeSelf)
+                    if (playerHead.SpeedBonusTimer > 0 )
                     {
-                        bonus.ShieldBonus.SetActive(true);
+                        if (!bonusIcon.SpeedBonus.activeSelf)
+                            bonusIcon.SpeedBonus.SetActive(true);
+                        
+                        bonusIcon.SpeedBonusImage.fillAmount = playerHead.SpeedBonusTimer / playerHead.SpeedBonusDuration;
                     }
-                    else if (playerHead.ShieldBonusTimer <= 0 && bonus.ShieldBonus.activeSelf)
+                    else if (playerHead.SpeedBonusTimer <= 0 && bonusIcon.SpeedBonus.activeSelf)
                     {
-                        bonus.ShieldBonus.SetActive(false);
+                        bonusIcon.SpeedBonus.SetActive(false);
+                    }
+                    
+                    if (playerHead.ShieldBonusTimer > 0)
+                    {
+                        if (!bonusIcon.ShieldBonus.activeSelf)
+                            bonusIcon.ShieldBonus.SetActive(true);
+                        
+                        bonusIcon.ShieldBonusImage.fillAmount = playerHead.ShieldBonusTimer / playerHead.ShieldBonusDuration;
+                    }
+                    else if (playerHead.ShieldBonusTimer <= 0 && bonusIcon.ShieldBonus.activeSelf)
+                    {
+                        bonusIcon.ShieldBonus.SetActive(false);
                     }
                 }
             }
