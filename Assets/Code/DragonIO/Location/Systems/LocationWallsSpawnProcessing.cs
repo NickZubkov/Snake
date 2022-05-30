@@ -20,7 +20,7 @@ namespace Modules.DragonIO.Location.Systems
                     ref var data = ref _levelData.Get1(levelData);
                     ref var configs = ref _levelData.Get2(levelData);
                     var angle = (360f / Data.GameConstants.WALLS_COUNT) * Mathf.Deg2Rad * _walls.GetEntitiesCount();
-                    var angleOffset = Data.GameConstants.ANGLE_OFFSET;
+                    var angleOffset = Data.GameConstants.WALLS_ANGLE_OFFSET;
                     var position = new Vector3(Mathf.Cos(angle + angleOffset) * data.ObjectsMaxSpawnRadius, 0, Mathf.Sin(angle + angleOffset) * data.ObjectsMaxSpawnRadius);
                     var wall = Object.Instantiate(configs.LocationConfig.WallPrefab, position, Quaternion.identity);
                     wall.transform.LookAt(Vector3.zero);

@@ -29,7 +29,7 @@ MonoBehaviour:
         LevelSize: 1
         WallPrefab: {fileID: 8292693005376339395, guid: 733e1affa63de94488547a3ba5e82741,
           type: 3}
-        EnemiesCount: 0
+        EnemiesCount: 15
       PlayerConfig:
         HeadPrefab: {fileID: 2227945532121990189, guid: ee64ed5f86fef3743b913d0ade1c9d2c,
           type: 3}
@@ -139,7 +139,7 @@ MonoBehaviour:
         ObstaclePrefabs:
         - {fileID: 8161272052182483467, guid: 3b6c3ef6d626eae40b04e59cf6d844b5, type: 3}
         - {fileID: 7285664605853232875, guid: 5d095d4a2eea5f643a0d5da278c7774a, type: 3}
-        GroundDecorCount: 100
+        GroundDecorCount: 20
         GroundDecorPrefabs:
         - {fileID: 7235652679403321981, guid: 7223a7c9aa8c7af4f8f1756a95ef445e, type: 3}
     - LocationConfig:

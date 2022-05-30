@@ -32,11 +32,22 @@ namespace Modules.DragonIO.Dragons.Systems
                             {
                                 continue;
                             }
+                            
+                            if (dragonHead.IsShieldActive)
+                            {
+                                continue;
+                            }
+                            
                             ReleaseCollision(currentLevelConfigs, ref dragonHead);
                         }
                         
-                        else if (triggered.Other.Has<Location.Components.Obstacle>())
+                        else if (triggered.Other.Has<Location.Components.Obstacle>() && !triggered.Other.Has<Location.Components.Wall>())
                         {
+                            if (triggered.Other.Get<Location.Components.Obstacle>().DestroyThreshold < dragonHead.BodyParts.Count)
+                            {
+                                triggered.Other.Get<Utils.DestroyTag>();
+                                continue;
+                            }
                             if (dragonHead.IsShieldActive)
                             {
                                 continue;
