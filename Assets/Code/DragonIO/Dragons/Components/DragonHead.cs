@@ -10,6 +10,8 @@ namespace Modules.DragonIO.Dragons.Components
         public Transform HeadTransform;
         public List<Transform> BodyParts;
         public Vector3 TargetHeadDirection;
+        public bool LockDirection;
+        public float LockDirectionTimer;
         public int Points;
         public float MovementSpeed;
         public float RotationSpeed;

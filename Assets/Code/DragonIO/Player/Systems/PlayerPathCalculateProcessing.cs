@@ -29,7 +29,8 @@ namespace Modules.DragonIO.Player.Systems
             foreach (var idx in _player)
             {
                 ref var dragonHead = ref _player.Get2(idx);
-                dragonHead.TargetHeadDirection = _headMoveDirection;
+                if (!dragonHead.LockDirection)
+                    dragonHead.TargetHeadDirection = _headMoveDirection;
             }
         }
     }

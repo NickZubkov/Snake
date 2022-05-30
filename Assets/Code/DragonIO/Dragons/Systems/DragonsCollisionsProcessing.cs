@@ -1,5 +1,6 @@
 ﻿using Leopotam.Ecs;
 using Modules.ViewHub;
+using Sirenix.Utilities;
 using UnityEngine;
 
 namespace Modules.DragonIO.Dragons.Systems
@@ -56,6 +57,16 @@ namespace Modules.DragonIO.Dragons.Systems
                         }
                         else if (triggered.Other.Has<Location.Components.Wall>())
                         {
+                            if (dragonHead.IsShieldActive)
+                            {
+                                dragonHead.TargetHeadDirection = (Vector3.zero - dragonHead.HeadTransform.position).normalized;
+                                if (!dragonHead.LockDirection)
+                                {
+                                    dragonHead.LockDirectionTimer = 2f;
+                                    dragonHead.LockDirection = true;
+                                }
+                                continue;
+                            }
                             ReleaseCollision(currentLevelConfigs, ref dragonHead);
                         }
                     }

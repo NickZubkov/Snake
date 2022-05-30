@@ -77,12 +77,21 @@ namespace Modules.DragonIO.LevelController.Systems
                 if (_gameplay.IsEmpty())
                     return;
                 
+                
+                
                 levelRunTimeData.LevelTimer -= _timeService.DeltaTime;
                 
                 foreach (var player in _playerHead)
                 {
-                    var playerPoints = _playerHead.Get1(player).Points;
-                    levelRunTimeData.PlayerPoints = playerPoints;
+                    
+                    ref var playerHead = ref _playerHead.Get1(player);
+                    
+                    playerHead.LockDirectionTimer -= _timeService.DeltaTime;
+                    
+                    if (playerHead.LockDirectionTimer <= 0)
+                        playerHead.LockDirection = false;
+                    
+                    levelRunTimeData.PlayerPoints = playerHead.Points;
 
                     if (levelRunTimeData.LevelTimer <= 0)
                     {
@@ -95,7 +104,7 @@ namespace Modules.DragonIO.LevelController.Systems
                             }
                         }
 
-                        if (playerPoints < maxPoints)
+                        if (playerHead.Points < maxPoints)
                         {
                             EventGroup.StateFactory.CreateState<EventGroup.RoundFailedState>(_world);
                         }
