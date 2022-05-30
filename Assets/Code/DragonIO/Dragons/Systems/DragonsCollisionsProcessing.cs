@@ -24,37 +24,45 @@ namespace Modules.DragonIO.Dragons.Systems
                     ref var triggered = ref _dragons.Get2(dragon);
                     ref var dragonHead = ref _dragons.Get1(dragon);
 
-                    if (triggered.Other.IsAlive() && triggered.Other.Has<Components.DragonBody>())
+                    if (triggered.Other.IsAlive())
                     {
-                        if (dragonHead.HeadID == triggered.Other.Get<Components.DragonBody>().HeadID)
+                        if (triggered.Other.Has<Components.DragonBody>())
                         {
-                            continue;
-                        }
-                    }
-                
-                    if (triggered.Other.IsAlive() && triggered.Other.Has<Location.Components.Obstacle>())
-                    {
-                        if (dragonHead.IsShieldActive)
-                        {
-                            continue;
-                        }
-
-                        var foodPrefab = currentLevelConfigs.GoodsConfig.FoodPrefab;
-                 
-                        for (int i = 0; i <  dragonHead.BodyParts.Count; i++)
-                        {
-                            var food = Object.Instantiate(foodPrefab, dragonHead.BodyParts[i].position, Quaternion.identity);
-                            food.Spawn(_world.NewEntity(), _world);
-                        }
-
-                        foreach (var bodyParts in dragonHead.BodyParts)
-                        {
-                            if (bodyParts.TryGetComponent(out EntityRef entityRef))
+                            if (dragonHead.HeadID == triggered.Other.Get<Components.DragonBody>().HeadID)
                             {
-                                entityRef.Entity.Get<Utils.DestroyTag>();
+                                continue;
                             }
+                            ReleaseCollision(currentLevelConfigs, ref dragonHead);
+                        }
+                        
+                        else if (triggered.Other.Has<Location.Components.Obstacle>())
+                        {
+                            if (dragonHead.IsShieldActive)
+                            {
+                                continue;
+                            }
+                            ReleaseCollision(currentLevelConfigs, ref dragonHead);
                         }
                     }
+                }
+            }
+        }
+
+        private void ReleaseCollision(LevelController.Components.CurrentLevelConfigs currentLevelConfigs, ref Components.DragonHead dragonHead)
+        {
+            var foodPrefab = currentLevelConfigs.GoodsConfig.FoodPrefab;
+
+            for (int i = 0; i < dragonHead.BodyParts.Count; i++)
+            {
+                var food = Object.Instantiate(foodPrefab, dragonHead.BodyParts[i].position, Quaternion.identity);
+                food.Spawn(_world.NewEntity(), _world);
+            }
+
+            foreach (var bodyParts in dragonHead.BodyParts)
+            {
+                if (bodyParts.TryGetComponent(out EntityRef entityRef))
+                {
+                    entityRef.Entity.Get<Utils.DestroyTag>();
                 }
             }
         }
