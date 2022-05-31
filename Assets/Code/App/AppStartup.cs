@@ -1,6 +1,8 @@
 ﻿using Modules.Root.ContainerComponentModel;
 using UnityEngine;
 using DG.Tweening;
+using Facebook.Unity;
+using GameAnalyticsSDK;
 
 namespace Modules.App 
 {
@@ -27,6 +29,15 @@ namespace Modules.App
 
         void Start ()
         {
+            /*if (!FB.IsInitialized)
+            {
+                FB.Init(FBInitCallback);
+            }
+            else
+            {
+                FB.ActivateApp();
+            }*/
+            
             _loadStarted = false;
             InitCallback();
         }
@@ -42,8 +53,20 @@ namespace Modules.App
 #else
             Invoke(nameof(LoadGame), 0.89f);
 #endif
-
+            GameAnalytics.Initialize();
             _loadStarted = true;
+        }
+
+        private void FBInitCallback()
+        {
+            if (FB.IsInitialized)
+            {
+                FB.ActivateApp();
+            }
+            else
+            {
+                Debug.Log("Failed to initialize the Facebook SDK");
+            }
         }
     }
 }
