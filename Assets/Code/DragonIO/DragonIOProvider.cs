@@ -54,15 +54,16 @@ namespace Modules.DragonIO
                 .Add(new Enemy.Systems.EnemySpawnSystem())
                 .Add(new Enemy.Systems.EnemyPathCalculateProcessing())
 
-                // goods
-                .Add(new Goods.Systems.GoodsSpawnProcessing())
-                
                 // dragons
                 .Add(new Dragons.Systems.DragonsCollectGoodsProcessing())
                 .Add(new Dragons.Systems.DragonBodySpawnProcessing())
                 .Add(new Dragons.Systems.DragonScalingProcessing())
                 .Add(new Dragons.Systems.DragonsCollisionsProcessing())
                 .Add(new Dragons.Systems.DragonsMoveProcessing())
+                
+                // goods
+                .Add(new Goods.Systems.GoodsSpawnProcessing())
+                .Add(new Goods.Systems.GoodsEffectsProcessing())
                 
                 // camera
                 .Add(new LevelCamera.Systems.CameraInitSystem())
@@ -71,7 +72,7 @@ namespace Modules.DragonIO
                 // ui
                 .Add(new UI.Systems.UIUpdateProcessing())
                 
-                //
+                // utils
                 .Add(new Utils.TimedDestructorSystem())
                 
                 // round end tracker

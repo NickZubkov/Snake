@@ -38,13 +38,17 @@ namespace Modules.DragonIO.Dragons.Systems
                                 bodySpawningSignal.DragonHead = dragonHead;
                                 bodySpawningSignal.BodyPrefab = dragonHead.DragonConfig.BodyPrefab;
                                 dragonHead.Points += dragonHead.PointBonusMultiplyer;
-                                entityRef.Entity.Get<Utils.DestroyTag>();
+                                collider.gameObject.layer = 0;
+                                entityRef.Entity.Get<Goods.Components.PlayGoodsEffectTag>().TargetTransform = dragonHead.HeadTransform;
+                                entityRef.Entity.Get<Goods.Components.PlayGoodsEffectTag>().Timer = 0.3f;
                             }
 
                             else if (entityRef.Entity.Has<Goods.Components.Bonus>())
                             {
                                 entityRef.Entity.Get<Goods.Components.Bonus>().BonusApplyer.Activate(ref dragonHead);
-                                entityRef.Entity.Get<Utils.DestroyTag>();
+                                collider.gameObject.layer = 0;
+                                entityRef.Entity.Get<Goods.Components.PlayGoodsEffectTag>().TargetTransform = dragonHead.HeadTransform;
+                                entityRef.Entity.Get<Goods.Components.PlayGoodsEffectTag>().Timer = 0.3f;
                             }
                         }
                     }
