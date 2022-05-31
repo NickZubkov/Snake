@@ -61,10 +61,8 @@ namespace Modules.DragonIO.Enemy.Systems
             enemy.TimeToChangeDirection = enemyConfig.TimeToChangeDirection;
             enemy.ChangeDirectionTimer = 0;
             enemy.GoodsSerchRadius = enemyConfig.GoodsSerchRadius;
-            enemy.MaxGoodsSerchingCount = (currentLevelConfigs.GoodsConfig.MinFoodCount + currentLevelConfigs.GoodsConfig.MaxBonusCount) / 10;
             enemy.ObstacleSerchingDistance = enemyConfig.ObstacleSerchingDistance;
             enemy.ObstacleLayerMask = 1 << 7;
-            enemy.GoodslayerMask = 1 << 6;
             enemy.IsAvoidingObstacle = false;
         }
     }

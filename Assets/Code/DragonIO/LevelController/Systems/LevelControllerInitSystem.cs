@@ -43,6 +43,9 @@ namespace Modules.DragonIO.LevelController.Systems
                 levelRunTimeData.EnemyMinSpawnRadiusSqr = _config.EnemyMinSpawnRadius * _config.EnemyMinSpawnRadius;
                 levelRunTimeData.ObstaclesMinSpawnRadiusSqr = _config.ObstaclesMinSpawnRadius * _config.ObstaclesMinSpawnRadius;
                 levelRunTimeData.GoodsMinSpawnRadiusSqr = _config.GoodsMinSpawnRadius * _config.GoodsMinSpawnRadius;
+                levelRunTimeData.GoodsLayerMask = 1 << 6;
+                levelRunTimeData.GoodsCollectingRadius = _config.GoodsCollectingRadius;
+                levelRunTimeData.MaxGoodsSerchingCount = _config.MaxGoodsSerchingCount;
 
                 foreach (var camera in _virtualCamera)
                 {

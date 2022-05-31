@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
-
+﻿
 namespace Modules.DragonIO.LevelController.Components
 {
     public struct LevelRunTimeData
@@ -18,5 +16,8 @@ namespace Modules.DragonIO.LevelController.Components
         public float EnemyMinSpawnRadiusSqr;
         public float ObstaclesMinSpawnRadiusSqr;
         public float GoodsMinSpawnRadiusSqr;
+        public int GoodsLayerMask;
+        public int MaxGoodsSerchingCount;
+        public float GoodsCollectingRadius;
     }
 }

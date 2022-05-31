@@ -21,6 +21,10 @@ namespace Modules.DragonIO.Data
         public float ObstaclesMinSpawnRadius = 15f;
         [FoldoutGroup("Other")] 
         public float GoodsMinSpawnRadius = 15f;
+        [FoldoutGroup("Other")]
+        public int MaxGoodsSerchingCount = 15;
+        [FoldoutGroup("Other")] 
+        public float GoodsCollectingRadius = 2f;
     }
 
     [DictionaryDrawerSettings(KeyLabel = "Level",DisplayMode = DictionaryDisplayOptions.Foldout, ValueLabel = "LevelConfigs")]

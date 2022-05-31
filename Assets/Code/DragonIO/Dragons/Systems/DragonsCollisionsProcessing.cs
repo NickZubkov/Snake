@@ -80,7 +80,8 @@ namespace Modules.DragonIO.Dragons.Systems
 
             for (int i = 0; i < dragonHead.BodyParts.Count; i++)
             {
-                var food = Object.Instantiate(foodPrefab, dragonHead.BodyParts[i].position, Quaternion.identity);
+                var position = dragonHead.BodyParts[i].position.Where(y: 0f);
+                var food = Object.Instantiate(foodPrefab, position, Quaternion.identity);
                 food.Spawn(_world.NewEntity(), _world);
             }
 

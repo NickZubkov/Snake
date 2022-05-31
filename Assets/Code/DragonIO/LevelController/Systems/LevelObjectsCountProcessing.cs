@@ -39,7 +39,7 @@ namespace Modules.DragonIO.LevelController.Systems
                 {
                     _levelData.GetEntity(idx).Get<Components.EnemySpawningSignal>();
                 }
-                
+
                 if (_food.GetEntitiesCount() < levelConfigs.GoodsConfig.MinFoodCount)
                 {
                     _levelData.GetEntity(idx).Get<Components.GoodsSpawningSignal>().GoodsPrefab = levelConfigs.GoodsConfig.FoodPrefab;
@@ -69,6 +69,17 @@ namespace Modules.DragonIO.LevelController.Systems
                 if (_player.IsEmpty())
                 {
                     _levelData.GetEntity(idx).Get<Components.PlayerSpawningSignal>();
+                }
+
+                foreach (var dragon in _dragons)
+                {
+                    ref var head = ref _dragons.Get1(dragon);
+                    if (head.BodyParts != null && head.BodyParts.Count < head.StartBodyCount + 3)
+                    {
+                        ref var signal = ref _dragons.GetEntity(dragon).Get<Components.DragonBodySpawningSignal>();
+                        signal.DragonHead = head;
+                        signal.BodyPrefab = head.DragonConfig.BodyPrefab;
+                    }
                 }
                 
                 
@@ -131,6 +142,7 @@ namespace Modules.DragonIO.LevelController.Systems
                         if (dragon.SpeedBonusTimer <= 0)
                         {
                             dragon.MovementSpeed /= dragon.SpeedBonusMultiplyer;
+                            dragon.Gap /= dragon.SpeedBonusMultiplyer;
                         }
                     }
                     if (dragon.ShieldBonusTimer > 0)

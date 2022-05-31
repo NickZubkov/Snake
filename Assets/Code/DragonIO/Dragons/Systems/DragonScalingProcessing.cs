@@ -15,11 +15,11 @@ namespace Modules.DragonIO.Dragons.Systems
                 {
                     ref var levelRunTimeData = ref _levelData.Get1(levelData);
                     ref var dragonHead = ref _scalngSignal.Get1(scalingSignal).DragonHead;
-                    var newScale = dragonHead.HeadTransform.localScale + (Vector3.one * levelRunTimeData.DragonScalingFactor);
+                    var newScale = Vector3.one + (Vector3.one * dragonHead.BodyParts.Count * levelRunTimeData.DragonScalingFactor);
                     foreach (var part in dragonHead.BodyParts)
                     {
                         part.localScale = newScale;
-                        var newPosition = new Vector3(part.localPosition.x, part.localScale.y / 2f, part.localPosition.z);
+                        var newPosition = new Vector3(part.localPosition.x, (part.localScale.y - 1) / 2f, part.localPosition.z);
                         part.localPosition = newPosition;
                     }
                 }

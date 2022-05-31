@@ -19,6 +19,7 @@ namespace Modules.DragonIO.Goods.Components
             {
                 dragonHead.SpeedBonusMultiplyer = SpeedMultiplier;
                 dragonHead.MovementSpeed *= SpeedMultiplier;
+                dragonHead.Gap *= SpeedMultiplier;
             }
             dragonHead.SpeedBonusTimer = BonusDuration;
             dragonHead.SpeedBonusDuration = BonusDuration;

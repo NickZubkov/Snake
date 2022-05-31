@@ -12,18 +12,21 @@ namespace Modules.DragonIO.Dragons.Systems
         private EcsWorld _world;
         public void Run()
         {
-            foreach (var bodySpawningSignal in _bodySpawningSignal)
+            if (_headSpawnedSignal.IsEmpty())
             {
-                ref var spawnSignal = ref _bodySpawningSignal.Get1(bodySpawningSignal);
-                var index = spawnSignal.DragonHead.BodyParts.Count - 1;
-                var bodyPart = Object.Instantiate(spawnSignal.BodyPrefab, spawnSignal.DragonHead.BodyParts[index].position, Quaternion.identity);
-                bodyPart.transform.parent = spawnSignal.DragonHead.HeadTransform.parent;
-                spawnSignal.DragonHead.BodyParts.Insert(index, bodyPart.transform);
-                var bodyEntity = _world.NewEntity();
-                bodyEntity.Get<Components.DragonBody>().HeadID = spawnSignal.DragonHead.HeadID;
-                bodyPart.Spawn(bodyEntity, _world);
+                foreach (var bodySpawningSignal in _bodySpawningSignal)
+                {
+                    ref var spawnSignal = ref _bodySpawningSignal.Get1(bodySpawningSignal);
+                    var index = spawnSignal.DragonHead.BodyParts.Count - 1;
+                    var bodyPart = Object.Instantiate(spawnSignal.BodyPrefab, spawnSignal.DragonHead.BodyParts[index].position, Quaternion.identity);
+                    bodyPart.transform.parent = spawnSignal.DragonHead.HeadTransform.parent;
+                    spawnSignal.DragonHead.BodyParts.Insert(index, bodyPart.transform);
+                    var bodyEntity = _world.NewEntity();
+                    bodyEntity.Get<Components.DragonBody>().HeadID = spawnSignal.DragonHead.HeadID;
+                    bodyPart.Spawn(bodyEntity, _world);
+                } 
             }
-
+            
             foreach (var headSpawnedSignal in _headSpawnedSignal)
             {
                 ref var spawnSignal = ref _headSpawnedSignal.Get1(headSpawnedSignal);

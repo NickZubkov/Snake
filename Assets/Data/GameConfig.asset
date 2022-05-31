@@ -42,7 +42,7 @@ MonoBehaviour:
         MovementSpeed: 6
         RotationSpeed: 6
         Gap: 5
-        BodySegmentsCount: 2
+        BodySegmentsCount: 10
       EnemiesConfigs:
       - HeadPrefab: {fileID: 2227945532121990189, guid: ae6aa955716834f4daec70858a6c76df,
           type: 3}
@@ -55,7 +55,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 10
         EnemyAI: 1
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -71,7 +71,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 10
         EnemyAI: 1
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -87,7 +87,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 10
         EnemyAI: 1
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -103,7 +103,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 10
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -119,7 +119,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 10
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -131,7 +131,7 @@ MonoBehaviour:
         - {fileID: 8310880059426670931, guid: 1ae9f349062cf8942a82f9933e855216, type: 3}
         - {fileID: 8310880059426670931, guid: d365bfe454a0a1f4f95709d2824de4f1, type: 3}
         - {fileID: 8310880059426670931, guid: af87ffbde9952f141a8c4f0adff8eb0a, type: 3}
-        MinFoodCount: 300
+        MinFoodCount: 500
         MaxBonusCount: 20
         BonusSpawnTimeRange: {x: 1, y: 2}
       GroundConfig:
@@ -513,3 +513,5 @@ MonoBehaviour:
   EnemyMinSpawnRadius: 27
   ObstaclesMinSpawnRadius: 10
   GoodsMinSpawnRadius: 3
+  MaxGoodsSerchingCount: 15
+  GoodsCollectingRadius: 2
