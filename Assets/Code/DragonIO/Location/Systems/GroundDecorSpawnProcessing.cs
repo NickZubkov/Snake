@@ -22,8 +22,9 @@ namespace Modules.DragonIO.Location.Systems
                     var idx = Random.Range(0, currentLevelConfigs.GroundConfig.GroundDecorPrefabs.Count);
                     var prefab = currentLevelConfigs.GroundConfig.GroundDecorPrefabs[idx];
                     var position = new Vector3(randomPoint.x, 0, randomPoint.y);
-
+                    var scale = Random.Range(0.1f, 1f);
                     var angle = new Vector3(0, Random.Range(0, 360f), 0);
+                    prefab.transform.GetChild(0).localScale = Vector3.one * scale;
                     var groundDecor = Object.Instantiate(prefab, position, Quaternion.Euler(angle));
                     groundDecor.Spawn(_world.NewEntity(), _world);
                 }

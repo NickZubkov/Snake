@@ -141,9 +141,8 @@ MonoBehaviour:
         - {fileID: 7285664605853232875, guid: 5d095d4a2eea5f643a0d5da278c7774a, type: 3}
         - {fileID: 8161272052182483467, guid: 5c6b7f15e98c66e4992334295e7fc0ae, type: 3}
         - {fileID: 7285664605853232875, guid: e58c689b5c9a3fe44992ba0f4c8efd79, type: 3}
-        GroundDecorCount: 30
+        GroundDecorCount: 50
         GroundDecorPrefabs:
-        - {fileID: 7235652679403321981, guid: f12f78a34c4802f42b46c5d6e11a68f9, type: 3}
         - {fileID: 7235652679403321981, guid: 7223a7c9aa8c7af4f8f1756a95ef445e, type: 3}
     - LocationConfig:
         LevelTimer: 60
@@ -265,7 +264,6 @@ MonoBehaviour:
         GroundDecorCount: 80
         GroundDecorPrefabs:
         - {fileID: -6642587625746292088, guid: 83d10a157ec1d8348bbc42842de07e6f, type: 3}
-        - {fileID: -6642587625746292088, guid: 6b316cc8fb147024cb62354e342ef3d0, type: 3}
     - LocationConfig:
         LevelTimer: 50
         LevelSize: 1
@@ -386,7 +384,6 @@ MonoBehaviour:
         GroundDecorCount: 80
         GroundDecorPrefabs:
         - {fileID: 7235652679403321981, guid: 7223a7c9aa8c7af4f8f1756a95ef445e, type: 3}
-        - {fileID: 7235652679403321981, guid: f12f78a34c4802f42b46c5d6e11a68f9, type: 3}
     - LocationConfig:
         LevelTimer: 40
         LevelSize: 1
@@ -507,7 +504,6 @@ MonoBehaviour:
         GroundDecorCount: 60
         GroundDecorPrefabs:
         - {fileID: -6642587625746292088, guid: 83d10a157ec1d8348bbc42842de07e6f, type: 3}
-        - {fileID: -6642587625746292088, guid: 6b316cc8fb147024cb62354e342ef3d0, type: 3}
   DragonScalingFactor: 0.02
   DefaultCameraOffset: {x: 0, y: 25, z: -13}
   EnemyMinSpawnRadius: 27
