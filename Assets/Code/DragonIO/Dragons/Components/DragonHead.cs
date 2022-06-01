@@ -18,6 +18,12 @@ namespace Modules.DragonIO.Dragons.Components
         public float RotationSpeed;
         public float Gap;
         public string DragonName;
+        
+        public ParticleSystem SpeedVFX;
+        public ParticleSystem ShieldVFX;
+        public ParticleSystem PointVFX;
+        public ParticleSystem DeathVFX;
+        public ParticleSystem WinVFX;
 
         public float DefaultBonusMultiplyer;
 

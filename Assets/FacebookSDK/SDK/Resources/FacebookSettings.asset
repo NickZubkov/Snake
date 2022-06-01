@@ -16,9 +16,9 @@ MonoBehaviour:
   clientTokens:
   - 
   appIds:
-  - 785689245699630
+  - 
   appLabels:
-  - Cut To Rescue
+  - 
   cookie: 1
   logging: 1
   status: 1

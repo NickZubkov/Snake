@@ -7,6 +7,11 @@ namespace Modules.DragonIO.Dragons.EntityTemplates
 {
     public class DragonHeadTemplate : ViewElement
     {
+        [SerializeField] private ParticleSystem _speedVFX;
+        [SerializeField] private ParticleSystem _shieldVFX;
+        [SerializeField] private ParticleSystem _pointVFX;
+        [SerializeField] private ParticleSystem _deathVFX;
+        [SerializeField] private ParticleSystem _winVFX;
         public override void OnSpawn(EcsEntity entity, EcsWorld world)
         {
             base.OnSpawn(entity, world);
@@ -22,6 +27,11 @@ namespace Modules.DragonIO.Dragons.EntityTemplates
             dragonHead.StartBodyCount = dragonHead.DragonConfig.BodySegmentsCount;
             dragonHead.TargetHeadDirection = Vector3.zero;
             dragonHead.Points = 0;
+            dragonHead.SpeedVFX = _speedVFX;
+            dragonHead.ShieldVFX = _shieldVFX;
+            dragonHead.PointVFX = _pointVFX;
+            dragonHead.DeathVFX = _deathVFX;
+            dragonHead.WinVFX = _winVFX;
             entity.Get<LevelSpawner.LevelEntityTag>();
         }
     }

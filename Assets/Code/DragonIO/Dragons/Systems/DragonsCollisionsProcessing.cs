@@ -24,6 +24,7 @@ namespace Modules.DragonIO.Dragons.Systems
                     ref var currentLevelConfigs = ref _levelData.Get2(levelData);
                     ref var triggered = ref _dragons.Get2(dragon);
                     ref var dragonHead = ref _dragons.Get1(dragon);
+                    ref var dragonEntity = ref _dragons.GetEntity(dragon);
 
                     if (triggered.Other.IsAlive())
                     {
@@ -38,7 +39,8 @@ namespace Modules.DragonIO.Dragons.Systems
                             {
                                 continue;
                             }
-                            
+
+                            dragonEntity.Get<Goods.Components.PlayDeathVFXSignal>();
                             ReleaseCollision(currentLevelConfigs, ref dragonHead);
                         }
                         
@@ -53,6 +55,7 @@ namespace Modules.DragonIO.Dragons.Systems
                             {
                                 continue;
                             }
+                            dragonEntity.Get<Goods.Components.PlayDeathVFXSignal>();
                             ReleaseCollision(currentLevelConfigs, ref dragonHead);
                         }
                         else if (triggered.Other.Has<Location.Components.Wall>())
@@ -67,6 +70,7 @@ namespace Modules.DragonIO.Dragons.Systems
                                 }
                                 continue;
                             }
+                            dragonEntity.Get<Goods.Components.PlayDeathVFXSignal>();
                             ReleaseCollision(currentLevelConfigs, ref dragonHead);
                         }
                     }
@@ -84,7 +88,7 @@ namespace Modules.DragonIO.Dragons.Systems
                 var food = Object.Instantiate(foodPrefab, position, Quaternion.identity);
                 food.Spawn(_world.NewEntity(), _world);
             }
-
+            
             foreach (var bodyParts in dragonHead.BodyParts)
             {
                 if (bodyParts.TryGetComponent(out EntityRef entityRef))

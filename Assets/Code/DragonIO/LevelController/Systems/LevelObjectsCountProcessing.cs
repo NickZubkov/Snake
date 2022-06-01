@@ -122,6 +122,7 @@ namespace Modules.DragonIO.LevelController.Systems
                         else
                         {
                             EventGroup.StateFactory.CreateState<EventGroup.RoundCompletedState>(_world);
+                            _playerHead.GetEntity(idx).Get<Goods.Components.PlayWinVFXSignal>();
                         }
                     }
                 }

@@ -39,16 +39,21 @@ namespace Modules.DragonIO.Dragons.Systems
                                 bodySpawningSignal.BodyPrefab = dragonHead.DragonConfig.BodyPrefab;
                                 dragonHead.Points += dragonHead.PointBonusMultiplyer;
                                 collider.gameObject.layer = 0;
-                                entityRef.Entity.Get<Goods.Components.PlayGoodsEffectTag>().TargetTransform = dragonHead.HeadTransform;
-                                entityRef.Entity.Get<Goods.Components.PlayGoodsEffectTag>().Timer = 0.3f;
+                                ref var effectTag = ref entityRef.Entity.Get<Goods.Components.PlayGoodsEffectTag>();
+                                effectTag.TargetTransform = dragonHead.HeadTransform;
+                                effectTag.Timer = 0.3f;
                             }
 
                             else if (entityRef.Entity.Has<Goods.Components.Bonus>())
                             {
-                                entityRef.Entity.Get<Goods.Components.Bonus>().BonusApplyer.Activate(ref dragonHead);
+                                ref var bonusApplyer = ref entityRef.Entity.Get<Goods.Components.Bonus>().BonusApplyer;
+                                bonusApplyer.Activate(ref dragonHead);
+                                _dragon.GetEntity(idx).Get<Goods.Components.PlayBonusVFXSignal>().BonusType = bonusApplyer;
                                 collider.gameObject.layer = 0;
-                                entityRef.Entity.Get<Goods.Components.PlayGoodsEffectTag>().TargetTransform = dragonHead.HeadTransform;
-                                entityRef.Entity.Get<Goods.Components.PlayGoodsEffectTag>().Timer = 0.3f;
+                                ref var effectTag = ref entityRef.Entity.Get<Goods.Components.PlayGoodsEffectTag>();
+                                effectTag.TargetTransform = dragonHead.HeadTransform;
+                                effectTag.Timer = 0.3f;
+                                
                             }
                         }
                     }
