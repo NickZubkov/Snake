@@ -53,7 +53,7 @@ namespace Modules.App
 #else
             Invoke(nameof(LoadGame), 0.89f);
 #endif
-            GameAnalytics.Initialize();
+           
             _loadStarted = true;
         }
 
