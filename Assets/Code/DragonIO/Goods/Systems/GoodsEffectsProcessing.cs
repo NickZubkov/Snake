@@ -1,4 +1,5 @@
 ﻿using Leopotam.Ecs;
+using MoreMountains.NiceVibrations;
 using UnityEngine;
 
 namespace Modules.DragonIO.Goods.Systems
@@ -30,6 +31,15 @@ namespace Modules.DragonIO.Goods.Systems
                 }
                 else
                 {
+                    if (effect.IsFood)
+                    {
+                        Misc.PlayVibro(HapticTypes.MediumImpact);
+                    }
+                    else
+                    {
+                        Misc.PlayVibro(HapticTypes.HeavyImpact);
+                    }
+                    
                     _foodSignal.GetEntity(signal).Destroy();
                 }
                 

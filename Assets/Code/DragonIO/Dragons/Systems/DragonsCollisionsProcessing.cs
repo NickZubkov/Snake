@@ -1,6 +1,6 @@
 ﻿using Leopotam.Ecs;
 using Modules.ViewHub;
-using Sirenix.Utilities;
+using MoreMountains.NiceVibrations;
 using UnityEngine;
 
 namespace Modules.DragonIO.Dragons.Systems
@@ -40,6 +40,10 @@ namespace Modules.DragonIO.Dragons.Systems
                                 continue;
                             }
 
+                            if (triggered.Other.Has<Player.Components.Player>())
+                            {
+                                Misc.PlayVibro(HapticTypes.SoftImpact);
+                            }
                             dragonEntity.Get<Goods.Components.PlayDeathVFXSignal>();
                             ReleaseCollision(currentLevelConfigs, ref dragonHead);
                         }

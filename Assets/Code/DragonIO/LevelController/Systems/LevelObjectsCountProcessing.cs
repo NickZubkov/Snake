@@ -1,5 +1,6 @@
 ﻿using Leopotam.Ecs;
 using Modules.Utils;
+using MoreMountains.NiceVibrations;
 using UnityEngine;
 
 namespace Modules.DragonIO.LevelController.Systems
@@ -84,6 +85,7 @@ namespace Modules.DragonIO.LevelController.Systems
                         
                         playerHead.MovementSpeed = 0f;
                         playerHead.RotationSpeed = 0f;
+                        Misc.PlayVibro(HapticTypes.Failure);
                     }
                     levelRunTimeData.WinFailTaimer -= _timeService.DeltaTime;
                     if (levelRunTimeData.WinFailTaimer <= 0)
@@ -144,6 +146,7 @@ namespace Modules.DragonIO.LevelController.Systems
                         if (playerHead.Points < maxPoints)
                         {
                             EventGroup.StateFactory.CreateState<EventGroup.RoundFailedState>(_world);
+                            Misc.PlayVibro(HapticTypes.Failure);
                         }
                         else
                         {
@@ -154,6 +157,7 @@ namespace Modules.DragonIO.LevelController.Systems
                             playerHead.MovementSpeed = 0f;
                             playerHead.RotationSpeed = 0f;
                             levelRunTimeData.WinFailTaimer -= _timeService.DeltaTime;
+                            Misc.PlayVibro(HapticTypes.Success);
                             if (levelRunTimeData.WinFailTaimer <= 0)
                             {
                                 _playerHead.GetEntity(idx).Get<Components.LevelComplitedSignal>();

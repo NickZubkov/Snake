@@ -1,8 +1,6 @@
 ﻿using Modules.Root.ContainerComponentModel;
 using UnityEngine;
-using DG.Tweening;
 using Facebook.Unity;
-using GameAnalyticsSDK;
 
 namespace Modules.App 
 {

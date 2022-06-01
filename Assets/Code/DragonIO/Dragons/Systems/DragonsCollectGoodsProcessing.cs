@@ -40,6 +40,7 @@ namespace Modules.DragonIO.Dragons.Systems
                                 dragonHead.Points += dragonHead.PointBonusMultiplyer;
                                 collider.gameObject.layer = 0;
                                 ref var effectTag = ref entityRef.Entity.Get<Goods.Components.PlayGoodsEffectTag>();
+                                effectTag.IsFood = true;
                                 effectTag.TargetTransform = dragonHead.HeadTransform;
                                 effectTag.Timer = 0.3f;
                             }
