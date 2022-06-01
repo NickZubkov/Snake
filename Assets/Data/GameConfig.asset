@@ -25,11 +25,11 @@ MonoBehaviour:
     keyData: 000000000100000002000000030000000400000005000000
     valueData:
     - LocationConfig:
-        LevelTimer: 10
+        LevelTimer: 60
         LevelSize: 1
         WallPrefab: {fileID: 8292693005376339395, guid: 733e1affa63de94488547a3ba5e82741,
           type: 3}
-        EnemiesCount: 1
+        EnemiesCount: 15
       PlayerConfig:
         HeadPrefab: {fileID: 2227945532121990189, guid: ee64ed5f86fef3743b913d0ade1c9d2c,
           type: 3}
