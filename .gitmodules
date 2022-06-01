@@ -5,3 +5,6 @@
 [submodule "Assets/Code/ToolBox"]
 	path = Assets/Code/ToolBox
 	url = https://git.lipsar.studio/a.subaev/ToolBox.git
+[submodule "PackagesKit"]
+	path = PackagesKit
+	url = https://git.lipsar.studio/Lipsar-Studio/PackagesKit.git

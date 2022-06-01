@@ -70,7 +70,6 @@ namespace Modules.DragonIO.Goods.Systems
                         head.PointPowerUpVFX.Stop();
                         break;
                     case Components.BonusType.Shield :
-                        Debug.Log("+++");
                         head.ShieldPowerUpVFX.Stop();
                         break;
                     case Components.BonusType.Speed :
