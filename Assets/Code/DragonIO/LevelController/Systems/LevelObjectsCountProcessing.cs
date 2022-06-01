@@ -80,12 +80,11 @@ namespace Modules.DragonIO.LevelController.Systems
                     foreach (var player in _playerHead)
                     {
                         ref var playerHead = ref _playerHead.Get1(player);
-                        if (!playerHead.WinVFX.isPlaying)
+                        if (!playerHead.DeathVFX.isPlaying)
                             _playerHead.GetEntity(idx).Get<Goods.Components.PlayDeathVFXSignal>();
                         
                         playerHead.MovementSpeed = 0f;
                         playerHead.RotationSpeed = 0f;
-                        Misc.PlayVibro(HapticTypes.Failure);
                     }
                     levelRunTimeData.WinFailTaimer -= _timeService.DeltaTime;
                     if (levelRunTimeData.WinFailTaimer <= 0)
@@ -147,17 +146,21 @@ namespace Modules.DragonIO.LevelController.Systems
                         {
                             EventGroup.StateFactory.CreateState<EventGroup.RoundFailedState>(_world);
                             Misc.PlayVibro(HapticTypes.Failure);
+                            Debug.Log("TimeOut");
                         }
                         else
                         {
                             if (!playerHead.WinVFX.isPlaying)
+                            {
                                 _playerHead.GetEntity(idx).Get<Goods.Components.PlayWinVFXSignal>();
-                            
-                            
+                                Misc.PlayVibro(HapticTypes.Success);
+                                Debug.Log("Win");
+                            }
+                                
                             playerHead.MovementSpeed = 0f;
                             playerHead.RotationSpeed = 0f;
                             levelRunTimeData.WinFailTaimer -= _timeService.DeltaTime;
-                            Misc.PlayVibro(HapticTypes.Success);
+                            
                             if (levelRunTimeData.WinFailTaimer <= 0)
                             {
                                 _playerHead.GetEntity(idx).Get<Components.LevelComplitedSignal>();

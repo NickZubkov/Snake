@@ -40,9 +40,10 @@ namespace Modules.DragonIO.Dragons.Systems
                                 continue;
                             }
 
-                            if (triggered.Other.Has<Player.Components.Player>())
+                            if (!_dragons.GetEntity(dragon).Has<Player.Components.Player>())
                             {
                                 Misc.PlayVibro(HapticTypes.SoftImpact);
+                                Debug.Log("CollisionOnPlayer");
                             }
                             dragonEntity.Get<Goods.Components.PlayDeathVFXSignal>();
                             ReleaseCollision(currentLevelConfigs, ref dragonHead);
@@ -59,6 +60,13 @@ namespace Modules.DragonIO.Dragons.Systems
                             {
                                 continue;
                             }
+
+                            if (_dragons.GetEntity(dragon).Has<Player.Components.Player>())
+                            {
+                                Misc.PlayVibro(HapticTypes.SoftImpact);
+                                Debug.Log("CollisionOnPlayer");
+                            }
+                            
                             dragonEntity.Get<Goods.Components.PlayDeathVFXSignal>();
                             ReleaseCollision(currentLevelConfigs, ref dragonHead);
                         }
@@ -73,6 +81,12 @@ namespace Modules.DragonIO.Dragons.Systems
                                     dragonHead.LockDirection = true;
                                 }
                                 continue;
+                            }
+                            
+                            if (_dragons.GetEntity(dragon).Has<Player.Components.Player>())
+                            {
+                                Misc.PlayVibro(HapticTypes.SoftImpact);
+                                Debug.Log("CollisionOnPlayer");
                             }
                             dragonEntity.Get<Goods.Components.PlayDeathVFXSignal>();
                             ReleaseCollision(currentLevelConfigs, ref dragonHead);
