@@ -133,6 +133,24 @@
       "dependencies": {},
       "url": "https://npm.lipsar.studio"
     },
+    "com.lipsar.uanalytics.trackers.usersessionstatstracker": {
+      "version": "1.0.2",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.lipsar.uanalytics": "1.0.0"
+      },
+      "url": "https://npm.lipsar.studio"
+    },
+    "com.lipsar.uananalytics.trackers.levelprogression": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.lipsar.uanalytics": "1.0.0"
+      },
+      "url": "https://npm.lipsar.studio"
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,

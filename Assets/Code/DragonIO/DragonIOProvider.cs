@@ -78,6 +78,9 @@ namespace Modules.DragonIO
                 // round end tracker
                 .Add(new RoundCompletedTracker())
                 .Add(new RoundFailedTracker())
+                
+                // Analitics
+                .Add(new UAnalytics.Samples.LevelProgressionTracker.LevelProgressionAnalyticsEventsTracker())
 
                 // event group
                 .Add(new EventGroup.StateCleanupSystem())       // remove entity with prev state component
