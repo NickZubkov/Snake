@@ -14,7 +14,8 @@ namespace Modules.DragonIO.LevelController.Systems
         private EcsFilter<Location.Components.GroundDecor> _groundDecor;
         private EcsFilter<Location.Components.Obstacle>.Exclude<Location.Components.Wall> _obstacle;
         private EcsFilter<Player.Components.Player> _player;
-        //private EcsFilter<Components.LevelFaildSignal> _levelFaildSignal;
+        private EcsFilter<Components.LevelFaildSignal> _levelFaildSignal;
+        private EcsFilter<Components.PLayerSpawnedTag> _pLayerSpawnedTag;
         
         
         private EcsFilter<EventGroup.GamePlayState> _gameplay;
@@ -67,29 +68,29 @@ namespace Modules.DragonIO.LevelController.Systems
                     _levelData.GetEntity(idx).Get<Components.ObstaclesSpawningSignal>();
                 }
                 
-                if (_player.IsEmpty() /*&& _levelFaildSignal.IsEmpty()*/)
+                if (_player.IsEmpty() && _pLayerSpawnedTag.IsEmpty())
                 {
                     _levelData.GetEntity(idx).Get<Components.PlayerSpawningSignal>();
+                    _levelData.GetEntity(idx).Get<Components.PLayerSpawnedTag>();
                 }
 
-                /*if (!_levelFaildSignal.IsEmpty())
+                if (_player.IsEmpty() && !_pLayerSpawnedTag.IsEmpty())
                 {
                     foreach (var player in _playerHead)
                     {
                         ref var playerHead = ref _playerHead.Get1(player);
                         if (!playerHead.WinVFX.isPlaying)
                             _playerHead.GetEntity(idx).Get<Goods.Components.PlayDeathVFXSignal>();
-
-
+                        
                         playerHead.MovementSpeed = 0f;
                         playerHead.RotationSpeed = 0f;
-                        levelRunTimeData.WinFailTaimer -= _timeService.DeltaTime;
-                        if (levelRunTimeData.WinFailTaimer <= 0)
-                        {
-                            _playerHead.GetEntity(idx).Get<Components.LevelFaildSignal>();
-                        }
                     }
-                }*/
+                    levelRunTimeData.WinFailTaimer -= _timeService.DeltaTime;
+                    if (levelRunTimeData.WinFailTaimer <= 0)
+                    {
+                        _levelData.GetEntity(idx).Get<Components.LevelFaildSignal>();
+                    }
+                }
 
                 foreach (var dragon in _dragons)
                 {

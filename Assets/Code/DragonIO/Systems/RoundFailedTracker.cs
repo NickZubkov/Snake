@@ -5,7 +5,7 @@ namespace Modules.DragonIO
     public class RoundFailedTracker : IEcsRunSystem
     {
         private EcsFilter<EventGroup.GamePlayState> _gameplay;
-        private EcsFilter<Player.Components.Player> _player;
+        private EcsFilter<LevelController.Components.LevelFaildSignal> _levelFaildSignal;
         
         private EcsWorld _world;
         private Data.GameConfig _config;
@@ -14,7 +14,7 @@ namespace Modules.DragonIO
             if(_gameplay.IsEmpty())
                 return;
 
-            if (_player.IsEmpty())
+            if (!_levelFaildSignal.IsEmpty())
             {
                 EventGroup.StateFactory.CreateState<EventGroup.RoundFailedState>(_world);
             }

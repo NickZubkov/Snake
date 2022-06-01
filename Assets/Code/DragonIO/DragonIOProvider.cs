@@ -101,6 +101,7 @@ namespace Modules.DragonIO
                 .OneFrame<LevelController.Components.PlayerSpawningSignal>()
                 .OneFrame<LevelController.Components.DragonBodySpawningSignal>()
                 .OneFrame<LevelController.Components.LevelComplitedSignal>()
+                .OneFrame<LevelController.Components.LevelFaildSignal>()
                 .OneFrame<Dragons.Components.DragonHeadSpawnedSignal>()
                 .OneFrame<Goods.Components.PlayBonusVFXSignal>()
                 .OneFrame<Goods.Components.PlayWinVFXSignal>()
