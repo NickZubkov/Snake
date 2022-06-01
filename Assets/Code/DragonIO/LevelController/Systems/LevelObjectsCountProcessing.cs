@@ -14,6 +14,7 @@ namespace Modules.DragonIO.LevelController.Systems
         private EcsFilter<Location.Components.GroundDecor> _groundDecor;
         private EcsFilter<Location.Components.Obstacle>.Exclude<Location.Components.Wall> _obstacle;
         private EcsFilter<Player.Components.Player> _player;
+        //private EcsFilter<Components.LevelFaildSignal> _levelFaildSignal;
         
         
         private EcsFilter<EventGroup.GamePlayState> _gameplay;
@@ -66,10 +67,29 @@ namespace Modules.DragonIO.LevelController.Systems
                     _levelData.GetEntity(idx).Get<Components.ObstaclesSpawningSignal>();
                 }
                 
-                if (_player.IsEmpty())
+                if (_player.IsEmpty() /*&& _levelFaildSignal.IsEmpty()*/)
                 {
                     _levelData.GetEntity(idx).Get<Components.PlayerSpawningSignal>();
                 }
+
+                /*if (!_levelFaildSignal.IsEmpty())
+                {
+                    foreach (var player in _playerHead)
+                    {
+                        ref var playerHead = ref _playerHead.Get1(player);
+                        if (!playerHead.WinVFX.isPlaying)
+                            _playerHead.GetEntity(idx).Get<Goods.Components.PlayDeathVFXSignal>();
+
+
+                        playerHead.MovementSpeed = 0f;
+                        playerHead.RotationSpeed = 0f;
+                        levelRunTimeData.WinFailTaimer -= _timeService.DeltaTime;
+                        if (levelRunTimeData.WinFailTaimer <= 0)
+                        {
+                            _playerHead.GetEntity(idx).Get<Components.LevelFaildSignal>();
+                        }
+                    }
+                }*/
 
                 foreach (var dragon in _dragons)
                 {
@@ -90,7 +110,7 @@ namespace Modules.DragonIO.LevelController.Systems
                 
                 
                 
-                levelRunTimeData.LevelTimer -= _timeService.DeltaTime;
+                
                 
                 foreach (var player in _playerHead)
                 {
@@ -103,9 +123,14 @@ namespace Modules.DragonIO.LevelController.Systems
                         playerHead.LockDirection = false;
                     
                     levelRunTimeData.PlayerPoints = playerHead.Points;
+                    
+                    if (levelRunTimeData.LevelTimer > 0)
+                        levelRunTimeData.LevelTimer -= _timeService.DeltaTime;
 
                     if (levelRunTimeData.LevelTimer <= 0)
                     {
+                        levelRunTimeData.LevelTimer = 0;
+                        
                         int maxPoints = -1;
                         foreach (var dragon in _dragons)
                         {
@@ -121,8 +146,17 @@ namespace Modules.DragonIO.LevelController.Systems
                         }
                         else
                         {
-                            EventGroup.StateFactory.CreateState<EventGroup.RoundCompletedState>(_world);
-                            _playerHead.GetEntity(idx).Get<Goods.Components.PlayWinVFXSignal>();
+                            if (!playerHead.WinVFX.isPlaying)
+                                _playerHead.GetEntity(idx).Get<Goods.Components.PlayWinVFXSignal>();
+                            
+                            
+                            playerHead.MovementSpeed = 0f;
+                            playerHead.RotationSpeed = 0f;
+                            levelRunTimeData.WinFailTaimer -= _timeService.DeltaTime;
+                            if (levelRunTimeData.WinFailTaimer <= 0)
+                            {
+                                _playerHead.GetEntity(idx).Get<Components.LevelComplitedSignal>();
+                            }
                         }
                     }
                 }

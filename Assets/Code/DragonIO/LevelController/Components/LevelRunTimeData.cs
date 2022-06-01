@@ -11,6 +11,7 @@ namespace Modules.DragonIO.LevelController.Components
         public Cinemachine.CinemachineTransposer CinemachineTransposer;
         public float DragonScalingFactor;
         public float LevelTimer;
+        public float WinFailTaimer;
         public int SpawnedEnemiesCount;
         public int PlayerPoints;
         public float EnemyMinSpawnRadiusSqr;

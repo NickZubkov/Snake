@@ -39,6 +39,7 @@ namespace Modules.DragonIO.LevelController.Systems
                 levelRunTimeData.OtherObjectMaxSpawnRadius = Data.GameConstants.OTHER_OBJECTS_SPAWN_RADIUS * levelConfigs.LocationConfig.LevelSize;
                 levelRunTimeData.DragonScalingFactor = _config.DragonScalingFactor;
                 levelRunTimeData.LevelTimer = levelConfigs.LocationConfig.LevelTimer;
+                levelRunTimeData.WinFailTaimer = 2f;
                 levelRunTimeData.SpawnedEnemiesCount = 0;
                 levelRunTimeData.EnemyMinSpawnRadiusSqr = _config.EnemyMinSpawnRadius * _config.EnemyMinSpawnRadius;
                 levelRunTimeData.ObstaclesMinSpawnRadiusSqr = _config.ObstaclesMinSpawnRadius * _config.ObstaclesMinSpawnRadius;
