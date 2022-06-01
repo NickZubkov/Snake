@@ -133,14 +133,6 @@
       "dependencies": {},
       "url": "https://npm.lipsar.studio"
     },
-    "com.lipsar.uanalytics.integrations.gameanalytics": {
-      "version": "file:../PackagesKit/Packages/com.lipsar.uanalytics.integrations.gameanalytics",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {
-        "com.lipsar.uanalytics": "1.0.1"
-      }
-    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,

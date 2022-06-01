@@ -1,0 +1,1 @@
+{"name":"UAnalytics.Integrations.GameAnalytics","rootNamespace":"UAnalytics.Integrations.GameAnalytics","references":["UAnalytics", "GameAnalyticsSDK"],"includePlatforms":[]}
