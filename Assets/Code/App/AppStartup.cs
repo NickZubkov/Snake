@@ -29,14 +29,14 @@ namespace Modules.App
 
         void Start ()
         {
-            /*if (!FB.IsInitialized)
+            if (!FB.IsInitialized)
             {
                 FB.Init(FBInitCallback);
             }
             else
             {
                 FB.ActivateApp();
-            }*/
+            }
             
             _loadStarted = false;
             InitCallback();

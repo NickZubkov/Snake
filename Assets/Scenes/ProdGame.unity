@@ -760,6 +760,17 @@ PrefabInstance:
       propertyPath: _levelLoadingView
       value: 
       objectReference: {fileID: 441907332}
+    - target: {fileID: 903502363783054635, guid: 6431263bd9149424e976c5164e9e3006,
+        type: 3}
+      propertyPath: _soInstallers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 903502363783054635, guid: 6431263bd9149424e976c5164e9e3006,
+        type: 3}
+      propertyPath: _soInstallers.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: e75d7dac26bc2164e958ed4a90333f80,
+        type: 2}
     - target: {fileID: 903502363783054637, guid: 6431263bd9149424e976c5164e9e3006,
         type: 3}
       propertyPath: m_RootOrder
