@@ -40,6 +40,14 @@ namespace Modules.DragonIO.Dragons.Systems
                                 dragonHead.Points += dragonHead.PointBonusMultiplyer;
                                 collider.gameObject.layer = 0;
                                 ref var effectTag = ref entityRef.Entity.Get<Goods.Components.PlayGoodsEffectTag>();
+                                if (_dragon.GetEntity(idx).Has<Player.Components.Player>())
+                                {
+                                    effectTag.IsPlayerHead = true;
+                                }
+                                else
+                                {
+                                    effectTag.IsPlayerHead = false;
+                                }
                                 effectTag.IsFood = true;
                                 effectTag.TargetTransform = dragonHead.HeadTransform;
                                 effectTag.Timer = 0.3f;
@@ -52,6 +60,15 @@ namespace Modules.DragonIO.Dragons.Systems
                                 _dragon.GetEntity(idx).Get<Goods.Components.PlayBonusVFXSignal>().BonusType = bonusApplyer;
                                 collider.gameObject.layer = 0;
                                 ref var effectTag = ref entityRef.Entity.Get<Goods.Components.PlayGoodsEffectTag>();
+                                if (_dragon.GetEntity(idx).Has<Player.Components.Player>())
+                                {
+                                    effectTag.IsPlayerHead = true;
+                                }
+                                else
+                                {
+                                    effectTag.IsPlayerHead = false;
+                                }
+                                effectTag.IsFood = false;
                                 effectTag.TargetTransform = dragonHead.HeadTransform;
                                 effectTag.Timer = 0.3f;
                                 

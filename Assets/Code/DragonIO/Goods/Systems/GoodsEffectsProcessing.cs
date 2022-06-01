@@ -31,11 +31,11 @@ namespace Modules.DragonIO.Goods.Systems
                 }
                 else
                 {
-                    if (effect.IsFood)
+                    if (effect.IsFood && effect.IsPlayerHead)
                     {
                         Misc.PlayVibro(HapticTypes.MediumImpact);
                     }
-                    else
+                    else if (!effect.IsFood && effect.IsPlayerHead)
                     {
                         Misc.PlayVibro(HapticTypes.HeavyImpact);
                     }
