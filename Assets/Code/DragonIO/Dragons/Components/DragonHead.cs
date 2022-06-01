@@ -20,8 +20,11 @@ namespace Modules.DragonIO.Dragons.Components
         public string DragonName;
         
         public ParticleSystem SpeedVFX;
+        public List<ParticleSystem> SpeedPowerUpVFX;
         public ParticleSystem ShieldVFX;
+        public ParticleSystem ShieldPowerUpVFX;
         public ParticleSystem PointVFX;
+        public ParticleSystem PointPowerUpVFX;
         public ParticleSystem DeathVFX;
         public ParticleSystem WinVFX;
 

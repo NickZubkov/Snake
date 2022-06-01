@@ -1,5 +1,4 @@
-﻿using System;
-using Leopotam.Ecs;
+﻿using Leopotam.Ecs;
 using UnityEngine;
 
 namespace Modules.DragonIO.Goods.Systems
@@ -7,9 +6,10 @@ namespace Modules.DragonIO.Goods.Systems
     public class GoodsEffectsProcessing : IEcsRunSystem
     {
         private EcsFilter<ViewHub.UnityView, Components.PlayGoodsEffectTag> _foodSignal;
-        private EcsFilter<Dragons.Components.DragonHead, Components.PlayBonusVFXSignal> _bonusSignal;
+        private EcsFilter<Dragons.Components.DragonHead, Components.PlayBonusVFXSignal> _playVFXSignal;
         private EcsFilter<Dragons.Components.DragonHead, Components.PlayDeathVFXSignal> _deathSignal;
         private EcsFilter<Dragons.Components.DragonHead, Components.PlayWinVFXSignal> _winSignal;
+        private EcsFilter<Dragons.Components.DragonHead, Components.StopPowerUpVFXSignal> _stopPowerupVFXSignal;
 
         private Utils.TimeService _timeService;
         public void Run()
@@ -35,22 +35,50 @@ namespace Modules.DragonIO.Goods.Systems
                 
             }
 
-            foreach (var bonusSignal in _bonusSignal)
+            foreach (var bonusSignal in _playVFXSignal)
             {
-                ref var bonusType = ref _bonusSignal.Get2(bonusSignal).BonusType;
-                ref var head = ref _bonusSignal.Get1(bonusSignal);
+                ref var bonusType = ref _playVFXSignal.Get2(bonusSignal).BonusType;
+                ref var head = ref _playVFXSignal.Get1(bonusSignal);
 
                 if (bonusType is Components.PointBonus)
                 {
                     head.PointVFX.Play();
+                    head.PointPowerUpVFX.Play();
                 }
                 else if (bonusType is Components.ShieldBonus)
                 {
                     head.ShieldVFX.Play();
+                    head.ShieldPowerUpVFX.Play();
                 }
                 else if (bonusType is Components.SpeedBonus)
                 {
                     head.SpeedVFX.Play();
+                    foreach (var vfx in head.SpeedPowerUpVFX)
+                    {
+                        vfx.Play();
+                    }
+                }
+            }
+
+            foreach (var stopSignal in _stopPowerupVFXSignal)
+            {
+                ref var bonusType = ref _stopPowerupVFXSignal.Get2(stopSignal).BonusType;
+                ref var head = ref _stopPowerupVFXSignal.Get1(stopSignal);
+                switch (bonusType)
+                {
+                    case Components.BonusType.Point :
+                        head.PointPowerUpVFX.Stop();
+                        break;
+                    case Components.BonusType.Shield :
+                        Debug.Log("+++");
+                        head.ShieldPowerUpVFX.Stop();
+                        break;
+                    case Components.BonusType.Speed :
+                        foreach (var vfx in head.SpeedPowerUpVFX)
+                        {
+                            vfx.Stop();
+                        }
+                        break;
                 }
             }
 

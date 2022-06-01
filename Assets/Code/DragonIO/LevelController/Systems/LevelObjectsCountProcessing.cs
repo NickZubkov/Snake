@@ -179,6 +179,7 @@ namespace Modules.DragonIO.LevelController.Systems
                         {
                             dragon.MovementSpeed /= dragon.SpeedBonusMultiplyer;
                             dragon.Gap /= dragon.SpeedBonusMultiplyer;
+                            _dragons.GetEntity(dragons).Get<Goods.Components.StopPowerUpVFXSignal>().BonusType = Goods.Components.BonusType.Speed;
                         }
                     }
                     if (dragon.ShieldBonusTimer > 0)
@@ -187,6 +188,7 @@ namespace Modules.DragonIO.LevelController.Systems
                         if (dragon.ShieldBonusTimer <= 0)
                         {
                             dragon.IsShieldActive = false;
+                            _dragons.GetEntity(dragons).Get<Goods.Components.StopPowerUpVFXSignal>().BonusType = Goods.Components.BonusType.Shield;
                         }
                     }
                     if (dragon.PointBonusTimer > 0)
@@ -195,6 +197,7 @@ namespace Modules.DragonIO.LevelController.Systems
                         if (dragon.PointBonusTimer <= 0)
                         {
                             dragon.PointBonusMultiplyer = (int)dragon.DefaultBonusMultiplyer;
+                            _dragons.GetEntity(dragons).Get<Goods.Components.StopPowerUpVFXSignal>().BonusType = Goods.Components.BonusType.Point;
                         }
                     }
                 }

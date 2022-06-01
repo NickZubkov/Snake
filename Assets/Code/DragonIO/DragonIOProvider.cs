@@ -106,6 +106,7 @@ namespace Modules.DragonIO
                 .OneFrame<Goods.Components.PlayBonusVFXSignal>()
                 .OneFrame<Goods.Components.PlayWinVFXSignal>()
                 .OneFrame<Goods.Components.PlayDeathVFXSignal>()
+                .OneFrame<Goods.Components.StopPowerUpVFXSignal>()
                 
                 ;
 
