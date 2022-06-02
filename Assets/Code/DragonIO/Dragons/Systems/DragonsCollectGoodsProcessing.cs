@@ -52,12 +52,11 @@ namespace Modules.DragonIO.Dragons.Systems
                                 effectTag.Timer = 0.3f;
                             }
 
-                            else if (entityRef.Entity.Has<Goods.Components.Bonus>())
+                            else if (entityRef.Entity.Has<Goods.Components.Bonus>() && !entityRef.Entity.Has<Goods.Components.PlayGoodsEffectTag>())
                             {
                                 ref var bonusApplyer = ref entityRef.Entity.Get<Goods.Components.Bonus>().BonusApplyer;
                                 bonusApplyer.Activate(ref dragonHead);
                                 _dragon.GetEntity(idx).Get<Goods.Components.PlayBonusVFXSignal>().BonusType = bonusApplyer;
-                                collider.gameObject.layer = 0;
                                 ref var effectTag = ref entityRef.Entity.Get<Goods.Components.PlayGoodsEffectTag>();
                                 if (_dragon.GetEntity(idx).Has<Player.Components.Player>())
                                 {

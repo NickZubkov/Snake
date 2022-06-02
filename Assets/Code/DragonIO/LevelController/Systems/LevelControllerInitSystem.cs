@@ -51,6 +51,7 @@ namespace Modules.DragonIO.LevelController.Systems
                 levelRunTimeData.MaxGoodsSerchingCount = _config.MaxGoodsSerchingCount;
                 levelRunTimeData.FoodCount = levelConfigs.GoodsConfig.MinFoodCount;
                 levelRunTimeData.FoodSpawningPositions = new Queue<Vector3>();
+                levelRunTimeData.BodyPartSpawnDecrease = _config.BodyPartSpawnDecrease;
 
                 foreach (var camera in _virtualCamera)
                 {

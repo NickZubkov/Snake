@@ -27,6 +27,8 @@ namespace Modules.DragonIO.Data
         public float GoodsCollectingRadius = 2f;
         [FoldoutGroup("Common")] 
         public Location.EntityTemplates.DethVFXTemplate DethVFXPrefab;
+        [FoldoutGroup("Common")][Range(1, 10)]
+        public int BodyPartSpawnDecrease = 2;
     }
 
     [DictionaryDrawerSettings(KeyLabel = "Level",DisplayMode = DictionaryDisplayOptions.Foldout, ValueLabel = "LevelConfigs")]
