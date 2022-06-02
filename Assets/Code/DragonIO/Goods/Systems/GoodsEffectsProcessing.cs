@@ -41,8 +41,11 @@ namespace Modules.DragonIO.Goods.Systems
                     {
                         Misc.PlayVibro(HapticTypes.HeavyImpact);
                     }
-                    
-                    _foodSignal.GetEntity(signal).Destroy();
+
+                    _foodSignal.GetEntity(signal).Get<Components.PooledFoodTag>();
+                    _foodSignal.GetEntity(signal).Del<Components.PlayGoodsEffectTag>();
+                    _foodSignal.GetEntity(signal).Del<Components.Food>();
+                    view.GameObject.SetActive(false);
                 }
                 
             }

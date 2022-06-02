@@ -32,13 +32,12 @@ namespace Modules.DragonIO.Dragons.Systems
                     {
                         if (collider != null && collider.gameObject.TryGetComponentInParent(out ViewHub.EntityRef entityRef))
                         {
-                            if (entityRef.Entity.Has<Goods.Components.Food>())
+                            if (entityRef.Entity.Has<Goods.Components.Food>() && !entityRef.Entity.Has<Goods.Components.PlayGoodsEffectTag>())
                             {
                                 ref var bodySpawningSignal = ref _dragon.GetEntity(idx).Get<LevelController.Components.DragonBodySpawningSignal>();
                                 bodySpawningSignal.DragonHead = dragonHead;
                                 bodySpawningSignal.BodyPrefab = dragonHead.DragonConfig.BodyPrefab;
                                 dragonHead.Points += dragonHead.PointBonusMultiplyer;
-                                collider.gameObject.layer = 0;
                                 ref var effectTag = ref entityRef.Entity.Get<Goods.Components.PlayGoodsEffectTag>();
                                 if (_dragon.GetEntity(idx).Has<Player.Components.Player>())
                                 {
