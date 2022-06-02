@@ -17,16 +17,20 @@ namespace Modules.DragonIO.Dragons.Systems
                 foreach (var bodySpawningSignal in _bodySpawningSignal)
                 {
                     ref var spawnSignal = ref _bodySpawningSignal.Get1(bodySpawningSignal);
-                    var index = spawnSignal.DragonHead.BodyParts.Count - 1;
-                    var bodyPart = Object.Instantiate(spawnSignal.BodyPrefab, spawnSignal.DragonHead.BodyParts[index].position, Quaternion.identity);
-                    bodyPart.transform.parent = spawnSignal.DragonHead.HeadTransform.parent;
-                    spawnSignal.DragonHead.BodyParts.Insert(index, bodyPart.transform);
-                    var bodyEntity = _world.NewEntity();
-                    ref var body = ref bodyEntity.Get<Components.DragonBody>();
-                    body.HeadID = spawnSignal.DragonHead.HeadID;
-                    body.Head = spawnSignal.DragonHead;
-                    bodyPart.Spawn(bodyEntity, _world);
-                    spawnSignal.DragonHead.Body.Insert(0, body);
+                    if (spawnSignal.DragonHead.Points % 5 == 0)
+                    {
+                        var index = spawnSignal.DragonHead.BodyParts.Count - 1;
+                        var bodyPart = Object.Instantiate(spawnSignal.BodyPrefab, spawnSignal.DragonHead.BodyParts[index].position, Quaternion.identity);
+                        bodyPart.transform.parent = spawnSignal.DragonHead.HeadTransform.parent;
+                        spawnSignal.DragonHead.BodyParts.Insert(index, bodyPart.transform);
+                        var bodyEntity = _world.NewEntity();
+                        ref var body = ref bodyEntity.Get<Components.DragonBody>();
+                        body.HeadID = spawnSignal.DragonHead.HeadID;
+                        body.Head = spawnSignal.DragonHead;
+                        bodyPart.Spawn(bodyEntity, _world);
+                        spawnSignal.DragonHead.Body.Insert(0, body);
+                    }
+                    
                 } 
             }
             
