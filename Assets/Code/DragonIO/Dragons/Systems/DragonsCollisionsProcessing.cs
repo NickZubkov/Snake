@@ -21,7 +21,7 @@ namespace Modules.DragonIO.Dragons.Systems
             {
                 foreach (var levelData in _levelData)
                 {
-                    ref var levelRunTimeData = ref _levelData.Get1(levelData);
+                    ref var currentLevelConfigs = ref _levelData.Get2(levelData);
                     ref var triggered = ref _dragons.Get2(dragon);
                     ref var dragonHead = ref _dragons.Get1(dragon);
                     ref var levelDataEntity = ref _levelData.GetEntity(levelData);
@@ -44,12 +44,12 @@ namespace Modules.DragonIO.Dragons.Systems
 
                             if (dragonHead.BodyParts.Count >= body.Head.BodyParts.Count)
                             {
-                                ReleaseCollision(ref levelRunTimeData, ref body.Head);
+                                ReleaseCollision(currentLevelConfigs, ref body.Head);
                             }
                             else if (!dragonHead.IsShieldActive)
                             {
                                 levelDataEntity.Get<Goods.Components.PlayDeathVFXSignal>().PlayPosition = dragonHead.HeadTransform.position;
-                                ReleaseCollision(ref levelRunTimeData, ref dragonHead);
+                                ReleaseCollision(currentLevelConfigs, ref dragonHead);
                             }
                             
                         }
@@ -72,7 +72,7 @@ namespace Modules.DragonIO.Dragons.Systems
                             }
                             
                             levelDataEntity.Get<Goods.Components.PlayDeathVFXSignal>().PlayPosition = dragonHead.HeadTransform.position;
-                            ReleaseCollision(ref levelRunTimeData, ref dragonHead);
+                            ReleaseCollision(currentLevelConfigs, ref dragonHead);
                         }
                         else if (triggered.Other.Has<Location.Components.Wall>())
                         {
@@ -92,23 +92,30 @@ namespace Modules.DragonIO.Dragons.Systems
                                 Misc.PlayVibro(HapticTypes.SoftImpact);
                             }
                             levelDataEntity.Get<Goods.Components.PlayDeathVFXSignal>().PlayPosition = dragonHead.HeadTransform.position;
-                            ReleaseCollision(ref levelRunTimeData, ref dragonHead);
+                            ReleaseCollision(currentLevelConfigs, ref dragonHead);
                         }
                     }
                 }
             }
         }
 
-        private void ReleaseCollision(ref LevelController.Components.LevelRunTimeData levelRunTimeData, ref Components.DragonHead dragonHead)
+        private void ReleaseCollision(LevelController.Components.CurrentLevelConfigs currentLevelConfigs, ref Components.DragonHead dragonHead)
         {
+            var foodPrefab = currentLevelConfigs.GoodsConfig.FoodPrefab;
+
+            for (int i = 0; i < dragonHead.BodyParts.Count; i++)
+            {
+                var position = dragonHead.BodyParts[i].position.Where(y: 0f);
+                var food = Object.Instantiate(foodPrefab, position, Quaternion.identity);
+                food.Spawn(_world.NewEntity(), _world);
+            }
+            
             foreach (var bodyParts in dragonHead.BodyParts)
             {
                 if (bodyParts.TryGetComponent(out EntityRef entityRef))
                 {
                     entityRef.Entity.Get<Utils.DestroyTag>();
                 }
-                
-                levelRunTimeData.FoodSpawningPositions.Enqueue(bodyParts.position);
             }
         }
     }

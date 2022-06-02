@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -49,8 +47,6 @@ namespace Modules.DragonIO.LevelController.Systems
                 levelRunTimeData.GoodsLayerMask = 1 << 6;
                 levelRunTimeData.GoodsCollectingRadius = _config.GoodsCollectingRadius;
                 levelRunTimeData.MaxGoodsSerchingCount = _config.MaxGoodsSerchingCount;
-                levelRunTimeData.FoodCount = levelConfigs.GoodsConfig.MinFoodCount;
-                levelRunTimeData.FoodSpawningPositions = new Queue<Vector3>();
 
                 foreach (var camera in _virtualCamera)
                 {
