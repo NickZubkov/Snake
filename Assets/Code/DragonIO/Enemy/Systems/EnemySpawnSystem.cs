@@ -33,7 +33,7 @@ namespace Modules.DragonIO.Enemy.Systems
                         break;
                     }
 
-                    var parent = new GameObject("Dragon_" + levelRunTimeData.SpawnedEnemiesCount);
+                    var parent = new GameObject("Dragon" + levelRunTimeData.SpawnedEnemiesCount);
                     var parentEntity = parent.AddComponent<Dragons.EntityTemplates.DragonParentTemplate>();
                     parentEntity._components = new List<ViewHub.ViewComponent>();
                     parentEntity.Spawn(_world.NewEntity(), _world);
