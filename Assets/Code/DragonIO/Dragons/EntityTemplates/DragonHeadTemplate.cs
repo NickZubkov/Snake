@@ -13,7 +13,6 @@ namespace Modules.DragonIO.Dragons.EntityTemplates
         [SerializeField] private ParticleSystem _shieldPowerUpVFX;
         [SerializeField] private ParticleSystem _pointVFX;
         [SerializeField] private ParticleSystem _pointPowerUpVFX;
-        [SerializeField] private ParticleSystem _deathVFX;
         [SerializeField] private ParticleSystem _winVFX;
         public override void OnSpawn(EcsEntity entity, EcsWorld world)
         {
@@ -36,7 +35,6 @@ namespace Modules.DragonIO.Dragons.EntityTemplates
             dragonHead.ShieldPowerUpVFX = _shieldPowerUpVFX;
             dragonHead.PointVFX = _pointVFX;
             dragonHead.PointPowerUpVFX = _pointPowerUpVFX;
-            dragonHead.DeathVFX = _deathVFX;
             dragonHead.WinVFX = _winVFX;
             entity.Get<LevelSpawner.LevelEntityTag>();
         }

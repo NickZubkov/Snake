@@ -20,5 +20,6 @@ namespace Modules.DragonIO.LevelController.Components
         public int GoodsLayerMask;
         public int MaxGoodsSerchingCount;
         public float GoodsCollectingRadius;
+        public bool PlayerDethVibroPlayed;
     }
 }

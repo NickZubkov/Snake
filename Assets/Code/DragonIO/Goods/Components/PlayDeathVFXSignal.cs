@@ -1,9 +1,9 @@
-﻿using Leopotam.Ecs;
+﻿using UnityEngine;
 
 namespace Modules.DragonIO.Goods.Components
 {
-    public struct PlayDeathVFXSignal : IEcsIgnoreInFilter
+    public struct PlayDeathVFXSignal
     {
-        
+        public Vector3 PlayPosition;
     }
 }

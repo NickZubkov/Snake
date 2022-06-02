@@ -751,3 +751,5 @@ MonoBehaviour:
   GoodsMinSpawnRadius: 3
   MaxGoodsSerchingCount: 15
   GoodsCollectingRadius: 2
+  DethVFXPrefab: {fileID: 891882845696242574, guid: f7abf5fe22990fa40bfac3f84a0fcd9e,
+    type: 3}

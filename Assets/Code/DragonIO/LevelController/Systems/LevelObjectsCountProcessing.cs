@@ -15,8 +15,8 @@ namespace Modules.DragonIO.LevelController.Systems
         private EcsFilter<Location.Components.GroundDecor> _groundDecor;
         private EcsFilter<Location.Components.Obstacle>.Exclude<Location.Components.Wall> _obstacle;
         private EcsFilter<Player.Components.Player> _player;
-        private EcsFilter<Components.LevelFaildSignal> _levelFaildSignal;
         private EcsFilter<Components.PLayerSpawnedTag> _pLayerSpawnedTag;
+        private EcsFilter<Components.PlayerSpawningSignal> _pLayerSpawningSignal;
         
         
         private EcsFilter<EventGroup.GamePlayState> _gameplay;
@@ -26,6 +26,7 @@ namespace Modules.DragonIO.LevelController.Systems
         
         private EcsWorld _world;
         private TimeService _timeService;
+
         public void Run()
         {
             foreach (var idx in _levelData)
@@ -73,18 +74,15 @@ namespace Modules.DragonIO.LevelController.Systems
                 {
                     _levelData.GetEntity(idx).Get<Components.PlayerSpawningSignal>();
                     _levelData.GetEntity(idx).Get<Components.PLayerSpawnedTag>();
+                    levelRunTimeData.PlayerDethVibroPlayed = false;
                 }
 
-                if (_player.IsEmpty() && !_pLayerSpawnedTag.IsEmpty())
+                if (_player.IsEmpty() && !_pLayerSpawnedTag.IsEmpty() && _pLayerSpawningSignal.IsEmpty())
                 {
-                    foreach (var player in _playerHead)
+                    if (!levelRunTimeData.PlayerDethVibroPlayed)
                     {
-                        ref var playerHead = ref _playerHead.Get1(player);
-                        if (!playerHead.DeathVFX.isPlaying)
-                            _playerHead.GetEntity(idx).Get<Goods.Components.PlayDeathVFXSignal>();
-                        
-                        playerHead.MovementSpeed = 0f;
-                        playerHead.RotationSpeed = 0f;
+                        Misc.PlayVibro(HapticTypes.Failure);
+                        levelRunTimeData.PlayerDethVibroPlayed = true;
                     }
                     levelRunTimeData.WinFailTaimer -= _timeService.DeltaTime;
                     if (levelRunTimeData.WinFailTaimer <= 0)
@@ -146,7 +144,6 @@ namespace Modules.DragonIO.LevelController.Systems
                         {
                             EventGroup.StateFactory.CreateState<EventGroup.RoundFailedState>(_world);
                             Misc.PlayVibro(HapticTypes.Failure);
-                            Debug.Log("TimeOut");
                         }
                         else
                         {
@@ -154,7 +151,6 @@ namespace Modules.DragonIO.LevelController.Systems
                             {
                                 _playerHead.GetEntity(idx).Get<Goods.Components.PlayWinVFXSignal>();
                                 Misc.PlayVibro(HapticTypes.Success);
-                                Debug.Log("Win");
                             }
                                 
                             playerHead.MovementSpeed = 0f;

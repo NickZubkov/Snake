@@ -25,7 +25,6 @@ namespace Modules.DragonIO.Dragons.Components
         public ParticleSystem ShieldPowerUpVFX;
         public ParticleSystem PointVFX;
         public ParticleSystem PointPowerUpVFX;
-        public ParticleSystem DeathVFX;
         public ParticleSystem WinVFX;
 
         public float DefaultBonusMultiplyer;

@@ -30,6 +30,7 @@ namespace Modules.DragonIO.Player.Systems
                     dragonHeadEntity.Get<Player.Components.Player>();
                     ref var dragonHead = ref dragonHeadEntity.Get<Dragons.Components.DragonHead>();
                     dragonHead.DragonConfig = currentLevelConfigs.PlayerConfig;
+                    dragonHead.HeadID = -1;
                     playerHeadTemplate.Spawn(dragonHeadEntity, _world);
                     
                     _world.NewEntity().Get<Dragons.Components.DragonHeadSpawnedSignal>().DragonHead = dragonHead;

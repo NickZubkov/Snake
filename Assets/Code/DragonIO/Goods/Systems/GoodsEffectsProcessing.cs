@@ -8,11 +8,13 @@ namespace Modules.DragonIO.Goods.Systems
     {
         private EcsFilter<ViewHub.UnityView, Components.PlayGoodsEffectTag> _foodSignal;
         private EcsFilter<Dragons.Components.DragonHead, Components.PlayBonusVFXSignal> _playVFXSignal;
-        private EcsFilter<Dragons.Components.DragonHead, Components.PlayDeathVFXSignal> _deathSignal;
+        private EcsFilter<Components.PlayDeathVFXSignal> _deathSignal;
         private EcsFilter<Dragons.Components.DragonHead, Components.PlayWinVFXSignal> _winSignal;
         private EcsFilter<Dragons.Components.DragonHead, Components.StopPowerUpVFXSignal> _stopPowerupVFXSignal;
 
         private Utils.TimeService _timeService;
+        private Data.GameConfig _config;
+        private EcsWorld _world;
         public void Run()
         {
             foreach (var signal in _foodSignal)
@@ -93,7 +95,8 @@ namespace Modules.DragonIO.Goods.Systems
 
             foreach (var deathSignal in _deathSignal)
             {
-                _deathSignal.Get1(deathSignal).DeathVFX.Play();
+                var deth = Object.Instantiate(_config.DethVFXPrefab, _deathSignal.Get1(deathSignal).PlayPosition, Quaternion.identity);
+                deth.Spawn(_world.NewEntity(), _world);
             }
             
             foreach (var winSignal in _winSignal)
