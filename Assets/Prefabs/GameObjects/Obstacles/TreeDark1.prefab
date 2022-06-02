@@ -80,6 +80,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _components: []
   _destroyThreshold: 70
+  _viewRenderers:
+  - {fileID: 0}
 --- !u!65 &1451190381435194298
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -84,7 +84,7 @@ Material:
     - _MixPower: 0.5
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _OutlineSize: 10
+    - _OutlineSize: 50
     - _Parallax: 0.02
     - _ShadowSoftness: 1
     - _Sharpness: 1
@@ -101,7 +101,7 @@ Material:
     - _ColorLocalTopGradient: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
     - _ColorTopGradient: {r: 0.5471698, g: 0.22202465, b: 0.03355288, a: 0.5}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _OutlineColor: {r: 0.22516909, g: 0.23511544, b: 0.41509432, a: 1}
+    - _OutlineColor: {r: 1, g: 0, b: 0, a: 1}
     - _ShadowColor: {r: 0.8490566, g: 0.24392262, b: 0.1802243, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

@@ -44,6 +44,7 @@ namespace Modules.DragonIO
                 .Add(new Location.Systems.LocationWallsSpawnProcessing())
                 .Add(new Location.Systems.ObstaclesSpawnProcessing())
                 .Add(new Location.Systems.GroundDecorSpawnProcessing())
+                .Add(new Location.Systems.ObstacleOutlineProcessing())
                 
                 // player
                 .Add(new Player.Systems.PlayerSpawnSystem())
