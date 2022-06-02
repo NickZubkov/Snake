@@ -39,6 +39,7 @@ namespace Modules.DragonIO.Dragons.Systems
                             if (body.HeadID == -1)
                             {
                                 Misc.PlayVibro(HapticTypes.SoftImpact);
+                                _world.NewEntity().Get<LevelController.Components.ChangeCameraFollowSignal>().FollowTransform = dragonHead.HeadTransform;
                             }
 
                             if (dragonHead.BodyParts.Count >= body.Head.BodyParts.Count)
