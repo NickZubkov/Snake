@@ -55,7 +55,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 5
         EnemyAI: 1
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -71,7 +71,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 5
         EnemyAI: 1
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -87,7 +87,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 10
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -103,7 +103,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 10
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -159,7 +159,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 5
         EnemyAI: 1
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -175,7 +175,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 10
         EnemyAI: 1
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -191,7 +191,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 5
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -207,7 +207,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 10
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -233,7 +233,7 @@ MonoBehaviour:
         GroundDecorPrefabs:
         - {fileID: -6642587625746292088, guid: 83d10a157ec1d8348bbc42842de07e6f, type: 3}
     - LocationConfig:
-        LevelTimer: 50
+        LevelTimer: 90
         LevelSize: 1
         WallPrefab: {fileID: 8292693005376339395, guid: 733e1affa63de94488547a3ba5e82741,
           type: 3}
@@ -263,7 +263,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 5
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -279,7 +279,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 5
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -337,7 +337,7 @@ MonoBehaviour:
         GroundDecorPrefabs:
         - {fileID: 7235652679403321981, guid: 7223a7c9aa8c7af4f8f1756a95ef445e, type: 3}
     - LocationConfig:
-        LevelTimer: 40
+        LevelTimer: 60
         LevelSize: 1
         WallPrefab: {fileID: 8292693005376339395, guid: b20ae18527f09d24b848231dde6a8199,
           type: 3}
@@ -367,7 +367,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 5
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -415,7 +415,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 10
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
