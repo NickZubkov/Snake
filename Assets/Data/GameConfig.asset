@@ -191,7 +191,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 5
+        BodySegmentsCount: 25
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -207,7 +207,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 10
+        BodySegmentsCount: 25
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -263,7 +263,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 5
+        BodySegmentsCount: 15
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -279,7 +279,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 5
+        BodySegmentsCount: 15
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -295,7 +295,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 20
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -311,7 +311,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 25
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -383,7 +383,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 5
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -399,7 +399,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 15
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -415,7 +415,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 10
+        BodySegmentsCount: 15
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -575,7 +575,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 5
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -591,7 +591,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 5
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -607,7 +607,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 10
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -623,7 +623,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 15
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -650,7 +650,7 @@ MonoBehaviour:
         - {fileID: -6642587625746292088, guid: 83d10a157ec1d8348bbc42842de07e6f, type: 3}
   DragonScalingFactor: 0.02
   DefaultCameraOffset: {x: 0, y: 25, z: -13}
-  EnemyMinSpawnRadius: 27
+  EnemyMinSpawnRadius: 26
   ObstaclesMinSpawnRadius: 10
   GoodsMinSpawnRadius: 3
   MaxGoodsSerchingCount: 15
