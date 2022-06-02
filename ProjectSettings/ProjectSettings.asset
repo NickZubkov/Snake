@@ -250,7 +250,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 3
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
-  androidSplashScreen: {fileID: 2800000, guid: de3559201dfb63f4a8c3e8a56af2ac7d, type: 3}
+  androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: '{inproject}: Assets/Configs/Certificates/collect.food.grow.dragon.io.keystore'
   AndroidKeyaliasName: collect.food.grow.dragon.io
   AndroidBuildApkPerCpuArchitecture: 0
