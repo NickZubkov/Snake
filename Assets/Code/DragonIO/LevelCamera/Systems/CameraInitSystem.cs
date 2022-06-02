@@ -33,6 +33,9 @@ namespace Modules.DragonIO.LevelCamera.Systems
             }
             foreach (var idx in _signal)
             {
+                if (_signal.Get1(idx).FollowTransform == null)
+                    continue;
+                
                 _world.NewEntity().Get<CameraUtils.SwitchCameraSignal>() = new CameraUtils.SwitchCameraSignal
                 {
                     CameraId = 0,
