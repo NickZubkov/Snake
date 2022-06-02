@@ -1,4 +1,6 @@
-﻿
+﻿using System.Collections.Generic;
+using UnityEngine;
+
 namespace Modules.DragonIO.LevelController.Components
 {
     public struct LevelRunTimeData
@@ -21,5 +23,7 @@ namespace Modules.DragonIO.LevelController.Components
         public int MaxGoodsSerchingCount;
         public float GoodsCollectingRadius;
         public bool PlayerDethVibroPlayed;
+        public int FoodCount;
+        public Queue<Vector3> FoodSpawningPositions;
     }
 }

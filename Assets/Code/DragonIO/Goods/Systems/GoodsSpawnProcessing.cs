@@ -18,15 +18,25 @@ namespace Modules.DragonIO.Goods.Systems
                 foreach (var levelData in _levelData)
                 {
                     ref var levelRunTimeData = ref _levelData.Get1(levelData);
+                    ref var signal = ref _goodsSignal.Get1(goodsSignal);
                     foreach (var player in _player)
                     {
-                        ref var playerTransform = ref _player.Get1(player).Transform;
-                        var randomPoint = Random.insideUnitCircle * levelRunTimeData.OtherObjectMaxSpawnRadius;
+                        var position = Vector3.zero;
                         var prefab = _goodsSignal.Get1(goodsSignal).GoodsPrefab;
-                        var position = new Vector3(randomPoint.x, prefab.transform.position.y, randomPoint.y);
-                        if ((playerTransform.position - position).sqrMagnitude < levelRunTimeData.GoodsMinSpawnRadiusSqr)
+                        
+                        if (signal.UseBodyPosition)
                         {
-                            break;
+                            position = signal.SpawningPosition;
+                        }
+                        else
+                        {
+                            ref var playerTransform = ref _player.Get1(player).Transform;
+                            var randomPoint = Random.insideUnitCircle * levelRunTimeData.OtherObjectMaxSpawnRadius;
+                            position = new Vector3(randomPoint.x, prefab.transform.position.y, randomPoint.y);
+                            if ((playerTransform.position - position).sqrMagnitude < levelRunTimeData.GoodsMinSpawnRadiusSqr)
+                            {
+                                break;
+                            }
                         }
 
                         if (_foodPool.IsEmpty())

@@ -44,11 +44,20 @@ namespace Modules.DragonIO.LevelController.Systems
                     _levelData.GetEntity(idx).Get<Components.EnemySpawningSignal>();
                 }
 
-                if (_food.GetEntitiesCount() < levelConfigs.GoodsConfig.MinFoodCount)
+                if (_food.GetEntitiesCount() < levelRunTimeData.FoodCount)
                 {
-                    _levelData.GetEntity(idx).Get<Components.GoodsSpawningSignal>().GoodsPrefab = levelConfigs.GoodsConfig.FoodPrefab;
+                    ref var signal = ref _levelData.GetEntity(idx).Get<Components.GoodsSpawningSignal>();
+                    signal.GoodsPrefab = levelConfigs.GoodsConfig.FoodPrefab;
                 }
-                
+
+                if (levelRunTimeData.FoodSpawningPositions.Count > 0)
+                {
+                    ref var signal = ref _levelData.GetEntity(idx).Get<Components.GoodsSpawningSignal>();
+                    signal.GoodsPrefab = levelConfigs.GoodsConfig.FoodPrefab;
+                    signal.SpawningPosition = levelRunTimeData.FoodSpawningPositions.Dequeue();
+                    signal.UseBodyPosition = true;
+                }
+
                 if (levelRunTimeData.BonusSpawnTimer <= 0)
                 {
                     if (_bonus.GetEntitiesCount() < levelConfigs.GoodsConfig.MaxBonusCount)
