@@ -52,8 +52,8 @@ MonoBehaviour:
           type: 3}
         TailPrefab: {fileID: 1291994516600404886, guid: 98da8e8262035524a87bc815414d0cb4,
           type: 3}
-        MovementSpeed: 4
-        RotationSpeed: 3
+        MovementSpeed: 5
+        RotationSpeed: 5
         Gap: 5
         BodySegmentsCount: 5
         EnemyAI: 1
@@ -68,8 +68,8 @@ MonoBehaviour:
           type: 3}
         TailPrefab: {fileID: 1291994516600404886, guid: a0977cdd9e3734c488dda0a138024fa6,
           type: 3}
-        MovementSpeed: 4
-        RotationSpeed: 3
+        MovementSpeed: 5
+        RotationSpeed: 5
         Gap: 5
         BodySegmentsCount: 5
         EnemyAI: 1
@@ -84,11 +84,11 @@ MonoBehaviour:
           type: 3}
         TailPrefab: {fileID: 1291994516600404886, guid: 2370f66db9ea0c945a4bd7c2ba43dccf,
           type: 3}
-        MovementSpeed: 4
-        RotationSpeed: 3
+        MovementSpeed: 5
+        RotationSpeed: 5
         Gap: 5
-        BodySegmentsCount: 10
-        EnemyAI: 2
+        BodySegmentsCount: 5
+        EnemyAI: 1
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -100,11 +100,11 @@ MonoBehaviour:
           type: 3}
         TailPrefab: {fileID: 1291994516600404886, guid: 0182ae6aaa2e9dc40bcb65a778498036,
           type: 3}
-        MovementSpeed: 4
-        RotationSpeed: 3
+        MovementSpeed: 5
+        RotationSpeed: 5
         Gap: 5
-        BodySegmentsCount: 10
-        EnemyAI: 2
+        BodySegmentsCount: 5
+        EnemyAI: 1
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -156,8 +156,8 @@ MonoBehaviour:
           type: 3}
         TailPrefab: {fileID: 1291994516600404886, guid: 98da8e8262035524a87bc815414d0cb4,
           type: 3}
-        MovementSpeed: 4
-        RotationSpeed: 3
+        MovementSpeed: 5
+        RotationSpeed: 5
         Gap: 5
         BodySegmentsCount: 5
         EnemyAI: 1
@@ -172,10 +172,10 @@ MonoBehaviour:
           type: 3}
         TailPrefab: {fileID: 1291994516600404886, guid: a0977cdd9e3734c488dda0a138024fa6,
           type: 3}
-        MovementSpeed: 4
-        RotationSpeed: 3
+        MovementSpeed: 5
+        RotationSpeed: 5
         Gap: 5
-        BodySegmentsCount: 10
+        BodySegmentsCount: 5
         EnemyAI: 1
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -188,11 +188,11 @@ MonoBehaviour:
           type: 3}
         TailPrefab: {fileID: 1291994516600404886, guid: 2370f66db9ea0c945a4bd7c2ba43dccf,
           type: 3}
-        MovementSpeed: 4
-        RotationSpeed: 3
+        MovementSpeed: 5
+        RotationSpeed: 5
         Gap: 5
-        BodySegmentsCount: 25
-        EnemyAI: 2
+        BodySegmentsCount: 5
+        EnemyAI: 1
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -204,11 +204,11 @@ MonoBehaviour:
           type: 3}
         TailPrefab: {fileID: 1291994516600404886, guid: 0182ae6aaa2e9dc40bcb65a778498036,
           type: 3}
-        MovementSpeed: 4
-        RotationSpeed: 3
+        MovementSpeed: 5
+        RotationSpeed: 5
         Gap: 5
-        BodySegmentsCount: 25
-        EnemyAI: 2
+        BodySegmentsCount: 5
+        EnemyAI: 1
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -260,11 +260,11 @@ MonoBehaviour:
           type: 3}
         TailPrefab: {fileID: 1291994516600404886, guid: 98da8e8262035524a87bc815414d0cb4,
           type: 3}
-        MovementSpeed: 4
-        RotationSpeed: 3
+        MovementSpeed: 5
+        RotationSpeed: 5
         Gap: 5
-        BodySegmentsCount: 15
-        EnemyAI: 2
+        BodySegmentsCount: 5
+        EnemyAI: 1
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -276,11 +276,11 @@ MonoBehaviour:
           type: 3}
         TailPrefab: {fileID: 1291994516600404886, guid: a0977cdd9e3734c488dda0a138024fa6,
           type: 3}
-        MovementSpeed: 4
-        RotationSpeed: 3
+        MovementSpeed: 5
+        RotationSpeed: 5
         Gap: 5
-        BodySegmentsCount: 15
-        EnemyAI: 2
+        BodySegmentsCount: 5
+        EnemyAI: 1
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -292,10 +292,10 @@ MonoBehaviour:
           type: 3}
         TailPrefab: {fileID: 1291994516600404886, guid: 2370f66db9ea0c945a4bd7c2ba43dccf,
           type: 3}
-        MovementSpeed: 4
-        RotationSpeed: 3
+        MovementSpeed: 5
+        RotationSpeed: 5
         Gap: 5
-        BodySegmentsCount: 20
+        BodySegmentsCount: 5
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -308,10 +308,10 @@ MonoBehaviour:
           type: 3}
         TailPrefab: {fileID: 1291994516600404886, guid: 0182ae6aaa2e9dc40bcb65a778498036,
           type: 3}
-        MovementSpeed: 4
-        RotationSpeed: 3
+        MovementSpeed: 5
+        RotationSpeed: 5
         Gap: 5
-        BodySegmentsCount: 25
+        BodySegmentsCount: 5
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -364,11 +364,11 @@ MonoBehaviour:
           type: 3}
         TailPrefab: {fileID: 1291994516600404886, guid: 98da8e8262035524a87bc815414d0cb4,
           type: 3}
-        MovementSpeed: 4
-        RotationSpeed: 3
+        MovementSpeed: 5
+        RotationSpeed: 5
         Gap: 5
         BodySegmentsCount: 5
-        EnemyAI: 2
+        EnemyAI: 1
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -380,11 +380,11 @@ MonoBehaviour:
           type: 3}
         TailPrefab: {fileID: 1291994516600404886, guid: a0977cdd9e3734c488dda0a138024fa6,
           type: 3}
-        MovementSpeed: 4
-        RotationSpeed: 3
+        MovementSpeed: 5
+        RotationSpeed: 5
         Gap: 5
         BodySegmentsCount: 5
-        EnemyAI: 2
+        EnemyAI: 1
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -396,10 +396,10 @@ MonoBehaviour:
           type: 3}
         TailPrefab: {fileID: 1291994516600404886, guid: 2370f66db9ea0c945a4bd7c2ba43dccf,
           type: 3}
-        MovementSpeed: 4
-        RotationSpeed: 3
+        MovementSpeed: 5
+        RotationSpeed: 5
         Gap: 5
-        BodySegmentsCount: 15
+        BodySegmentsCount: 5
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -412,10 +412,10 @@ MonoBehaviour:
           type: 3}
         TailPrefab: {fileID: 1291994516600404886, guid: 0182ae6aaa2e9dc40bcb65a778498036,
           type: 3}
-        MovementSpeed: 4
-        RotationSpeed: 3
+        MovementSpeed: 5
+        RotationSpeed: 5
         Gap: 5
-        BodySegmentsCount: 15
+        BodySegmentsCount: 5
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -468,10 +468,10 @@ MonoBehaviour:
           type: 3}
         TailPrefab: {fileID: 1291994516600404886, guid: 98da8e8262035524a87bc815414d0cb4,
           type: 3}
-        MovementSpeed: 4
-        RotationSpeed: 3
+        MovementSpeed: 5
+        RotationSpeed: 5
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 5
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -484,10 +484,10 @@ MonoBehaviour:
           type: 3}
         TailPrefab: {fileID: 1291994516600404886, guid: a0977cdd9e3734c488dda0a138024fa6,
           type: 3}
-        MovementSpeed: 4
-        RotationSpeed: 3
+        MovementSpeed: 5
+        RotationSpeed: 5
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 5
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -500,10 +500,10 @@ MonoBehaviour:
           type: 3}
         TailPrefab: {fileID: 1291994516600404886, guid: 2370f66db9ea0c945a4bd7c2ba43dccf,
           type: 3}
-        MovementSpeed: 4
-        RotationSpeed: 3
+        MovementSpeed: 5
+        RotationSpeed: 5
         Gap: 5
-        BodySegmentsCount: 1
+        BodySegmentsCount: 5
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -516,11 +516,11 @@ MonoBehaviour:
           type: 3}
         TailPrefab: {fileID: 1291994516600404886, guid: 0182ae6aaa2e9dc40bcb65a778498036,
           type: 3}
-        MovementSpeed: 4
-        RotationSpeed: 3
+        MovementSpeed: 5
+        RotationSpeed: 5
         Gap: 5
-        BodySegmentsCount: 1
-        EnemyAI: 2
+        BodySegmentsCount: 5
+        EnemyAI: 1
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -531,7 +531,7 @@ MonoBehaviour:
         - {fileID: 8310880059426670931, guid: 1ae9f349062cf8942a82f9933e855216, type: 3}
         - {fileID: 8310880059426670931, guid: d365bfe454a0a1f4f95709d2824de4f1, type: 3}
         - {fileID: 8310880059426670931, guid: af87ffbde9952f141a8c4f0adff8eb0a, type: 3}
-        MinFoodCount: 500
+        MinFoodCount: 200
         MaxBonusCount: 20
         BonusSpawnTimeRange: {x: 1, y: 2}
       GroundConfig:
@@ -576,7 +576,7 @@ MonoBehaviour:
         RotationSpeed: 3
         Gap: 5
         BodySegmentsCount: 5
-        EnemyAI: 2
+        EnemyAI: 1
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -592,7 +592,7 @@ MonoBehaviour:
         RotationSpeed: 3
         Gap: 5
         BodySegmentsCount: 5
-        EnemyAI: 2
+        EnemyAI: 1
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -607,7 +607,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 10
+        BodySegmentsCount: 5
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -623,7 +623,7 @@ MonoBehaviour:
         MovementSpeed: 4
         RotationSpeed: 3
         Gap: 5
-        BodySegmentsCount: 15
+        BodySegmentsCount: 5
         EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
@@ -635,7 +635,7 @@ MonoBehaviour:
         - {fileID: 8310880059426670931, guid: 1ae9f349062cf8942a82f9933e855216, type: 3}
         - {fileID: 8310880059426670931, guid: d365bfe454a0a1f4f95709d2824de4f1, type: 3}
         - {fileID: 8310880059426670931, guid: af87ffbde9952f141a8c4f0adff8eb0a, type: 3}
-        MinFoodCount: 500
+        MinFoodCount: 200
         MaxBonusCount: 20
         BonusSpawnTimeRange: {x: 1, y: 2}
       GroundConfig:
@@ -649,11 +649,11 @@ MonoBehaviour:
         GroundDecorPrefabs:
         - {fileID: -6642587625746292088, guid: 83d10a157ec1d8348bbc42842de07e6f, type: 3}
   DragonScalingFactor: 0.01
-  DefaultCameraOffset: {x: 0, y: 25, z: -13}
+  DefaultCameraOffset: {x: 0, y: 20, z: -13}
   EnemyMinSpawnRadius: 26
   ObstaclesMinSpawnRadius: 10
-  GoodsMinSpawnRadius: 3
-  MaxGoodsSerchingCount: 15
+  GoodsMinSpawnRadius: 5
+  MaxGoodsSerchingCount: 20
   GoodsCollectingRadius: 2
   DethVFXPrefab: {fileID: 891882845696242574, guid: f7abf5fe22990fa40bfac3f84a0fcd9e,
     type: 3}
