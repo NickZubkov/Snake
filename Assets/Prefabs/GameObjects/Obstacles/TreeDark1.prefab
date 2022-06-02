@@ -81,7 +81,7 @@ MonoBehaviour:
   _components: []
   _destroyThreshold: 70
   _viewRenderers:
-  - {fileID: 0}
+  - {fileID: 5974652447795913557}
 --- !u!65 &1451190381435194298
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -182,6 +182,12 @@ PrefabInstance:
 --- !u!4 &4801143295085697082 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1479378059001878368, guid: f69bb0e30ff725d4887bc398d656a50f,
+    type: 3}
+  m_PrefabInstance: {fileID: 6207887601618423642}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &5974652447795913557 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 345900160516074511, guid: f69bb0e30ff725d4887bc398d656a50f,
     type: 3}
   m_PrefabInstance: {fileID: 6207887601618423642}
   m_PrefabAsset: {fileID: 0}
