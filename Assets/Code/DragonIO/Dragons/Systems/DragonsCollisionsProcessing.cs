@@ -1,4 +1,5 @@
-﻿using Leopotam.Ecs;
+﻿using DG.Tweening;
+using Leopotam.Ecs;
 using Modules.ViewHub;
 using MoreMountains.NiceVibrations;
 using UnityEngine;
@@ -54,11 +55,16 @@ namespace Modules.DragonIO.Dragons.Systems
                             
                         }
                         
-                        else if (triggered.Other.Has<Location.Components.Obstacle>() && !triggered.Other.Has<Location.Components.Wall>())
+                        else if (triggered.Other.Has<Location.Components.Obstacle>())
                         {
                             if (triggered.Other.Get<Location.Components.Obstacle>().DestroyThreshold < dragonHead.BodyParts.Count)
                             {
-                                triggered.Other.Get<Utils.DestroyTag>();
+                                var transform = triggered.Collider.transform;
+                                var sequence = DOTween.Sequence();
+                                sequence.Append(transform.DOPunchScale(Vector3.one * 0.1f, 0.2f, 0, 0));
+                                sequence.Append(transform.DOScale(Vector3.one * 0.05f, 0.2f));
+                                triggered.Other.Del<Location.Components.Obstacle>();
+                                triggered.Other.Get<Utils.DestroyTag>().DestroyTime = 0.5f;
                                 continue;
                             }
                             if (dragonHead.IsShieldActive)
