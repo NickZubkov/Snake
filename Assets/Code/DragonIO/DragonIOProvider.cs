@@ -60,6 +60,7 @@ namespace Modules.DragonIO
                 .Add(new Dragons.Systems.DragonScalingProcessing())
                 .Add(new Dragons.Systems.DragonsCollisionsProcessing())
                 .Add(new Dragons.Systems.DragonsMoveProcessing())
+                .Add(new Dragons.Systems.BodyOutLineColorProcessing())
                 
                 // goods
                 .Add(new Goods.Systems.GoodsSpawnProcessing())

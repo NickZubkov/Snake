@@ -14,6 +14,7 @@ namespace Modules.DragonIO.Dragons.EntityTemplates
         [SerializeField] private ParticleSystem _pointVFX;
         [SerializeField] private ParticleSystem _pointPowerUpVFX;
         [SerializeField] private ParticleSystem _winVFX;
+        [SerializeField] private List<MeshRenderer> _viewRenderers;
         public override void OnSpawn(EcsEntity entity, EcsWorld world)
         {
             base.OnSpawn(entity, world);
@@ -26,6 +27,8 @@ namespace Modules.DragonIO.Dragons.EntityTemplates
             dragonHead.DragonName = transform.parent.name;
             dragonHead.HeadTransform = transform;
             dragonHead.BodyParts = new List<Transform>{transform};
+            dragonHead.Body = new List<Components.DragonBody>();
+            dragonHead.ViewRenderers = _viewRenderers;
             dragonHead.StartBodyCount = dragonHead.DragonConfig.BodySegmentsCount;
             dragonHead.TargetHeadDirection = Vector3.zero;
             dragonHead.Points = 0;

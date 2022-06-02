@@ -9,6 +9,8 @@ namespace Modules.DragonIO.Dragons.Components
         public int HeadID;
         public Transform HeadTransform;
         public List<Transform> BodyParts;
+        public List<DragonBody> Body;
+        public List<MeshRenderer> ViewRenderers;
         public int StartBodyCount;
         public Vector3 TargetHeadDirection;
         public bool LockDirection;

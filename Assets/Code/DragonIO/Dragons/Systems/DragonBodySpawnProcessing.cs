@@ -22,8 +22,11 @@ namespace Modules.DragonIO.Dragons.Systems
                     bodyPart.transform.parent = spawnSignal.DragonHead.HeadTransform.parent;
                     spawnSignal.DragonHead.BodyParts.Insert(index, bodyPart.transform);
                     var bodyEntity = _world.NewEntity();
-                    bodyEntity.Get<Components.DragonBody>().HeadID = spawnSignal.DragonHead.HeadID;
+                    ref var body = ref bodyEntity.Get<Components.DragonBody>();
+                    body.HeadID = spawnSignal.DragonHead.HeadID;
+                    body.Head = spawnSignal.DragonHead;
                     bodyPart.Spawn(bodyEntity, _world);
+                    spawnSignal.DragonHead.Body.Insert(0, body);
                 } 
             }
             
@@ -34,15 +37,23 @@ namespace Modules.DragonIO.Dragons.Systems
                 legs.transform.parent = spawnSignal.DragonHead.HeadTransform.parent;
                 spawnSignal.DragonHead.BodyParts.Insert(1, legs.transform);
                 var legsEntity = _world.NewEntity();
-                legsEntity.Get<Components.DragonBody>().HeadID = spawnSignal.DragonHead.HeadID;
+                ref var legsBody = ref legsEntity.Get<Components.DragonBody>();
+                legsBody.HeadID = spawnSignal.DragonHead.HeadID;
+                legsBody.Head = spawnSignal.DragonHead;
+                
                 legs.Spawn(legsEntity, _world);
+                spawnSignal.DragonHead.Body.Insert(0, legsBody);
 
                 var tail = Object.Instantiate(spawnSignal.DragonHead.DragonConfig.TailPrefab, spawnSignal.DragonHead.HeadTransform.position, Quaternion.identity);
                 tail.transform.parent = spawnSignal.DragonHead.HeadTransform.parent;
                 spawnSignal.DragonHead.BodyParts.Insert(2, tail.transform);
                 var tailEntity = _world.NewEntity();
-                tailEntity.Get<Components.DragonBody>().HeadID = spawnSignal.DragonHead.HeadID;
+                ref var tailbody = ref tailEntity.Get<Components.DragonBody>();
+                tailbody.HeadID = spawnSignal.DragonHead.HeadID;
+                tailbody.Head = spawnSignal.DragonHead;
+                
                 tail.Spawn(tailEntity, _world);
+                spawnSignal.DragonHead.Body.Insert(0, tailbody);
             }
         }
     }

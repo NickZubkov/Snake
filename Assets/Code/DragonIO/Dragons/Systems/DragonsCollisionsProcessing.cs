@@ -30,22 +30,27 @@ namespace Modules.DragonIO.Dragons.Systems
                     {
                         if (triggered.Other.Has<Components.DragonBody>())
                         {
-                            if (dragonHead.HeadID == triggered.Other.Get<Components.DragonBody>().HeadID)
-                            {
-                                continue;
-                            }
-                            
-                            if (dragonHead.IsShieldActive)
+                            ref var body = ref triggered.Other.Get<Components.DragonBody>();
+                            if (dragonHead.HeadID == body.HeadID)
                             {
                                 continue;
                             }
 
-                            if (triggered.Other.Get<Components.DragonBody>().HeadID == -1)
+                            if (body.HeadID == -1)
                             {
                                 Misc.PlayVibro(HapticTypes.SoftImpact);
                             }
-                            levelDataEntity.Get<Goods.Components.PlayDeathVFXSignal>().PlayPosition = dragonHead.HeadTransform.position;
-                            ReleaseCollision(currentLevelConfigs, ref dragonHead);
+
+                            if (dragonHead.BodyParts.Count >= body.Head.BodyParts.Count)
+                            {
+                                ReleaseCollision(currentLevelConfigs, ref body.Head);
+                            }
+                            else if (!dragonHead.IsShieldActive)
+                            {
+                                levelDataEntity.Get<Goods.Components.PlayDeathVFXSignal>().PlayPosition = dragonHead.HeadTransform.position;
+                                ReleaseCollision(currentLevelConfigs, ref dragonHead);
+                            }
+                            
                         }
                         
                         else if (triggered.Other.Has<Location.Components.Obstacle>() && !triggered.Other.Has<Location.Components.Wall>())

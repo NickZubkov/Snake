@@ -47,6 +47,11 @@ namespace Modules.DragonIO.Enemy.Systems
                     dragonHead.HeadID = levelRunTimeData.SpawnedEnemiesCount;
                     InitEnemy(ref dragonHeadEntity, enemyConfig, currentLevelConfigs);
                     enemyHeadTemplate.Spawn(dragonHeadEntity, _world);
+                    ref var body = ref dragonHeadEntity.Get<Dragons.Components.DragonBody>();
+                    body.HeadID = dragonHead.HeadID;
+                    body.Head = dragonHead;
+                    body.ViewRenderers = dragonHead.ViewRenderers;
+                    dragonHead.Body.Insert(0, body);
 
                     _world.NewEntity().Get<Dragons.Components.DragonHeadSpawnedSignal>().DragonHead = dragonHead;
                     

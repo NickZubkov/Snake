@@ -1,16 +1,18 @@
-﻿using Leopotam.Ecs;
+﻿using System.Collections.Generic;
+using Leopotam.Ecs;
 using Modules.ViewHub;
+using UnityEngine;
 
 namespace Modules.DragonIO.Dragons.EntityTemplates
 {
     public class DragonBodyTemplate: ViewElement
     {
-        private EcsEntity _entity;
+        [SerializeField] private List<MeshRenderer> _viewRenderers;
         public override void OnSpawn(EcsEntity entity, EcsWorld world)
         {
             base.OnSpawn(entity, world);
             entity.Get<LevelSpawner.LevelEntityTag>();
-            _entity = entity;
+            entity.Get<Components.DragonBody>().ViewRenderers = _viewRenderers;
         }
     }
 }

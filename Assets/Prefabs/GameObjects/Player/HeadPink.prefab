@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _components: []
+  _viewRenderers: []
 --- !u!1 &3750438799194082080
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _components: []
+  _viewRenderers: []
 --- !u!1 &7439165988358018791
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,8 +325,9 @@ MonoBehaviour:
   _shieldPowerUpVFX: {fileID: 7186509648724378616}
   _pointVFX: {fileID: 3060467606859674520}
   _pointPowerUpVFX: {fileID: 4064953652938252501}
-  _deathVFX: {fileID: 0}
   _winVFX: {fileID: 1486078455913605332}
+  _viewRenderers:
+  - {fileID: 6884155017141518730}
 --- !u!1001 &916548843949994710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -335,6 +338,10 @@ PrefabInstance:
     - target: {fileID: 147436, guid: 6c45da03ed96040499bdba3b88449bb6, type: 3}
       propertyPath: m_Name
       value: vfx_powerup_speed (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 147436, guid: 6c45da03ed96040499bdba3b88449bb6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 460430, guid: 6c45da03ed96040499bdba3b88449bb6, type: 3}
       propertyPath: m_RootOrder
@@ -501,6 +508,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1952864959801099572}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &6884155017141518730 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4940614637766902974, guid: 9c9213b660799fe49837af0dfde2aac4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1952864959801099572}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3699675557311254111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -612,6 +625,10 @@ PrefabInstance:
     - target: {fileID: 191548, guid: 7d427bec8cc5e97499ce9fd0d8d05b95, type: 3}
       propertyPath: m_Name
       value: vfx_powerup_mult
+      objectReference: {fileID: 0}
+    - target: {fileID: 191548, guid: 7d427bec8cc5e97499ce9fd0d8d05b95, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 434584, guid: 7d427bec8cc5e97499ce9fd0d8d05b95, type: 3}
       propertyPath: m_RootOrder
@@ -796,6 +813,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: vfx_win
       objectReference: {fileID: 0}
+    - target: {fileID: 8746034632018266691, guid: a50343081631faa41b167a7e940a0a36,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a50343081631faa41b167a7e940a0a36, type: 3}
 --- !u!198 &1486078455913605332 stripped
@@ -922,6 +944,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: vfx_powerup_speed
       objectReference: {fileID: 0}
+    - target: {fileID: 147436, guid: 6c45da03ed96040499bdba3b88449bb6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 460430, guid: 6c45da03ed96040499bdba3b88449bb6, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1002,6 +1028,10 @@ PrefabInstance:
     - target: {fileID: 106386, guid: 831c85159903ac84399ac3c3e1d5c5ad, type: 3}
       propertyPath: m_Name
       value: vfx_powerup_shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 106386, guid: 831c85159903ac84399ac3c3e1d5c5ad, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 490222, guid: 831c85159903ac84399ac3c3e1d5c5ad, type: 3}
       propertyPath: m_RootOrder
@@ -1096,6 +1126,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: vfx_shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814691455412633029, guid: a406c9447e8c2224b9bbff6cf7a54cb5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1814691455412633030, guid: a406c9447e8c2224b9bbff6cf7a54cb5,
         type: 3}
