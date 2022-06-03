@@ -55,8 +55,8 @@ MonoBehaviour:
         MovementSpeed: 5
         RotationSpeed: 5
         Gap: 5
-        BodySegmentsCount: 5
-        EnemyAI: 1
+        BodySegmentsCount: 10
+        EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -72,7 +72,7 @@ MonoBehaviour:
         RotationSpeed: 5
         Gap: 5
         BodySegmentsCount: 5
-        EnemyAI: 1
+        EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -88,7 +88,7 @@ MonoBehaviour:
         RotationSpeed: 5
         Gap: 5
         BodySegmentsCount: 5
-        EnemyAI: 1
+        EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -104,7 +104,7 @@ MonoBehaviour:
         RotationSpeed: 5
         Gap: 5
         BodySegmentsCount: 5
-        EnemyAI: 1
+        EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -160,7 +160,7 @@ MonoBehaviour:
         RotationSpeed: 5
         Gap: 5
         BodySegmentsCount: 5
-        EnemyAI: 1
+        EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -176,7 +176,7 @@ MonoBehaviour:
         RotationSpeed: 5
         Gap: 5
         BodySegmentsCount: 5
-        EnemyAI: 1
+        EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -192,7 +192,7 @@ MonoBehaviour:
         RotationSpeed: 5
         Gap: 5
         BodySegmentsCount: 5
-        EnemyAI: 1
+        EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -208,7 +208,7 @@ MonoBehaviour:
         RotationSpeed: 5
         Gap: 5
         BodySegmentsCount: 5
-        EnemyAI: 1
+        EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -264,7 +264,7 @@ MonoBehaviour:
         RotationSpeed: 5
         Gap: 5
         BodySegmentsCount: 5
-        EnemyAI: 1
+        EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -280,7 +280,7 @@ MonoBehaviour:
         RotationSpeed: 5
         Gap: 5
         BodySegmentsCount: 5
-        EnemyAI: 1
+        EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -368,7 +368,7 @@ MonoBehaviour:
         RotationSpeed: 5
         Gap: 5
         BodySegmentsCount: 5
-        EnemyAI: 1
+        EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -384,7 +384,7 @@ MonoBehaviour:
         RotationSpeed: 5
         Gap: 5
         BodySegmentsCount: 5
-        EnemyAI: 1
+        EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -520,7 +520,7 @@ MonoBehaviour:
         RotationSpeed: 5
         Gap: 5
         BodySegmentsCount: 5
-        EnemyAI: 1
+        EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -576,7 +576,7 @@ MonoBehaviour:
         RotationSpeed: 3
         Gap: 5
         BodySegmentsCount: 5
-        EnemyAI: 1
+        EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -592,7 +592,7 @@ MonoBehaviour:
         RotationSpeed: 3
         Gap: 5
         BodySegmentsCount: 5
-        EnemyAI: 1
+        EnemyAI: 2
         TimeToChangeDirection: 2
         GoodsSerchRadius: 10
         ObstacleSerchingDistance: 5
@@ -649,7 +649,7 @@ MonoBehaviour:
         GroundDecorPrefabs:
         - {fileID: -6642587625746292088, guid: 83d10a157ec1d8348bbc42842de07e6f, type: 3}
   DragonScalingFactor: 0.01
-  DefaultCameraOffset: {x: 0, y: 20, z: -13}
+  DefaultCameraOffset: {x: 0, y: 17, z: -9}
   EnemyMinSpawnRadius: 26
   ObstaclesMinSpawnRadius: 10
   GoodsMinSpawnRadius: 5
