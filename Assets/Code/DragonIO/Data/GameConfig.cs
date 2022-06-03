@@ -1,4 +1,5 @@
-﻿using Sirenix.OdinInspector;
+﻿using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Modules.DragonIO.Data
@@ -29,6 +30,10 @@ namespace Modules.DragonIO.Data
         public Location.EntityTemplates.DethVFXTemplate DethVFXPrefab;
         [FoldoutGroup("Common")][Range(1, 10)]
         public int BodyPartSpawnDecrease = 2;
+        [FoldoutGroup("Common")] 
+        public List<Sprite> CountrySprite;
+        [FoldoutGroup("Common")]
+        public List<string> Names;
     }
 
     [DictionaryDrawerSettings(KeyLabel = "Level",DisplayMode = DictionaryDisplayOptions.Foldout, ValueLabel = "LevelConfigs")]

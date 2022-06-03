@@ -32,6 +32,8 @@ namespace Modules.DragonIO.Player.Systems
                     dragonHead.DragonConfig = currentLevelConfigs.PlayerConfig;
                     dragonHead.HeadID = -1;
                     playerHeadTemplate.Spawn(dragonHeadEntity, _world);
+                    dragonHead.TextMeshProUGUI.transform.parent.gameObject.SetActive(false);
+                    dragonHead.DragonNameColor = new Color(0.2245906f, 0.5621458f, 0.9716981f, 1f);
                     ref var body = ref dragonHeadEntity.Get<Dragons.Components.DragonBody>();
                     body.HeadID = dragonHead.HeadID;
                     body.Head = dragonHead;

@@ -657,5 +657,76 @@ MonoBehaviour:
   GoodsCollectingRadius: 2
   DethVFXPrefab: {fileID: 891882845696242574, guid: f7abf5fe22990fa40bfac3f84a0fcd9e,
     type: 3}
-  PuffVFXPrefab: {fileID: 0}
   BodyPartSpawnDecrease: 3
+  CountrySprite:
+  - {fileID: 467792874, guid: ead5dd14817abbf4e8d777f1aff7ce5d, type: 3}
+  - {fileID: -472901455, guid: ead5dd14817abbf4e8d777f1aff7ce5d, type: 3}
+  - {fileID: 41498092, guid: ead5dd14817abbf4e8d777f1aff7ce5d, type: 3}
+  - {fileID: 1113793140, guid: ead5dd14817abbf4e8d777f1aff7ce5d, type: 3}
+  - {fileID: 1470700570, guid: ead5dd14817abbf4e8d777f1aff7ce5d, type: 3}
+  - {fileID: -1184040311, guid: ead5dd14817abbf4e8d777f1aff7ce5d, type: 3}
+  - {fileID: -1018576917, guid: ead5dd14817abbf4e8d777f1aff7ce5d, type: 3}
+  - {fileID: 1000131946, guid: ead5dd14817abbf4e8d777f1aff7ce5d, type: 3}
+  - {fileID: 1428132256, guid: ead5dd14817abbf4e8d777f1aff7ce5d, type: 3}
+  - {fileID: -1459779607, guid: ead5dd14817abbf4e8d777f1aff7ce5d, type: 3}
+  Names:
+  - Evgem
+  - Tube
+  - Tery
+  - Warden
+  - Steve
+  - Zelda
+  - oxxxy
+  - Scapul
+  - MonMan
+  - Indium
+  - Lemony
+  - Parley
+  - BizzyB
+  - CatIn
+  - TnT56
+  - 7Elven
+  - Kind
+  - DJVox
+  - DejaB
+  - TheB
+  - Mind_C
+  - Densel
+  - QueenB
+  - Trexxx
+  - Hero4H
+  - Circe
+  - doub00
+  - Myopia
+  - Pr00l
+  - MaryM
+  - KingFG
+  - GenXXX
+  - BettyO
+  - Scylla
+  - ModeXx
+  - Ghost_
+  - Dihard
+  - DejaBo
+  - Prima
+  - Iocal
+  - TheGe
+  - BigDip
+  - ExtraT
+  - Hygger
+  - DrKind
+  - PapaB
+  - Onatic
+  - RatBoy
+  - Honor9
+  - Orange
+  - SuSap
+  - Daxxx
+  - Hami
+  - Ista
+  - Daaaaa
+  - Ndeen
+  - Xima
+  - Illie
+  - Zacc
+  - Quas

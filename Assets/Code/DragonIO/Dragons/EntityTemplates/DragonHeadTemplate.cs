@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using Leopotam.Ecs;
 using Modules.ViewHub;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Modules.DragonIO.Dragons.EntityTemplates
 {
@@ -14,7 +16,10 @@ namespace Modules.DragonIO.Dragons.EntityTemplates
         [SerializeField] private ParticleSystem _pointVFX;
         [SerializeField] private ParticleSystem _pointPowerUpVFX;
         [SerializeField] private ParticleSystem _winVFX;
+        [SerializeField] private TextMeshProUGUI _textMeshPro;
+        [SerializeField] private Image _countryImage;
         [SerializeField] private List<MeshRenderer> _viewRenderers;
+        
         public override void OnSpawn(EcsEntity entity, EcsWorld world)
         {
             base.OnSpawn(entity, world);
@@ -24,7 +29,6 @@ namespace Modules.DragonIO.Dragons.EntityTemplates
             dragonHead.Gap = dragonHead.DragonConfig.Gap;
             dragonHead.DefaultBonusMultiplyer = 1;
             dragonHead.PointBonusMultiplyer = 1;
-            dragonHead.DragonName = transform.parent.name;
             dragonHead.HeadTransform = transform;
             dragonHead.BodyParts = new List<Transform>{transform};
             dragonHead.Body = new List<Components.DragonBody>();
@@ -39,6 +43,12 @@ namespace Modules.DragonIO.Dragons.EntityTemplates
             dragonHead.PointVFX = _pointVFX;
             dragonHead.PointPowerUpVFX = _pointPowerUpVFX;
             dragonHead.WinVFX = _winVFX;
+            dragonHead.DragonName = transform.parent.name;
+            dragonHead.TextMeshProUGUI = _textMeshPro;
+            dragonHead.TextMeshProUGUI.text = dragonHead.DragonName;
+            dragonHead.DragonNameColor = _viewRenderers[0].materials[0].color;
+            dragonHead.TextMeshProUGUI.color = dragonHead.DragonNameColor;
+            dragonHead.CountryImage = _countryImage;
             entity.Get<LevelSpawner.LevelEntityTag>();
         }
     }

@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Modules.DragonIO.Dragons.Components
 {
@@ -20,6 +22,9 @@ namespace Modules.DragonIO.Dragons.Components
         public float RotationSpeed;
         public float Gap;
         public string DragonName;
+        public Color DragonNameColor;
+        public TextMeshProUGUI TextMeshProUGUI;
+        public Image CountryImage;
         
         public ParticleSystem SpeedVFX;
         public List<ParticleSystem> SpeedPowerUpVFX;

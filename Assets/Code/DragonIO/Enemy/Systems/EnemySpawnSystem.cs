@@ -11,6 +11,7 @@ namespace Modules.DragonIO.Enemy.Systems
         private EcsFilter<LevelController.Components.LevelRunTimeData, LevelController.Components.CurrentLevelConfigs> _levelData;
         
         private EcsWorld _world;
+        private Data.GameConfig _config;
 
         public void Run()
         {
@@ -33,7 +34,8 @@ namespace Modules.DragonIO.Enemy.Systems
                         break;
                     }
 
-                    var parent = new GameObject("Dragon" + levelRunTimeData.SpawnedEnemiesCount);
+                    index = Random.Range(0, _config.Names.Count);
+                    var parent = new GameObject(_config.Names[index] + levelRunTimeData.SpawnedEnemiesCount);
                     var parentEntity = parent.AddComponent<Dragons.EntityTemplates.DragonParentTemplate>();
                     parentEntity._components = new List<ViewHub.ViewComponent>();
                     parentEntity.Spawn(_world.NewEntity(), _world);
@@ -47,6 +49,7 @@ namespace Modules.DragonIO.Enemy.Systems
                     dragonHead.HeadID = levelRunTimeData.SpawnedEnemiesCount;
                     InitEnemy(ref dragonHeadEntity, enemyConfig, currentLevelConfigs);
                     enemyHeadTemplate.Spawn(dragonHeadEntity, _world);
+                    dragonHead.CountryImage.sprite = _config.CountrySprite[Random.Range(0, _config.CountrySprite.Count)];
                     ref var body = ref dragonHeadEntity.Get<Dragons.Components.DragonBody>();
                     body.HeadID = dragonHead.HeadID;
                     body.Head = dragonHead;
