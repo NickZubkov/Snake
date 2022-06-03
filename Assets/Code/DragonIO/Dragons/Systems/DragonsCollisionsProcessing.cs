@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System.Collections.Generic;
+using DG.Tweening;
 using Leopotam.Ecs;
 using Modules.ViewHub;
 using MoreMountains.NiceVibrations;
@@ -107,6 +108,7 @@ namespace Modules.DragonIO.Dragons.Systems
 
         private void ReleaseCollision(ref LevelController.Components.LevelRunTimeData levelRunTimeData, ref Components.DragonHead dragonHead)
         {
+            var positions = new Queue<Vector3>(); 
             foreach (var bodyParts in dragonHead.BodyParts)
             {
                 if (bodyParts.TryGetComponent(out EntityRef entityRef))
@@ -114,8 +116,9 @@ namespace Modules.DragonIO.Dragons.Systems
                     entityRef.Entity.Get<Utils.DestroyTag>();
                 }
                 
-                levelRunTimeData.FoodSpawningPositions.Enqueue(bodyParts.position);
+                positions.Enqueue(bodyParts.position);
             }
+            levelRunTimeData.FoodSpawningPositions.Enqueue(positions);
         }
     }
 }

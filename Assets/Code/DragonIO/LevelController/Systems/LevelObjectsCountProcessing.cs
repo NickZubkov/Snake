@@ -46,16 +46,29 @@ namespace Modules.DragonIO.LevelController.Systems
 
                 if (_food.GetEntitiesCount() < levelRunTimeData.FoodCount)
                 {
-                    ref var signal = ref _levelData.GetEntity(idx).Get<Components.GoodsSpawningSignal>();
+                    ref var signal = ref _world.NewEntity().Get<Components.GoodsSpawningSignal>();
                     signal.GoodsPrefab = levelConfigs.GoodsConfig.FoodPrefab;
                 }
 
-                if (levelRunTimeData.FoodSpawningPositions.Count > 0)
+                foreach (var data in levelRunTimeData.FoodSpawningPositions)
                 {
-                    ref var signal = ref _levelData.GetEntity(idx).Get<Components.GoodsSpawningSignal>();
-                    signal.GoodsPrefab = levelConfigs.GoodsConfig.FoodPrefab;
-                    signal.SpawningPosition = levelRunTimeData.FoodSpawningPositions.Dequeue();
-                    signal.UseBodyPosition = true;
+                    if (data.Count > 0)
+                    {
+                        ref var signal = ref _world.NewEntity().Get<Components.GoodsSpawningSignal>();
+                        signal.GoodsPrefab = levelConfigs.GoodsConfig.FoodPrefab;
+                        signal.SpawningPosition = data.Dequeue();
+                        signal.UseBodyPosition = true;
+                    }
+                    Debug.Log(levelRunTimeData.FoodSpawningPositions.Count);
+                }
+
+                foreach (var data in levelRunTimeData.FoodSpawningPositions)
+                {
+                    if (data.Count <= 0)
+                    {
+                        levelRunTimeData.FoodSpawningPositions.Dequeue();
+                        break;
+                    }
                 }
 
                 if (levelRunTimeData.BonusSpawnTimer <= 0)
@@ -63,7 +76,7 @@ namespace Modules.DragonIO.LevelController.Systems
                     if (_bonus.GetEntitiesCount() < levelConfigs.GoodsConfig.MaxBonusCount)
                     {
                         var index = Random.Range(0, levelConfigs.GoodsConfig.BonusPrefabs.Count);
-                        _levelData.GetEntity(idx).Get<Components.GoodsSpawningSignal>().GoodsPrefab = levelConfigs.GoodsConfig.BonusPrefabs[index];
+                        _world.NewEntity().Get<Components.GoodsSpawningSignal>().GoodsPrefab = levelConfigs.GoodsConfig.BonusPrefabs[index];
                     }
                     
                     levelRunTimeData.BonusSpawnTimer = Random.Range(levelConfigs.GoodsConfig.BonusSpawnTimeRange.x, (float)levelConfigs.GoodsConfig.BonusSpawnTimeRange.y);

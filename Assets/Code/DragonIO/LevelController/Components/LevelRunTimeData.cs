@@ -24,7 +24,7 @@ namespace Modules.DragonIO.LevelController.Components
         public float GoodsCollectingRadius;
         public bool PlayerDethVibroPlayed;
         public int FoodCount;
-        public Queue<Vector3> FoodSpawningPositions;
+        public Queue<Queue<Vector3>> FoodSpawningPositions;
         public int BodyPartSpawnDecrease;
     }
 }
