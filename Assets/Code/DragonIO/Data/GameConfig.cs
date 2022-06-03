@@ -31,6 +31,8 @@ namespace Modules.DragonIO.Data
         [FoldoutGroup("Common")][Range(1, 10)]
         public int BodyPartSpawnDecrease = 2;
         [FoldoutGroup("Common")] 
+        public float CameraOffset = 0.02f;
+        [FoldoutGroup("Common")] 
         public List<Sprite> CountrySprite;
         [FoldoutGroup("Common")]
         public List<string> Names;

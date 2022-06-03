@@ -658,6 +658,7 @@ MonoBehaviour:
   DethVFXPrefab: {fileID: 891882845696242574, guid: f7abf5fe22990fa40bfac3f84a0fcd9e,
     type: 3}
   BodyPartSpawnDecrease: 3
+  CameraOffset: 0.02
   CountrySprite:
   - {fileID: 467792874, guid: ead5dd14817abbf4e8d777f1aff7ce5d, type: 3}
   - {fileID: -472901455, guid: ead5dd14817abbf4e8d777f1aff7ce5d, type: 3}

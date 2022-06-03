@@ -26,5 +26,6 @@ namespace Modules.DragonIO.LevelController.Components
         public int FoodCount;
         public Queue<Queue<Vector3>> FoodSpawningPositions;
         public int BodyPartSpawnDecrease;
+        public float CameraOffset;
     }
 }

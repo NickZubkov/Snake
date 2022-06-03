@@ -52,6 +52,7 @@ namespace Modules.DragonIO.LevelController.Systems
                 levelRunTimeData.FoodCount = levelConfigs.GoodsConfig.MinFoodCount;
                 levelRunTimeData.FoodSpawningPositions = new Queue<Queue<Vector3>>();
                 levelRunTimeData.BodyPartSpawnDecrease = _config.BodyPartSpawnDecrease;
+                levelRunTimeData.CameraOffset = _config.CameraOffset;
 
                 foreach (var camera in _virtualCamera)
                 {

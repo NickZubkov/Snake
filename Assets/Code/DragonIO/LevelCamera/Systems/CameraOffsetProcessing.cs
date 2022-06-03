@@ -9,12 +9,15 @@ namespace Modules.DragonIO.LevelCamera.Systems
         private EcsFilter<LevelController.Components.LevelRunTimeData, LevelController.Components.CurrentLevelConfigs> _levelData;
         public void Run()
         {
-            if (!_scalngSignal.IsEmpty())
+            foreach (var signal in _scalngSignal)
             {
-                foreach (var levelData in _levelData)
+                if (_scalngSignal.Get1(signal).DragonHead.HeadID == -1)
                 {
-                    ref var levelRunTimeData = ref _levelData.Get1(levelData);
-                    levelRunTimeData.CinemachineTransposer.m_FollowOffset += new Vector3(0, levelRunTimeData.DragonScalingFactor, 0);
+                    foreach (var levelData in _levelData)
+                    {
+                        ref var levelRunTimeData = ref _levelData.Get1(levelData);
+                        levelRunTimeData.CinemachineTransposer.m_FollowOffset += new Vector3(0, levelRunTimeData.CameraOffset, 0);
+                    }
                 }
             }
         }
