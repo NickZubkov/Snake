@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using DG.Tweening;
 using Leopotam.Ecs;
 using Modules.ViewHub;
 using MoreMountains.NiceVibrations;
@@ -46,10 +45,13 @@ namespace Modules.DragonIO.Dragons.Systems
 
                             if (dragonHead.BodyParts.Count >= body.Head.BodyParts.Count)
                             {
-                                ReleaseCollision(ref levelRunTimeData, ref body.Head);
-                                if (dragonHead.HeadID == -1)
+                                if (!body.Head.IsShieldActive)
                                 {
-                                    _world.NewEntity().Get<UI.Components.FlyingTextSignal>();
+                                    if (dragonHead.HeadID == -1)
+                                    {
+                                        _world.NewEntity().Get<UI.Components.FlyingTextSignal>();
+                                    }
+                                    ReleaseCollision(ref levelRunTimeData, ref body.Head);
                                 }
                             }
                             else if (!dragonHead.IsShieldActive)
