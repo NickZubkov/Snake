@@ -15,7 +15,7 @@ namespace Modules.DragonIO.Dragons.Systems
                 foreach (var enemy in _enemy)
                 {
                     ref var enemyHead = ref _enemy.Get1(enemy);
-                    if (playerHead.BodyParts.Count >= enemyHead.BodyParts.Count)
+                    if (playerHead.BodyParts.Count - 1 >= enemyHead.BodyParts.Count)
                     {
                         foreach (var part in enemyHead.Body)
                         {

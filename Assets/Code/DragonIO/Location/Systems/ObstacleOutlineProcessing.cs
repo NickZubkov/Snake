@@ -15,7 +15,7 @@ namespace Modules.DragonIO.Location.Systems
                 foreach (var obstacleComponent in _obstacle)
                 {
                     ref var obstacle = ref _obstacle.Get1(obstacleComponent);
-                    if (playerHead.BodyParts.Count >= obstacle.DestroyThreshold)
+                    if (playerHead.BodyParts.Count - 1 >= obstacle.DestroyThreshold)
                     {
                         foreach (var renderer in obstacle.ViewMeshRenderers)
                         {
