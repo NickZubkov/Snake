@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6464608753643072414}
-  - component: {fileID: 6058398803396991283}
   m_Layer: 7
   m_Name: Tree
   m_TagString: Untagged
@@ -33,19 +32,6 @@ Transform:
   m_Father: {fileID: 4437287551222202329}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6058398803396991283
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2960464405066525205}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.66729754, y: 5, z: 0.5780722}
-  m_Center: {x: -0.0055765808, y: 1.98, z: -0.005576551}
 --- !u!1 &6545975762334974112
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,7 +42,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4437287551222202329}
   - component: {fileID: 8301662862115129004}
-  m_Layer: 0
+  - component: {fileID: 5422463835648594076}
+  m_Layer: 7
   m_Name: TreeSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,6 +85,19 @@ MonoBehaviour:
   _view: {fileID: 6464608753643072414}
   _viewRenderers:
   - {fileID: 1358489314492854748}
+--- !u!65 &5422463835648594076
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6545975762334974112}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.66729754, y: 4, z: 0.5780722}
+  m_Center: {x: -0.0055765808, y: 1, z: -0.005576551}
 --- !u!1 &8374787073504679696
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,6 +137,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4437287551222202329}
     m_Modifications:
+    - target: {fileID: 3072069914209492847, guid: 481fc1a80294f6940aabf85cc7676e32,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361142797399128713, guid: 481fc1a80294f6940aabf85cc7676e32,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7682917687395259314, guid: 481fc1a80294f6940aabf85cc7676e32,
         type: 3}
       propertyPath: m_RootOrder
@@ -196,6 +206,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: vfx_puff
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860426658668966660, guid: 481fc1a80294f6940aabf85cc7676e32,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 481fc1a80294f6940aabf85cc7676e32, type: 3}

@@ -18,6 +18,7 @@ namespace Modules.DragonIO.Location.Systems
                 signal.View.DOScale(Vector3.one * 0.04f, 0.2f);
                 signal.PuffVFX.Play();
                 entity.Del<Components.Obstacle>();
+                entity.Del<Components.ObstaclePlayVFXSignal>();
                 entity.Get<Utils.DestroyTag>().DestroyTime = 0.4f;
             }
         }
