@@ -9,14 +9,8 @@ namespace Modules.DragonIO.Dragons.EntityTemplates
         public override void OnSpawn(EcsEntity entity, EcsWorld world)
         {
             base.OnSpawn(entity, world);
-            entity.Get<Components.DragonBody>();
             entity.Get<LevelSpawner.LevelEntityTag>();
             _entity = entity;
-        }
-
-        public void SetComponentReferences(EcsEntity entity)
-        {
-            _entity.Get<Components.DragonBody>().Head = entity;
         }
     }
 }

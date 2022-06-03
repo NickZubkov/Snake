@@ -1,0 +1,17 @@
+{
+  "name": "com.lipsar.uanalytics.integrations.gameanalytics",
+  "displayName": "UAnalytics.Integrations.GameAnalytics",
+  "version": "1.0.1",
+  "unity": "2020.3",
+  "description": "GameAnalytics package + event submitter for UAnalytics",
+  "dependencies": {
+    "com.lipsar.uanalytics": "1.0.1"
+  },
+  "samples": [
+    {
+      "displayName": "External dependency manager for unity",
+      "description": "Contains external dependency manager for unity",
+      "path": "Samples~/ExternalDependencyManager"
+    }
+  ]
+}

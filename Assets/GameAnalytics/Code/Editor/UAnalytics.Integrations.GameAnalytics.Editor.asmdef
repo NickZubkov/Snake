@@ -1,0 +1,1 @@
+{"name":"UAnalytics.Integrations.GameAnalytics.Editor","rootNamespace":"UAnalytics.Integrations.GameAnalytics.Editor","references":["UAnalytics.Integrations.GameAnalytics"],"includePlatforms":["Editor"]}

@@ -3,11 +3,12 @@ namespace Modules.DragonIO.Enemy.Components
 {
     public struct Enemy
     {
-        public Data.EnemyConfig EnemyConfig;
+        public Data.EnemyAI EnemyAI;
         public float TimeToChangeDirection;
         public float ChangeDirectionTimer;
-        public float SerchRadiusThreshold;
-        public int LayerMask;
+        public float GoodsSerchRadius;
+        public float ObstacleSerchingDistance;
+        public int ObstacleLayerMask;
         public bool IsAvoidingObstacle;
     }
 }

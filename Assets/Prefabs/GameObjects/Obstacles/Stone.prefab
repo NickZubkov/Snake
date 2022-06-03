@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1839314742721591575}
-  - component: {fileID: 4137618187380219370}
+  - component: {fileID: 8161272052182483467}
   - component: {fileID: 1451190381435194298}
   m_Layer: 7
   m_Name: Stone
@@ -66,7 +66,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4137618187380219370
+--- !u!114 &8161272052182483467
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,10 +75,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7576680590022555804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdb61751f6a6433fab522c79f52935b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 56e29711b66b3064d8958d1ffdc9d386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _components: []
+  _destroyThreshold: 30
 --- !u!65 &1451190381435194298
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -90,8 +91,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.24, y: 2.5, z: 1.21}
-  m_Center: {x: -0.05, y: 0.42, z: 0.03}
+  m_Size: {x: 1.1274529, y: 2.5, z: 1.145069}
+  m_Center: {x: -0.062986225, y: 0.41999996, z: 0.036493123}
 --- !u!1001 &1141749749549710036
 PrefabInstance:
   m_ObjectHideFlags: 0

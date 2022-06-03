@@ -11,12 +11,22 @@ namespace Modules.DragonIO.Data
         public LevelConfig LevelsConfigs;
         
         [Space]
-        [FoldoutGroup("Other")]
+        [FoldoutGroup("Common")]
         public float DragonScalingFactor = 0.02f;
-        [FoldoutGroup("Other")]
+        [FoldoutGroup("Common")]
         public Vector3 DefaultCameraOffset = new Vector3(0, 25f, 0);
-        [FoldoutGroup("Other")] 
-        public float ObjectsSpawnRadius = 5f;
+        [FoldoutGroup("Common")] 
+        public float EnemyMinSpawnRadius = 15f;
+        [FoldoutGroup("Common")] 
+        public float ObstaclesMinSpawnRadius = 15f;
+        [FoldoutGroup("Common")] 
+        public float GoodsMinSpawnRadius = 15f;
+        [FoldoutGroup("Common")]
+        public int MaxGoodsSerchingCount = 15;
+        [FoldoutGroup("Common")] 
+        public float GoodsCollectingRadius = 2f;
+        [FoldoutGroup("Common")] 
+        public Location.EntityTemplates.DethVFXTemplate DethVFXPrefab;
     }
 
     [DictionaryDrawerSettings(KeyLabel = "Level",DisplayMode = DictionaryDisplayOptions.Foldout, ValueLabel = "LevelConfigs")]

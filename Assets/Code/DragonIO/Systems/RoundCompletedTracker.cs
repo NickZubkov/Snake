@@ -5,6 +5,7 @@ namespace Modules.DragonIO
     public class RoundCompletedTracker : IEcsRunSystem
     {
         private EcsFilter<EventGroup.GamePlayState> _gameplay;
+        private EcsFilter<LevelController.Components.LevelComplitedSignal> _complitedSignal;
         
         
         private EcsWorld _world;
@@ -14,7 +15,8 @@ namespace Modules.DragonIO
             if(_gameplay.IsEmpty())
                 return;
             
-            //EventGroup.StateFactory.CreateState<EventGroup.RoundCompletedState>(_world);
+            if (!_complitedSignal.IsEmpty()) 
+                EventGroup.StateFactory.CreateState<EventGroup.RoundCompletedState>(_world);
             
         }
     }

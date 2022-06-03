@@ -5,12 +5,12 @@ namespace Modules.DragonIO.Goods.Components
     public struct SpeedBonus : Interfaces.IBonusApplyer
     {
         public float SpeedMultiplier;
-        private float _bonusTimeLife;
+        private float _bonusDuration;
 
-        public float BonusTimeLife
+        public float BonusDuration
         {
-            get => _bonusTimeLife;
-            set => _bonusTimeLife = value;
+            get => _bonusDuration;
+            set => _bonusDuration = value;
         }
 
         public void Activate(ref DragonHead dragonHead)
@@ -19,8 +19,10 @@ namespace Modules.DragonIO.Goods.Components
             {
                 dragonHead.SpeedBonusMultiplyer = SpeedMultiplier;
                 dragonHead.MovementSpeed *= SpeedMultiplier;
+                dragonHead.Gap *= SpeedMultiplier;
             }
-            dragonHead.SpeedBonusTimer += BonusTimeLife;
+            dragonHead.SpeedBonusTimer = BonusDuration;
+            dragonHead.SpeedBonusDuration = BonusDuration;
             
         }
     }

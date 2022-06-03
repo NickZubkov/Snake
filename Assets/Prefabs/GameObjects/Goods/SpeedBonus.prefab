@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bonusComponent: 1
-  _bonusTimeLife: 5
+  _bonusDuration: 5
   _bonusMultiplyer: 2
 --- !u!1 &5375841591774672014
 GameObject:

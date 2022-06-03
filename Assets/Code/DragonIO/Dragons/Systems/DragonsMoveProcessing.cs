@@ -23,7 +23,7 @@ namespace Modules.DragonIO.Dragons.Systems
                 ref var dragonHeadTransform = ref _dragons.Get1(idx).Transform;
 
                 int index = 0;
-                var gap = 10f / (dragon.DragonConfig.Gap + dragonHeadTransform.localScale.x - 1);
+                var gap = 10f / (dragon.Gap + dragonHeadTransform.localScale.x - 1);
                 for (int i = 0; i < dragon.BodyParts.Count; i++)
                 {
                     if (i == 0)

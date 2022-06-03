@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-
+﻿
 namespace Modules.DragonIO.Data
 {
     [System.Serializable]
@@ -12,7 +11,6 @@ namespace Modules.DragonIO.Data
         public float MovementSpeed = 5f;
         public float RotationSpeed = 3f;
         public int Gap = 5;
-        public float BodySize = 1;
         public int BodySegmentsCount = 1;
     }
 }

@@ -6,8 +6,8 @@ namespace Modules.DragonIO.Dragons.Systems
     public class DragonsCollectGoodsProcessing : IEcsRunSystem
     {
         private EcsFilter<EventGroup.GamePlayState> _gamePlay;
-        private EcsFilter<ViewHub.UnityView, Components.DragonHead, UPhysics.Triggered> _dragon;
-        private EcsFilter<LevelController.Components.LevelController> _levelController;
+        private EcsFilter<ViewHub.UnityView, Components.DragonHead> _dragon;
+        private EcsFilter<LevelController.Components.LevelRunTimeData, LevelController.Components.CurrentLevelConfigs> _levelData;
 
         private EcsWorld _world;
 
@@ -15,63 +15,67 @@ namespace Modules.DragonIO.Dragons.Systems
         {
             if (_gamePlay.IsEmpty())
                 return;
-
-            foreach (var idx in _dragon)
+            
+            foreach (var levelData in _levelData)
             {
-                foreach (var levelController in _levelController)
+                foreach (var idx in _dragon)
                 {
-                    ref var controller = ref _levelController.Get1(levelController);
-                    ref var triggered = ref _dragon.Get3(idx);
+                    ref var levelRunTimeData = ref _levelData.Get1(levelData);
+                    
                     ref var dragonHead = ref _dragon.Get2(idx);
-                    ref var dragonTransform = ref _dragon.Get1(idx);
-                    ref var dragonEntity = ref _dragon.GetEntity(idx);
-                    if (triggered.Other.IsAlive() && triggered.Other.Has<Goods.Components.Food>())
+                    Collider[] hitColliders = new Collider[levelRunTimeData.MaxGoodsSerchingCount];
+                    var spherePosition = dragonHead.HeadTransform.position.Where(y: 0f);
+                    var radius = levelRunTimeData.GoodsCollectingRadius * dragonHead.HeadTransform.localScale.x / 2f;
+                    Physics.OverlapSphereNonAlloc(spherePosition, radius, hitColliders, levelRunTimeData.GoodsLayerMask);
+                    
+                    foreach (var collider in hitColliders)
                     {
-                        var index = dragonHead.BodyParts.Count - 1;
-                        var bodyPart = Object.Instantiate(dragonHead.DragonConfig.BodyPrefab, dragonHead.BodyParts[index].position, Quaternion.identity);
-                        bodyPart.Spawn(_world.NewEntity(), _world);
-                        bodyPart.SetComponentReferences(dragonEntity);
-                        bodyPart.transform.parent = dragonTransform.Transform.parent;
-                        dragonHead.BodyParts.Insert(index, bodyPart.transform);
-                        dragonHead.Points += dragonHead.PointBonusMultiplyer;
-
-                        var newScale = dragonTransform.Transform.localScale + (Vector3.one * controller.DragonScalingFactor);
-                        foreach (var part in dragonHead.BodyParts)
+                        if (collider != null && collider.gameObject.TryGetComponentInParent(out ViewHub.EntityRef entityRef))
                         {
-                            part.localScale = newScale;
-                            var newPosition = new Vector3(part.position.x, part.position.y + controller.DragonScalingFactor, part.position.z);
-                            part.position = newPosition;
-                        }
-
-                        if (dragonEntity.Has<Player.Components.Player>())
-                        {
-                            dragonEntity.Get<LevelController.Components.ChangeCameraOffsetSignal>();
-                        }
-                        
-                        for (int i = 0; i < controller.GoodsPositions.Count; i++)
-                        {
-                            if (controller.GoodsPositions[i].gameObject == triggered.Collider.transform.parent.parent.gameObject)
+                            if (entityRef.Entity.Has<Goods.Components.Food>())
                             {
-                                controller.GoodsPositions.RemoveAt(i);
+                                ref var bodySpawningSignal = ref _dragon.GetEntity(idx).Get<LevelController.Components.DragonBodySpawningSignal>();
+                                bodySpawningSignal.DragonHead = dragonHead;
+                                bodySpawningSignal.BodyPrefab = dragonHead.DragonConfig.BodyPrefab;
+                                dragonHead.Points += dragonHead.PointBonusMultiplyer;
+                                collider.gameObject.layer = 0;
+                                ref var effectTag = ref entityRef.Entity.Get<Goods.Components.PlayGoodsEffectTag>();
+                                if (_dragon.GetEntity(idx).Has<Player.Components.Player>())
+                                {
+                                    effectTag.IsPlayerHead = true;
+                                }
+                                else
+                                {
+                                    effectTag.IsPlayerHead = false;
+                                }
+                                effectTag.IsFood = true;
+                                effectTag.TargetTransform = dragonHead.HeadTransform;
+                                effectTag.Timer = 0.3f;
+                            }
+
+                            else if (entityRef.Entity.Has<Goods.Components.Bonus>())
+                            {
+                                ref var bonusApplyer = ref entityRef.Entity.Get<Goods.Components.Bonus>().BonusApplyer;
+                                bonusApplyer.Activate(ref dragonHead);
+                                _dragon.GetEntity(idx).Get<Goods.Components.PlayBonusVFXSignal>().BonusType = bonusApplyer;
+                                collider.gameObject.layer = 0;
+                                ref var effectTag = ref entityRef.Entity.Get<Goods.Components.PlayGoodsEffectTag>();
+                                if (_dragon.GetEntity(idx).Has<Player.Components.Player>())
+                                {
+                                    effectTag.IsPlayerHead = true;
+                                }
+                                else
+                                {
+                                    effectTag.IsPlayerHead = false;
+                                }
+                                effectTag.IsFood = false;
+                                effectTag.TargetTransform = dragonHead.HeadTransform;
+                                effectTag.Timer = 0.3f;
+                                
                             }
                         }
-
-                        triggered.Other.Destroy();
                     }
-                    else if (triggered.Other.IsAlive() && triggered.Other.Has<Goods.Components.Bonus>())
-                    {
-                        for (int i = 0; i < controller.GoodsPositions.Count; i++)
-                        {
-                            if (controller.GoodsPositions[i].gameObject == triggered.Collider.transform.parent.parent.gameObject)
-                            {
-                                controller.GoodsPositions.RemoveAt(i);
-                            }
-                        }
-
-                        triggered.Other.Get<Goods.Components.Bonus>().BonusApplyer.Activate(ref dragonHead);
-                        triggered.Other.Destroy();
-                    }
-                }
+                } 
             }
         }
     }
