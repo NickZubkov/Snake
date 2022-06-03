@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using Leopotam.Ecs;
+using UnityEngine;
 
 namespace Modules.DragonIO.UI.Systems
 {
@@ -13,7 +15,8 @@ namespace Modules.DragonIO.UI.Systems
         private EcsFilter<ViewHub.UnityView, Dragons.Components.DragonHead> _dragons;
         private EcsFilter<LevelController.Components.LevelRunTimeData> _levelController;
         private EcsFilter<Dragons.Components.DragonHead, Player.Components.Player> _player;
-        private EcsFilter<UICoreECS.UIScreen> _UIScreen;
+        private EcsFilter<Components.FlyingTextSignal> _flyingSignal;
+        private EcsFilter<Components.FlyingText> _flyingText;
         
         public void Run()
         {
@@ -88,6 +91,16 @@ namespace Modules.DragonIO.UI.Systems
                         bonusIcon.ShieldBonus.SetActive(false);
                     }
                 }
+            }
+
+            foreach (var flyingSignal in _flyingSignal)
+            {
+                foreach (var flyingText in _flyingText)
+                {
+                    _flyingText.Get1(flyingText).View.RunText();
+                }
+
+                _flyingSignal.GetEntity(flyingSignal).Get<Utils.DestroyTag>();
             }
         }
     }

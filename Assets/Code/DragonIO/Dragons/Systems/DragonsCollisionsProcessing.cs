@@ -47,6 +47,10 @@ namespace Modules.DragonIO.Dragons.Systems
                             if (dragonHead.BodyParts.Count >= body.Head.BodyParts.Count)
                             {
                                 ReleaseCollision(ref levelRunTimeData, ref body.Head);
+                                if (dragonHead.HeadID == -1)
+                                {
+                                    _world.NewEntity().Get<UI.Components.FlyingTextSignal>();
+                                }
                             }
                             else if (!dragonHead.IsShieldActive)
                             {
