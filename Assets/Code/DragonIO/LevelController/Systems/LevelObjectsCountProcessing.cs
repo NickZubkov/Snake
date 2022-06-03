@@ -59,7 +59,6 @@ namespace Modules.DragonIO.LevelController.Systems
                         signal.SpawningPosition = data.Dequeue();
                         signal.UseBodyPosition = true;
                     }
-                    Debug.Log(levelRunTimeData.FoodSpawningPositions.Count);
                 }
 
                 foreach (var data in levelRunTimeData.FoodSpawningPositions)

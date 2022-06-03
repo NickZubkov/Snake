@@ -45,6 +45,7 @@ namespace Modules.DragonIO
                 .Add(new Location.Systems.ObstaclesSpawnProcessing())
                 .Add(new Location.Systems.GroundDecorSpawnProcessing())
                 .Add(new Location.Systems.ObstacleOutlineProcessing())
+                .Add(new Location.Systems.ObstacleVFXProcessing())
                 
                 // player
                 .Add(new Player.Systems.PlayerSpawnSystem())
@@ -108,6 +109,7 @@ namespace Modules.DragonIO
                 .OneFrame<LevelController.Components.LevelComplitedSignal>()
                 .OneFrame<LevelController.Components.LevelFaildSignal>()
                 .OneFrame<LevelController.Components.ChangeCameraFollowSignal>()
+                .OneFrame<Location.Components.ObstaclePlayVFXSignal>()
                 .OneFrame<Dragons.Components.DragonHeadSpawnedSignal>()
                 .OneFrame<Goods.Components.PlayBonusVFXSignal>()
                 .OneFrame<Goods.Components.PlayWinVFXSignal>()

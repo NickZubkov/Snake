@@ -29,7 +29,7 @@ MonoBehaviour:
         LevelSize: 1
         WallPrefab: {fileID: 8292693005376339395, guid: 733e1affa63de94488547a3ba5e82741,
           type: 3}
-        EnemiesCount: 1
+        EnemiesCount: 15
       PlayerConfig:
         HeadPrefab: {fileID: 2227945532121990189, guid: ee64ed5f86fef3743b913d0ade1c9d2c,
           type: 3}
@@ -121,10 +121,10 @@ MonoBehaviour:
       GroundConfig:
         ObstaclesCount: 50
         ObstaclePrefabs:
-        - {fileID: 8161272052182483467, guid: 3b6c3ef6d626eae40b04e59cf6d844b5, type: 3}
-        - {fileID: 7285664605853232875, guid: 5d095d4a2eea5f643a0d5da278c7774a, type: 3}
-        - {fileID: 8161272052182483467, guid: 5c6b7f15e98c66e4992334295e7fc0ae, type: 3}
-        - {fileID: 7285664605853232875, guid: e58c689b5c9a3fe44992ba0f4c8efd79, type: 3}
+        - {fileID: 4561231667490088804, guid: 2f16ec01c2bd14a41ab2926a16ef9b61, type: 3}
+        - {fileID: 4561231667490088804, guid: 238c8d5d8f8ffb34c81d44ae04f2d340, type: 3}
+        - {fileID: 620326254068752660, guid: bfb46a869be33164eb5da81c6cdb95e5, type: 3}
+        - {fileID: 8301662862115129004, guid: 40aefa1f2b9780d41802f25a2b02a5ae, type: 3}
         GroundDecorCount: 30
         GroundDecorPrefabs:
         - {fileID: 7235652679403321981, guid: 7223a7c9aa8c7af4f8f1756a95ef445e, type: 3}
@@ -225,10 +225,10 @@ MonoBehaviour:
       GroundConfig:
         ObstaclesCount: 50
         ObstaclePrefabs:
-        - {fileID: 1958448178069832200, guid: 49fe441bac1d19441903eca720bcbdc1, type: 3}
-        - {fileID: 4727870946865373663, guid: 19c268e7522f3aa4991ad202d7987ed3, type: 3}
-        - {fileID: 1958448178069832200, guid: 34780d88d1be4c04ca2ae13d7c775bcc, type: 3}
-        - {fileID: 4727870946865373663, guid: 1fcbf359c091c914dbb4aaebce4cd6ab, type: 3}
+        - {fileID: 4426300092847487158, guid: cb3ae32d06a002f468623c6b3e245609, type: 3}
+        - {fileID: 4426300092847487158, guid: 02b7cec33efbb46429573b51b37fd028, type: 3}
+        - {fileID: 3733789567204440549, guid: 31a091edffea690419f4bb7ad79e1c6a, type: 3}
+        - {fileID: 1260508921717371878, guid: 22dc82c72d6f65545bddd2bda931107c, type: 3}
         GroundDecorCount: 80
         GroundDecorPrefabs:
         - {fileID: -6642587625746292088, guid: 83d10a157ec1d8348bbc42842de07e6f, type: 3}
@@ -329,10 +329,10 @@ MonoBehaviour:
       GroundConfig:
         ObstaclesCount: 50
         ObstaclePrefabs:
-        - {fileID: 8161272052182483467, guid: 3b6c3ef6d626eae40b04e59cf6d844b5, type: 3}
-        - {fileID: 7285664605853232875, guid: 5d095d4a2eea5f643a0d5da278c7774a, type: 3}
-        - {fileID: 8161272052182483467, guid: 5c6b7f15e98c66e4992334295e7fc0ae, type: 3}
-        - {fileID: 7285664605853232875, guid: e58c689b5c9a3fe44992ba0f4c8efd79, type: 3}
+        - {fileID: 4561231667490088804, guid: 2f16ec01c2bd14a41ab2926a16ef9b61, type: 3}
+        - {fileID: 4561231667490088804, guid: 238c8d5d8f8ffb34c81d44ae04f2d340, type: 3}
+        - {fileID: 620326254068752660, guid: bfb46a869be33164eb5da81c6cdb95e5, type: 3}
+        - {fileID: 8301662862115129004, guid: 40aefa1f2b9780d41802f25a2b02a5ae, type: 3}
         GroundDecorCount: 80
         GroundDecorPrefabs:
         - {fileID: 7235652679403321981, guid: 7223a7c9aa8c7af4f8f1756a95ef445e, type: 3}
@@ -433,10 +433,10 @@ MonoBehaviour:
       GroundConfig:
         ObstaclesCount: 60
         ObstaclePrefabs:
-        - {fileID: 1958448178069832200, guid: 49fe441bac1d19441903eca720bcbdc1, type: 3}
-        - {fileID: 4727870946865373663, guid: 19c268e7522f3aa4991ad202d7987ed3, type: 3}
-        - {fileID: 1958448178069832200, guid: 34780d88d1be4c04ca2ae13d7c775bcc, type: 3}
-        - {fileID: 4727870946865373663, guid: 1fcbf359c091c914dbb4aaebce4cd6ab, type: 3}
+        - {fileID: 4426300092847487158, guid: cb3ae32d06a002f468623c6b3e245609, type: 3}
+        - {fileID: 4426300092847487158, guid: 02b7cec33efbb46429573b51b37fd028, type: 3}
+        - {fileID: 3733789567204440549, guid: 31a091edffea690419f4bb7ad79e1c6a, type: 3}
+        - {fileID: 1260508921717371878, guid: 22dc82c72d6f65545bddd2bda931107c, type: 3}
         GroundDecorCount: 60
         GroundDecorPrefabs:
         - {fileID: -6642587625746292088, guid: 83d10a157ec1d8348bbc42842de07e6f, type: 3}
@@ -537,10 +537,10 @@ MonoBehaviour:
       GroundConfig:
         ObstaclesCount: 90
         ObstaclePrefabs:
-        - {fileID: 8161272052182483467, guid: 3b6c3ef6d626eae40b04e59cf6d844b5, type: 3}
-        - {fileID: 7285664605853232875, guid: 5d095d4a2eea5f643a0d5da278c7774a, type: 3}
-        - {fileID: 8161272052182483467, guid: 5c6b7f15e98c66e4992334295e7fc0ae, type: 3}
-        - {fileID: 7285664605853232875, guid: e58c689b5c9a3fe44992ba0f4c8efd79, type: 3}
+        - {fileID: 8301662862115129004, guid: 40aefa1f2b9780d41802f25a2b02a5ae, type: 3}
+        - {fileID: 620326254068752660, guid: bfb46a869be33164eb5da81c6cdb95e5, type: 3}
+        - {fileID: 4561231667490088804, guid: 238c8d5d8f8ffb34c81d44ae04f2d340, type: 3}
+        - {fileID: 4561231667490088804, guid: 2f16ec01c2bd14a41ab2926a16ef9b61, type: 3}
         GroundDecorCount: 80
         GroundDecorPrefabs:
         - {fileID: 7235652679403321981, guid: 7223a7c9aa8c7af4f8f1756a95ef445e, type: 3}
@@ -641,10 +641,10 @@ MonoBehaviour:
       GroundConfig:
         ObstaclesCount: 60
         ObstaclePrefabs:
-        - {fileID: 1958448178069832200, guid: 49fe441bac1d19441903eca720bcbdc1, type: 3}
-        - {fileID: 4727870946865373663, guid: 19c268e7522f3aa4991ad202d7987ed3, type: 3}
-        - {fileID: 1958448178069832200, guid: 34780d88d1be4c04ca2ae13d7c775bcc, type: 3}
-        - {fileID: 4727870946865373663, guid: 1fcbf359c091c914dbb4aaebce4cd6ab, type: 3}
+        - {fileID: 4426300092847487158, guid: cb3ae32d06a002f468623c6b3e245609, type: 3}
+        - {fileID: 4426300092847487158, guid: 02b7cec33efbb46429573b51b37fd028, type: 3}
+        - {fileID: 3733789567204440549, guid: 31a091edffea690419f4bb7ad79e1c6a, type: 3}
+        - {fileID: 1260508921717371878, guid: 22dc82c72d6f65545bddd2bda931107c, type: 3}
         GroundDecorCount: 60
         GroundDecorPrefabs:
         - {fileID: -6642587625746292088, guid: 83d10a157ec1d8348bbc42842de07e6f, type: 3}
@@ -657,4 +657,5 @@ MonoBehaviour:
   GoodsCollectingRadius: 2
   DethVFXPrefab: {fileID: 891882845696242574, guid: f7abf5fe22990fa40bfac3f84a0fcd9e,
     type: 3}
+  PuffVFXPrefab: {fileID: 0}
   BodyPartSpawnDecrease: 3

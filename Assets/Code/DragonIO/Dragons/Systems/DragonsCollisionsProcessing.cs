@@ -60,12 +60,7 @@ namespace Modules.DragonIO.Dragons.Systems
                         {
                             if (triggered.Other.Get<Location.Components.Obstacle>().DestroyThreshold < dragonHead.BodyParts.Count)
                             {
-                                var transform = triggered.Collider.transform;
-                                var sequence = DOTween.Sequence();
-                                sequence.Append(transform.DOPunchScale(Vector3.one * 0.1f, 0.2f, 0, 0));
-                                sequence.Append(transform.DOScale(Vector3.one * 0.05f, 0.2f));
-                                triggered.Other.Del<Location.Components.Obstacle>();
-                                triggered.Other.Get<Utils.DestroyTag>().DestroyTime = 0.5f;
+                                triggered.Other.Get<Location.Components.ObstaclePlayVFXSignal>();
                                 continue;
                             }
                             if (dragonHead.IsShieldActive)
