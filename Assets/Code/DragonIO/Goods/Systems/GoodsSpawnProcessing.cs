@@ -7,10 +7,14 @@ namespace Modules.DragonIO.Goods.Systems
     {
         private EcsFilter<LevelController.Components.GoodsSpawningSignal> _goodsSignal;
         private EcsFilter<Components.PooledFoodTag> _foodPool;
-        private EcsFilter<LevelController.Components.LevelRunTimeData, LevelController.Components.CurrentLevelConfigs> _levelData;
+
+        private EcsFilter<LevelController.Components.LevelRunTimeData, LevelController.Components.CurrentLevelConfigs>
+            _levelData;
+
         private EcsFilter<ViewHub.UnityView, Dragons.Components.DragonHead, Player.Components.Player> _player;
-        
+
         private EcsWorld _world;
+
         public void Run()
         {
             foreach (var goodsSignal in _goodsSignal)
@@ -19,43 +23,46 @@ namespace Modules.DragonIO.Goods.Systems
                 {
                     ref var levelRunTimeData = ref _levelData.Get1(levelData);
                     ref var signal = ref _goodsSignal.Get1(goodsSignal);
+                    var playerPosition = Vector3.zero;
+                    
                     foreach (var player in _player)
                     {
-                        var position = Vector3.zero;
-                        var prefab = _goodsSignal.Get1(goodsSignal).GoodsPrefab;
-                        
-                        if (signal.UseBodyPosition)
-                        {
-                            position = signal.SpawningPosition;
-                        }
-                        else
-                        {
-                            ref var playerTransform = ref _player.Get1(player).Transform;
-                            var randomPoint = Random.insideUnitCircle * levelRunTimeData.OtherObjectMaxSpawnRadius;
-                            position = new Vector3(randomPoint.x, prefab.transform.position.y, randomPoint.y);
-                            if ((playerTransform.position - position).sqrMagnitude < levelRunTimeData.GoodsMinSpawnRadiusSqr)
-                            {
-                                break;
-                            }
-                        }
+                        playerPosition = _player.Get1(player).Transform.position;
+                    }
+                    
+                    var position = Vector3.zero;
+                    var prefab = _goodsSignal.Get1(goodsSignal).GoodsPrefab;
 
-                        if (_foodPool.IsEmpty())
+                    if (signal.UseBodyPosition)
+                    {
+                        position = signal.SpawningPosition;
+                    }
+                    else
+                    {
+                        var randomPoint = Random.insideUnitCircle * levelRunTimeData.OtherObjectMaxSpawnRadius;
+                        position = new Vector3(randomPoint.x, prefab.transform.position.y, randomPoint.y);
+                        if ((playerPosition - position).sqrMagnitude < levelRunTimeData.GoodsMinSpawnRadiusSqr)
                         {
-                            var goods = Object.Instantiate(prefab, position, Quaternion.identity);
-                            goods.Spawn(_world.NewEntity(), _world);
+                            break;
                         }
-                        else
+                    }
+
+                    if (_foodPool.IsEmpty())
+                    {
+                        var goods = Object.Instantiate(prefab, position, Quaternion.identity);
+                        goods.Spawn(_world.NewEntity(), _world);
+                    }
+                    else
+                    {
+                        foreach (var foodPool in _foodPool)
                         {
-                            foreach (var foodPool in _foodPool)
-                            {
-                                ref var food = ref _foodPool.GetEntity(foodPool);
-                                food.Del<Components.PooledFoodTag>();
-                                food.Get<Components.Food>();
-                                food.Get<ViewHub.UnityView>().Transform.position = position;
-                                food.Get<ViewHub.UnityView>().Transform.localScale = Vector3.one;
-                                food.Get<ViewHub.UnityView>().GameObject.SetActive(true);
-                                break;
-                            }
+                            ref var food = ref _foodPool.GetEntity(foodPool);
+                            food.Del<Components.PooledFoodTag>();
+                            food.Get<Components.Food>();
+                            food.Get<ViewHub.UnityView>().Transform.position = position;
+                            food.Get<ViewHub.UnityView>().Transform.localScale = Vector3.one;
+                            food.Get<ViewHub.UnityView>().GameObject.SetActive(true);
+                            break;
                         }
                     }
                 }
