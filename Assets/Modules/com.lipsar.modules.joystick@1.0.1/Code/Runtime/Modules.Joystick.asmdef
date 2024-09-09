@@ -1,0 +1,19 @@
+{
+    "name": "Modules.Joystick",
+    "rootNamespace": "",
+    "references": [
+        "Leopotam.Ecs",
+        "Modules.UICoreECS",
+        "Modules.UserInput",
+        "Modules.Root.ECS"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

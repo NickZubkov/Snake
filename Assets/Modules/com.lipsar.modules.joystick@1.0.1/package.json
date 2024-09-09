@@ -1,0 +1,20 @@
+{
+  "name": "com.lipsar.modules.joystick",
+  "displayName": "Modules.Joystick",
+  "version": "1.0.1",
+  "unity": "2020.3",
+  "description": "Virtual joystick",
+  "hideInEditor": false,
+  "dependencies": {
+    "com.lipsar.modules.root.ecs": "1.0.3",
+    "com.lipsar.modules.userinput": "1.0.0",
+    "com.lipsar.modules.uicoreecs": "1.0.0"
+  },
+  "samples": [
+    {
+      "displayName": "Joystick",
+      "description": "Contains pre-configured joystick assets",
+      "path": "Samples~/Joystick"
+    }
+  ]
+}

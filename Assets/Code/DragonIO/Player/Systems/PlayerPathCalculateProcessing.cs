@@ -1,4 +1,5 @@
 ﻿using Leopotam.Ecs;
+using Modules.Joystick;
 using UnityEngine;
 
 namespace Modules.DragonIO.Player.Systems
@@ -7,7 +8,7 @@ namespace Modules.DragonIO.Player.Systems
     {
         private EcsFilter<EventGroup.GamePlayState> _gameplay;
 
-        private EcsFilter<Joystick.JoystickData> _joystick;
+        private EcsFilter<JoystickData> _joystick;
         private EcsFilter<ViewHub.UnityView, Dragons.Components.DragonHead, Components.Player> _player;
 
         private Utils.TimeService _time;
